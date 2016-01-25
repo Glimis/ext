@@ -1,0 +1,18 @@
+Ext.onReady(function() {
+    Ext.create('Ext.menu.Menu', {
+        renderTo: 'test',
+        width: 300,
+        margin: '0 0 10 0',
+        floating: false,
+        items: [{
+            text: '菜单文本'
+        },{
+            text: '菜单文本'
+        }, {
+            xtype: 'menuseparator'
+        }, {
+            xtype: 'menucheckitem',
+            text: '选择菜单'
+        }]
+    });
+})

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-chart-Legend'>/**
+</span> * @class Ext.chart.Legend
+ */
+Ext.define('Ext.chart.Legend', {
+    xtype: 'legend',
+    extend: 'Ext.chart.LegendBase',
+    config: {
+<span id='Ext-chart-Legend-cfg-baseCls'>        baseCls: 'x-legend',
+</span><span id='Ext-chart-Legend-cfg-padding'>        padding: 5,
+</span>
+<span id='Ext-chart-Legend-cfg-rect'>        /**
+</span>         * @cfg {Array}
+         * The rect of the legend related to its container.
+         */
+        rect: null,
+
+<span id='Ext-chart-Legend-cfg-disableSelection'>        disableSelection: true,
+</span>
+<span id='Ext-chart-Legend-cfg-toggleable'>        toggleable: true
+</span>    },
+
+<span id='Ext-chart-Legend-method-toggleItem'>    toggleItem: function (index) {
+</span>        if (this.getToggleable()) {
+            var store = this.getStore(),
+                record = store &amp;&amp; store.getAt(index);
+            if (record) {
+                record.set('disabled', !record.get('disabled'));
+            }
+        }
+    }
+
+});
+</pre>
+</body>
+</html>

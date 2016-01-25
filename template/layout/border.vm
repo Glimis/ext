@@ -1,0 +1,31 @@
+//面向应用的UI布局样式
+//通过region描述布局,其中南北需要高度,东西需要宽度,中部`自适应`
+Ext.create('Ext.panel.Panel', {
+    width: 500,
+    height: 500,
+    title: 'Border布局',
+    layout: 'border',
+    items: [{
+        title: '南部',
+        region: 'south',
+        height: 100
+    },{
+        title: '北部',
+        region: 'north',
+        height:100,
+    },{
+        title: '东',
+        region: 'east',
+        width:100,
+    },{
+        title: '西部',
+        region:'west',
+        width:100
+    },{
+        title: '中部',
+        region: 'center',
+        xtype: 'panel'
+    }],
+    renderTo: Ext.getBody()
+});
+

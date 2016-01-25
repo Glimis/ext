@@ -1,0 +1,480 @@
+<!DOCTYPE HTML>
+<html manifest="">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Api/Ext.Component</title>
+    <link type="text/css" rel="stylesheet" href="/css/font-awesome.css">
+    <script type="text/javascript" src="/ext/build/ext-all-rtl-debug.js"></script>
+
+    <script src="/resources/beautify.js"></script>
+    <script src="/resources/beautify-html.js"></script>
+    <link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />
+    <script src="/resources/codemirror/lib/codemirror.js"></script>
+    <script src="/resources/codemirror/addon/edit/closetag.js"></script>
+    <script src="/resources/codemirror/mode/xml/xml.js"></script>
+    <script src="/resources/codemirror/mode/javascript/javascript.js"></script>
+    <script src="/resources/codemirror/mode/css/css.js"></script>
+    <script src="/resources/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <style>
+    .red {
+        background: #f2dede;
+        border-color: #f2dede;
+    }
+    
+    pre,
+    code {
+        display: block;
+        overflow: auto;
+        background: #f4f4f4;
+        padding: 5px 10px;
+        border: 1px solid #eee;
+        word-wrap: break-word;
+        /* Internet Explorer 5.5+ */
+        white-space: pre-wrap;
+        /* Firefox */
+    }
+    
+    .valigin-super {
+        vertical-align: super;
+    }
+    
+    #loading .title {
+        margin: 300px 0 0 0;
+        font-family: "Exo", sans-serif;
+        font-size: 2em;
+        color: gray;
+        text-align: center;
+        white-space: nowrap;
+        display: block
+    }
+    
+    #loading .logo {
+        background: url(/images/loading.gif) no-repeat center;
+        display: block;
+        height: 120px
+    }
+    </style>
+</head>
+
+<body>
+    <div id="loading"><span class="title">请稍等....</span><span class="logo"></span></div>
+    <div id='content' style='display:none'>
+        <p>Ext.Component是Ext所有组件的基类,其api也是公共api,此处加入各种组建,方便尝试继承的属性/方法</p>
+        <h1>创建</h1>
+        <a cy-text='Component' cy-model="Ext.Component" cy-type="create"></a>
+        <a cy-text='Button' cy-model="Ext.button.Button" cy-type="create"></a>
+        <a cy-text='Cycle' cy-model="Ext.button.Cycle" cy-type="create"></a>
+        <a cy-text='Color' cy-model="Ext.picker.Color" cy-type="create"></a>
+        <a cy-text='Date' cy-model="Ext.picker.Date" cy-type="create"></a>
+        <a cy-text='Menu' cy-model="Ext.menu.Menu" cy-type="create"></a>
+        
+        <span>点击按钮初始化例子</span>
+        <p>每次初始化都会重新创建一个新的组建,可以看到id会变哦
+            <br>在下面的例子中,点击按钮就会在编辑框内加入/删除相应的特定的属性</p>
+        <h4>参考例子</h4>
+        <a cy-type="demo"></a>
+
+        <h1>属性</h1>
+        <p>创建component系列时可以配置的项目,这些都可以用json表示(json不包括对方法的描述)
+            <br> component是所有组建的基础,其他组建会继承并可能重写默认属性,下面的默认属性仅代表标准的component下的默认值
+            <br> 因为属性比较多,为了便于理解,暂时通过功能对属性进行了非常山寨的区分,这种划分并非官方－。－
+        </p>
+        
+
+        <hr>
+        <h2>快捷样式</h2>
+        <span>对常用样式的修改提供快捷方式</span>
+        <p><span cy-type='config' cy-data='style={"color":"#FFFFFF","backgroundColor":"#000000"}' cy-text='style'></span></span><span class='valigin-super'>:标准的内置样式,兜底大魔王(默认样式,优先级比下面的方式的低),作为教程,这种属性怎么看都应该放在最后-.-不过有些组建不先设置写样式,可能就无法预览了</span></p>
+        <span cy-type='config' cy-data='padding=20' cy-text='padding'></span>
+        <span cy-type='config' cy-data='width=200' cy-text='width'></span>
+        <span cy-type='config' cy-data='height=60' cy-text='height'></span>
+        <span cy-type='config' cy-data='border=1' cy-text='border'></span>
+        <span cy-type='config' cy-data='margin=5' cy-text='margin'></span>
+        <span cy-type='config' cy-data='maxHeight=400' cy-text='maxHeight'></span>
+        <span cy-type='config' cy-data='maxWidth=400' cy-text='maxWidth'></span>
+        <span cy-type='config' cy-data='minHeight=100' cy-text='minHeight'></span>
+        <span cy-type='config' cy-data='minWidth=100' cy-text='minWidth'></span>
+        <span cy-type='config' cy-data='autoScroll=true' cy-text='autoScroll'></span>
+        <span cy-type='config' cy-data='overflowX=auto' cy-text='overflowX'></span>
+        <span cy-type='config' cy-data='overflowY =auto' cy-text='overflowY '></span>
+        <span cy-type='config' cy-data='frame=true' cy-text='frame'></span>
+        <p>以上数据均属于style的内部属性,注意观察style,当然,不设置style,直接使用也是可以的(会自动产生style)
+            <br> max/min都会跟相应的数据(height/width)进行比较后进行修正,而非使用max/min-*系列
+            <br> autoScroll的产生跟外部容器有关,外小内大才会产生滚动条
+            <br> 其他样式,不解释-.-
+        </p>
+        <hr>
+        <h2>视图/描述</h2>
+        <p>尽管所有的属性都能称之为描述...这里指的是对html有直接影响的属性,故也称之为视图(吐槽:ext组件相当完善,大多数情况下简单的继承就可以完成任务,这些属性基本不会涉及,但对于理解ext的结构,乃至于api的设计都是非常有帮助的)
+        </p>
+        <p>通常第一层为主/根容器(山寨称呼),大多数公共的属性只会整对于此容器,比如cls,style等操作
+            <br> data-ref代表的是子组建,在需要修改内部时,会通过子组建去执行基础方法,以达到操作目的
+            <br> 当然,成熟的组建也会增加快捷入口,降低复杂度,屏蔽子组建,比如button下的arrowCls,其效果相当于找到`arrow`(业务称呼,实际为btnWrap)子组件,通过cls描述增加class *(实际值为basecls-*)
+        </p>
+        <p><span cy-type='config' cy-data='html="&nbsp;        hell world"' cy-text='html'></span><span class='valigin-super'>:最常用的,`内容`容器下的innerHtml,这意味着其内容一定会按照html规范来的,打一百个空格无效什么的,不解释-.-</span>
+            <br>
+            <span class='valigin-super'>contentEl:通过id,将目标转换为html(严格来说叫转移),转移以后原有的对象就不在原有的位置了(可以理解为没有了),有点renderTo的逆向的感觉</span>
+            <br>
+            <span cy-type='config' cy-data="tpl=<p>{string}</p>" cy-text='tpl'></span><span class='valigin-super'>:内部模板,也就是`视图`,他时具有逻辑的`html`,此处跟html一样却并不互斥</span>
+            <br>
+            <span cy-type='config' cy-data='data={"string":"tpl-stringData"}' cy-text='data'></span><span class='valigin-super'>:关联视图的｀模型｀,没有data的tpl直接使用html。。可以尝试切换tpl/data,观察结构的变化</span>
+            <br>
+            <span cy-type='config' cy-data="tplWriteMode=overwrite" cy-text='tplWriteMode'></span><span class='valigin-super'>:动态更新区域的方法名,也就是调用update时,更新区域的逻辑的引用,需要配合update方法和tpl的生成才能看见变化,此处依然适用默认值</span>
+            <br>
+            <span cy-type='config' cy-data="renderTpl=<h1 id='{id}-title' class='title' data-ref='title'>{title}</h1>" cy-text='renderTpl'></span><span class='valigin-super'>:内部结构四人组:视图,某种意义上就是为定义根组建的innerhtml...他会覆盖其他结构的描述</span>
+            <br>
+            <span cy-type='config' cy-data='renderData={"title":"title-renderData"}' cy-text='renderData'></span><span class='valigin-super'>:内部结构四人组:模型</span>
+            <br>
+            <span cy-type='config' cy-data='renderSelectors={"titleEl":"h1.title","descEl": "p"}' cy-text='renderSelectors'></span><span class='valigin-super'>:内部结构四人组:子结构设置,当设置子结构A后可以通过item.A直接调用子结构,此处通过选择器设置结构</span>
+            <br>
+            <span cy-type='config' cy-data='childEls=["title"]' cy-text='childEls'></span><span class='valigin-super'>:内部结构四人组:内部结构,通过站位符描述结构,其最终效果==renderSelectors</span>
+            <br>
+            <span cy-type='config' cy-data='autoEl={"tag":"pre"}' cy-text='autoEl'></span><span class='valigin-super'>:标签/domhelp的描述</span>
+            <br>
+            <span class='valigin-super'>loader:模版还是用html编写方便,写在js中永远都是蛋疼的,异步获取模板,这就是loader所要做的</span>
+        </p>
+        <p>为了产生动态html,而不得不在某个空间蛋疼的拼接html的优化方案就是模板
+            <br>混合了html+独特语法+数据的展示方式,就是模板
+            <br>handlebars,jade,jsp,velocity或者任意其他的所谓的动态html语言都是模板
+            <br>ext神奇的不包含html的神话基础,就是这个模板,使用ext组件最好还是不要修改tpl
+            <br>其进化方式大致是html/contentEl-->tpl-->renderTpl
+        </p>
+        <hr>
+        <h2>class系列</h2>
+        <span>class不再是单纯的style封装,他早已有了更多的含义</span>
+        <ul>
+            <li>1.传统的样式</li>
+            <li>2.oocss</li>
+            <li>3.组建的识别</li>
+            <li>4.状态的识别</li>
+        </ul>
+        <span>总的来说,就是更有逼格的代表样式和识别</span>
+        <br>
+        <p><span cy-type='config' cy-data='cls="cls"' cy-text='cls'></span><span class='valigin-super'>:主容器自定义样式,不同的组建包含子组建,子组建一般也会有自己特有的cls,此处仅作用于最外围</span>
+            <br>
+            <span cy-type='config' cy-data='baseCls="baseCls"' cy-text='baseCls'></span><span class='valigin-super'>:一个基础CSS类,主要用于复合其他内部容器,功能上相当于前缀,修改会导致基础样式甚至事件的丢失</span>
+            <br>
+            <span cy-type='config' cy-data='componentCls="componentCls"' cy-text='componentCls'></span><span class='valigin-super'>:至于根目录上的识别类</span>
+            <br>
+            <span cy-type='config' cy-data='overCls="overCls"' cy-text='overCls'></span><span class='valigin-super'>:鼠标移动后添加的样式,既可以通过:hover也可以通过overCls,把鼠标甩到预览的控件中,就可以看到变化</span>
+            <br>
+            <span cy-type='config' cy-data='disabledCls="disabledCls"' cy-text='disabledCls'></span><span class='valigin-super'>:状态识别类,默认"x-item-disabled",可以在事件disable中观察区别</span>
+            <br>
+            <span cy-type='config' cy-data='ui="danger"' cy-text='ui'></span><span class='valigin-super'>:皮肤/主题,可以看到根容器下某些默认的*-default,变成了*-danger,当然,此处并没有css</span>
+            <br>
+            <span cy-type='config' cy-data='uiCls=["uicls"]' cy-text='uicls'></span><span class='valigin-super'>:状态识别类,默认"x-item-disabled",可以在事件disable中观察区别</span>
+            <br>
+        </p>
+        <p>公共属性,不包含子组建的创建,故以上样式大多作用于最外层的标签上</p>
+        <hr>
+        <h2>状态系列</h2>
+        <p>初始化状态,仅针对第一次,js依赖于事件/方法,动态的修改必然需要执行相应的事件或方法
+            <br>如果想修改组建的状态,比如禁用组件item,设置item.disabled=false,绝对是逗比行为(无视mvvm)</p>
+        <p><span cy-type='config' cy-data='disabled="true"' cy-text='disabled'></span><span class='valigin-super'>:禁止,对应disabledCls</span>
+            <br>
+            <span cy-type='config' cy-data='hidden="true"' cy-text='hidden'></span><span class='valigin-super'>:隐藏,不要小看隐藏,即便是隐藏也会变着花样的隐藏-.-</span>
+            <br>
+            <span cy-type='config' cy-data='hideMode="offsets"' cy-text='hideMode'></span><span class='valigin-super'>:隐藏的不同花样,包括看不见摸不到的display,看不见,摸得到的offsets,以及活见鬼的visibility</span>
+        </p>
+        <p>隐藏大坑,罄竹难书,如果在显示状态下调整的组建,在初始化隐藏时各种报错,记得查看hideMode</p>
+        <hr>
+        <h2>拖拽</h2>
+        <p>
+            <span cy-type='config' cy-data='draggable=true' cy-text='draggable'></span><span class='valigin-super'>:拖拽</span>
+            <br>
+            <span cy-type='config' cy-data='focusOnToFront=false' cy-text='focusOnToFront'></span><span class='valigin-super'>:指定当一个浮动组建至于顶部时,是否应该获取焦点,需要另一个浮动组件配合-.-</span>
+        </p>
+        <h2>浮动</h2>
+        <span cy-type='config' cy-data='floating=true' cy-text='floating'></span><span class='valigin-super'>:悬浮,脱离文档流了(ext会统一管理脱离文档流的组件)-.-脱离文档流的组件代表包括window,menu。。</span>
+        <br>
+        <span cy-type='config' cy-data='autoShow=true' cy-text='autoShow'></span><span class='valigin-super'>:主要针对浮动组件,默认不在第一时间显示-.-</span>
+        <hr>
+        <h1>内部属性</h1>
+        <p>区别于一般的可配置属性(其实config中也有些只读属性),这些属性通常都是只读,多用于判断,而且一般也会有对应的获取/修改的方法</p>
+        <p><span cy-type='method' cy-data='draggable' cy-text='draggable'></span><span class='valigin-super'>:创建,点击初始化...不解释</span></p>
+        <p><span cy-type='method' cy-data='floatParent' cy-text='floatParent'></span><span class='valigin-super'>:创建,点击初始化...不解释</span></p>
+        <p>frameSize </p>
+        <p>hasListeners</p>
+        <p>isComponent</p>
+        <p>isObservable</p>
+        <p>maskOnDisable</p>
+        <p>ownerCt</p>
+        <p>rendered</p>
+        <p>zIndexManager</p>
+        <p>zIndexParent</p>
+        <h2>事件</h2>
+        <h3>bubbleEvents</h3>
+        <h2>其他</h2>
+        <h3>autoDestroy</h3>
+        <p>是否自动摧毁子组建,默认为true</p>
+        <p>此处有坑,,公共组建融入window之类的容器,在父容器(window)关闭后再打开会发生错误,this is why-.-</p>
+        <h1>方法</h1>
+        <p>事件是动态的`基础`,方法是事件的`基础`,好吧,就是业务逻辑了,除了在控制台主动调用方法外,大多数方法都是安静的呆在那里,等着某个事件发生的时候会调用他,不是吗-.-这里的方法就是组建的`业务逻辑`</p>
+        <p>这一次点击按钮执行方法,可以发现id不会进行改变-.-没错,所谓动态,只的就是当其已经存在以后,所能处理的能力</p>
+        <p>类似于属性,此处也适用山寨的方式进行简单的区分</p>
+        <h2>生命周期</h2>
+        <p><span cy-type='method' cy-data='center()' cy-text='new Ext.Component'></span><span class='valigin-super'>:创建,点击初始化...不解释</span></p>
+        <p><span cy-type='method' cy-data=' destroy( )' cy-text=' destroy( )'></span><span class='valigin-super'>:摧毁...摧毁以后记得点击上面的初始化-.-</span></p>
+        <hr>
+        <h2>控制系列</h2>
+        <p>禁用/启用,隐藏/显示...记得控制系列的配置信息不,此处跟她们有关,做为牛逼哄哄的控制系列,可以保证结果的正确产生(让他隐藏不可能返回一个失败,因此一般返回值为还是本身,依然可以使用链式操作,对吧),但不保证执行的时间(动画什么的),为了提升通用型,必须保证控制完成后的某些命令的执行,有两种后续的方式,跟事件相关(因此,有些事件都很蛋疼的包含一个boolean参数,事件里的方法对应的就是后续的命令),或者跟回调有关(跟事件无关的会增加回调方法,增强处理)－。－</p>
+        <p><span cy-type='method' cy-data='disable()' cy-text='disable()'></span><span class='valigin-super'>:禁用,这货又跟事件挂钩,可以通过参数boolean,用以选择是否触发方法</span></p>
+        <p><span cy-type='method' cy-data='enable()' cy-text='enable'></span><span class='valigin-super'>:启用...不解释</span></p>
+        <p><span cy-type='method' cy-data='hide()' cy-text='hide()'></span><span class='valigin-super'>:根据hideModel进行隐藏,此处使用回调的方式进行处理,第二参数为回调方法,第三参数作用域,至于第一个动画...无视他</span></p>
+        <p><span cy-type='method' cy-data='show()' cy-text='show()'></span><span class='valigin-super'>:根据hideModel进行隐藏</span></p>
+        <hr>
+        <h2>自定义事件系列</h2>
+        <p>作为业务逻辑的封装自定义方法远远没有自定义事件好用-.-</p>
+        <p><span cy-type='console' cy-data='addListener("hide",function(){alert("hide")})' cy-text='addListener()'></span><span class='valigin-super'>:事件创建/注册,注册允许重复,内部为数组,因此,可以多次添加相同的事件－。－将不同的业务丢在不同的方法中,也是不错的选择,测试中注册的是hide事件,很巧的是他与hide方法有关联,点击hide()方法,就会触发所注册的事件</span></p>
+        <p><span cy-type='console' cy-data='fireEvent("hide")' cy-text='fireEvent()'></span><span class='valigin-super'>:事件的执行,执行后返回boolean,因此,如果还不知道如何使用事件的话,将没有返回值的逻辑丢在事件里,就是一个依据</span></p>
+        <p><span cy-type='console' cy-data='clearListeners()' cy-text='clearListeners()'></span><span class='valigin-super'>:无差别清除所有事件,在点击上面的执行发现事件不会被处罚,与其称呼某些事件为自定义事件,不如称呼某些事件恰巧被组建使用</span></p>
+        <hr>
+        <h2>判断系列</h2>
+        <p>作为普通的猴子,只从处理业务出发,判断系列没蛋用,没有也能用其他方式解决</p>
+        <p>但作为想写好组件,用好架构的猴子,你也绝不会嫌判断系列太多</p>
+        <p>判断系列绝壁不会返回自身,其返回结果为boolean</p>
+        <span cy-type='console' cy-data='isDisabled()' cy-text='isDisabled()'></span>
+        <span cy-type='console' cy-data='isDraggable()' cy-text='isDraggable()'></span>
+        <span cy-type='console' cy-data='isDroppable()' cy-text='isDroppable()'></span>
+        <span cy-type='console' cy-data='isFloating()' cy-text='isFloating()'></span>
+        <span cy-type='console' cy-data='isHidden()' cy-text='isHidden()'></span>
+        <span cy-type='console' cy-data='isLayoutSuspended()' cy-text='isLayoutSuspended()'></span>
+        <span cy-type='console' cy-data='isVisible()' cy-text='isVisible()'></span>
+        <span cy-type='console' cy-data='isXType("component")' cy-text='isXType()'></span>
+        <br>
+        <span cy-type='console' cy-data='hasCls("cls")' cy-text='hasCls()'></span>
+        <span cy-type='console' cy-data='hasListener("click")' cy-text='hasListener()'></span>
+        <span cy-type='console' cy-data='hasUICls("uicls")' cy-text='hasUICls()'></span>
+        <hr>
+        <h2>获取系列</h2>
+        <p>或为参数的get方式,或为某些动态参数,总之,返回的一定不是自身－。－</p>
+        <span cy-type='console' cy-data='getActiveAnimation()' cy-text='getActiveAnimation()'></span>
+        <span cy-type='console' cy-data='getBox()' cy-text='getBox()'></span>
+        <span cy-type='console' cy-data='getBubbleTarget()' cy-text='getBubbleTarget()'></span>
+        <span cy-type='console' cy-data='getEl()' cy-text='getEl()'></span>
+        <span cy-type='console' cy-data='getHeight()' cy-text='getHeight()'></span>
+        <span cy-type='console' cy-data='getId()' cy-text='getId()'></span>
+        <span cy-type='console' cy-data='getInsertPosition()' cy-text='getInsertPosition()'></span>
+        <span cy-type='console' cy-data='getLoader()' cy-text='getLoader()'></span>
+        <span cy-type='console' cy-data='getPlugin()' cy-text='getPlugin()'></span>
+        <span cy-type='console' cy-data='getPosition()' cy-text='getPosition()'></span>
+        <span cy-type='console' cy-data='getSize()' cy-text='getSize()'></span>
+        <span cy-type='console' cy-data='getSizeModel()' cy-text='getSizeModel()'></span>
+        <span cy-type='console' cy-data='getWidth()' cy-text='getWidth()'></span>
+        <span cy-type='console' cy-data='getXType()' cy-text='getXType()'></span>
+        <span cy-type='console' cy-data='getXTypes()' cy-text='getXTypes()'></span>
+        <p>组件的api</p>
+        <h2>属性动态系列</h2>
+        <p>就是一群对属性的增加/删除,属性上的描述只是初始化值,只在组件创建时参考使用,创建结束后就没蛋用了,如果需要动态(组件创建后)修改,则需要使用相应的方法(想通过属性进行动态修改...欢迎进入mvvm大坑－。－)</p>
+        <h3>addChildEls()</h3>
+        <h3>addcls</h3>
+        <h2>判断系列</h2>
+        <h1>事件</h1>
+        <p>js基于事件驱动,部署在原生事件中,由原生事件调用的方法,就是事件</p>
+        <p>可以通过配置listeners属性,用以描述任意事件</p>
+        <p>至于以下事件,完全可以称之为在运行到某一步时,恰巧会执行的事件,仅此而已</p>
+        <p>点击初始化按钮将会加入所有的系统事件</p>
+        <div id='listeners'></div>
+    </div>
+</body>
+<script>
+Ext._method = {};
+
+
+//cls修改
+Ext._method["Ext.dom.Element.prototype.addCls"] = Ext.dom.Element.prototype.addCls;
+Ext.dom.Element.prototype.addCls = function() {
+    var rs = Ext._method["Ext.dom.Element.prototype.addCls"].apply(this, arguments);
+    this.dom.afterInsertAdjacentHTML.apply(this.dom, [null, this.dom.outerHTML]);
+    return rs;
+};
+
+Ext._method["Ext.dom.Element.prototype.removeCls"] = Ext.dom.Element.prototype.removeCls;
+Ext.dom.Element.prototype.removeCls = function() {
+    var rs = Ext._method["Ext.dom.Element.prototype.removeCls"].apply(this, arguments);
+    this.dom.afterInsertAdjacentHTML.apply(this.dom, [null, this.dom.outerHTML]);
+    return rs;
+};
+
+//html修改
+Ext._method["HTMLElement.prototype.insertAdjacentHTML"] = HTMLElement.prototype.insertAdjacentHTML;
+HTMLElement.prototype.afterInsertAdjacentHTML = function() {
+    if (this.parentNode.afterInsertAdjacentHTML) {
+        this.parentNode.afterInsertAdjacentHTML.apply(this.parentNode, arguments);
+    };
+}
+
+HTMLElement.prototype.insertAdjacentHTML = function() {
+    Ext._method["HTMLElement.prototype.insertAdjacentHTML"].apply(this, arguments)
+    this.afterInsertAdjacentHTML.apply(this, arguments);
+}
+
+//style修改
+// Ext._method["CSSStyleDeclaration.prototype.removeProperty"] = CSSStyleDeclaration.prototype.removeProperty;
+// CSSStyleDeclaration.prototype.removeProperty = function() {
+//     var rs = Ext._method["CSSStyleDeclaration.prototype.removeProperty"].apply(this, arguments);
+//     this.dom.afterInsertAdjacentHTML.apply(this.dom, [null, this.dom.outerHTML]);
+//     return rs;
+// };
+
+// Ext._method["CSSStyleDeclaration.prototype.setProperty"] = CSSStyleDeclaration.prototype.setProperty;
+// CSSStyleDeclaration.prototype.setProperty = function() {
+//     var rs = Ext._method["CSSStyleDeclaration.prototype.setProperty"].apply(this, arguments);
+//     console.log(1);
+//     this.dom.afterInsertAdjacentHTML.apply(this.dom, [null, this.dom.outerHTML]);
+//     return rs;
+// };
+
+
+
+Ext.application({
+    name: 'app',
+    appFolder:'/app',
+    // autoCreateViewport: 'app.view.BaseViewport',
+    launch: function() {
+        Ext.get("content").show();
+        Ext.viewport = Ext.create('app.view.BaseViewport', {
+            meta: {
+                model: {
+                    type: 'Ext.Component',
+                    json: {
+
+                    }
+                }
+            }
+        });
+
+        Ext.viewport.fireEvent('init', Ext.viewport);
+
+        Ext.region = {
+            center: Ext.getCmp('contentregion')
+        };
+
+
+
+        Ext.create('Ext.button.Button', {
+            text: '初始化事件',
+            renderTo: 'listeners',
+            handler: function() {
+                var panel = Ext.region.center.getComponent('displaycontainer');
+                panel.setListeners({
+                    activate: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("activate:组件激活后触发");
+                    },
+                    added: function(This, container, pos, eOpts) {
+                        panel.getDisplayConsole().insert("added:组件被添加到一个容器后触发");
+                    },
+                    afterrender: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("afterrender:在组件渲染完成之后触发");
+                    },
+                    beforeactivate: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("beforeactivate:组件激活前触发.");
+                    },
+
+                    beforedeactivate: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("beforedeactivate:组件失去激活前触发.");
+                    },
+
+                    beforedestroy: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("beforedestroy:组件被 destroy前触发.");
+                    },
+
+                    beforehide: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("beforehide:当调用 hide 方法组件隐藏前触发.");
+                    },
+
+                    beforerender: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("beforerender:在组件渲染 rendered之前触发.");
+                    },
+
+                    beforeshow: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("beforeshow:当调用 show 方法组件显示前触发.");
+                    },
+                    beforestaterestore: function(This, state, eOpts) {
+                        panel.getDisplayConsole().insert("beforestaterestore:在state对象被恢复之前触发。从一个事件处理程序返回false来阻止恢复。");
+                    },
+
+
+                    beforestatesave: function(This, state, eOpts) {
+                        panel.getDisplayConsole().insert("beforestatesave:在state对象保存到配置state的提供者之前触发。返回false来阻止保存。");
+                    },
+
+                    blur: function(This, The, eOpts) {
+                        panel.getDisplayConsole().insert("blur:组件失去焦点时触发.");
+                    },
+
+                    boxready: function(This, width, height, eOpts) {
+                        panel.getDisplayConsole().insert("boxready:触发 一次 - 组件首次布局初始化大小后触发.");
+                    },
+
+                    deactivate: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("deactivate:组件失去激活后触发.");
+                    },
+
+                    destroy: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("destroy:在组件被 destroy 之后触发.");
+                    },
+
+                    disable: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("disable:组件被禁用后触发.");
+                    },
+
+                    enable: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("enable:组件被启用后触发.");
+                    },
+
+                    focus: function(This, The, eOpts) {
+                        panel.getDisplayConsole().insert("focus:组件获取焦点时触发.");
+                    },
+
+                    hide: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("hide:组件被隐藏后触发, 当调用 hide 方法后出发");
+                    },
+
+                    move: function(This, x, y, eOpts) {
+                        panel.getDisplayConsole().insert("move:组件移动之后触发.");
+                    },
+
+                    removed: function(This, ownerCt, eOpts) {
+                        panel.getDisplayConsole().insert("removed:当组件从一个容器中移除时触发");
+                    },
+
+                    render: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("render:在组件被 rendered 之后触发.");
+                    },
+
+                    resize: function(This, width, height, oldWidth, oldHeight, eOpts) {
+                        panel.getDisplayConsole().insert("resize:在组件被调整大小之后触发.");
+                    },
+
+                    show: function(This, eOpts) {
+                        panel.getDisplayConsole().insert("show:当调用 show 方法组件显示后触发.");
+                    },
+
+
+                    staterestore: function(This, state, eOpts) {
+                        panel.getDisplayConsole().insert("staterestore:在state对象被恢复之后触发。");
+                    },
+                    statesave: function(This, state, eOpts) {
+                        panel.getDisplayConsole().insert("statesave:在state对象保存到配置state的提供者之后触发。");
+                    }
+                });
+            }
+        });
+
+    }
+});
+
+
+Ext.util.format = function(val) {
+    if (Ext.typeOf(val) == 'object') {
+        val = JSON.stringify(val);
+    }
+    val = val || '';
+    return js_beautify(val);
+}
+</script>
+
+</html>

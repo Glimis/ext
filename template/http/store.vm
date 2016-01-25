@@ -1,0 +1,36 @@
+//store model/record的集合管理,包括分页,过滤,排序,查询
+//proxy一般选择json对象(json对象不是数组,返回一个数组的情况是无法接受的)
+Ext.require('app.ux.ConsolePanel');
+var panel=Ext.create('app.ux.ConsolePanel');
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields:  [
+        {name: 'name',     type: 'string'},
+        {name: 'age',      type: 'int'}
+    ]
+});
+
+var store=Ext.create('Ext.data.Store', {
+     model: 'User',
+     proxy: {
+         type: 'ajax',
+         url: '/data/models.json',
+         reader: {
+             type: 'json',
+             root: 'data'
+         }
+     },
+     autoLoad: false
+ });
+
+store.load({
+     callback: function(records, operation, success) {
+        if(!records||!records.length){
+            return;
+        }
+        panel.records=records;
+        for(var i=0;i<records.length;i++){
+           panel.runMethod("this.records["+i+"].getData()"); 
+        }
+    }
+})

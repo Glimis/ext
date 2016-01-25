@@ -1,0 +1,37 @@
+Ext.onReady(function() {
+    //所有组件的基类,包含大量的公共方法,通常不会直接使用
+    var item = Ext.create("Ext.Component", {
+        renderTo: "test",
+        //快捷样式
+        padding: 20,
+        width: 60,
+        height: 60,
+        border: 1,
+        //视图描述
+        html: "&nbsp;  <a>hello world</a>",
+        //class系列,加载样式
+        cls: 'danger',
+        overCls: 'info'
+    })
+
+    //属性系列-->对属性的动态维护
+    Ext.defer(function() {
+        item.setHeight(200);
+    }, 500);
+
+    Ext.defer(function() {
+        item.setWidth(200);
+    }, 1000);
+
+    Ext.defer(function() {
+        item.update("hello,ext");
+    }, 1500);
+
+    Ext.defer(function() {
+        item.disable();
+    }, 2000);
+
+    Ext.defer(function() {
+        item.enable();
+    }, 2500);
+})

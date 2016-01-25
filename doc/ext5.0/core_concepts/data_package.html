@@ -1,0 +1,694 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Data Package</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Models" title="Models">Models</a> 
+       <a class="toc-page-h3" href="#Creating_a_Model" title="Creating a Model">Creating a Model</a> 
+       <a class="toc-page-h3" href="#Proxies" title="Proxies">Proxies</a> 
+       <a class="toc-page-h4" href="#Client_Proxy" title="Client Proxy">Client Proxy</a> 
+       <a class="toc-page-h4" href="#Server_Proxy" title="Server Proxy">Server Proxy</a> 
+       <a class="toc-page-h3" href="#Schema" title="Schema">Schema</a> 
+       <a class="toc-page-h2" href="#Stores" title="Stores">Stores</a> 
+       <a class="toc-page-h3" href="#Inline_data" title="Inline data">Inline data</a> 
+       <a class="toc-page-h3" href="#Sorting_and_Grouping" title="Sorting and Grouping">Sorting and Grouping</a> 
+       <a class="toc-page-h2" href="#Associations" title="Associations">Associations</a> 
+       <a class="toc-page-h3" href="#Loading_Nested_Data" title="Loading Nested Data">Loading Nested Data</a> 
+       <a class="toc-page-h2" href="#Validations" title="Validations">Validations</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Data Package</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>The data package is what loads and saves all of the data in your application. It consists of a multitude of classes, but there are three that are more important than all the others. </p> 
+       <p>These classes are: </p> 
+       <ul> 
+        <li><a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Ext.data.Model</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.data.Store" data-full-load="true">Store</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.data.proxy.Proxy" data-full-load="true">Ext.data.proxy.Proxy</a></li> 
+       </ul> 
+       <p>The above classes are used by almost every application. They are supported by a number of satellite classes.</p> 
+       <p><img src="images/data-model.png" /></p> 
+       <h2 id="Models">Models</h2> 
+       <p>The centerpiece of the data package is Ext.data.Model. A Model represents an entity in an application. For example, an e-commerce app might have models for Users, Products and Orders. At the simplest level, a Model defines a set of fields and related business logic. </p> 
+       <p>Let’s look at a few of the principal parts of Model:</p> 
+       <ul> 
+        <li><a href=".././apidocs/#!/api/Ext.data.field.Field" data-full-load="true">Fields</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.data.proxy.Proxy" data-full-load="true">Proxies</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.data.Validation" data-full-load="true">Validations</a></li> 
+        <li>Associations</li> 
+       </ul> 
+       <p><img src="images/model-breakdown.png" /></p> 
+       <h3 id="Creating_a_Model">Creating a Model</h3> 
+       <p>It is usually best to define your models starting with a common base class. This base class allows you to easily configure certain aspects for all of your models in one place. It is also a good place to configure the <a href=".././apidocs/#!/api/Ext.data.schema.Schema" data-full-load="true">schema</a>. The schema is a manager for all of the models in your application. For now we’ll focus on two of its most helpful configuration options:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.model.Base', {
+    extend: 'Ext.data.Model',
+
+    fields: [{
+        name: 'id',
+        type: 'int'
+    }],
+
+    schema: {
+        namespace: 'MyApp.model',  // generate auto entityName
+
+        proxy: {     // Ext.util.ObjectTemplate
+            type: ajax,
+            url: '{entityName}.json',
+            reader: {
+                type: 'json',
+                rootProperty: '{entityName:lowercase}'
+            }
+        }
+    }
+});</code></pre> 
+       <p>The appropriate content for your model base class, especially its “fields”, will likely differ between applications.</p> 
+       <h3 id="Proxies">Proxies</h3> 
+       <p><a href=".././apidocs/#!/api/Ext.data.proxy.Proxy" data-full-load="true">Proxies</a> are used by <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Models</a> and <a href=".././apidocs/#!/api/Ext.data.Store" data-full-load="true">Stores</a> to handle the loading and saving of Model data. There are two types of proxies: Client and Server. </p> 
+       <p>Proxies can be defined directly on the schema of the Model’s base class (as seen above).</p> 
+       <h4 id="Client_Proxy">Client Proxy</h4> 
+       <p>Examples of client proxies include <a href=".././apidocs/#!/api/Ext.data.proxy.Memory" data-full-load="true">Memory</a> and <a href=".././apidocs/#!/api/Ext.data.proxy.LocalStorage" data-full-load="true">Local Storage</a>, which uses the HTML5 localstorage feature. Although older browsers don’t support these new HTML5 APIs, they’re so useful that a lot of applications will benefit enormously from their presence.</p> 
+       <h4 id="Server_Proxy">Server Proxy</h4> 
+       <p>Server proxies handle the marshaling of data to a remote server. Examples of this type of proxy include <a href=".././apidocs/#!/api/Ext.data.proxy.Ajax" data-full-load="true">AJAX</a>, <a href=".././apidocs/#!/api/Ext.data.proxy.JsonP" data-full-load="true">JSONP</a> and <a href=".././apidocs/#!/api/Ext.data.proxy.Rest" data-full-load="true">REST</a>.</p> 
+       <h3 id="Schema">Schema</h3> 
+       <p>A <a href=".././apidocs/#!/api/Ext.data.schema.Schema" data-full-load="true">schema</a> is a collection of entities that have associations with one another. When a model specifies a “schema” config, that schema will be inherited by all derived models. In the above example, the schema has been configured with two values that establish the defaults for all models in that schema.</p> 
+       <p>The first of these configs is the “namespace”. By specifying this namespace all models gain a shortened name call an “entityName”. This short name is primarily useful when defining associations between models which we will see later.</p> 
+       <p>The example schema also defines a “proxy” config. This is an object template which is similar to textual templates based on Ext.XTemplate. The difference is that the object template produces objects when given its data. In this case, that data is used to automate the definition of the “proxy” config for all models that do not explicitly define a proxy.</p> 
+       <p>This is very helpful since it’s likely that every instance of model will need to load its data the same way with slightly different values. This avoids repetitive proxy definitions for each Model. </p> 
+       <p>The <code>User.json</code> that we specify in the URL, <code>url: '{entityName}.json'</code>, should return a JSON string. </p> 
+       <p>For this example we’ve used this:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+  &quot;success&quot;: &quot;true&quot;,
+  &quot;user&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;Philip J. Fry&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;name&quot;: &quot;Hubert Farnsworth&quot;
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;name&quot;: &quot;Turanga Leela&quot;
+    },
+    {
+      &quot;id&quot;: 4,
+      &quot;name&quot;: &quot;Amy Wong&quot;
+    }
+  ]
+}</code></pre> 
+       <h2 id="Stores">Stores</h2> 
+       <p>Models are typically used with a Store, which is basically a collection of records (instances of a Model-derived class). Creating a Store and loading its data is simple:</p> 
+       <pre mode="javascript" theme="chrome"><code>var store = new Ext.data.Store ({
+    model: 'MyApp.model.User'
+});
+
+store.load({
+    callback:function(){
+        var first_name = this.first().get('name');
+       console.log(first_name);
+    }
+});</code></pre> 
+       <p>We are manually loading the store to receive a set of <code>MyApp.model.User</code> records. The records are then logged when the store load’s callback function is fired (upon completion). </p> 
+       <h3 id="Inline_data">Inline data</h3> 
+       <p>Stores can also load data in-line. Internally, Store converts each of the objects we pass in as <a href=".././apidocs/#!/api/Ext.data.Store-cfg-data" data-full-load="true">data</a> into records of the appropriate <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Model</a> type:</p> 
+       <pre mode="javascript" theme="chrome"><code>new Ext.data.Store({
+    model: 'MyApp.model.User',
+    data: [{
+        id: 1,
+        name: &quot;Philip J. Fry&quot;
+    },{
+        id: 2,
+        name: &quot;Hubert Farnsworth&quot;
+    },{
+        id: 3,
+        name: &quot;Turanga Leela&quot;
+    },{
+        id: 4,
+        name: &quot;Amy Wong&quot;
+    }]
+});</code></pre> 
+       <h3 id="Sorting_and_Grouping">Sorting and Grouping</h3> 
+       <p>Stores are able to perform sorting, filtering and grouping locally and remotely.</p> 
+       <pre mode="javascript" theme="chrome"><code>new Ext.data.Store({
+    model: 'MyApp.model.User',
+
+    sorters: ['name','id'],
+    filters: {
+        property: 'name',
+        value   : 'Philip J. Fry'
+    }
+});</code></pre> 
+       <p>In this store, the data will be sorted first by name and then id. The data will be filtered to only include users with the name ‘Philip J. Fry’. It’s easy to change the attributes for these items at any time via the Store’s API. </p> 
+       <h2 id="Associations">Associations</h2> 
+       <p>Models can be linked together with the Associations API. Most applications deal with many different Models and the Models are almost always related. A blog authoring application might have models for User and Post. Each User creates Posts. So in this case, a user can have multiple posts, but a post will only have one User creating it. This is known as a ManyToOne relationship. We can express this relationship like so:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.model.User', {
+    extend: 'MyApp.model.Base',
+
+    fields: [{
+        name: 'name',
+        type: 'string'
+    }]
+});
+
+Ext.define('MyApp.model.Post', {
+    extend: 'MyApp.model.Base',
+
+    fields: [{
+        name: 'userId',
+        reference: 'User', // the entityName for MyApp.model.User
+        type: 'int'
+    }, {
+        name: 'title',
+        type: 'string'
+    }]
+});</code></pre> 
+       <p>It’s easy to express rich relationships between different Models in your application. Each Model can have any number of associations with other Models. Additionally, your Models may be defined in any order. Once you have a record of this Model type, it’s easy to traverse the associated data. For example, if you wanted to get all of the posts for a user, you could do something like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>// Loads User with ID 1 and related posts and comments
+// using User's Proxy
+MyApp.model.User.load(1, {
+    callback: function(user) {
+        console.log('User: ' + user.get('name'));
+
+        user.posts(function(posts){
+            posts.each(function(post) {
+                console.log('Post: ' + post.get('title'));
+            });
+        });
+    }
+});</code></pre> 
+       <p>The above association results in a new function being added to the Model. Each User model has many Posts, which added the <code>user.posts()</code> function that we used. Calling <code>user.posts()</code> returns a <a href=".././apidocs/#!/api/Ext.data.Store" data-full-load="true">Store</a> configured with the Post model. </p> 
+       <p>Associations aren’t just helpful for loading data. They’re also quite useful for creating new records:</p> 
+       <pre mode="javascript" theme="chrome"><code>user.posts().add({
+    userId: 1,
+    title: 'Post 10'
+});
+
+user.posts().sync();</code></pre> 
+       <p>This instantiates a new Post, which is automatically given the User’s id in the userId field. Calling <code>sync()</code> saves the new Post via its proxy (defined ultimately by the schema’s proxy config). This is an asynchronous operation to which you can pass a callback if you want to be notified when the operation completed.</p> 
+       <p>The “inverse” of the association also generates new methods on the Post model:</p> 
+       <pre mode="javascript" theme="chrome"><code>MyApp.model.Post.load(1, {
+    callback: function(post) {
+
+        post.getUser(function(user) {
+            console.log('Got user from post: ' + user.get('name'));
+        });                           
+    }
+});
+
+MyApp.model.Post.load(2, {
+    callback: function(post) {
+        post.setUser(100);                         
+    }
+});</code></pre> 
+       <p>The loading function, <code>getUser()</code>, is asynchronous and requires a callback function to get at the user instance. The <code>setUser()</code> method simply updates the <code>userId</code> (sometimes called the “foreign key”) to 100 and saves the Post model. As usual, callbacks can be passed in that will be triggered when the save operation has completed - whether successful or not.</p> 
+       <h3 id="Loading_Nested_Data">Loading Nested Data</h3> 
+       <p>When associations are defined, the act of loading a record can also load associated records in a single request. For example, consider a server response like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    &quot;success&quot;: true,
+    &quot;user&quot;: [{
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Philip J. Fry&quot;,
+        &quot;posts&quot;: [{
+            &quot;title&quot;: &quot;Post 1&quot;
+        },{
+            &quot;title&quot;: &quot;Post 2&quot;
+        },{
+            &quot;title&quot;: &quot;Post 3&quot;
+        }]
+    }]
+}</code></pre> 
+       <p>The framework can automatically parse out nested data in a single response such as the above. Instead of making a request for the User data and another for the Posts data, we can return all of the data in a single server response.</p> 
+       <h2 id="Validations">Validations</h2> 
+       <p>Models also provide a bevy of support for validating data. To demonstrate, we’re going to build upon the example we used above. First let’s add some validations to the User model:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.model.User', {
+    extend: 'Ext.data.Model',
+    fields: ...,
+
+    validators: {
+        name: [
+            'presence',
+            { type: 'length', min: 7 },
+            { type: 'exclusion', list: ['Bender'] }
+        ]
+    }
+});</code></pre> 
+       <p>Validators are defined as an object keyed by field name which map to the rules that define a valid field. These rules are expressed as a validator object config or an array of these configs. The validators in our example validate the name field, which should be at least 7 characters in length, and the value to be anything but “Bender”. </p> 
+       <p>Some validations take additional optional configuration - for example the length validation can take min and max properties, format can take a matcher, etc. There are five validations built into Ext JS and adding custom rules is easy. </p> 
+       <p>First, let’s meet the ones built right in:</p> 
+       <ul> 
+        <li><strong>Presence</strong> - ensures that the field has a value. Zero counts as a valid value but empty strings do not.</li> 
+        <li><strong>Length</strong> - ensures that a string is between a min and max length. Both constraints are optional.</li> 
+        <li><strong>Format</strong> - ensures that a string matches a regular expression format. In the example above we ensure that the age field consists only of numbers.</li> 
+        <li><strong>Inclusion</strong> - ensures that a value is within a specific set of values (e.g. ensuring gender is either male or female).</li> 
+        <li><strong>Exclusion</strong> - ensures that a value is not one of the specific set of values (e.g. blacklisting usernames like ‘admin’).</li> 
+       </ul> 
+       <p>Now that we have a grasp on the different validations, let’s try using them against a User instance. We’ll create a user and run the validations against it, noting any failures:</p> 
+       <pre mode="javascript" theme="chrome"><code>// now lets try to create a new user with as many validation
+// errors as we can
+var newUser = new MyApp.model.User({
+    id: 10,
+    name: 'Bender'
+});
+
+// run some validation on the new user we just created
+console.log('Is User valid?', newUser.isValid());
+
+//returns 'false' as there were validation errors
+
+var errors = newUser.getValidation(),
+    error  = errors.get('name');
+
+console.log(&quot;Error is: &quot; + error);</code></pre> 
+       <p>The key function here is getValidation(), which runs all of the configured validations and returns a record populated by the first occurring error for each field or the boolean value true for valid fields. The validation record is lazily created and is only updated when requested.</p> 
+       <p>In this case, the first error shows us: “Length must be greater than 7” on the name field. </p> 
+       <p>So let’s provide a name that contains more than 7 characters.</p> 
+       <pre mode="javascript" theme="chrome"><code>newUser.set('name', 'Bender Bending Rodriguez');
+errors = newUser.getValidation();</code></pre> 
+       <p>This user record now fulfills all of the validations. The record exists, it contains more than 7 characters, and the name does not match Bender.</p> 
+       <p><code>newUser.isValid()</code> will now return true. When we call <code>getValidation()</code>, the validation record will be updated and will no longer be dirty, and all of its fields will be set to true.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | View Models &amp; Data Binding</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Component_Binding" title="Component Binding">Component Binding</a> 
+       <a class="toc-page-h3" href="#Binding_and_Configs" title="Binding and Configs">Binding and Configs</a> 
+       <a class="toc-page-h3" href="#Binding_Boolean_Configs" title="Binding Boolean Configs">Binding Boolean Configs</a> 
+       <a class="toc-page-h3" href="#Binding_and_Priority" title="Binding and Priority">Binding and Priority</a> 
+       <a class="toc-page-h3" href="#Binding_and_Child_Components" title="Binding and Child Components">Binding and Child Components</a> 
+       <a class="toc-page-h3" href="#Two_Way_Binding" title="Two Way Binding">Two Way Binding</a> 
+       <a class="toc-page-h3" href="#Binding_and_Component_State" title="Binding and Component State">Binding and Component State</a> 
+       <a class="toc-page-h3" href="#Bind_Descriptors" title="Bind Descriptors">Bind Descriptors</a> 
+       <a class="toc-page-h4" href="#Multi_Bind" title="Multi-Bind">Multi-Bind</a> 
+       <a class="toc-page-h4" href="#Record_Bind" title="Record Bind">Record Bind</a> 
+       <a class="toc-page-h4" href="#Association_Bind" title="Association Bind">Association Bind</a> 
+       <a class="toc-page-h4" href="#Bind_Options" title="Bind Options">Bind Options</a> 
+       <a class="toc-page-h2" href="#Creating_ViewModels" title="Creating ViewModels">Creating ViewModels</a> 
+       <a class="toc-page-h3" href="#Formulas" title="Formulas">Formulas</a> 
+       <a class="toc-page-h4" href="#Formulas_With_Explicit_Binding" title="Formulas With Explicit Binding">Formulas With Explicit Binding</a> 
+       <a class="toc-page-h4" href="#Two_Way_Formulas" title="Two-Way Formulas">Two-Way Formulas</a> 
+       <a class="toc-page-h3" href="#Recommendations" title="Recommendations">Recommendations</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>View Models and Data Binding</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>Data binding and the ViewModel that powers it are powerful new additions to Ext JS 5. Together they enable you to do more with less code and write in a much more declarative style while helping you maintain a clean separation of concerns.</p> 
+       <p>A ViewModel is a class that manages a data object. It then allows those interested in this data to bind to it and be notified when it changes. The ViewModel, like ViewController, is owned by the view that references it. Because ViewModels are associated with a view, they are also able to link to a parent ViewModel owned by ancestor components in the component hierarchy. This allows child views to simply “inherit” the data of their parent ViewModel.</p> 
+       <p>Components have a new “bind” config that allows them to associate any of their configs to data from the ViewModel. Using bind, you can be sure that the appropriate component config will have its setter method called whenever the bound value changes - no custom event handlers needed.</p> 
+       <p>In this guide, we will walk through some examples that show the power of ViewModels and Data Binding.</p> 
+       <h2 id="Component_Binding">Component Binding</h2> 
+       <p>Probably the best way to understand binding and ViewModels is to look at the various ways you can use bindings on components. This is because components are the primary consumers of data binding and components are something familiar to Ext JS developers. In order for binding to work, however, we do need a ViewModel so we will reference one for now and define it later.</p> 
+       <h3 id="Binding_and_Configs">Binding and Configs</h3> 
+       <p>Binding for components is the process of connecting data from a <a href=".././apidocs/#!/api/Ext.app.ViewModel" data-full-load="true">Ext.app.ViewModel</a> to a component’s config properties. Any configuration a component possesses may be bound to, so long as it has a setter method. For instance, since there’s a setTitle() method on Ext.panel.Panel, you can bind to the title configuration.</p> 
+       <p>In this example, we will set the width of a panel based on the results of our ViewModel’s data. We can bind our data to width since setWidth() is a method that Ext.panel.Panel may use.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.panel.Panel', {
+    title: 'Simple Form',
+
+    viewModel: {
+        type: 'test'  // we will define the &quot;test&quot; ViewModel soon
+    },
+
+    bind: {
+        html: '&lt;p&gt;Hello {name}&lt;/p&gt;',
+        width: '{someWidth}'
+    }
+});</code></pre> 
+       <p>The syntax used for bind values is very similar to Ext.Template. You can put text around tokens inside braces. You can use formatters as well, as with Ext.Template. Unlike Ext.Template, however, when a template is a single token (like ‘{someWidth}’) then its value is passed unmodified. That is, it is not converted to a string.</p> 
+       <p>We will see later how the data for “name” and “someWidth” are defined. The above example simply shows how the data is consumed by a component.</p> 
+       <h3 id="Binding_Boolean_Configs">Binding Boolean Configs</h3> 
+       <p>Many configs you will want to bind are boolean values, such as visible (or hidden), disabled, checked and pressed. Bind templates support boolean negation “inline” in the template. Other forms of algebra are relegated to formulas (see below), but boolean inversion is common enough there is special provision for it. For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.panel.Panel', {
+    title: 'Simple Form',
+
+    viewModel: {
+        type: 'test'
+    },
+
+    items: [{
+        xtype: 'button',
+        bind: {
+            hidden: '{!name}'  // negated
+        }
+    }]
+});</code></pre> 
+       <p>This also highlights how values in single token templates are not converted to strings. In the above, while “name” is a string value, it is negated using “!” and becomes a boolean value and that is passed to the <code>setHidden</code> method on the button.</p> 
+       <h3 id="Binding_and_Priority">Binding and Priority</h3> 
+       <p>Bound config properties will always overwrite configurations set statically on the component as soon as the bound result is available. In other words, bound data will always take priority over static configuration values but may be delayed in order to fetch that data.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.panel.Panel', {
+    title: 'Simple Form',
+
+    viewModel: {
+        type: 'test'
+    },
+
+    bind: {
+        title: 'Hello {name}'
+    }
+});</code></pre> 
+       <p>Once the binding for “name” is delivered, the “Simple Form” title will be replaced.</p> 
+       <h3 id="Binding_and_Child_Components">Binding and Child Components</h3> 
+       <p>One of the most helpful parts of binding is that all of the children of the component with a viewModel also have access to their container’s data.</p> 
+       <p>In this example, you can see the children items of a form may be bound to their container’s viewModel.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.panel.Panel', {
+    title: 'Simple Form',
+
+    viewModel: {
+        type: 'test'
+    },
+
+    layout: 'form',
+    defaultType: 'textfield',
+
+    items: [{
+        fieldLabel: 'First Name',
+        bind: '{firstName}' // uses &quot;test&quot; ViewModel from parent
+    },{
+        fieldLabel: 'Last Name',
+        bind: '{lastName}'
+    }]
+});</code></pre> 
+       <h3 id="Two_Way_Binding">Two Way Binding</h3> 
+       <p>The bind config also allows for two-way data binding, which translates to live synchronization of data between the view and the model. Any data change made in the view is automatically written back to the model. This automatically updates any other components that may be bound to that same data.</p> 
+       <p>In the above example, because the “firstName” and “lastName” properties were bound to text fields, changes in the input would be written back to the ViewModel. To see how all this connects, it is time to complete the example and define the ViewModel.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('TestViewModel', {
+    extend: 'Ext.app.ViewModel',
+
+    alias: 'viewmodel.test', // connects to viewModel/type below
+
+    data: {
+        firstName: 'John',
+        lastName: 'Doe'
+    },
+
+    formulas: {
+        // We'll explain formulas in more detail soon.
+        name: function (get) {
+            var fn = get('firstName'), ln = get('lastName');
+            return (fn &amp;&amp; ln) ? (fn + ' ' + ln) : (fn || ln || '');
+        }
+    }
+});
+
+Ext.define('TestView', {
+    extend: 'Ext.panel.Panel',
+    layout: 'form',
+
+    // Always use this form when defining a view class. This
+    // allows the creator of the component to pass data without
+    // erasing the ViewModel type that we want.
+    viewModel: {
+        type: 'test'  // references alias &quot;viewmodel.test&quot;
+    },
+
+    bind: {
+        title: 'Hello {name}'
+    },
+
+    defaultType: 'textfield',
+    items: [{
+        fieldLabel: 'First Name',
+        bind: '{firstName}'
+    },{
+        fieldLabel: 'Last Name',
+        bind: '{lastName}'
+    },{
+        xtype: 'button',
+        text: 'Submit',
+        bind: {
+            hidden: '{!name}'
+        }
+    }]
+});
+
+Ext.onReady(function () {
+    Ext.create('TestView', {
+        renderTo: Ext.getBody(),
+        width: 400
+    });
+});</code></pre> 
+       <p>When the above panel is displayed we can see that changes in the text fields are reflected in the panel title as well as the hidden state of the Submit button.</p> 
+       <h3 id="Binding_and_Component_State">Binding and Component State</h3> 
+       <p>Sometimes a component’s state, e.g. the “checked” state of a checkbox or the selected record of a grid, is interesting to other components. When a component is assigned a “reference” to identify it, that component will publish some of its key properties in the ViewModel.</p> 
+       <p>In this example, we have the “Admin Key” textfield’s disabled config bound to the the checked state of the checkbox. This results in the textfield being disabled until the checkbox is checked. This sort of behavior is well suited for dynamic forms like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.panel.Panel', {
+    title: 'Sign Up Form',
+
+    viewModel: {
+        type: 'test'
+    },
+
+    items: [{
+        xtype: 'checkbox',
+        boxLabel: 'Is Admin',
+        reference: 'isAdmin'
+    },{
+        xtype: 'textfield',
+        fieldLabel: 'Admin Key',
+        bind: {
+            disabled: '{!isAdmin.checked}'
+        }
+    }]
+});</code></pre> 
+       <h3 id="Bind_Descriptors">Bind Descriptors</h3> 
+       <p>So far we’ve seen three basic forms of bind descriptors:</p> 
+       <ul> 
+        <li><p><code>{firstName}</code> - A “direct bind” to some value in the ViewModel. This value is passed through unmodified and so may arrive as any type of data.</p></li> 
+        <li><p><code>Hello {name}</code> - A “bind template” always produces a string by inserting the textual value of the various bind expressions. Bind templates can also use formatters as with a normal Ext.Template, for example: ‘Hello {name:capitalize}’.</p></li> 
+        <li><p><code>{!isAdmin.checked}</code> - The negated form of a direct bind, useful for binding to boolean config properties.</p></li> 
+       </ul> 
+       <p>Beyond these basic forms, there are a few specialized forms of bind descriptors that you can use.</p> 
+       <h4 id="Multi_Bind">Multi-Bind</h4> 
+       <p>If an object or array is given as a bind descriptor, the ViewModel will produce an object or array of the same shape but with the various properties replaced by their bind result. For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.Component', {
+    bind: {
+        data: {
+            fname: '{firstName}',
+            lname: '{lastName}'
+        }
+    }
+});</code></pre> 
+       <p>This sets the “data” config for the component to be an object with two properties whose values are set from the ViewModel.</p> 
+       <h4 id="Record_Bind">Record Bind</h4> 
+       <p>When a particular record is desired, say “User” with id of 42, the bind descriptor is an object but with a “reference” property. For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.Component', {
+    bind: {
+        data: {
+            reference: 'User',
+            id: 42
+        }
+    }
+});</code></pre> 
+       <p>In this case, the component’s tpl will receive the User record once it is loaded. This currently requires the use of an Ext.data.Session.</p> 
+       <h4 id="Association_Bind">Association Bind</h4> 
+       <p>Similar to a record bind, one can also bind to an association, say the User’s Address record:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.Component', {
+    bind: {
+        data: {
+            reference: 'User',
+            id: 42,
+            association: 'address'
+        }
+    }
+});</code></pre> 
+       <p>In this case, the component’s tpl will receive the User’s “address” record once it is loaded. This also currently requires the use of an Ext.data.Session.</p> 
+       <h4 id="Bind_Options">Bind Options</h4> 
+       <p>The final form of bind descriptor is used when you need to describe binding options. The following example shows how to receive only one value for a binding and then disconnect automatically.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.Component', {
+    bind: {
+        data: {
+            bindTo: '{name}',
+            single: true
+        }
+    }
+});</code></pre> 
+       <p>The “bindTo” property is the second reserved name in a bind descriptor object (the first being “reference”). When present it signifies that the value of “bindTo” is the actual bind descriptor and the other properties are configuration options for the binding.</p> 
+       <p>The other bind option currently supported is “deep”. This option is used when binding to an object so that the binding will be notified when any property of that object changes, not just the reference itself. This would be most useful when binding to the “data” config of a component since these often receive objects.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.Component', {
+    bind: {
+        data: {
+            bindTo: '{someObject}',
+            deep: true
+        }
+    }
+});</code></pre> 
+       <h2 id="Creating_ViewModels">Creating ViewModels</h2> 
+       <p>Now that we’ve gotten a taste for how components use ViewModels and gotten a glimpse of what ViewModels look like, it is time to learn more about ViewModels and what they offer.</p> 
+       <p>As stated previously, a ViewModel is a manager for an underlying <code>data</code> object. It is the content of that object that is being consumed by bind statements. The inheritance of data from a parent ViewModel to its child ViewModels leverages the JavaScript prototype chain. This is covered in more detail in the <a href="./view_model_internals.html">View Model Internals</a> guide, but in a nutshell a child ViewModel’s <code>data</code> object has the <code>data</code> object of its parent ViewModel as its prototype.</p> 
+       <h3 id="Formulas">Formulas</h3> 
+       <p>In addition to holding data and providing binding, ViewModels also offer a convenient way to calculate data from other data called “formulas”. Formulas allow you to encapsulate data dependencies in the ViewModel and keep your views free to focus on declaring their structure. </p> 
+       <p>In other words, the data is not changed in the ViewModel’s data, but can be displayed differently by transforming it using formulas. This is similar to how the convert configuration works for fields of a traditional data model.</p> 
+       <p>We saw a simple “name” formula in the previous example. In that case, the “name” formula was simply a function that combined two other values from the ViewModel: “firstName” and “lastName”.</p> 
+       <p>Formulas can also use the results of other formulas as if the result were just another data property. For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('TestViewModel2', {
+    extend: 'Ext.app.ViewModel',
+
+    alias: 'viewmodel.test2',
+
+    formulas: {
+        x2y: function (get) {
+            return get('x2') * get('y');
+        },
+
+        x2: function (get) {
+            return get('x') * 2;
+        }
+    }
+});</code></pre> 
+       <p>The “x2” formulas uses an “x” property to define “x2” as “x * 2”. The “x2y” formulas uses both “x2” and “y”. This definition means that if “x” changes, “x2” is recalculated and then “x2y”. But if “y” changes, only “x2y” needs to be recalculated.</p> 
+       <h4 id="Formulas_With_Explicit_Binding">Formulas With Explicit Binding</h4> 
+       <p>In the above examples, the dependencies for the formula were found via inspecting the function, however this isn’t always the best solution. An explicit bind statement can be used, which will return a simple object when all the values in the bind have presented.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('TestViewModel2', {
+    extend: 'Ext.app.ViewModel',
+
+    alias: 'viewmodel.test2',
+
+    formulas: {
+        something: {
+            bind: {
+                x: '{foo.bar.x}',
+                y: '{bar.foo.thing.zip.y}'
+            },
+
+            get: function (data) {
+                return data.x + data.y;
+            }
+        }
+    }
+});</code></pre> 
+       <h4 id="Two_Way_Formulas">Two-Way Formulas</h4> 
+       <p>When a formula is invertible we can also define a “set” method to be called when the value is set (say via two-way binding). Since the “this” pointer is the ViewModel, the “set” method can call “this.set()” to set the appropriate properties in the ViewModel.</p> 
+       <p>A revised version of the TestViewModel below shows how “name” can be defined as a two-way formula.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('TestViewModel', {
+    extend: 'Ext.app.ViewModel',
+
+    alias: 'viewmodel.test',
+
+    formulas: {
+        name: {
+            get: function (get) {
+                var fn = get('firstName'), ln = get('lastName');
+                return (fn &amp;&amp; ln) ? (fn + ' ' + ln) : (fn || ln || '');
+            },
+
+            set: function (value) {
+                var space = value.indexOf(' '),
+                    split = (space &lt; 0) ? value.length : space;
+
+                this.set({
+                    firstName: value.substring(0, split),
+                    lastName: value.substring(split + 1)
+                });
+            }
+        }
+    }
+});</code></pre> 
+       <h3 id="Recommendations">Recommendations</h3> 
+       <p>With all the power of ViewModels, formulas and data binding, it can be easy to overuse or abuse these mechanisms and create an application that is hard to understand or debug, or is slow to update or leaks memory. To help avoid these issues and still get the most out of ViewModels here are some recommended techniques:</p> 
+       <ul> 
+        <li><p><strong>Always use the following form when configuring your viewModel.</strong> This is important because of the way the Config System merges config values. With this form, the “type” property is preserved during the merge.</p> <pre mode="javascript" theme="chrome"><code>Ext.define('TestView', {
+    //...
+    viewModel: {
+        type: 'test'
+    },
+});</code></pre></li> 
+        <li><p><strong>Make names obvious</strong>, especially in high level ViewModels. In JavaScript we rely on textual searching so pick names that make finding usages possible. The more code that might use a property the more important it is to pick meaningful or even unique names.</p></li> 
+        <li><p><strong>Don’t nest data in objects more deeply necessary.</strong> Multiple top-level objects stored in the ViewModel will require less bookkeeping compared to one object with lots of nested sub-objects. Further, this will help make dependencies on this information more obvious than if many components depend on some large containing object. There are reasons to share objects, but remember the ViewModel is just a managed object so you can use its properties too.</p></li> 
+        <li><p><strong>Use child ViewModels to allow data to be cleaned up</strong> with the components that needed it. If you put all data in high-level ViewModels that data will likely never be removed even when the child views that needed it have been destroyed. Instead, create ViewModels for the child view and pass data into its ViewModel.</p></li> 
+        <li><p><strong>Don’t create child ViewModels unless they are actually needed.</strong> Each ViewModel instance takes time to create and memory to manage. If a child view does not need data unique to itself, it can simply use the ViewModel it inherits from its container. See the previous recommendation though because it is better to create child ViewModels when they are needed than pollute a parent ViewModel and effectively leak memory.</p></li> 
+        <li><p><strong>Use formulas instead of repeating binds.</strong> If you followed how formulas are ways to combine the results of several bound values you can probably see how using a formula would help reduce the number of dependencies compared to directly using those same values in many places. For example, one formula with 3 dependencies and 4 users make 3 + 4 = 7 dependencies to track in the ViewModel. Compared to 4 users with those 3 dependencies on themselves we would have 3 * 4 = 12 dependencies. Fewer dependencies to track means less memory used and time to process them.</p></li> 
+        <li><p><strong>Don’t chain formulas too deeply.</strong> This is not so much a run-time cost issue as a code clarity issue. Chained formulas can mask the connections between data and components making it hard to understand what is happening.</p></li> 
+        <li><p><strong>Two-way formulas must be stable.</strong> Say formula “foo” is a calculation of value “bar”. When “foo” is set it will set “bar” by inverting the formula from its get method. The result is stable if the get method will produce the exact same value for “foo” that is now being set. If it does not, the process will cycle until it reaches a stable point or it will continue indefinitely. Neither result is likely desirable.</p></li> 
+       </ul> 
+       <h1>Further Reading</h1> 
+       <p>For more information about the viewModels, please take a few minutes to check out our <a href="./view_model_internals.html">ViewModel Internals guide</a>.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

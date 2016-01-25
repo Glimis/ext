@@ -1,0 +1,654 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Forms</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Basic_Form_Panel" title="Basic Form Panel">Basic Form Panel</a> 
+       <a class="toc-page-h2" href="#Fields" title="Fields">Fields</a> 
+       <a class="toc-page-h3" href="#Field_Types" title="Field Types">Field Types</a> 
+       <a class="toc-page-h3" href="#Validation" title="Validation">Validation</a> 
+       <a class="toc-page-h4" href="#1__Built_in_Validations" title="1. Built-in Validations">1. Built-in Validations</a> 
+       <a class="toc-page-h4" href="#2__Custom_Validations" title="2. Custom Validations">2. Custom Validations</a> 
+       <a class="toc-page-h2" href="#Handling_Data" title="Handling Data">Handling Data</a> 
+       <a class="toc-page-h3" href="#Submitting_a_Form" title="Submitting a Form">Submitting a Form</a> 
+       <a class="toc-page-h3" href="#Binding_a_Form_to_a_Model" title="Binding a Form to a Model">Binding a Form to a Model</a> 
+       <a class="toc-page-h2" href="#Layouts" title="Layouts">Layouts</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Forms</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>A <a href=".././apidocs/#!/api/Ext.form.Panel" data-full-load="true">Form Panel</a> is nothing more than a basic <a href=".././apidocs/#!/api/Ext.panel.Panel" data-full-load="true">Panel</a> with form handling abilities added. Form Panels can be used throughout an Ext application wherever there is a need to collect data from the user.</p> 
+       <p>In addition, Form Panels can use any <a href=".././apidocs/#!/api/Ext.layout.container.Container" data-full-load="true">Container Layout</a>, providing a convenient and flexible way to handle the positioning of their fields. Form Panels can also be bound to a <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Model</a>, making it easy to load data from and submit data back to the server.</p> 
+       <p>Under the hood a Form Panel wraps a <a href=".././apidocs/#!/api/Ext.form.Basic" data-full-load="true">Basic Form</a> which handles all of its input field management, validation, submission, and form loading services. This means that any of the config options of a Basic Form can be used directly on a Form Panel.</p> 
+       <h2 id="Basic_Form_Panel">Basic Form Panel</h2> 
+       <p>To start off, here’s how to create a simple form that collects user data:</p> 
+       <div mode="javascript" theme="chrome"><div class="example">
+	<a class="code-tab-editor code-tab-active" onclick="displayTabEditor(this)">Editor</a>
+	<a class="code-tab-preview" onclick="displayTabPreview(this)">Preview</a>
+	<a class="code-tab-fiddler" onclick="displayTabFiddler(this)">Open in Fiddle</a>
+	<div class="code-editor"><pre><code>Ext.create('Ext.form.Panel', {
+    renderTo: Ext.getBody(),
+    title: 'User Form',
+    height: 150,
+    width: 300,
+    bodyPadding: 10,
+    defaultType: 'textfield',
+    items: [
+        {
+            fieldLabel: 'First Name',
+            name: 'firstName'
+        },
+        {
+            fieldLabel: 'Last Name',
+            name: 'lastName'
+        },
+        {
+            xtype: 'datefield',
+            fieldLabel: 'Date of Birth',
+            name: 'birthDate'
+        }
+    ]
+});</code></pre></div>
+	<iframe class="code-live-preview" style="display:none" url="./../editor-preview/extjs.html"></iframe>
+</div></div> 
+       <p>This form renders itself to the document body and has three <a href=".././apidocs/#!/api/Ext.form.field.Field" data-full-load="true">Field</a>s - “First Name”, “Last Name”, and “Date of Birth”. Fields are added to the Form Panel using the <a href=".././apidocs/#!/api/Ext.form.Panel-cfg-items" data-full-load="true">items</a> configuration.</p> 
+       <p>The <a href=".././apidocs/#!/api/Ext.form.Labelable-cfg-fieldLabel" data-full-load="true">fieldLabel</a> configuration defines what text will appear in the label next to the field, and the <a href=".././apidocs/#!/api/Ext.form.field.Base-cfg-name" data-full-load="true">name</a> configuration becomes the <code>name</code> attribute of the underlying html field.</p> 
+       <p>Notice how this Form Panel has a <a href=".././apidocs/#!/api/Ext.form.Panel-cfg-defaultType" data-full-load="true">defaultType</a> of ‘textfield’. This means that any of its items that do not have an <a href=".././apidocs/#!/api/Ext.Component" data-full-load="true">xtype</a> specified (the “First Name” and “Last Name” fields in this example), are <a href=".././apidocs/#!/api/Ext.form.field.Text" data-full-load="true">Text Field</a>s.</p> 
+       <p>The “Date of Birth” field on the other hand has its <code>xtype</code> explicitly defined as ‘datefield’ which makes it a <a href=".././apidocs/#!/api/Ext.form.field.Date" data-full-load="true">Date Field</a>. Date Fields expect to only contain valid date data, and come with a <a href=".././apidocs/#!/api/Ext.menu.DatePicker" data-full-load="true">DatePicker</a> for selecting a date.</p> 
+       <h2 id="Fields">Fields</h2> 
+       <h3 id="Field_Types">Field Types</h3> 
+       <p>Ext JS provides a set of standard Field types out of the box. Any of the Fields in the <code>Ext.form.field</code> namespace can be used in a Form Panel. For more information see the API documentaion for each Field type:</p> 
+       <ul> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.Checkbox" data-full-load="true">Ext.form.field.Checkbox</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.ComboBox" data-full-load="true">Ext.form.field.ComboBox</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.Date" data-full-load="true">Ext.form.field.Date</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.Display" data-full-load="true">Ext.form.field.Display</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.File" data-full-load="true">Ext.form.field.File</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.Hidden" data-full-load="true">Ext.form.field.Hidden</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.HtmlEditor" data-full-load="true">Ext.form.field.HtmlEditor</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.Number" data-full-load="true">Ext.form.field.Number</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.Radio" data-full-load="true">Ext.form.field.Radio</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.Text" data-full-load="true">Ext.form.field.Text</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.TextArea" data-full-load="true">Ext.form.field.TextArea</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.form.field.Time" data-full-load="true">Ext.form.field.Time</a></li> 
+       </ul> 
+       <h3 id="Validation">Validation</h3> 
+       <h4 id="1__Built_in_Validations">1. Built-in Validations</h4> 
+       <p>Ext JS has built in support for validation on any type of Field, and some Fields have built in validation rules.</p> 
+       <p>For example, if a value is entered into a <a href=".././apidocs/#!/api/Ext.form.field.Date" data-full-load="true">Date Field</a> and that value cannot be converted into a <code>Date</code>, the Field will have the <code>x-form-invalid-field</code> CSS class added to its HTML element.</p> 
+       <p>If necessary, this CSS class can be changed using the <a href=".././apidocs/#!/api/Ext.form.field.Base-cfg-invalidCls" data-full-load="true">invalidCls</a> configuration. In the default theme, adding the <code>invalidCls</code> adds a red “invalid underline”:</p> 
+       <p><img src="images/invalid_field.png" alt="Invalid Field" /></p> 
+       <p>A Field containing invalid data will also display an error message. By default this message displays as a tool tip:</p> 
+       <p><img src="images/invalid_field_hover.png" alt="Invalid Field Hover" /></p> 
+       <p>It’s easy to change the location of a Field’s error message using the <a href=".././apidocs/#!/api/Ext.form.Labelable-cfg-msgTarget" data-full-load="true">msgTarget</a> configuration, and the <a href=".././apidocs/#!/api/Ext.form.field.Base-cfg-invalidText" data-full-load="true">invalidText</a> configuration changes the error message.</p> 
+       <p>Each Field provides its own implementation of <code>invalidText</code>, and many support token replacement in the error message.</p> 
+       <p>For example, in a Date Field’s <code>invalidText</code>, any occurrences of “{0}” will be replaced with the Field’s value, and any occurrences of “{1}” will be replaced with the required date <a href=".././apidocs/#!/api/Ext.form.field.Date-cfg-format" data-full-load="true">format</a>.</p> 
+       <p>The following code demonstrates placing the error message directly under the Field, and customizing the error message text:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    xtype: 'datefield',
+    fieldLabel: 'Date of Birth',
+    name: 'birthDate',
+    msgTarget: 'under', // location of the error message
+    invalidText: '&quot;{0}&quot; bad. &quot;{1}&quot; good.' // custom error message text
+}</code></pre> 
+       <p><img src="images/custom_error_message.png" alt="Custom Error Message" /></p> 
+       <h4 id="2__Custom_Validations">2. Custom Validations</h4> 
+       <p>Some validation requirements cannot be met using the built-in validations. The simplest way to implement a custom validation is to use the <a href=".././apidocs/#!/api/Ext.form.field.Text" data-full-load="true">Text Field</a>’s <a href=".././apidocs/#!/api/Ext.form.field.Text-cfg-regex" data-full-load="true">regex</a> configuration to apply validation rules, and the <a href=".././apidocs/#!/api/Ext.form.field.Text-cfg-maskRe" data-full-load="true">maskRe</a> configuration to limit which characters can be typed into the field. Here’s an example of a Text Field that validates a time.</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    fieldLabel: 'Last Login Time',
+    name: 'loginTime',
+    regex: /^([1-9]|1[0-9]):([0-5][0-9])(\s[a|p]m)$/i,
+    maskRe: /[\d\s:amp]/i,
+    invalidText: 'Not a valid time.  Must be in the format &quot;12:34 PM&quot;.'
+}</code></pre> 
+       <p>While the above method works well for validating a single field, it is not practical for an application that has many fields that share the same custom validation.</p> 
+       <p>The <a href=".././apidocs/#!/api/Ext.form.field.VTypes" data-full-load="true">Ext.form.field.VTypes</a> class provides a solution for creating reusable custom validations. Here’s how a custom “time” validator can be created:</p> 
+       <pre mode="javascript" theme="chrome"><code>// custom Vtype for vtype:'time'
+var timeTest = /^([1-9]|1[0-9]):([0-5][0-9])(\s[a|p]m)$/i;
+Ext.apply(Ext.form.field.VTypes, {
+    //  vtype validation function
+    time: function(val, field) {
+        return timeTest.test(val);
+    },
+    // vtype Text property: The error text to display when the validation function</code></pre> 
+       <p>returns false timeText: ‘Not a valid time. Must be in the format “12:34 PM”.’, // vtype Mask property: The keystroke filter mask timeMask: /[\d\s:amp]/i });</p> 
+       <p>Once a custom validator has been created it can be used on Text Fields throughout an application using the <a href=".././apidocs/#!/api/Ext.form.field.Text-cfg-vtype" data-full-load="true">vtype</a> configuration:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    fieldLabel: 'Last Login Time',
+    name: 'loginTime',
+    vtype: 'time'
+}</code></pre> 
+       <p>See <a href="http://dev.sencha.com/ext/5.0.0/examples/form/adv-vtypes.html">Validation Example</a> for a working demo. For more information on custom validations please refer to the API Documentation for <a href=".././apidocs/#!/api/Ext.form.field.VTypes" data-full-load="true">VTypes</a>.</p> 
+       <h2 id="Handling_Data">Handling Data</h2> 
+       <h3 id="Submitting_a_Form">Submitting a Form</h3> 
+       <p>The simplest way to submit data to the server is to use the <a href=".././apidocs/#!/api/Ext.form.Basic-cfg-url" data-full-load="true">url</a> configuration of <a href=".././apidocs/#!/api/Ext.form.Basic" data-full-load="true">Basic Form</a>. Since <a href=".././apidocs/#!/api/Ext.form.Panel" data-full-load="true">Form Panel</a> wraps a Basic Form, we can use any of Basic Form’s configuration options directly on a Form Panel:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.form.Panel', {
+    ...
+    url: 'add_user',
+    items: [
+        ...
+    ]
+});</code></pre> 
+       <p>The Basic Form’s <a href=".././apidocs/#!/api/Ext.form.Basic-method-submit" data-full-load="true">submit</a> method can be used to submit data to the configured <code>url</code>:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.form.Panel', {
+    ...
+    url: 'add_user',
+    items: [
+        ...
+    ],
+    buttons: [
+        {
+            text: 'Submit',
+            handler: function() {
+                var form = this.up('form').getForm(); // get the basic form
+                if (form.isValid()) { // make sure the form contains valid data before</code></pre> 
+       <p>submitting form.submit({ success: function(form, action) { Ext.Msg.alert(‘Success’, action.result.msg); }, failure: function(form, action) { Ext.Msg.alert(‘Failed’, action.result.msg); } }); } else { // display error alert if the data is invalid Ext.Msg.alert(‘Invalid Data’, ‘Please correct form errors.’) } } } ] });</p> 
+       <p>In the above example a button is configured with a handler that handles form submission. The handler takes the following actions:</p> 
+       <ol> 
+        <li>First a reference to the Basic Form must be acquired.</li> 
+        <li>Then the <a href=".././apidocs/#!/api/Ext.form.Basic-method-isValid" data-full-load="true">isValid</a> method is called before submission to verify that none of the fields have validation errors.</li> 
+        <li>Finally the <code>submit</code> method is called, and two callback functions are passed - <code>success</code> and <code>failure</code>. Within these callback functions <code>action.result</code> refers to the parsed JSON response.</li> 
+       </ol> 
+       <p>The above example expects a JSON response that looks something like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>{ &quot;success&quot;: true, &quot;msg&quot;: &quot;User added successfully&quot; }</code></pre> 
+       <h3 id="Binding_a_Form_to_a_Model">Binding a Form to a Model</h3> 
+       <p>The <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Model</a> class is used throughout Ext JS for representing various types of data, as well as retrieving and updating data on the server. A Model representing a User would define the fields a User has, as well as a proxy for loading and saving data:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields: ['firstName', 'lastName', 'birthDate'],
+    proxy: {
+        type: 'ajax',
+        api: {
+            read: 'data/get_user',
+            update: 'data/update_user'
+        },
+        reader: {
+            type: 'json',
+            root: 'users'
+        }
+    }
+});</code></pre> 
+       <p>Data can be loaded into a <a href=".././apidocs/#!/api/Ext.form.Panel" data-full-load="true">Form Panel</a> directly from a <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Model</a> using the <a href=".././apidocs/#!/api/Ext.form.Panel-method-loadRecord" data-full-load="true">loadRecord</a> method:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.ModelMgr.getModel('User').load(1, { // load user with ID of &quot;1&quot;
+    success: function(user) {
+        userForm.loadRecord(user); // when user is loaded successfully, load the data</code></pre> 
+       <p>into the form } });</p> 
+       <p>Finally, instead of using the <a href=".././apidocs/#!/api/Ext.form.Basic-method-submit" data-full-load="true">submit</a> method to save the data, Basic Form’s <a href=".././apidocs/#!/api/Ext.form.Basic-method-updateRecord" data-full-load="true">updateRecord</a> method is used to update the record with the form data, and the Model’s <a href=".././apidocs/#!/api/Ext.data.Model-method-save" data-full-load="true">save</a> method is called to save the data to the server:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.form.Panel', {
+    ...
+    url: 'add_user',
+    items: [
+        ...
+    ],
+    buttons: [
+        {
+            text: 'Submit',
+            handler: function() {
+                var form = this.up('form').getForm(), // get the basic form
+                    record = form.getRecord(); // get the underlying model instance
+                if (form.isValid()) { // make sure the form contains valid data before</code></pre> 
+       <p>submitting form.updateRecord(record); // update the record with the form data record.save({ // save the record to the server success: function(user) { Ext.Msg.alert(‘Success’, ‘User saved successfully.’) }, failure: function(user) { Ext.Msg.alert(‘Failure’, ‘Failed to save user.’) } }); } else { // display error alert if the data is invalid Ext.Msg.alert(‘Invalid Data’, ‘Please correct form errors.’) } } } ] });</p> 
+       <p><a href="http://dev.sencha.com/ext/5.0.0/examples/kitchensink/#form-grid">Model Binding Example</a></p> 
+       <h2 id="Layouts">Layouts</h2> 
+       <p>Layouts are used to handle sizing and positioning of components in an Ext JS application. <a href=".././apidocs/#!/api/Ext.form.Panel" data-full-load="true">Form Panels</a> can use any <a href=".././apidocs/#!/api/Ext.layout.container.Container" data-full-load="true">Container Layout</a>. For more information on Layouts please refer to the <a href="../core_concepts/layouts.html">Layouts and Containers Guide</a>.</p> 
+       <p>For example, positioning fields in a form horizontally can easily be done using an <a href=".././apidocs/#!/api/Ext.layout.container.HBox" data-full-load="true">HBox</a> Layout:</p> 
+       <div mode="javascript" theme="chrome"><div class="example">
+	<a class="code-tab-editor code-tab-active" onclick="displayTabEditor(this)">Editor</a>
+	<a class="code-tab-preview" onclick="displayTabPreview(this)">Preview</a>
+	<a class="code-tab-fiddler" onclick="displayTabFiddler(this)">Open in Fiddle</a>
+	<div class="code-editor"><pre><code>Ext.create('Ext.form.Panel', {
+    renderTo: Ext.getBody(),
+    title: 'User Form',
+    height: 120,
+    width: 585,
+    defaults: {
+        xtype: 'textfield',
+        labelAlign: 'top',
+        padding: 10
+    },
+    layout: {
+        type: 'hbox'
+    },
+    items: [
+        {
+            fieldLabel: 'First Name',
+            name: 'firstName'
+        },
+        {
+            fieldLabel: 'Last Name',
+            name: 'lastName'
+        },
+        {
+            xtype: 'datefield',
+            fieldLabel: 'Date of Birth',
+            name: 'birthDate'
+        }
+    ]
+});</code></pre></div>
+	<iframe class="code-live-preview" style="display:none" url="./../editor-preview/extjs.html"></iframe>
+</div></div> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Introduction to Application Architecture</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#What_is_MVC_" title="What is MVC?">What is MVC?</a> 
+       <a class="toc-page-h2" href="#What_is_MVVM_" title="What is MVVM?">What is MVVM?</a> 
+       <a class="toc-page-h2" href="#Returning_Users" title="Returning Users">Returning Users</a> 
+       <a class="toc-page-h2" href="#MVC_and_MVVM" title="MVC and MVVM">MVC and MVVM</a> 
+       <a class="toc-page-h2" href="#Building_a_Sample_App" title="Building a Sample App">Building a Sample App</a> 
+       <a class="toc-page-h2" href="#Application_Overview" title="Application Overview">Application Overview</a> 
+       <a class="toc-page-h3" href="#File_Structure" title="File Structure">File Structure</a> 
+       <a class="toc-page-h3" href="#Namespace" title="Namespace">Namespace</a> 
+       <a class="toc-page-h2" href="#Application" title="Application">Application</a> 
+       <a class="toc-page-h3" href="#app_js" title="app.js">app.js</a> 
+       <a class="toc-page-h3" href="#Application_js" title="Application.js">Application.js</a> 
+       <a class="toc-page-h2" href="#Views" title="Views">Views</a> 
+       <a class="toc-page-h3" href="#Controller_Config" title="Controller Config">Controller Config</a> 
+       <a class="toc-page-h3" href="#ViewModel_Config" title="ViewModel Config">ViewModel Config</a> 
+       <a class="toc-page-h2" href="#Controllers" title="Controllers">Controllers</a> 
+       <a class="toc-page-h2" href="#ViewModels" title="ViewModels">ViewModels</a> 
+       <a class="toc-page-h2" href="#Models_and_Stores" title="Models and Stores">Models and Stores</a> 
+       <a class="toc-page-h3" href="#Models" title="Models">Models</a> 
+       <a class="toc-page-h4" href="#Fields" title="Fields">Fields</a> 
+       <a class="toc-page-h3" href="#Stores" title="Stores">Stores</a> 
+       <a class="toc-page-h2" href="#Next_Steps" title="Next Steps">Next Steps</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Introduction to Application Architecture</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>Ext JS provides support for both MVC and MVVM application architectures. Both of these architectural approaches share certain concepts and focus on dividing application code along logical lines. Each approach has its strengths based on how it chooses to divide up the pieces of an application.</p> 
+       <p>The goal of this guide is to provide you with foundational knowledge regarding the components that make up these architectures. </p> 
+       <h2 id="What_is_MVC_">What is MVC?</h2> 
+       <p>In an MVC architecture, most classes are either Models, Views or Controllers. The user interacts with Views, which display data held in Models. Those interactions are monitored by a Controller, which then responds to the interactions by updating the View and Model, as necessary. </p> 
+       <p>The View and the Model are generally unaware of each other because the Controller has the sole responsibility of directing updates. Generally speaking, Controllers will contain most of the application logic within an MVC application. Views ideally have little (if any) business logic. Models are primarily an interface to data and contain business logic to manage changes to said data. </p> 
+       <p>The goal of MVC is to clearly define the responsibilities for each class in the application. Because every class has clearly defined responsibilities, they implicitly become decoupled from the larger environment. This makes the app easier to test and maintain, and its code more reusable.</p> 
+       <h2 id="What_is_MVVM_">What is MVVM?</h2> 
+       <p>The key difference between MVC and MVVM is that MVVM features an abstraction of a View called the ViewModel. The ViewModel coordinates the changes between a Model’s data and the View’s presentation of that data using a technique called “data binding”.</p> 
+       <p>The result is that the Model and framework perform as much work as possible, minimizing or eliminating application logic that directly manipulates the View.</p> 
+       <h2 id="Returning_Users">Returning Users</h2> 
+       <p>Ext JS 5 introduces support for the MVVM architecture as well as improvements on the (C) in MVC. While we encourage you to investigate and take advantage of these improvements, it is important to note that we have made every effort to ensure existing Ext JS 4 MVC applications continue to function unmodified.</p> 
+       <h2 id="MVC_and_MVVM">MVC and MVVM</h2> 
+       <p>To understand how these choices fit into your application, we should start by defining what the various abbreviations represent.</p> 
+       <ul> 
+        <li><p><strong>(M) Model</strong> - This is the data for your application. A set of classes (called “Models”) defines the fields for their data (e.g. a User model with user-name and password fields). Models know how to persist themselves through the data package and can be linked to other models via associations.</p><p>Models are normally used in conjunction with Stores to provide data for grids and other components. Models are also an ideal location for any data logic that you may need, such as validation, conversion, etc.</p></li> 
+        <li><p><strong>(V) View</strong> - A View is any type of component that is visually represented. For instance, grids, trees and panels are all considered Views.</p></li> 
+        <li><p><strong>(C) Controller</strong> - Controllers are used as a place to maintain the view’s logic that makes your app work. This could entail rendering views, routing, instantiating Models, and any other sort of app logic.</p></li> 
+        <li><p><strong>(VM) ViewModel</strong> - The ViewModel is a class that manages data specific to the View. It allows interested components to bind to it and be updated whenever this data changes.</p></li> 
+       </ul> 
+       <p>These application architectures are provide structure and consistency to your framework code. Following the conventions we suggest will provide a number of important benefits:</p> 
+       <ul> 
+        <li><p>Every application works in the same manner, so you only have to learn it once.</p></li> 
+        <li><p>It’s easy to share code between applications.</p></li> 
+        <li><p>You can use <a href="http://www.sencha.com/products/sencha-cmd/">Sencha Cmd</a> to create optimized production versions of your applications.</p></li> 
+       </ul> 
+       <h2 id="Building_a_Sample_App">Building a Sample App</h2> 
+       <p>Before we start walking through the pieces, let’s build a sample application with <a href="http://www.sencha.com/products/sencha-cmd/">Sencha Cmd</a>. Simply issue the following commands from your command line:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha generate app -ext MyApp ./app
+cd app
+sencha app watch</code></pre> 
+       <p><strong>Note:</strong> If you are not familiar with what’s happening above, please check out our <a href="../getting_started/getting_started.html">Getting Started guide</a>.</p> 
+       <h2 id="Application_Overview">Application Overview</h2> 
+       <p>Before we start talking about the pieces that make up the MVC, MVVM, MVC+VM patterns, let’s take a look at the structure of a Cmd generated application.</p> 
+       <h3 id="File_Structure">File Structure</h3> 
+       <p>Ext JS applications follow a unified directory structure that is the same for every app. In our recommended layout, all classes are placed into the <code>app</code> folder. This folder contains sub-folders that namespace your <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Models</a>, <a href=".././apidocs/#!/api/Ext.data.Store" data-full-load="true">Stores</a>, and View elements. View elements, such as View, <a href=".././apidocs/#!/api/Ext.app.ViewController" data-full-load="true">ViewControllers</a>, and <a href=".././apidocs/#!/api/Ext.app.ViewModel" data-full-load="true">ViewModels</a> should stay grouped together as best practice for organization (see “main” view folder below). </p> 
+       <p><img src="images/file_structure.jpeg" /></p> 
+       <h3 id="Namespace">Namespace</h3> 
+       <p>The first line of each Class is an address of sorts. This “address” is called a namespace. The formula for namespace is:</p> 
+       <pre mode="javascript" theme="chrome"><code>&lt;AppName&gt;.&lt;foldername&gt;.&lt;ClassAndFileName&gt;</code></pre> 
+       <p>In your sample app, “MyApp” is the AppName, “view” is the folder name, “main” is the sub-folder name and “Main” is the Class and Filename. Based on that information, the framework looks for a file called <code>Main.js</code> in the following location:</p> 
+       <pre mode="javascript" theme="chrome"><code>app/view/main/Main.js</code></pre> 
+       <p>If that file is not found, Ext JS will throw an error until you remedy the situation.</p> 
+       <p><img src="images/missing_class_error.jpeg" /></p> 
+       <h2 id="Application">Application</h2> 
+       <p>Let’s start evaluating the application by looking at <code>index.html</code>.</p> 
+       <pre mode="javascript" theme="chrome"><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+
+    &lt;title&gt;MyApp&lt;/title&gt;
+
+    &lt;!-- The line below must be kept intact for Sencha Cmd to build your application --&gt;
+    &lt;script id=&quot;microloader&quot; type=&quot;text/javascript&quot; src=&quot;bootstrap.js&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+       <p>Ext JS uses the Microloader to load application resources described in the <code>app.json</code> file. This replaces the need to add them to <code>index.html</code>. With <code>app.json</code> all of the application meta-data exists in a single location. <a href="http://www.sencha.com/products/sencha-cmd/">Sencha Cmd</a> can then compile your application in a simple and efficient manner.</p> 
+       <p><code>app.json</code> is heavily commented and provides an excellent resource for gleaning information about the information it accepts.</p> 
+       <h3 id="app_js">app.js</h3> 
+       <p>When we generated our application earlier, we created a class (in <code>Application.js</code>) AND launched an instance of it (in <code>app.js</code>). You can see the content of <code>app.js</code> below:</p> 
+       <pre mode="javascript" theme="chrome"><code>/*
+ * This file is generated and updated by Sencha Cmd. You can edit this file as
+ * needed for your application, but these edits will have to be merged by
+ * Sencha Cmd when upgrading.
+ */
+Ext.application({
+    name: 'MyApp',
+
+    extend: 'MyApp.Application',
+
+    autoCreateViewport: 'MyApp.view.main.Main'
+
+    //-------------------------------------------------------------------------
+    // Most customizations should be made to MyApp.Application. If you need to
+    // customize this file, doing so below this section reduces the likelihood
+    // of merge conflicts when upgrading to new versions of Sencha Cmd.
+    //-------------------------------------------------------------------------
+});</code></pre> 
+       <p><a href=".././apidocs/#!/api/Ext.app.Application-cfg-autoCreateViewport" data-full-load="true">autoCreateViewport</a> is a new feature as of Ext JS 5. By designating a container class for autoCreateViewport, you can use any class as your Viewport. In the above example, we have determined <code>MyApp.view.main.Main</code> (a <a href=".././apidocs/#!/api/Ext.container.Container" data-full-load="true">Container class</a>) to be our Viewport.</p> 
+       <p>The <a href=".././apidocs/#!/api/Ext.app.Application-cfg-autoCreateViewport" data-full-load="true">autoCreateViewport</a> config instructs the application to create the designated view and attach the <a href=".././apidocs/#!/api/Ext.plugin.Viewport" data-full-load="true">Viewport Plugin</a>. This connects the view to the document body.</p> 
+       <h3 id="Application_js">Application.js</h3> 
+       <p>Every Ext JS application starts with an instance of the <a href=".././apidocs/#!/api/Ext.app.Application" data-full-load="true">Application Class</a>. This class is intended to be launch-able by <code>app.js</code> as well as instantiable for testing.</p> 
+       <p>The following <code>Application.js</code> content is automatically created when you generate your application with Sencha Cmd. </p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.Application', {
+    extend: 'Ext.app.Application',
+
+    name: 'MyApp',
+
+    stores: [
+        // TODO: add global/shared stores here
+    ],
+
+    launch: function () {
+        // TODO - Launch the application
+    }
+});</code></pre> 
+       <p>The <a href=".././apidocs/#!/api/Ext.app.Application" data-full-load="true">Application Class</a> contains global settings for your application, such as the app’s namespace, shared stores, etc. </p> 
+       <h2 id="Views">Views</h2> 
+       <p>A View is nothing more than a Component, which is a subclass of <a href=".././apidocs/#!/api/Ext.Component" data-full-load="true">Ext.Component</a>. A view contains all of your application’s visual aspects.</p> 
+       <p>If you open the starter app’s <code>Main.js</code> under the “main” folder, you should see the following code.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.main.Main', {
+    extend: 'Ext.container.Container',
+
+    xtype: 'app-main',
+
+    controller: 'main',
+    viewModel: {
+        type: 'main'
+    },
+
+    layout: {
+        type: 'border'
+    },
+
+    items: [{
+        xtype: 'panel',
+        bind: {
+            title: '{name}'
+        },
+        region: 'west',
+        html: '&lt;ul&gt;...&lt;/ul&gt;',
+        width: 250,
+        split: true,
+        tbar: [{
+            text: 'Button',
+            handler: 'onClickButton'
+        }]
+    },{
+        region: 'center',
+        xtype: 'tabpanel',
+        items:[{
+            title: 'Tab 1',
+            html: '&lt;h2&gt;Content ...&lt;/h2&gt;'
+        }]
+    }]
+});</code></pre> 
+       <p>Please note that the view does not include any application logic. All of your view’s logical bits should be included in the <a href=".././apidocs/#!/api/Ext.app.ViewController" data-full-load="true">ViewController</a>, which we’ll talk about in the next section. </p> 
+       <p>This particular view defines a container with a <a href=".././apidocs/#!/api/Ext.layout.container.Border" data-full-load="true">border layout</a> with a west and center region. These regions include a <a href=".././apidocs/#!/api/Ext.panel.Panel" data-full-load="true">panel</a> with a <a href=".././apidocs/#!/api/Ext.panel.Panel-cfg-tbar" data-full-load="true">toolbar</a> containing a <a href=".././apidocs/#!/api/Ext.button.Button" data-full-load="true">button</a> and a <a href=".././apidocs/#!/api/Ext.tab.Panel" data-full-load="true">tab panel</a> with a single tab. If you aren’t familiar with these concepts, check out our <a href="../getting_started/getting_started.html">Getting Started Guide</a>.</p> 
+       <p>Two interesting pieces of this view are the controller and viewModel configs.</p> 
+       <h3 id="Controller_Config">Controller Config</h3> 
+       <p>The controller config allows you to designate a <a href=".././apidocs/#!/api/Ext.app.ViewController" data-full-load="true">ViewController</a> for the view. When a <a href=".././apidocs/#!/api/Ext.app.ViewController" data-full-load="true">ViewController</a> is specified on a view in this manner, it then becomes a container for your event handlers and references. This gives the <a href=".././apidocs/#!/api/Ext.app.ViewController" data-full-load="true">ViewController</a> a one-to-one relationship with the components and events fired from the view. We’ll talk more about controllers in the next section.</p> 
+       <h3 id="ViewModel_Config">ViewModel Config</h3> 
+       <p>The viewModel config allows you to designate a <a href=".././apidocs/#!/api/Ext.app.ViewModel" data-full-load="true">ViewModel</a> for the view. The ViewModel is a data provider for this component and its child views. The data contained in the ViewModel is typically used by adding bind configs to the components that want to present or edit this data.</p> 
+       <p>In the above view, you can see that the title of the west region’s panel is bound to the ViewModel. This means that the title will be populated by data’s “name” value, which is managed in the ViewModel. If the ViewModel’s data changes, the title’s value will be automatically updated. We’ll discuss ViewModels later in this document.</p> 
+       <h2 id="Controllers">Controllers</h2> 
+       <p>Next, let’s take a look at <a href=".././apidocs/#!/api/Ext.app.ViewController" data-full-load="true">Controllers</a>. The starter app’s generated ViewController <code>MainController.js</code> looks like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.main.MainController', {
+    extend: 'Ext.app.ViewController',
+
+    requires: [
+        'Ext.MessageBox'
+    ],
+
+    alias: 'controller.main',
+
+    onClickButton: function () {
+        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+    },
+
+    onConfirm: function (choice) {
+        if (choice === 'yes') {
+            //
+        }
+    }
+});</code></pre> 
+       <p>If you look back at your view, <code>Main.js</code>, you’ll notice a function designation for the tbar button’s handler. That handler is mapped to a function called onClickButton in this controller. As you can see, this controller is ready to deal with that event with no special setup.</p> 
+       <p>This makes it incredibly easy to add logic for your application. All you need to do is define the onClickButton function since your controller has a one-to-one relationship with its view.</p> 
+       <p>Upon clicking the view’s button, a Message box will be created. This message box contains its own function call with onConfirm, which is scoped to this same controller.</p> 
+       <p>ViewControllers are designed to:</p> 
+       <ul> 
+        <li><p>Make the connection to views using “listeners” and “reference” configs obvious.</p></li> 
+        <li><p>Leverage the life cycle of views to automatically manage their associated ViewController. From instantiation to destruction, Ext.app.ViewController is tied to the component that referenced it. A second instance of the same view class would get its own ViewController instance. When these views are destroyed, their associated ViewController instance will be destroyed as well.</p></li> 
+        <li><p>Provide encapsulation to make nesting views intuitive.</p></li> 
+       </ul> 
+       <h2 id="ViewModels">ViewModels</h2> 
+       <p>Next, let’s take a look at the <a href=".././apidocs/#!/api/Ext.app.ViewModel" data-full-load="true">ViewModel</a>. If you open your <code>MainModel.js</code> file, you should see the following code:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.main.MainModel', {
+    extend: 'Ext.app.ViewModel',
+
+    alias: 'viewmodel.main',
+
+    data: {
+        name: 'MyApp'
+    }
+
+    //TODO - add data, formulas and/or methods to support your view
+});</code></pre> 
+       <p>A <a href=".././apidocs/#!/api/Ext.app.ViewModel" data-full-load="true">ViewModel</a> is a class that manages a data object. This class then allows views interested in this data to bind to it and be notified of changes. The ViewModel, like ViewController, is owned by the view that references it. Because ViewModels are associated with a view, they are also able to link to a parent ViewModel owned by ancestor components in the component hierarchy. This allows child views to simply “inherit” the data of their parent ViewModel.</p> 
+       <p>We created a linkage from our view to the ViewModel with the ViewModel config in Main.js. This linkage allows binding of configs with setters to automatically set data from the viewModel onto the view in a declarative fashion. The data is in-line in the MainModel.js example. That said, your data could be anything and come from anywhere. Data may be provided by any sort of proxy (AJAX, REST, etc). </p> 
+       <h2 id="Models_and_Stores">Models and Stores</h2> 
+       <p><a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Models</a> and <a href=".././apidocs/#!/api/Ext.data.Store" data-full-load="true">Stores</a> make up the information gateway of your application. Most of your data is sent, retrieved, organized, and “modeled” by these two classes.</p> 
+       <h3 id="Models">Models</h3> 
+       <p>A <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Ext.data.Model</a> represents any type of persist-able data in your application. Each model has fields and functions that allow your application to “model” data. Models are most commonly used in conjunction with stores. Stores can then be consumed by data-bound components like grids, trees, and charts.</p> 
+       <p>Our sample application does not currently contain a model so let’s add the following code:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.model.User', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'name',  type: 'string'},
+        {name: 'age',   type: 'int'}
+    ]
+});</code></pre> 
+       <p>As mentioned in the namespace section above, you would want to create <code>User.js</code>, which will live under app/model.</p> 
+       <h4 id="Fields">Fields</h4> 
+       <p><a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Ext.data.Model</a> describes records that contain values or properties called “<a href=".././apidocs/#!/api/Ext.data.Model-cfg-fields" data-full-load="true">fields</a>”. The Model class can declare these fields using the “fields” config. In this case, the “name” is declared to be a <a href=".././apidocs/#!/api/Ext.data.field.String" data-full-load="true">string</a> and age is an <a href=".././apidocs/#!/api/Ext.data.field.Integer" data-full-load="true">integer</a>. There are other <a href=".././apidocs/#!/api/Ext.data.field.Field" data-full-load="true">field types</a> available in the API docs. </p> 
+       <p>While there are good reasons to declare fields and their types, doing so is not required. If you do not include the fields config, data will be automatically read and inserted into the data object. You will want to define your fields if your data needs:</p> 
+       <ul> 
+        <li><p>Validation</p></li> 
+        <li><p>Default values</p></li> 
+        <li><p>Convert functions</p></li> 
+       </ul> 
+       <p>Let’s set up a store and see these two work together.</p> 
+       <h3 id="Stores">Stores</h3> 
+       <p>A <a href=".././apidocs/#!/api/Ext.data.Store" data-full-load="true">Store</a> is a client side cache of records (instances of a Model class). Stores provide functions for sorting, filtering and querying the records contained within.</p> 
+       <p>This sample application does not contain a store, but not to worry. Simply define your store and assign the Model.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.store.User', {
+    extend: 'Ext.data.Store',
+    model: 'MyApp.model.User',
+    data : [
+     {firstName: 'Seth',    age: '34'},
+     {firstName: 'Scott', age: '72'},
+     {firstName: 'Gary', age: '19'},
+     {firstName: 'Capybara', age: '208'}
+    ]
+});</code></pre> 
+       <p>Add the above content to <code>User.js</code>, which should be placed in app/store.</p> 
+       <p>You can add the store to <code>Application.js</code>’s store config if you’d like a global instance of your store. The stores config in <code>Application.js</code> would look like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>stores: [
+    'User'
+],</code></pre> 
+       <p>In this example, the store directly contains the data. Most real world situations would require that you gather data by using a proxy on your model or store. Proxies allow for data transfer between your data providers and applications. </p> 
+       <p>You can read more about models, stores, and data providers in our <a href="../core_concepts/data_package.html">Data Guide</a>.</p> 
+       <h2 id="Next_Steps">Next Steps</h2> 
+       <p>We’ve created a robust and useful application called the <a href="http://dev.sencha.com/ext/5.0.0/examples/ticket-app/index.html">Ticket App</a>. This application manages Login/Logout sessions, incorporates data binding, and displays “best practice” when utilizing an MVC+VM architecture. This example has been heavily commented so that everything is as clear as possible.</p> 
+       <p>We recommend you spend some time exploring the <a href="http://dev.sencha.com/ext/5.0.0/examples/ticket-app/index.html">Ticket App</a> to learn more about ideal MVC+VM Application Architecture.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

@@ -1,0 +1,45 @@
+//按钮包含三大部分
+//1.图标
+//2.文本
+//3.菜单
+//注意右下角的提示
+Ext.setGlyphFontFamily('FontAwesome');
+Ext.create("Ext.button.Button", {
+    renderTo: "test",
+    text: "按钮",
+    arrowAlign: 'bottom',
+    scale: 'large',
+    glyph: 0xf0c9,
+    height:70,
+    //iconCls : 'fa-bars'  ,
+    menu: [{
+        xtype: 'button',
+        text: '子按钮',
+        glyph: 0xf0c5,
+        //快捷事件－->click
+        handler: function() {
+            Ext.toast({
+                width: 200,
+                html: "子按钮",
+                title: "hi,看着"
+            })
+        }
+    }],
+    //事件监听
+    listeners: {
+        click: function() {
+            Ext.toast({
+                width: 200,
+                html: "按钮",
+                title: "hi,点击按钮"
+            })
+        },
+        mouseover: function() {
+            Ext.toast({
+                width: 200,
+                html: "按钮",
+                title: "hi,进入按钮"
+            })
+        }
+    }
+})

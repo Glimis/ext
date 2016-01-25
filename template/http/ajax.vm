@@ -1,0 +1,18 @@
+//Ext.ajax是Ext.data.Connection的单例...简单的说就是一个已存在的Ext.data.Connection对象
+//request请求为流行的api,无论何种情况,都建议写上failure
+Ext.Ajax.request({
+    method: 'get',
+    url: '/data/hello.json',
+    success: function(response) {
+    	Ext.Msg.show({
+            title: '数据返回成功',
+            msg: response.responseText
+        });
+    },
+    failure: function(response) {
+        Ext.Msg.show({
+            title: '数据返回失败',
+            msg: response.status
+        });
+    }
+});

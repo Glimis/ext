@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-selection-TreeModel'>/**
+</span> * This selection model is created by default for {@link Ext.tree.Panel}.
+ *
+ * It implements a row selection model.
+ */
+Ext.define('Ext.selection.TreeModel', {
+    extend: 'Ext.selection.RowModel',
+    alias: 'selection.treemodel',
+
+<span id='Ext-selection-TreeModel-cfg-pruneRemoved'>    /**
+</span>     * @cfg {Boolean} pruneRemoved @hide
+     */
+
+    constructor: function(config) {
+        var me = this;
+
+        me.callParent([config]);
+
+        // If pruneRemoved is required, we must listen to the the Store's bubbled noderemove event to know when nodes
+        // are added and removed from parentNodes.
+        // The Store's remove event will be fired during collapses.
+        if (me.pruneRemoved) {
+            me.pruneRemoved = false;
+            me.pruneRemovedNodes = true;
+        }
+    },
+
+<span id='Ext-selection-TreeModel-method-bindStore'>    // binds the store to the selModel.
+</span>    bindStore: function(store, initial) {
+        var me = this;
+
+        me.callParent([store, initial]);
+
+        // pruneRemovedNodes means that we deselect on node remove.
+        if (me.store &amp;&amp; me.pruneRemovedNodes) {
+            me.view.mon(me.store, {
+                noderemove: me.onNodeRemove,
+                scope: me
+            });
+        }
+    },
+
+<span id='Ext-selection-TreeModel-method-onNodeRemove'>    onNodeRemove: function(parent, node, isMove) {
+</span>        // deselection of deleted records done in base Model class
+        if (!isMove) {
+            this.deselectDeletedRecords([node]);
+        }
+    }
+});
+</pre>
+</body>
+</html>

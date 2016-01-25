@@ -1,0 +1,21 @@
+//json转换的封装,使用编码/解码的api
+//相比于浏览器自带的JSON,Ext.JSON的使用更贴近json对象的描述
+//1.不在需要纠结与单引号,双引号的问题
+//2.拥有时间转换的钩子/接口
+Ext.require('app.ux.ConsolePanel');
+Ext.create('app.ux.ConsolePanel', {
+    title:'Ext.JSON方法执行',
+    renderTo: document.body,
+    json: {
+        title: 'this\'s title',
+        content: 'this"s hello world!',
+        data: new Date
+    },
+    jsonStr: "{data:'hello jsonStr'}",
+    methods: ['Ext.JSON.decode(this.jsonStr).data',
+        'Ext.JSON.encode(this.json)',
+        //时间转换的业务逻辑
+        'Ext.JSON.encodeDate(new Date)',
+        'Ext.JSON.encodeValue("你好")'
+    ]
+});

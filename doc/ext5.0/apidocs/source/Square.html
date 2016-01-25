@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js">Ext.define('Ext.draw.sprite.Square', {
+    extend: 'Ext.draw.sprite.Rect',
+    alias: 'sprite.square',
+
+    inheritableStatics: {
+        def: {
+            processors: {
+<span id='global-cfg-size'>                /**
+</span>                 * @cfg {Number} [size=4] The size of the sprite.
+                 * Meant to be comparable to the size of a circle sprite with the same radius.
+                 */
+                size: 'number'
+            },
+            defaults: {
+                size: 4
+            },
+            dirtyTriggers: {
+                size: 'size'
+            },
+            updaters: {
+                size: function (attr) {
+                    var size = attr.size,
+                        halfLineWidth = attr.lineWidth / 2;
+                    this.setAttributes({
+                        x: attr.x - size - halfLineWidth,
+                        y: attr.y - size,
+                        height: 2 * size,
+                        width: 2 * size
+                    });
+                }
+            }
+        }
+    }
+
+});</pre>
+</body>
+</html>

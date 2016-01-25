@@ -1,0 +1,14 @@
+Ext.onReady(function() {
+    Ext.create('Ext.picker.Date', {
+        renderTo: 'test',
+        minDate: new Date(),
+        handler: function(picker, date) {
+            var dt = Ext.Date.format(date, 'Y-m-d');
+            Ext.toast({
+                width: 200,
+                html: dt,
+                title: dt
+            })
+        }
+    });
+})

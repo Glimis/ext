@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html manifest="">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Api/Ext.Component</title>
+    <!--     <link type="text/css" rel="stylesheet" href="/css/font-awesome.css"> -->
+    <link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />
+    <link href="/resources/codemirror/lib/codemirror.css" rel="stylesheet" />
+    <link href="/resources/prettify.css" rel="stylesheet" />
+    <script type="text/javascript" src="/ext/build/ext-all-rtl-debug.js"></script>
+    <script src="/api/app.js"></script>
+    <script src="/resources/ace/build/src/ace.js"></script>
+    <script src="/resources/beautify-html.js"></script>
+    <script src="/resources/beautify.js"></script>
+    <script src="/resources/prettify.js"></script>
+    <script>
+    Ext.onReady(function() {
+        var doms = Ext.query(".InlineWrap");
+        doms.forEach(function(dom) {
+            Ext.create("InlineWrap", dom);
+        })
+    })
+    </script>
+</head>
+
+<body>
+    <h1>Ext.data</h1>
+    <p>Ext.data主要用于描述or获取数据,是Ext的数据来源(依赖),了解页面交互的对象封装,大致有一下几个部分</p>
+    <h2>1.链接</h2>
+    <h3>数据的获取-->Ext.data.Connection</h3>
+    <p>即便是链接也可称为一个对象,我们可以在对象中预定义url,参数等其他信息,在需要的时候进行调用,当然这些参数在需要的时候进行变更也是可以的</p>
+    <div class="InlineWrap InlinePreview" src="api/http/connection.vm"></div>
+    <h3>Ext.Ajax-->Ext.data.Connection的单例对象</h3>
+    <p>我们可以认为ext基于操作习惯,也可以认为是基于性能优化,Ext.ajax是Ext.data.Connection的一个实例(单例),因此,对Ext.ajax的调用直接将其理解为content对象就对了</p>
+    <div class="InlineWrap InlinePreview" src="api/http/ajax.vm"></div>
+    <h2>2.代理</h2>
+    <ul>
+        <li>确定使用数据存储类型, Client 和 Server</li>
+        <li>2</li>
+    </ul>
+    <h2>3.模型</h2>
+    <h3>Model</h3>
+    <p>最开始的时候我一直认为,json就是前后端交互的模型,后台返回json,前端获取json渲染数据,一切对前端对象做定义的行为都是sb行为,model是我最反感的类,没有之一。。。
+        <br> 在无数次链调(陪加班)的经历下,我对前端model的定义和感触也是越来越深
+        <br> ｀妈蛋,接口数据改名字关我p事｀,｀测试数据都没有,前端写个毛线啊｀....
+        <br> 数据库的更改对前端没影响
+
+    </p>
+</body>
+
+</html>

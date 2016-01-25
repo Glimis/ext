@@ -1,0 +1,20 @@
+//数据连接的底层,大多数情况会使用其单例对象ajax
+var connect = Ext.create("Ext.data.Connection", {
+    method: 'get'
+})
+
+connect.request({
+    url: '/data/hello.json',
+    success: function(response) {
+        Ext.Msg.show({
+            title: '数据返回成功',
+            msg: response.responseText
+        });
+    },
+    failure: function(response) {
+        Ext.Msg.show({
+            title: '数据返回失败',
+            msg: response.status
+        });
+    }
+});

@@ -1,0 +1,24 @@
+//前端模板
+//tpl定义结构,data定义数据内容
+//默认情况下此处的数据为最终展示数据,不会在包含更多的业务逻辑(比如屏蔽敏感词,只显示前n的字符等)
+//故任何模板仅包含简单的if/for逻辑
+var data = {
+    name: 'Don Griffin',
+    title: 'Senior Technomage',
+    company: 'Sencha Inc.',
+    drinks: ['Coffee', 'Water', 'More Coffee'],
+    kids: [
+        { name: 'Aubrey',  age: 17 },
+        { name: 'Joshua',  age: 13 },
+        { name: 'Cale',    age: 10 },
+        { name: 'Nikol',   age: 5 },
+        { name: 'Solomon', age: 0 }
+    ]
+};
+var tpl = new Ext.XTemplate(
+    '<p>Kids: ',
+    '<tpl for=".">',       // 处理数据的子节点
+        '<p>{#}. {name}</p>',  // #当前数组的索引当自动编号
+    '</tpl></p>'
+);
+tpl.overwrite(Ext.getBody(), data.kids);

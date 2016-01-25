@@ -1,0 +1,21 @@
+//数字比较包含各种业务逻辑,此处封装了比较常用的几种逻辑
+//常见的业务逻辑
+//constrain 范围限制
+//from 数字保证
+//snap与snapInRange 数值调整,比如在Time组建下的时间显示
+//常用逻辑整合:
+//randomInt 随机整数
+//原生方法整合:
+//toFixed 保留n位小数
+Ext.require('app.ux.ConsoleForm');
+Ext.create('app.ux.ConsoleForm', {
+    title:'Ext.Number方法执行',
+    renderTo: document.body,
+    methods: ['Ext.Number.constrain(5,1,7)',
+        'Ext.Number.from("1.23",7)',
+        'Ext.Number.from("1.23a",7)',
+        'Ext.Number.randomInt(1,7)',
+        'Ext.Number.snap(new Date().getTime(), 15* 60 * 1000)',
+        'Ext.Number.toFixed(1.23,2)'
+    ]
+});

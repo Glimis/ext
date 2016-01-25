@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html manifest="">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>htjy</title>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script type="text/javascript" src="/ext/build/ext.js"></script>
+    <script type="text/javascript" src="/ext/build/ext-all.js"></script>
+    <script src="/ext/packages/ext-locale/build/ext-locale-zh_CN.js"></script>
+    <!--  // <script src="/resources/jsFormat.js"></script>
+    // <script src="/resources/htmlFormat.js"></script> -->
+    <script src="/resources/beautify.js"></script>
+    <script src="/resources/beautify-html.js"></script>
+    <link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />
+    <script src="resources/codemirror/lib/codemirror.js"></script>
+    <script src="resources/codemirror/addon/edit/closetag.js"></script>
+    <script src="resources/codemirror/mode/xml/xml.js"></script>
+    <script src="resources/codemirror/mode/javascript/javascript.js"></script>
+    <script src="resources/codemirror/mode/css/css.js"></script>
+    <script src="resources/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <style>
+    pre,
+    code {
+        display: block;
+        overflow: auto;
+        background: #f4f4f4;
+        padding: 5px 10px;
+        border: 1px solid #eee;
+        word-wrap: break-word;
+        /* Internet Explorer 5.5+ */
+        white-space: pre-wrap;
+        /* Firefox */
+    }
+    
+    .valigin-super {
+        vertical-align: super;
+    }
+    
+    #loading .title {
+        margin: 300px 0 0 0;
+        font-family: "Exo", sans-serif;
+        font-size: 2em;
+        color: gray;
+        text-align: center;
+        white-space: nowrap;
+        display: block
+    }
+    
+    #loading .logo {
+        background: url(images/loading.gif) no-repeat center;
+        display: block;
+        height: 120px
+    }
+    </style>
+</head>
+
+<body>
+    <div id="loading"><span class="title">请稍等....</span><span class="logo"></span></div>
+    <div id='content' style='display:none'>
+        <p>button简单的按钮的封装,继承component,拥有其所有的属性/方法/事件,按钮包含三组功能</p>
+        <ul>
+            <li>按钮</li>
+            <li>a标签</li>
+            <li>菜单按钮</li>
+        </ul>
+        <p>尽管按钮和a标签的功能相似,但在实现尤其是配置上有区别,故做了区分</p>
+        <h1>创建</h1>
+        <div id='create'></div>
+        <p>创建后可以看到button使用a做容器,内部由三层四个部分组成(以下均为山寨称呼)</p>
+        <p>a:容器层,所有的样式属性都设置在该层</p>
+        <p>btnWrap:外层</p>
+        <p>btnEl:封装元素层</p>
+        <p>btnIconEl:图片</p>
+        <p>btnInnerEl:文本</p>
+        <p>这三层结构看起来就很不一般</p>
+        <p>依然根据山寨的区分方式来区分－。－</p>
+        <h2>按钮系列</h2>
+        <span cy-type='config' cy-data='html="html"' cy-text='html'></span>
+        <span cy-type='config' cy-data='text="text"' cy-text='text'></span>
+        <p>其主要目的是修改btnInnerEl内的内容,目前看起来没什么区别,但是text更为准确,优先级也更高(毕竟只接受纯文本)</p>
+        <span cy-type='config' cy-data='iconCls="iconCls"' cy-text='iconCls'></span>
+        <span cy-type='config' cy-data='icon="icon"' cy-text='icon'></span>
+        <span cy-type='config' cy-data='iconAlign="iconAlign"' cy-text='iconAlign'></span>
+        <p>btnIconEl</p>
+        <span cy-type='config' cy-data='type="submit"' cy-text='type'></span>
+        <h2>a系列</h2>
+        <span cy-type='config' cy-data='href="href"' cy-text='href'></span>
+        <span cy-type='config' cy-data='hrefTarget="hrefTarget"' cy-text='hrefTarget'></span>
+         <span cy-type='config' cy-data='baseParams="baseParams"' cy-text='baseParams'></span>
+        <p>尽管可以通过点击事件去模拟超链接功能,但谁会嫌快捷方式多累</p>
+        <h2>菜单按钮</h2>
+         <span cy-type='config' cy-data="menu=[{text:'Item 1'}]" cy-text='menu'></span>
+        <span cy-type='config' cy-data='arrowCls="arrowCls"' cy-text='arrowCls'></span>
+        <span cy-type='config' cy-data='arrowAlign=left' cy-text='arrowAlign'></span>
+        <p>菜单内容通过相对+事件的方式进行处理的,因此,在a容器内是看不到的-.-</p>
+        <h2>class系列</h2>
+        <span cy-type='config' cy-data='pressedCls="pressedCls"' cy-text='pressedCls'></span>
+        <span cy-type='config' cy-data='styleHtmlCls =200' cy-text='styleHtmlCls '></span>
+        <h1>继承属性</h1>
+        <p>在component中-.-在这种相对复杂的组建中,她们的主要作用区域都在容器上(a标签)</p>
+        <p>点击查看html中的变化,基本上对内三层的影响都不大</p>
+        <span cy-type='config' cy-data='style={"color":"#FFFFFF","backgroundColor":"#000000"}' cy-text='style'></span>
+        <span cy-type='config' cy-data='padding=20' cy-text='padding'></span>
+        <span cy-type='config' cy-data='width=200' cy-text='width'></span>
+        <span cy-type='config' cy-data='height=60' cy-text='height'></span>
+        <span cy-type='config' cy-data='border=1' cy-text='border'></span>
+        <span cy-type='config' cy-data='margin=5' cy-text='margin'></span>
+        <span cy-type='config' cy-data='maxHeight=400' cy-text='maxHeight'></span>
+        <span cy-type='config' cy-data='maxWidth=400' cy-text='maxWidth'></span>
+        <span cy-type='config' cy-data='minHeight=100' cy-text='minHeight'></span>
+        <span cy-type='config' cy-data='minWidth=100' cy-text='minWidth'></span>
+        <span cy-type='config' cy-data='autoScroll=true' cy-text='autoScroll'></span>
+       
+       
+        <span cy-type='config' cy-data='handler="handler"' cy-text='handler'></span>
+        
+        <span cy-type='config' cy-data='text="text"' cy-text='text'></span>
+        <span cy-type='config' cy-data='disabled="true"' cy-text='disabled'></span>
+        <span cy-type='config' cy-data='hidden="true"' cy-text='hidden'></span>
+        <span cy-type='config' cy-data='hideMode="offsets"' cy-text='hideMode'></span>
+        <hr>
+        <h2>描述</h2>
+        <p><span cy-type='config' cy-data='html="<a>hell world</a>"' cy-text='html'></span><span class='valigin-super'>:innerHtml</span></p>
+        <p><span cy-type='config' cy-data='autoEl={"tag":"pre"}' cy-text='autoEl'></span><span class='valigin-super'>:标签ordomhelp的描述</span></p>
+        <h3>childEls</h3>
+        <h2>事件</h2>
+        <h3>bubbleEvents</h3>
+        <h2>其他</h2>
+        <h3>autoDestroy</h3>
+        <p>是否自动摧毁子组建,默认为true</p>
+        <p>此处有坑,,公共组建融入window之类的容器,在父容器(window)关闭后再打开会发生错误,this is why-.-</p>
+        <h1>内部属性</h1>
+        <p>区别于一般的可配置属性,这些属性通常都是只读,多用于判断,而且一般也会有对应的获取/修改的方法</p>
+        <p>draggable</p>
+        <p>floatParent</p>
+        <p>frameSize </p>
+        <p>hasListeners</p>
+        <p>isComponent</p>
+        <p>isObservable</p>
+        <p>maskOnDisable</p>
+        <p>ownerCt</p>
+        <p>rendered</p>
+        <p>zIndexManager</p>
+        <p>zIndexParent</p>
+        <h1>方法</h1>
+        <p>事件是动态的`基础`,方法是事件的`基础`,好吧,就是业务逻辑了,除了在控制台主动调用方法外,大多数方法都是安静的呆在那里,等着某个事件发生的时候会调用他,不是吗-.-这里的方法就是组建的`业务逻辑`</p>
+        <p>这一次点击按钮执行方法,可以发现id不会进行改变-.-没错,所谓动态,只的就是当其已经存在以后,所能处理的能力</p>
+        <p>类似于属性,此处也适用山寨的方式进行简单的区分</p>
+        <h2>生命周期</h2>
+        <p><span cy-type='method' cy-data='center()' cy-text='new Ext.Component'></span><span class='valigin-super'>:创建,点击初始化...不解释</span></p>
+        <p><span cy-type='method' cy-data=' destroy( )' cy-text=' destroy( )'></span><span class='valigin-super'>:摧毁...摧毁以后记得点击上面的初始化-.-</span></p>
+        <hr>
+        <h2>class系列</h2>
+        <p>略</p>
+        <hr>
+        <h2>控制系列</h2>
+        <p>禁用/启用,隐藏/显示...记得控制系列的配置信息不,此处跟她们有关,做为牛逼哄哄的控制系列,可以保证结果的正确产生(让他隐藏不可能返回一个失败,因此一般返回值为还是本身,依然可以使用链式操作,对吧),但不保证执行的时间(动画什么的),为了提升通用型,必须保证控制完成后的某些命令的执行,有两种后续的方式,跟事件相关(因此,有些事件都很蛋疼的包含一个boolean参数,事件里的方法对应的就是后续的命令),或者跟回调有关(跟事件无关的会增加回调方法,增强处理)－。－</p>
+        <p><span cy-type='method' cy-data='disable()' cy-text='disable()'></span><span class='valigin-super'>:禁用,这货又跟事件挂钩,可以通过参数boolean,用以选择是否触发方法</span></p>
+        <p><span cy-type='method' cy-data='enable()' cy-text='enable'></span><span class='valigin-super'>:启用...不解释</span></p>
+        <p><span cy-type='method' cy-data='hide()' cy-text='hide()'></span><span class='valigin-super'>:根据hideModel进行隐藏,此处使用回调的方式进行处理,第二参数为回调方法,第三参数作用域,至于第一个动画...无视他</span></p>
+        <p><span cy-type='method' cy-data='show()' cy-text='show()'></span><span class='valigin-super'>:根据hideModel进行隐藏</span></p>
+        <hr>
+        <h2>自定义事件系列</h2>
+        <p>作为业务逻辑的封装自定义方法远远没有自定义事件好用-.-</p>
+        <p><span cy-type='console' cy-data='addListener("hide",function(){alert("hide")})' cy-text='addListener()'></span><span class='valigin-super'>:事件创建/注册,注册允许重复,内部为数组,因此,可以多次添加相同的事件－。－将不同的业务丢在不同的方法中,也是不错的选择,测试中注册的是hide事件,很巧的是他与hide方法有关联,点击hide()方法,就会触发所注册的事件</span></p>
+        <p><span cy-type='console' cy-data='fireEvent("hide")' cy-text='fireEvent()'></span><span class='valigin-super'>:事件的执行,执行后返回boolean,因此,如果还不知道如何使用事件的话,将没有返回值的逻辑丢在事件里,就是一个依据</span></p>
+        <p><span cy-type='console' cy-data='clearListeners()' cy-text='clearListeners()'></span><span class='valigin-super'>:无差别清除所有事件,在点击上面的执行发现事件不会被处罚,与其称呼某些事件为自定义事件,不如称呼某些事件恰巧被组建使用</span></p>
+        <hr>
+        <h2>判断系列</h2>
+        <p>作为普通的猴子,只从处理业务出发,判断系列没蛋用,没有也能用其他方式解决</p>
+        <p>但作为想写好组件,用好架构的猴子,你也绝不会嫌判断系列太多</p>
+        <p>判断系列绝壁不会返回自身,其返回结果为boolean</p>
+        <span cy-type='console' cy-data='isDisabled()' cy-text='isDisabled()'></span>
+        <span cy-type='console' cy-data='isDraggable()' cy-text='isDraggable()'></span>
+        <span cy-type='console' cy-data='isDroppable()' cy-text='isDroppable()'></span>
+        <span cy-type='console' cy-data='isFloating()' cy-text='isFloating()'></span>
+        <span cy-type='console' cy-data='isHidden()' cy-text='isHidden()'></span>
+        <span cy-type='console' cy-data='isLayoutSuspended()' cy-text='isLayoutSuspended()'></span>
+        <span cy-type='console' cy-data='isVisible()' cy-text='isVisible()'></span>
+        <span cy-type='console' cy-data='isXType("component")' cy-text='isXType()'></span>
+        <br>
+        <span cy-type='console' cy-data='hasCls("cls")' cy-text='hasCls()'></span>
+        <span cy-type='console' cy-data='hasListener("click")' cy-text='hasListener()'></span>
+        <span cy-type='console' cy-data='hasUICls("uicls")' cy-text='hasUICls()'></span>
+        <hr>
+        <h2>获取系列</h2>
+        <p>或为参数的get方式,或为某些动态参数,总之,返回的一定不是自身－。－</p>
+        <span cy-type='console' cy-data='getActiveAnimation()' cy-text='getActiveAnimation()'></span>
+        <span cy-type='console' cy-data='getBox()' cy-text='getBox()'></span>
+        <span cy-type='console' cy-data='getBubbleTarget()' cy-text='getBubbleTarget()'></span>
+        <span cy-type='console' cy-data='getEl()' cy-text='getEl()'></span>
+        <span cy-type='console' cy-data='getHeight()' cy-text='getHeight()'></span>
+        <span cy-type='console' cy-data='getId()' cy-text='getId()'></span>
+        <span cy-type='console' cy-data='getInsertPosition()' cy-text='getInsertPosition()'></span>
+        <span cy-type='console' cy-data='getLoader()' cy-text='getLoader()'></span>
+        <span cy-type='console' cy-data='getPlugin()' cy-text='getPlugin()'></span>
+        <span cy-type='console' cy-data='getPosition()' cy-text='getPosition()'></span>
+        <span cy-type='console' cy-data='getSize()' cy-text='getSize()'></span>
+        <span cy-type='console' cy-data='getSizeModel()' cy-text='getSizeModel()'></span>
+        <span cy-type='console' cy-data='getWidth()' cy-text='getWidth()'></span>
+        <span cy-type='console' cy-data='getXType()' cy-text='getXType()'></span>
+        <span cy-type='console' cy-data='getXTypes()' cy-text='getXTypes()'></span>
+        <p>组件的api</p>
+        <h2>属性动态系列</h2>
+        <p>就是一群对属性的增加/删除,属性上的描述只是初始化值,只在组件创建时参考使用,创建结束后就没蛋用了,如果需要动态(组件创建后)修改,则需要使用相应的方法(想通过属性进行动态修改...欢迎进入mvvm大坑－。－)</p>
+        <h3>addChildEls()</h3>
+        <h3>addcls</h3>
+        <h2>判断系列</h2>
+        <h1>事件</h1>
+        <p>js基于事件驱动,部署在原生事件中,由原生事件调用的方法,就是事件</p>
+        <p>可以通过配置listeners属性,用以描述任意事件</p>
+        <p>至于以下事件,完全可以称之为在运行到某一步时,恰巧会执行的事件,仅此而已</p>
+        <p>点击初始化按钮将会加入所有的系统事件</p>
+        <div id='listeners'></div>
+    </div>
+</body>
+<script>
+Ext.application({
+    name: 'app',
+    // autoCreateViewport: 'app.view.BaseViewport',
+    launch: function() {
+        Ext.get("content").show();
+        Ext.viewport = Ext.create('app.view.BaseViewport', {
+            meta: {
+                model: {
+                    type: 'Ext.button.Button',
+                    json: {
+
+                    }
+                }
+            }
+        });
+
+        Ext.viewport.fireEvent('init', Ext.viewport);
+
+        Ext.region = {
+            center: Ext.getCmp('contentregion')
+        };
+
+        Ext.create('Ext.button.Button', {
+            text: '初始化数据',
+            renderTo: 'create',
+            handler: function() {
+                var viewport = Ext.viewport;
+                var model = viewport.meta.model;
+                viewport.fireEvent('setModel', viewport, model);
+            }
+        });
+
+
+    }
+});
+
+
+Ext.util.format = function(val) {
+    if (Ext.typeOf(val) == 'object') {
+        val = JSON.stringify(val);
+    }
+    val = val || '';
+    return js_beautify(val);
+}
+</script>
+
+</html>

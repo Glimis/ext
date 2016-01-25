@@ -1,0 +1,922 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Trees</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#The_Node_Interface" title="The Node Interface">The Node Interface</a> 
+       <a class="toc-page-h2" href="#Visually_changing_your_tree" title="Visually changing your tree">Visually changing your tree</a> 
+       <a class="toc-page-h2" href="#Multiple_columns" title="Multiple columns">Multiple columns</a> 
+       <a class="toc-page-h2" href="#Adding_nodes_to_the_tree" title="Adding nodes to the tree">Adding nodes to the tree</a> 
+       <a class="toc-page-h2" href="#Loading_and_Saving_Tree_Data_using_a_Proxy" title="Loading and Saving Tree Data using a Proxy">Loading and Saving Tree Data using a Proxy</a> 
+       <a class="toc-page-h3" href="#NodeInterface_Fields" title="NodeInterface Fields">NodeInterface Fields</a> 
+       <a class="toc-page-h4" href="#NodeInterface_Fields_are_Reserved_Names" title="NodeInterface Fields are Reserved Names">NodeInterface Fields are Reserved Names</a> 
+       <a class="toc-page-h4" href="#Persistent_Fields_vs_Non_persistent_Fields_and_Overriding_the_Persistence_of_Fields" title="Persistent Fields vs Non-persistent Fields and Overriding the Persistence of Fields">Persistent Fields vs Non-persistent Fields and Overriding the Persistence of Fields</a> 
+       <a class="toc-page-h3" href="#Loading_Data" title="Loading Data">Loading Data</a> 
+       <a class="toc-page-h4" href="#Loading_the_Entire_Tree" title="Loading the Entire Tree">Loading the Entire Tree</a> 
+       <a class="toc-page-h4" href="#Dynamically_Loading_Children_When_a_Node_is_Expanded" title="Dynamically Loading Children When a Node is Expanded">Dynamically Loading Children When a Node is Expanded</a> 
+       <a class="toc-page-h3" href="#Saving_Data" title="Saving Data">Saving Data</a> 
+       <a class="toc-page-h4" href="#Creating_a_New_Node" title="Creating a New Node">Creating a New Node</a> 
+       <a class="toc-page-h4" href="#Updating_an_Existing_Node" title="Updating an Existing Node">Updating an Existing Node</a> 
+       <a class="toc-page-h4" href="#Removing_a_Node" title="Removing a Node">Removing a Node</a> 
+       <a class="toc-page-h4" href="#Bulk_Operations" title="Bulk Operations">Bulk Operations</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Trees</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>The <a href=".././apidocs/#!/api/Ext.tree.Panel" data-full-load="true">Tree Panel</a> Component is one of the most versatile Components in Ext JS and is an excellent tool for displaying hierarchical data in an application. Tree Panel extends from the same class as <a href=".././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Grid Panel</a>, so all of the benefits of Grid Panels - features, extensions, and plugins can also be used on Tree Panels. Things like columns, column resizing, dragging and dropping, renderers, sorting and filtering can be expected to work similarly for both components. </p> 
+       <p>Let’s start by creating a very simple Tree.</p> 
+       <div mode="javascript" theme="chrome"><div class="example">
+	<a class="code-tab-editor code-tab-active" onclick="displayTabEditor(this)">Editor</a>
+	<a class="code-tab-preview" onclick="displayTabPreview(this)">Preview</a>
+	<a class="code-tab-fiddler" onclick="displayTabFiddler(this)">Open in Fiddle</a>
+	<div class="code-editor"><pre><code>Ext.create('Ext.tree.Panel', {
+    renderTo: Ext.getBody(),
+    title: 'Simple Tree',
+    width: 300,
+    height: 250,
+    root: {
+        text: 'Root',
+        expanded: true,
+        children: [
+            {
+                text: 'Child 1',
+                leaf: true
+            },
+            {
+                text: 'Child 2',
+                leaf: true
+            },
+            {
+                text: 'Child 3',
+                expanded: true,
+                children: [
+                    {
+                        text: 'Grandchild',
+                        leaf: true
+                    }
+                ]
+            }
+        ]
+    }
+});</code></pre></div>
+	<iframe class="code-live-preview" style="display:none" url="./../editor-preview/extjs.html"></iframe>
+</div></div> 
+       <p>This Tree Panel renders itself to the document body. We defined a root node that is expanded by default. The root node has three children, the first two of which are leaf nodes which means they cannot have any children. The third node is not a leaf node and has has one child leaf node. The <code>text</code> property is used as the node’s text label. </p> 
+       <p>Internally, a Tree Panel stores its data in a <a href=".././apidocs/#!/api/Ext.data.TreeStore" data-full-load="true">TreeStore</a>. The above example uses the <a href=".././apidocs/#!/api/Ext.tree.Panel-cfg-root" data-full-load="true">root</a> config as a shortcut for configuring a store. If we were to configure the store separately, the code would look something like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>var store = Ext.create('Ext.data.TreeStore', {
+    root: {
+        text: 'Root',
+        expanded: true,
+        children: [
+            {
+                text: 'Child 1',
+                leaf: true
+            },
+            {
+                text: 'Child 2',
+                leaf: true
+            },
+            ...
+        ]
+    }
+});
+
+Ext.create('Ext.tree.Panel', {
+    title: 'Simple Tree',
+    store: store,
+    ...
+});</code></pre> 
+       <h2 id="The_Node_Interface">The Node Interface</h2> 
+       <p>In the above examples we set a couple of different properties on tree nodes. But what are nodes exactly? As mentioned before, the Tree Panel is bound to a <a href=".././apidocs/#!/api/Ext.data.TreeStore" data-full-load="true">TreeStore</a>. A Store in Ext JS manages a collection of <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Model</a> instances. Tree nodes are simply Model instances that are decorated with a <a href=".././apidocs/#!/api/Ext.data.NodeInterface" data-full-load="true">NodeInterface</a>. Decorating a Model with a NodeInterface gives the Model the fields, methods and properties that are required for it to be used in a tree. The following is a screenshot that shows the structure of a node in the developer tools.</p> 
+       <p><img src="images/nodeinterface.png" alt="A model instance decorated with the
+NodeInterface" /></p> 
+       <p>In order to see the full set of fields, methods and properties available on nodes, see the API documentation for the <a href=".././apidocs/#!/api/Ext.data.NodeInterface" data-full-load="true">NodeInterface</a> class.</p> 
+       <h2 id="Visually_changing_your_tree">Visually changing your tree</h2> 
+       <p>Let’s try something simple. When you set the <a href=".././apidocs/#!/api/Ext.tree.Panel-cfg-useArrows" data-full-load="true">useArrows</a> configuration to true, the Tree Panel hides the lines and uses arrows as expand and collapse icons.</p> 
+       <p><img src="images/arrows.png" alt="Arrows" /></p> 
+       <p>Setting the <a href=".././apidocs/#!/api/Ext.tree.Panel-cfg-rootVisible" data-full-load="true">rootVisible</a> property to false visually removes the root node. By doing this, the root node will automatically be expanded. The following image shows the same tree with <code>rootVisible</code> set to false and <a href=".././apidocs/#!/api/Ext.tree.Panel-cfg-lines" data-full-load="true">lines</a> set to false.</p> 
+       <p><img src="images/root-lines.png" alt="Root not visible and no lines" /></p> 
+       <h2 id="Multiple_columns">Multiple columns</h2> 
+       <p>Since <a href=".././apidocs/#!/api/Ext.tree.Panel" data-full-load="true">Tree Panel</a> extends from the same base class as <a href=".././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Grid Panel</a> adding more columns is very easy to do.</p> 
+       <div mode="javascript" theme="chrome"><div class="example">
+	<a class="code-tab-editor code-tab-active" onclick="displayTabEditor(this)">Editor</a>
+	<a class="code-tab-preview" onclick="displayTabPreview(this)">Preview</a>
+	<a class="code-tab-fiddler" onclick="displayTabFiddler(this)">Open in Fiddle</a>
+	<div class="code-editor"><pre><code>var tree = Ext.create('Ext.tree.Panel', {
+    renderTo: Ext.getBody(),
+    title: 'TreeGrid',
+    width: 300,
+    height: 150,
+    fields: ['name', 'description'],
+    columns: [{
+        xtype: 'treecolumn',
+        text: 'Name',
+        dataIndex: 'name',
+        width: 150,
+        sortable: true
+    }, {
+        text: 'Description',
+        dataIndex: 'description',
+        flex: 1,
+        sortable: true
+    }],
+    root: {
+        name: 'Root',
+        description: 'Root description',
+        expanded: true,
+        children: [{
+            name: 'Child 1',
+            description: 'Description 1',
+            leaf: true
+        }, {
+            name: 'Child 2',
+            description: 'Description 2',
+            leaf: true
+        }]
+    }
+});</code></pre></div>
+	<iframe class="code-live-preview" style="display:none" url="./../editor-preview/extjs.html"></iframe>
+</div></div> 
+       <p>The <a href=".././apidocs/#!/api/Ext.tree.Panel-cfg-columns" data-full-load="true">columns</a> configuration expects an array of <a href=".././apidocs/#!/api/Ext.grid.column.Column" data-full-load="true">Ext.grid.column.Column</a> configurations just like a <a href=".././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Grid Panel</a> would have. The only difference is that a Tree Panel requires at least one column with an xtype of ‘treecolumn’. This type of column has tree-specific visual effects like depth, lines and expand and collapse icons. A typical Tree Panel would have only one ‘treecolumn’.</p> 
+       <p>The <code>fields</code> configuration is passed on to the <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Ext.data.Model</a> that the internally created Store uses. Notice how the <a href=".././apidocs/#!/api/Ext.grid.column.Column-cfg-dataIndex" data-full-load="true">dataIndex</a> configurations on the columns map to the fields we specified - name and description.</p> 
+       <p>It is also worth noting that when columns are not defined, the tree will automatically create one single <code>treecolumn</code> with a <code>dataIndex</code> set to ‘text’. It also hides the headers on the tree. To show this header when using only a single column set the <code>hideHeaders</code> configuration to ‘false’.</p> 
+       <h2 id="Adding_nodes_to_the_tree">Adding nodes to the tree</h2> 
+       <p>The root node for the Tree Panel does not have to be specified in the initial configuration. We can always add it later:</p> 
+       <pre mode="javascript" theme="chrome"><code>var tree = Ext.create('Ext.tree.Panel');
+tree.setRootNode({
+    text: 'Root',
+    expanded: true,
+    children: [{
+        text: 'Child 1',
+        leaf: true
+    }, {
+        text: 'Child 2',
+        leaf: true
+    }]
+});</code></pre> 
+       <p>Although this is useful for very small trees with only a few static nodes, most Tree Panels will contain many more nodes. So let’s take a look at how we can programmatically add new nodes to the tree.</p> 
+       <pre mode="javascript" theme="chrome"><code>var root = tree.getRootNode();
+
+var parent = root.appendChild({
+    text: 'Parent 1'
+});
+
+parent.appendChild({
+    text: 'Child 3',
+    leaf: true
+});
+
+parent.expand();</code></pre> 
+       <p>Every node that is not a leaf node has an <a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-appendChild" data-full-load="true">appendChild</a> method which accepts a Node, or a config object for a Node as its first parameter, and returns the Node that was appended. The above example also calls the <a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-expand" data-full-load="true">expand</a> method to expand the newly created parent.</p> 
+       <p><img src="images/append-children.png" alt="Appending to the tree" /></p> 
+       <p>Also useful is the ability to define children inline when creating the new parent nodes. The following code gives us the same result.</p> 
+       <pre mode="javascript" theme="chrome"><code>var parent = root.appendChild({
+    text: 'Parent 1',
+    expanded: true,
+    children: [{
+        text: 'Child 3',
+        leaf: true
+    }]
+});</code></pre> 
+       <p>Sometimes we want to insert a node into a specific location in the tree instead of appending it. Besides the <code>appendChild</code> method, <a href=".././apidocs/#!/api/Ext.data.NodeInterface" data-full-load="true">Ext.data.NodeInterface</a> also provides <a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-insertBefore" data-full-load="true">insertBefore</a> and <a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-insertChild" data-full-load="true">insertChild</a> methods.</p> 
+       <pre mode="javascript" theme="chrome"><code>var child = parent.insertChild(0, {
+    text: 'Child 2.5',
+    leaf: true
+});
+
+parent.insertBefore({
+    text: 'Child 2.75',
+    leaf: true
+}, child.nextSibling);</code></pre> 
+       <p>The <code>insertChild</code> method expects an index at which the child will be inserted. The <code>insertBefore</code> method expects a reference node. The new node will be inserted before the reference node.</p> 
+       <p><img src="images/insert-children.png" alt="Inserting children into the tree" /></p> 
+       <p>NodeInterface also provides several more properties on nodes that can be used to reference other nodes.</p> 
+       <ul> 
+        <li><a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-nextSibling" data-full-load="true">nextSibling</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-previousSibling" data-full-load="true">previousSibling</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-parentNode" data-full-load="true">parentNode</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-lastChild" data-full-load="true">lastChild</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-firstChild" data-full-load="true">firstChild</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-childNodes" data-full-load="true">childNodes</a></li> 
+       </ul> 
+       <h2 id="Loading_and_Saving_Tree_Data_using_a_Proxy">Loading and Saving Tree Data using a Proxy</h2> 
+       <p>Loading and saving Tree data is somewhat more complex than dealing with flat data because of all the fields that are required to represent the hierarchical structure of the tree. This section will explain the intricacies of working with tree data.</p> 
+       <h3 id="NodeInterface_Fields">NodeInterface Fields</h3> 
+       <p>The first and most important thing to understand when working with tree data is how the <a href=".././apidocs/#!/api/Ext.data.NodeInterface" data-full-load="true">NodeInterface</a> class’ fields work. Every node in a Tree is simply a <a href=".././apidocs/#!/api/Ext.data.Model" data-full-load="true">Model</a> instance decorated with the NodeInterface’s fields and methods. Assume for a moment that an application has a Model called Person. A Person only has two fields - id and name:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('Person', {
+    extend: 'Ext.data.Model',
+    fields: [
+        { name: 'id', type: 'int' },
+        { name: 'name', type: 'string' }
+    ]
+});</code></pre> 
+       <p>At this point Person is just a plain vanilla Model. If an instance is created, it can easily be verified that it only has two fields by looking at its <code>fields</code> collection</p> 
+       <pre mode="javascript" theme="chrome"><code>console.log(Person.prototype.fields.getCount()); // outputs '2'</code></pre> 
+       <p>When the Person model is used in a TreeStore, something interesting happens. Notice the field count now:</p> 
+       <pre mode="javascript" theme="chrome"><code>var store = Ext.create('Ext.data.TreeStore', {
+    model: 'Person',
+    root: {
+        name: 'Phil'
+    }
+});
+
+console.log(Person.prototype.fields.getCount()); // outputs '24'</code></pre> 
+       <p>The Person model’s prototype got 22 extra fields added to it just by using it in a TreeStore. All of these extra fields are defined on the <a href=".././apidocs/#!/api/Ext.data.NodeInterface" data-full-load="true">NodeInterface</a> class and are added to the Model’s prototype the first time an instance of that Model is used in a TreeStore (by setting it as the root node).</p> 
+       <p>So what exactly are these 22 extra fields, and what do they do? A quick look at the NodeInterface source code reveals that it decorates the Model with the following fields. These fields are used internally to store information relating to the tree’s structure and state:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    name: 'parentId',
+    type: idType,
+    defaultValue: null,
+    useNull: idField.useNull
+}, {
+    name: 'index',
+    type: 'int',
+    defaultValue: -1,
+    persist: false,
+    convert: null
+}, {
+    name: 'depth',
+    type: 'int',
+    defaultValue: 0,
+    persist: false,
+    convert: null
+}, {
+    name: 'expanded',
+    type: 'bool',
+    defaultValue: false,
+    persist: false,
+    convert: null
+}, {
+    name: 'expandable',
+    type: 'bool',
+    defaultValue: true,
+    persist: false,
+    convert: null
+}, {
+    name: 'checked',
+    type: 'auto',
+    defaultValue: null,
+    persist: false,
+    convert: null
+}, {
+    name: 'leaf',
+    type: 'bool',
+    defaultValue: false
+}, {
+    name: 'cls',
+    type: 'string',
+    defaultValue: '',
+    persist: false,
+    convert: null
+}, {
+    name: 'iconCls',
+    type: 'string',
+    defaultValue: '',
+    persist: false,
+    convert: null
+}, {
+    name: 'icon',
+    type: 'string',
+    defaultValue: '',
+    persist: false,
+    convert: null
+}, {
+    name: 'root',
+    type: 'boolean',
+    defaultValue: false,
+    persist: false,
+    convert: null
+}, {
+    name: 'isLast',
+    type: 'boolean',
+    defaultValue: false,
+    persist: false,
+    convert: null
+}, {
+    name: 'isFirst',
+    type: 'boolean',
+    defaultValue: false,
+    persist: false,
+    convert: null
+}, {
+    name: 'allowDrop',
+    type: 'boolean',
+    defaultValue: true,
+    persist: false,
+    convert: null
+}, {
+    name: 'allowDrag',
+    type: 'boolean',
+    defaultValue: true,
+    persist: false,
+    convert: null
+}, {
+    name: 'loaded',
+    type: 'boolean',
+    defaultValue: false,
+    persist: false,
+    convert: null
+}, {
+    name: 'loading',
+    type: 'boolean',
+    defaultValue: false,
+    persist: false,
+    convert: null
+}, {
+    name: 'href',
+    type: 'string',
+    defaultValue: '',
+    persist: false,
+    convert: null
+}, {
+    name: 'hrefTarget',
+    type: 'string',
+    defaultValue: '',
+    persist: false,
+    convert: null
+}, {
+    name: 'qtip',
+    type: 'string',
+    defaultValue: '',
+    persist: false,
+    convert: null
+}, {
+    name: 'qtitle',
+    type: 'string',
+    defaultValue: '',
+    persist: false,
+    convert: null
+}, {
+    name: 'qshowDelay',
+    type: 'int',
+    defaultValue: 0,
+    persist: false,
+    convert: null
+}, {
+    name: 'children',
+    type: 'auto',
+    defaultValue: null,
+    persist: false,
+    convert: null
+}</code></pre> 
+       <h4 id="NodeInterface_Fields_are_Reserved_Names">NodeInterface Fields are Reserved Names</h4> 
+       <p>It is important to note that all of the above field names should be treated as “reserved” names. For example, it is not allowed to have a field called “parentId” in a Model, if that Model is intended to be used in a Tree, since the Model’s field will override the NodeInterface field. The exception to this rule is when there is a legitimate need to override the persistence of a field.</p> 
+       <h4 id="Persistent_Fields_vs_Non_persistent_Fields_and_Overriding_the_Persistence_of_Fields">Persistent Fields vs Non-persistent Fields and Overriding the Persistence of Fields</h4> 
+       <p>Most of NodeInterface’s fields default to <code>persist: false</code>. This means they are non-persistent fields by default. Non-persistent fields will not be saved via the Proxy when calling the TreeStore’s sync method or calling save() on the Model. In most cases, the majority of these fields can be left at their default persistence setting, but there are cases where it is necessary to override the persistence of some fields. The following example demonstrates how to override the persistence of a NodeInterface field. When overriding a NodeInterface field it is important to only change the <code>persist</code> property. <code>name</code>, <code>type</code>, and <code>defaultValue</code> should never be changed.</p> 
+       <pre mode="javascript" theme="chrome"><code>// overriding the persistence of NodeInterface fields in a Model definition
+    Ext.define('Person', {
+        extend: 'Ext.data.Model',
+        fields: [
+            // Person fields
+            { name: 'id', type: 'int' },
+            { name: 'name', type: 'string' }
+
+            // override a non-persistent NodeInterface field to make it persistent
+            { name: 'iconCls', type: 'string',  defaultValue: null, persist: true },
+
+            // Make the index persistent, so that when reordering nodes, syncing to the server
+            // passes the new index as well as the parentId.
+            // (Note that if moved to the same index in a different parent, the index will
+still be sent in order to fully describe the operation)
+            { name: 'index', type: 'int', defaultValue: -1, persist: true}
+        ]
+    });</code></pre> 
+       <p>Let’s take a more in-depth look at each NodeInterface field and the scenarios in which it might be necessary to override its <code>persist</code> property. In each example below it is assumed that a <a href=".././apidocs/#!/api/Ext.data.proxy.Server" data-full-load="true">Server Proxy</a> is being used unless otherwise noted.</p> 
+       <p>Persistent by default:</p> 
+       <ul> 
+        <li><code>parentId</code> - used to store the id of a node’s parent node. This field should always be persistent, and should not be overridden.</li> 
+        <li><code>leaf</code> - used to indicate that the node is a leaf node, and therefore cannot have children appended to it. This field should not normally need to be overridden.</li> 
+       </ul> 
+       <p>Non-persistent by default:</p> 
+       <ul> 
+        <li><p><code>index</code> - used to store the order of nodes within their parent. When a node is <a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-insertBefore" data-full-load="true">inserted</a> or <a href=".././apidocs/#!/api/Ext.data.NodeInterface-method-removeChild" data-full-load="true">removed</a>, all of its sibling nodes after the insertion or removal point will have their indexes updated. If desired, the application can use this field to persist the ordering of nodes.</p><p>However, if the server uses a different method of storing order, it may be more appropriate to leave the index field as non-persistent. When using a <a href=".././apidocs/#!/api/Ext.data.proxy.WebStorage" data-full-load="true">WebStorage Proxy</a> if storing order is required, this field must be overridden to be persistent.</p><p>Also if client-side <a href=".././apidocs/#!/api/Ext.data.TreeStore-method-sort" data-full-load="true">sorting</a> is being used it is recommended for the index field to be left as non-persistent, since sorting updates the indexes of all the sorted nodes, which would cause them to be persisted on next sync or save if the <code>persist</code> property is true.</p></li> 
+        <li><p><code>depth</code> - used to store the depth of a node in the tree hierarchy. Override this field to turn on persistence if the server needs to store the depth field. When using a <a href=".././apidocs/#!/api/Ext.data.proxy.WebStorage" data-full-load="true">WebStorage Proxy</a> it is recommended to not override the persistence of the depth field since it is not needed to properly store the tree structure and will just take up extra space.</p></li> 
+        <li><code>checked</code> - this field should be overridden to be persistent if the tree is using the <a href="#!/example/tree/check-tree.html">checkbox feature</a></li> 
+        <li><code>expanded</code> - used to store the expanded/collapsed state of a node. This field should not normally need to be overridden.</li> 
+        <li><code>expandable</code> - used internally to indicate that this node is expandable. Do not override the persistence of this field.</li> 
+        <li><code>cls</code> - used to apply a CSS class to the node when it is rendered in a TreePanel. Override this field to be persistent if desired.</li> 
+        <li><code>iconCls</code> - used to apply a css class to the node’s icon when it is rendered in a TreePanel. Override this field to be persistent if desired.</li> 
+        <li><code>icon</code> - used to apply a custom icon to the node node when it is rendered in a TreePanel. Override this field to be persistent if desired.</li> 
+        <li><code>root</code> - used to indicate that this node is the root node. This field should not be overridden.</li> 
+        <li><code>isLast</code> - used to indicate that this node is the last of its siblings. This field should not normally need to be overridden.</li> 
+        <li><code>isFirst</code> - used to indicate that this node is the first of its siblings. This field should not normally need to be overridden.</li> 
+        <li><code>allowDrop</code> - used internally to deny dropping on the node. Do not override the persistence of this field.</li> 
+        <li><code>allowDrag</code> - used internally to deny dragging the node. Do not override the persistence of this field.</li> 
+        <li><code>loaded</code> - used internally to indicate that the node’s children have been loaded. Do not override the persistence of this field.</li> 
+        <li><code>loading</code> - used internally to indicate that the proxy is in the process of loading the node’s children. Do not override the persistence of this field.</li> 
+        <li><code>href</code> - used to specify a url that the node should be a link to. Override to be persistent if desired.</li> 
+        <li><code>hrefTarget</code> - used to specify the target for the <code>href</code>. Override to be persistent if desired.</li> 
+        <li><code>qtip</code> - used to add a tooltip text to the node. Override to be persistent if desired.</li> 
+        <li><code>qtitle</code> - used to specify the title for the <code>tooltip</code>. Override to be persistent if desired.</li> 
+        <li><code>children</code> - used internally when loading a node and its children all in one request. Do not override the persistence of this field.</li> 
+       </ul> 
+       <h3 id="Loading_Data">Loading Data</h3> 
+       <p>There are two ways to load tree data. The first is to for the proxy to fetch the entire tree all at once. For larger trees where loading everything at once is not ideal, it may be preferable to use the second method - dynamically loading the children for each node when it is expanded.</p> 
+       <h4 id="Loading_the_Entire_Tree">Loading the Entire Tree</h4> 
+       <p>Internally the tree only loads data in response to a node being expanded. However the entire hierarchy can be loaded if the proxy retrieves a nested object containing the whole tree structure. To accomplish this, initialize the TreeStore’s root node to <code>expanded</code>:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('Person', {
+    extend: 'Ext.data.Model',
+    fields: [
+        { name: 'id', type: 'int' },
+        { name: 'name', type: 'string' }
+    ],
+    proxy: {
+        type: 'ajax',
+        api: {
+            create: 'createPersons',
+            read: 'readPersons',
+            update: 'updatePersons',
+            destroy: 'destroyPersons'
+        }
+    }
+
+});
+
+var store = Ext.create('Ext.data.TreeStore', {
+    model: 'Person',
+    root: {
+        name: 'People',
+        expanded: true
+    }
+});
+
+Ext.create('Ext.tree.Panel', {
+    renderTo: Ext.getBody(),
+    width: 300,
+    height: 200,
+    title: 'People',
+    store: store,
+    columns: [
+        { xtype: 'treecolumn', header: 'Name', dataIndex: 'name', flex: 1 }
+    ]
+});</code></pre> 
+       <p>Assume that the <code>readPersons</code> url returns the following json object</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    &quot;success&quot;: true,
+    &quot;children&quot;: [
+        { &quot;id&quot;: 1, &quot;name&quot;: &quot;Phil&quot;, &quot;leaf&quot;: true },
+        { &quot;id&quot;: 2, &quot;name&quot;: &quot;Nico&quot;, &quot;expanded&quot;: true, &quot;children&quot;: [
+            { &quot;id&quot;: 3, &quot;name&quot;: &quot;Mitchell&quot;, &quot;leaf&quot;: true }
+        ]},
+        { &quot;id&quot;: 4, &quot;name&quot;: &quot;Sue&quot;, &quot;loaded&quot;: true }
+    ]
+}</code></pre> 
+       <p>That’s all that’s needed to load the entire tree.</p> 
+       <p><img src="images/tree-bulk-load.png" alt="Tree with Bulk Loaded Data" /></p> 
+       <p>Important items to note:</p> 
+       <ul> 
+        <li>For all non-leaf nodes that do not have children (for example, Person with name Sue above), the server response MUST set the <code>loaded</code> property to <code>true</code>. Otherwise the proxy will attempt to load children for these nodes when they are expanded.</li> 
+        <li>The question then arises - if the server is allowed to set the <code>loaded</code> property on a node in the JSON response can it set any of the other non-persistent fields? The answer is yes - sometimes. In the example above the node with name “Nico” has is <code>expanded</code> field set to <code>true</code> so that it will be initially displayed as expanded in the Tree Panel. Caution should be exercised as there are cases where this is not appropriate and could cause serious problems, like setting the <code>root</code> property on a node that is not the root node for example. In general <code>loaded</code> and <code>expanded</code> are the only cases where it is recommended for the server to set a non-persistent field in the JSON response.</li> 
+       </ul> 
+       <h4 id="Dynamically_Loading_Children_When_a_Node_is_Expanded">Dynamically Loading Children When a Node is Expanded</h4> 
+       <p>For larger trees it may be desirable to only load parts of the tree by loading child nodes only when their parent node is expanded. Suppose in the above example, that the node with name “Sue” does not have its <code>loaded</code> field set to <code>true</code> by the server response. The Tree would display an expander icon next to the node. When the node is expanded the proxy will make another request to the <code>readPersons</code> url that looks something like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>/readPersons?node=4</code></pre> 
+       <p>This tells the server to retrieve the child nodes for the node with an id of 4. The data should be returned in the same format as the data that was used to load the root node:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    &quot;success&quot;: true,
+    &quot;children&quot;: [
+        { &quot;id&quot;: 5, &quot;name&quot;: &quot;Evan&quot;, &quot;leaf&quot;: true }
+    ]
+}</code></pre> 
+       <p>Now the Tree looks something like this:</p> 
+       <p><img src="images/tree-dynamic-load.png" alt="Tree with Dynamically Loaded Node" /></p> 
+       <h3 id="Saving_Data">Saving Data</h3> 
+       <p>Creating, updating, and deleting nodes is handled automatically and seamlessly by the Proxy.</p> 
+       <h4 id="Creating_a_New_Node">Creating a New Node</h4> 
+       <pre mode="javascript" theme="chrome"><code>// Create a new node and append it to the tree:
+var newPerson = Ext.create('Person', { name: 'Nige', leaf: true });
+store.getNodeById(2).appendChild(newPerson);</code></pre> 
+       <p>Since the proxy is defined directly on the Model, the Model’s <a href=".././apidocs/#!/api/Ext.data.Model-method-save" data-full-load="true">save()</a> method can be used to persist the data:</p> 
+       <pre mode="javascript" theme="chrome"><code>newPerson.save();</code></pre> 
+       <h4 id="Updating_an_Existing_Node">Updating an Existing Node</h4> 
+       <pre mode="javascript" theme="chrome"><code>store.getNodeById(1).set('name', 'Philip');</code></pre> 
+       <h4 id="Removing_a_Node">Removing a Node</h4> 
+       <pre mode="javascript" theme="chrome"><code>store.getRootNode().lastChild.remove();</code></pre> 
+       <h4 id="Bulk_Operations">Bulk Operations</h4> 
+       <p>After creating, updating, and removing several nodes, they can all be persisted in one operation by calling the TreeStore’s <a href=".././apidocs/#!/api/Ext.data.TreeStore-method-sync" data-full-load="true">sync()</a> method:</p> 
+       <pre mode="javascript" theme="chrome"><code>store.sync();</code></pre> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

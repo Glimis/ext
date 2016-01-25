@@ -1,0 +1,821 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Theming Ext JS</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Requirements" title="Requirements">Requirements</a> 
+       <a class="toc-page-h3" href="#Sencha_Cmd_5" title="Sencha Cmd 5">Sencha Cmd 5</a> 
+       <a class="toc-page-h3" href="#Ruby" title="Ruby">Ruby</a> 
+       <a class="toc-page-h3" href="#Ext_JS" title="Ext JS">Ext JS</a> 
+       <a class="toc-page-h2" href="#Building_a_Custom_Theme" title="Building a Custom Theme">Building a Custom Theme</a> 
+       <a class="toc-page-h3" href="#Set_up_the_Workspace" title="Set up the Workspace">Set up the Workspace</a> 
+       <a class="toc-page-h3" href="#Generating_an_Application_for_Testing_the_Theme" title="Generating an Application for Testing the Theme">Generating an Application for Testing the Theme</a> 
+       <a class="toc-page-h4" href="#1__Development_mode" title="1. Development mode">1. Development mode</a> 
+       <a class="toc-page-h4" href="#2__Production_mode" title="2. Production mode">2. Production mode</a> 
+       <a class="toc-page-h3" href="#Generating_the_Custom_Theme_Package_and_File_Structure" title="Generating the Custom Theme Package and File Structure">Generating the Custom Theme Package and File Structure</a> 
+       <a class="toc-page-h3" href="#Configuring_Theme_Inheritance_" title="Configuring Theme Inheritance.">Configuring Theme Inheritance.</a> 
+       <a class="toc-page-h3" href="#Configuring_Global_Theme_Variables" title="Configuring Global Theme Variables">Configuring Global Theme Variables</a> 
+       <a class="toc-page-h3" href="#Building_the_Package" title="Building the Package">Building the Package</a> 
+       <a class="toc-page-h3" href="#Using_a_Theme_in_an_Application" title="Using a Theme in an Application">Using a Theme in an Application</a> 
+       <a class="toc-page-h3" href="#Configuring_Component_Variables" title="Configuring Component Variables">Configuring Component Variables</a> 
+       <a class="toc-page-h3" href="#Creating_Custom_Component_UIs" title="Creating Custom Component UIs">Creating Custom Component UIs</a> 
+       <a class="toc-page-h3" href="#Modifying_Image_Assets" title="Modifying Image Assets">Modifying Image Assets</a> 
+       <a class="toc-page-h3" href="#Slicing_Images_for_CSS3_effects_in_IE" title="Slicing Images for CSS3 effects in IE">Slicing Images for CSS3 effects in IE</a> 
+       <a class="toc-page-h3" href="#Theme_JS_Overrides" title="Theme JS Overrides">Theme JS Overrides</a> 
+       <a class="toc-page-h3" href="#The_SASS_Namespace" title="The SASS Namespace">The SASS Namespace</a> 
+       <a class="toc-page-h3" href="#Adding_Custom_Utility_SASS" title="Adding Custom Utility SASS">Adding Custom Utility SASS</a> 
+       <a class="toc-page-h3" href="#Migrating_a_Theme_from_Ext_JS_4_1_or_earlier_" title="Migrating a Theme from Ext JS 4.1 or earlier.">Migrating a Theme from Ext JS 4.1 or earlier.</a> 
+       <a class="toc-page-h2" href="#Styling_Your_Application" title="Styling Your Application">Styling Your Application</a> 
+       <a class="toc-page-h3" href="#Changing_Theme_Variables_in_Your_Application" title="Changing Theme Variables in Your Application">Changing Theme Variables in Your Application</a> 
+       <a class="toc-page-h3" href="#Styling_Your_Application_s_Views" title="Styling Your Application’s Views">Styling Your Application’s Views</a> 
+       <a class="toc-page-h3" href="#The_SASS_Namespace" title="The SASS Namespace">The SASS Namespace</a> 
+       <a class="toc-page-h3" href="#Organization_of_Generated_SASS" title="Organization of Generated SASS">Organization of Generated SASS</a> 
+       <a class="toc-page-h4" href="#Inclusion_Flags" title="Inclusion Flags">Inclusion Flags</a> 
+       <a class="toc-page-h2" href="#Sharing_a_Theme_Between_Applications" title="Sharing a Theme Between Applications">Sharing a Theme Between Applications</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Theming Ext JS</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>Theming defines the visual motif of your application. A theme is a set of visual aspects that can be easily switched without affecting the basic functionality of your application such as base color, font family, borders, backgrounds, and other CSS properties.</p> 
+       <p>Theming is differentiated from “styling” by the ability to flip a switch and change the theme.</p> 
+       <p>Ext JS 5 includes an overhaul of the theming system that makes it much easier to customize the look and feel of an application. Ext JS themes leverage <a href="http://sass-lang.com">SASS</a> and <a href="http://compass-style.org">Compass</a>, which enable the use of variables and mixins in your stylesheets. Almost all of the styles for Ext JS components can now be customized, including colors, fonts, borders, and backgrounds, simply by changing SASS variables.</p> 
+       <p>Ext JS includes default themes that can be used as a base to create your own custom theme package for use with an Ext JS application.</p> 
+       <p>This tutorial shows you how to create a custom theme that is sharable between applications, how to use that theme in an application, and how to create application-specific styling that is not shared.</p> 
+       <h2 id="Requirements">Requirements</h2> 
+       <h3 id="Sencha_Cmd_5">Sencha Cmd 5</h3> 
+       <p>Sencha Cmd is a command-line tool used to package and deploy Ext JS and Sencha Touch applications. To build a theme in Ext JS 5, you must have Sencha Cmd 5 or higher installed on your computer. Sencha Cmd 5 removes the need to have SASS and Compass installed on your computer as it uses its own bundled versions.</p> 
+       <p>For more information about installing and getting started with Sencha Cmd see <a href="../cmd/intro_to_cmd.html">Introduction to Sencha Cmd</a>.</p> 
+       <h3 id="Ruby">Ruby</h3> 
+       <p><a href="https://www.ruby-lang.org/en/">Ruby</a> is an open source programming language that is required to run Sencha Cmd. Refer to the <a href="../cmd/intro_to_cmd.html">Introduction to Sencha Cmd</a> guide for instructions on installing Ruby.</p> 
+       <h3 id="Ext_JS">Ext JS</h3> 
+       <p>Custom themes are based on default themes included with the Ext JS SDK.</p> 
+       <p>Sencha Cmd no longer requires you to download Ext JS. You can now use the “-ext” flag in the generate command, which will automatically download the latest version of Ext JS 5. Sencha Cmd will then use that for generating applications.</p> 
+       <p>That said, you can still <a href="http://www.sencha.com/products/extjs/download/">download Ext JS</a> if you prefer. Simply extract the Ext JS development kit (SDK) to a location of your choosing.</p> 
+       <p>For this tutorial, we’ll assume that you generated your workspace using the “-ext” flag.</p> 
+       <h2 id="Building_a_Custom_Theme">Building a Custom Theme</h2> 
+       <p>Once you have installed all of the above requirements for theme building, you can proceed with creating a fully customized theme.</p> 
+       <h3 id="Set_up_the_Workspace">Set up the Workspace</h3> 
+       <p>The first step in building a custom theme is to set up your workspace using Sencha Cmd.</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha generate workspace -ext my-workspace</code></pre> 
+       <p>If you want to use an existing local copy of the SDK, run the following from the command line. Simply replace <code>&quot;~/sencha-5.0.0/&quot;</code> with the path where you unzipped the Ext JS SDK.</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha -sdk ~/sencha-5.0.0 generate workspace my-workspace</code></pre> 
+       <p>The ‘generate workspace’ will create the scaffolding for a Sencha workspace in the target directory <code>&quot;my-workspace&quot;</code>. This workspace will be location in which you create your custom theme package. You will also create an application here that uses the new custom theme. This command copies the Ext JS SDK and packages into your workspace so that the theme and application can find their required dependencies. The commands for generating the theme and application must be executed from inside the workspace directory. So, at this time, you should change your working directory to the new <code>&quot;my-workspace&quot;</code> directory:</p> 
+       <pre mode="javascript" theme="chrome"><code>cd my-workspace</code></pre> 
+       <p>You should now see two directories inside your workspace</p> 
+       <ul> 
+        <li><code>&quot;ext&quot;</code> – contains the Ext JS SDK</li> 
+        <li><code>&quot;packages&quot;</code> – contains the Ext JS locale and theme packages</li> 
+       </ul> 
+       <h3 id="Generating_an_Application_for_Testing_the_Theme">Generating an Application for Testing the Theme</h3> 
+       <p>Before creating a custom theme we need to set up a way to test the theme. The best way to test a theme is to use it in an application. Generate a skeleton Ext JS application using the following command from the <code>&quot;my-workspace&quot;</code> directory:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha -sdk ext generate app ThemeDemoApp theme-demo-app</code></pre> 
+       <p>Sencha Cmd will generate an application named ThemeDemoApp in a new sub-directory named <code>&quot;theme-demo-app&quot;</code>. The generated application will use the contents of the ‘ext’ directory as the source for the Ext JS SDK. This directory was created in the “my-workspace” directory, and the framework copied into it when the workspace was generated. </p> 
+       <pre mode="javascript" theme="chrome"><code>cd theme-demo-app
+sencha app watch</code></pre> 
+       <p>There are two ways to run your app:</p> 
+       <h4 id="1__Development_mode">1. Development mode</h4> 
+       <p>To view your application in development mode, simply open: </p> 
+       <pre mode="javascript" theme="chrome"><code>`&quot;my-workspace/theme-demo-app/index.html&quot;`</code></pre> 
+       <p>We will use development mode for this tutorial since it uses un-minified source files for easy debugging.</p> 
+       <h4 id="2__Production_mode">2. Production mode</h4> 
+       <p>To view your application in production mode, you will need to build your application with:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app build</code></pre> 
+       <p>Once built, you can find your application at:</p> 
+       <p><code>&quot;my-workspace/build/production/ThemeDemoApp/index.html&quot;</code> in a browser.</p> 
+       <p>Production mode uses minified source files for a smaller footprint and better performance for the application.</p> 
+       <h3 id="Generating_the_Custom_Theme_Package_and_File_Structure">Generating the Custom Theme Package and File Structure</h3> 
+       <p>Sencha Cmd simplifies the process of creating a custom theme by generating a theme package containing all the necessary files required for your custom theme. Run the following command from the theme-demo-app directory:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha generate theme my-custom-theme</code></pre> 
+       <p>This tells Sencha Cmd to generate a theme package named <code>&quot;my-custom-theme&quot;</code> in the current workspace. You should see a newly created directory named <code>&quot;my-custom-theme&quot;</code> in the “packages” directory of your workspace. This is the theme package. Lets take a look at the main content:</p> 
+       <ul> 
+        <li><code>&quot;package.json&quot;</code> - This is the package properties file. It tells Sencha Cmd certain things about the package like its name, version, and dependencies (other packages that it requires).</li> 
+        <li><p><code>&quot;sass/&quot;</code> - This directory contains all of your theme’s SASS files. The sass files are divided into 3 main sections:</p> 
+         <ul> 
+          <li><code>&quot;sass/etc/&quot;</code> - contains additional utility functions or mixins</li> 
+          <li><code>&quot;sass/src/&quot;</code> - contains SASS rules and UI mixin calls that can use the variables defined in “sass/var/”</li> 
+          <li><code>&quot;sass/var/&quot;</code> - contains SASS variables</li> 
+         </ul><p>The files in <code>&quot;sass/var/&quot;</code> and <code>&quot;sass/src&quot;</code> should be structured to match the class path of the component you are styling. For example, variables that change the appearance of <a href=".././apidocs/#!/api/Ext.panel.Panel" data-full-load="true">Ext.panel.Panel</a> should be placed in a file named <code>&quot;sass/var/panel/Panel.scss&quot;</code>.</p></li> 
+        <li><code>&quot;resources/</code>&quot; - contains images and other static resources that your theme requires.</li> 
+        <li><code>&quot;overrides/&quot;</code> - contains any JavaScript overrides to Ext JS component classes that may be required for theming those components.</li> 
+       </ul> 
+       <h3 id="Configuring_Theme_Inheritance_">Configuring Theme Inheritance.</h3> 
+       <p>All Sencha theme packages are part of a larger hierarchy of themes, and each theme package must extend a base theme. The next step in creating your custom theme is to figure out which theme to extend. In the packages directory your workspace you will see the following theme packages:</p> 
+       <ul> 
+        <li><p><code>&quot;ext-theme-base&quot;</code> - This package is the base theme for all other themes, and the only theme package that does not have a parent theme. It contains the bare minimum set of CSS rules that are absolutely required for Ext JS components and layouts to work correctly. The style rules in <code>&quot;ext-theme-base&quot;</code> are not configurable in a derived theme, and you should avoid overriding any of the style rules that are created by this theme.</p></li> 
+        <li><p><code>&quot;ext-theme-neutral&quot;</code> - The neutral theme extends <code>&quot;ext-theme-base&quot;</code>, and contains the vast majority of configurable style rules. Most of the variables that are available for configuring the appearance of Ext JS components are defined in <code>&quot;ext-theme-neutral&quot;</code>. These are the variables that can be overridden by your custom theme.</p></li> 
+        <li><p><code>&quot;ext-theme-neptune&quot;</code> - Modern borderless theme. Extends <code>&quot;ext-theme-neutral&quot;</code>. </p></li> 
+        <li><code>&quot;ext-theme-crisp-touch&quot;</code> - Neptune-Based Touch Theme. Extends <code>&quot;ext-theme-neptune&quot;</code>. 
+         <ul> 
+          <li>This theme includes the <code>&quot;touch-sizing&quot;</code> package</li> 
+         </ul></li> 
+        <li><code>&quot;ext-theme-crisp&quot;</code> - Minimalistic Theme. Extends <code>&quot;ext-theme-neptune&quot;</code>.</li> 
+        <li><code>&quot;ext-theme-crisp-touch&quot;</code> - Crisp-Based Touch Theme. Extends <code>&quot;ext-theme-crisp&quot;</code>.</li> 
+        <li><code>&quot;ext-theme-classic&quot;</code> - The classic blue Ext JS theme. Extends <code>&quot;ext-theme-neutral&quot;</code>.</li> 
+        <li><code>&quot;ext-theme-gray&quot;</code> - Gray theme. Extends <code>&quot;ext-theme-classic&quot;</code>.</li> 
+        <li><code>&quot;ext-theme-aria&quot;</code> - Accessibility theme. Extends <code>&quot;ext-theme-neptune&quot;</code>. 
+         <ul> 
+          <li>This theme includes the <code>&quot;ext-aria&quot;</code> package</li> 
+         </ul></li> 
+       </ul> 
+       <p>This chart should make it easier to see how theme inheritance works in Ext JS 5.</p> 
+       <p><img src="images/theme_heirarchy.png" /></p> 
+       <p>So which theme should your custom theme extend? We recommend using either <code>&quot;ext-theme-neptune&quot;</code> or <code>&quot;ext-theme-classic&quot;</code> as the starting point for custom themes. The reason for this is because these themes contain all the code necessary for creating an attractive theme out of the box. The neutral theme should be thought of as a very abstract theme, and should not typically need to be extended directly. Creating a custom theme by overriding <code>&quot;ext-theme-neutral&quot;</code> requires hundreds of variable overrides and many hours of work, and should only be done by very advanced theme developers. However, a custom theme derived from either the Neptune or classic theme can be up and running in minutes by simply changing a couple variables. Additionally you can override <code>&quot;ext-theme-gray&quot;</code> or <code>&quot;ext-theme-aria&quot;</code> if they provide a more desirable starting point for your custom theme.</p> 
+       <p>In this tutorial, we will create a custom theme that extends the Neptune theme. The first thing to do is configure your custom theme with the name of the theme it is extending. This is done by changing the ‘extend’ property in the <code>“packages/my-custom-theme/package.json”</code> from its default value as shown here:</p> 
+       <pre mode="javascript" theme="chrome"><code>&quot;extend&quot;: &quot;ext-theme-classic&quot;</code></pre> 
+       <p>to:</p> 
+       <pre mode="javascript" theme="chrome"><code>&quot;extend&quot;: &quot;ext-theme-neptune&quot;</code></pre> 
+       <p>You now need to refresh your application. This ensures that the correct theme JavaScript files are included in the application’s “bootstrap.js” file so that the application can be run in development mode. Run the following command from the “theme-demo-app” directory.</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app refresh</code></pre> 
+       <p>Your custom theme is now configured to use the Neptune theme as a base. But you still need to make your own changes to it, as right now - it is identical to Neptune. Now you can proceed to add custom changes to your theme. </p> 
+       <h3 id="Configuring_Global_Theme_Variables">Configuring Global Theme Variables</h3> 
+       <p>Let’s start by modify the base color from which many Ext JS components’ colors are derived. Create a file called Component.scss in <code>&quot;my-custom-theme/sass/var/&quot;</code>. Add the following code to the Component.scss file:</p> 
+       <pre mode="javascript" theme="chrome"><code>$base-color: #317040 !default;</code></pre> 
+       <p>Be sure to include <code>!default</code> at the end of all variable assignments if you want your custom theme values to be extensible. Without <code>!default</code> you will not be able to override the variable in a derived theme, because Sencha Cmd includes variable files in “reverse” order - most-derived theme first, base theme last. For more information on the use of <code>!default</code> see <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_">Variable Defaults</a></p> 
+       <p>The value of $base-color must be a valid HTML color code; see the <a href="http://html-color-codes.info">HTML Color Codes</a> web page.</p> 
+       <p>For the complete list of Ext JS global SASS variables see <a href=".././apidocs/#!/api/Global_CSS" data-full-load="true">Global_CSS</a>.</p> 
+       <h3 id="Building_the_Package">Building the Package</h3> 
+       <p>Now that you’ve modified the base color to your theme, you need to build an updated version of the theme css file containing all the style rules for your theme. From the <code>&quot;packages/my-custom-theme/&quot;</code> directory run the following command:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha package build</code></pre> 
+       <p>Building the package creates a “build” directory in your theme package directory. Inside <code>&quot;my-custom-theme/build/resources&quot;</code> you will find a file named <code>my-custom-theme-all.css</code>. This file contains all the style rules for all Ext JS components for your theme. You can link directly to this file from your app but this is not recommended because the <code>&quot;all&quot;</code> file contains all styles for every Ext JS component and most apps only use a subset of Ext JS components. Sencha Cmd has the ability to filter out unused CSS style rules when you build an app, but first we need to configure the test app to use the custom theme.</p> 
+       <h3 id="Using_a_Theme_in_an_Application">Using a Theme in an Application</h3> 
+       <p>At this point you can start <code>sencha app watch</code> in your application’s directory.</p> 
+       <p>This will monitor your application for changes and automatically re-build and refresh your application. Please note that <code>sencha app watch</code> does NOT currently monitor packages. </p> 
+       <p>To configure your test application to use your custom theme, find the following line in <code>theme-demo-app/app.json</code></p> 
+       <pre mode="javascript" theme="chrome"><code>/**
+ * The name of the theme for this application.
+ */
+&quot;theme&quot;: &quot;ext-theme-neptune&quot;,</code></pre> 
+       <p>and replace it with:</p> 
+       <pre mode="javascript" theme="chrome"><code>/**
+ * The name of the theme for this application.
+ */
+&quot;theme&quot;: &quot;my-custom-theme&quot;,</code></pre> 
+       <p>Refresh <code>&quot;theme-demo-app/index.html&quot;</code> in a browser once <code>sencha app watch</code> finishes process the change. You should see the green color we specified earlier as <code>$base-color</code> applied to the components on the screen.</p> 
+       <h3 id="Configuring_Component_Variables">Configuring Component Variables</h3> 
+       <p>Each Ext JS component has a list of global variables that can be used to configure its appearance. Let’s change the <code>font-family</code> of Panel Headers in <code>&quot;my-custom-theme&quot;</code>. Create a file named <code>&quot;packages/my-custom-theme/sass/var/panel/Panel.scss&quot;</code> and add the following code:</p> 
+       <pre mode="javascript" theme="chrome"><code>$panel-header-font-family: Times New Roman !default;</code></pre> 
+       <p>Now build your app by running the following command from the <code>&quot;theme-demo-app&quot;</code> directory.</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app build</code></pre> 
+       <p>Open <code>&quot;theme-demo-app/index.html&quot;</code> in a web browser and you should see that the panel header uses “Times New Roman” font.</p> 
+       <p>You can find the complete list of SASS variables for each component in the “CSS Variables” section of each page in the API docs. For example, see <a href=".././apidocs/#!/api/Ext.panel.Panel" data-full-load="true">Ext.panel.Panel</a> and scroll down to the section titled “CSS Variables”</p> 
+       <h3 id="Creating_Custom_Component_UIs">Creating Custom Component UIs</h3> 
+       <p>Every component in the Ext JS framework has a user interface (UI) configuration, which defaults to <code>default</code>. This property can be configured on individual component instances to give them a different appearance from other instances of the same type. This is used in the Neptune theme to create different types of <a href=".././apidocs/#!/api/Ext.panel.Panel" data-full-load="true">Panels</a> and <a href=".././apidocs/#!/api/Ext.button.Button" data-full-load="true">buttons</a>. For example, panels with the ‘default’ UI have dark blue headers and panels with the ‘light’ UI have light blue headers. Buttons use UIs to give toolbar buttons a different appearance from regular buttons.</p> 
+       <p>The ext-theme-neutral theme includes SASS mixins for many different Ext JS components. You can call these mixins to generate new UIs for components. Available mixins for each component are listed in the API documentation. For example, see <a href=".././apidocs/#!/api/Ext.panel.Panel" data-full-load="true">Ext.panel.Panel</a> and scroll down to the “CSS Mixins” section to see what parameters the Panel UI mixin accepts. Let’s use this mixin to create a custom Panel UI. Create a file named <code>&quot;packages/my-custom-theme/sass/src/panel/Panel.scss&quot;</code> and add the following code to it:</p> 
+       <pre mode="javascript" theme="chrome"><code>@include extjs-panel-ui(
+    $ui-label: 'highlight-framed',
+    $ui-header-background-color: red,
+    $ui-border-color: red,
+    $ui-header-border-color: red,
+    $ui-body-border-color: red,
+    $ui-border-width: 5px,
+    $ui-border-radius: 5px
+);</code></pre> 
+       <p>This mixin call creates a new Panel UI named “highlight-framed” which has a red header background, red bordering, 5px border, and 5px border-radius. To use this UI, configure a Panel with “highlight” as its “ui” property (the “-framed” suffix is added to the UI of a panel when you set the <a href=".././apidocs/#!/api/Ext.panel.Panel-cfg-frame" data-full-load="true">frame</a> config to <code>true</code>). Open <code>&quot;theme-demo-app/app/view/Main.js&quot;</code> and replace the items array with the following:</p> 
+       <pre mode="javascript" theme="chrome"><code>items: [{
+    // custom &quot;highlight&quot; UI        
+    xtype: 'panel',
+    ui: 'highlight-framed',
+    frame: true, // Make sure to add this config to see the frame highlight changes
+    bind: {
+        title: '{name}'
+    },
+    region: 'west',
+    html: '&lt;ul&gt;&lt;li&gt;This area is used for navigation, for example, using a &quot;tree&quot; component.&lt;/li&gt;&lt;/ul&gt;',
+    width: 250,
+    split: true,
+    tbar: [{
+        text: 'Button',
+        handler: 'onClickButton'
+    }]
+},{    
+    region: 'center',
+    xtype: 'tabpanel',
+    items:[{
+        title: 'Tab 1',
+        html: '&lt;h2&gt;Content appropriate for the current navigation.&lt;/h2&gt;'
+    }]
+}]</code></pre> 
+       <p>If you still have <code>sencha app watch</code> running, the change to <code>Main.js</code> should have been picked up.</p> 
+       <p>Open <code>&quot;theme-demo-app/index.html&quot;</code> in a web browser and you should see the red “highlight” panel in the west region.</p> 
+       <p>While UI mixins are a handy way to configure multiple appearances for a component, they should not be overused. Each call to a UI mixin generates additional CSS rules. Gratuitous calls to UI mixins can produce an overly large CSS file.</p> 
+       <p>Another important point to remember when calling UI mixins is to call the mixin by passing its named parameters, not an ordered list of parameter values. Although SASS supports both forms it’s best to use this form:</p> 
+       <pre mode="javascript" theme="chrome"><code>@include extjs-component-ui(
+    $ui-foo: foo,
+    $ui-bar: bar
+);</code></pre> 
+       <p>And avoid this form:</p> 
+       <pre mode="javascript" theme="chrome"><code>@include extjs-component-ui(foo, bar);</code></pre> 
+       <p>Due to the complexity and number of mixin parameters, we cannot guarantee that the order will stay the same if new parameters are added, or if a deprecated parameter is removed. It is safest to always specify the parameters by name and not by ordinal names when calling UI mixins.</p> 
+       <h3 id="Modifying_Image_Assets">Modifying Image Assets</h3> 
+       <p>All required image assets are inherited from the parent theme by default, but in some cases you may need to override an image. This can be easily done by placing the desired image in <code>&quot;my-custom-theme/resources/images/&quot;</code> and giving it the same name as the image it is intended to override. For example, let’s change the info icon of the MessageBox component. Save the following image as <code>&quot;packages/my-custom-theme/resources/images/shared/icon-info.png&quot;</code></p> 
+       <p><img src="images/icon-info.png" /></p> 
+       <p>Now modify your test application to show a MessageBox that uses the custom icon. Add the following items array to the highlight panel in your application’s <code>&quot;theme-demo-app/app/view/Main.js&quot;</code>:</p> 
+       <pre mode="javascript" theme="chrome"><code>...
+tbar: [{
+    text: 'Button',
+    handler: 'onClickButton'
+}],
+items: [{
+    xtype: 'button',
+    text: 'Show Message',
+    handler: function() {
+        Ext.Msg.show({
+            title: 'Info',
+            msg: 'Message Box with custom icon',
+            buttons: Ext.MessageBox.OK,
+            icon: Ext.MessageBox.INFO
+        });
+    }
+}]
+...</code></pre> 
+       <p>Now build your app by running the following command from the <code>&quot;theme-demo-app&quot;</code> directory.</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app build</code></pre> 
+       <p>Now view the app in the browser. When you click the button you should see that the MessageBox contains a friendly face.</p> 
+       <h3 id="Slicing_Images_for_CSS3_effects_in_IE">Slicing Images for CSS3 effects in IE</h3> 
+       <p>In many cases when creating new UI’s, you will want to include background gradients or rounded corners. Unfortunately, legacy browsers do not support the CSS3 properties for these effects, so we must use images instead. Sencha Cmd includes the ability to automatically slice these images for you. To do this, we need to tell Sencha Cmd which components need slicing. The files that contain the slicing configuration are contained in the <code>&quot;sass/example/&quot;</code> directory of a theme. To get an idea of what these files look like, let’s look at the <code>&quot;packages/ext-theme-base/sass/example/&quot;</code> directory in your workspace:</p> 
+       <ul> 
+        <li><p><code>&quot;shortcuts.js&quot;</code> - This file contains the base configurations for the types of components that can be sliced. Most custom themes do not need to contain a <code>&quot;shortcuts.js&quot;</code> file; it is necessary only if your theme includes styling for custom components. Your theme inherits all of the shortcuts defined in its base themes, and you can add additional shortcuts if needed by calling <code>Ext.theme.addShortcuts()</code> in the <code>&quot;shortcuts.js&quot;</code> file in your theme.</p></li> 
+        <li><p><code>&quot;manifest.js&quot;</code> - This file contains the list of component UIs for which sliced images will be generated when you build your theme. A theme inherits all manifest entries from its parent themes, and can add its own manifest entries by calling the <code>Ext.theme.addManifest()</code> function in its own <code>&quot;manifest.js&quot;</code> file.</p></li> 
+        <li><p><code>&quot;theme.html&quot;</code> - This is the file that renders the components defined in the <code>&quot;manifest.js&quot;</code> file. Sencha Cmd renders <code>&quot;theme.html&quot;</code> in a headless WebKit browser, and takes a screenshot of the page. It then uses this screenshot to slice the required images for displaying rounded corners and gradients in IE.</p></li> 
+       </ul> 
+       <p>To create slices for the rounded corners of the “highlight” panel UI that you created earlier in this tutorial, create a file named <code>&quot;packages/my-custom-theme/sass/example/manifest.js&quot;</code> and add the following code to it.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.theme.addManifest(
+    {
+        xtype: 'panel',
+        ui: 'highlight'
+    }
+);</code></pre> 
+       <p>Now edit <code>&quot;packages/my-custom-theme/sass/example/theme.html&quot;</code> and add the following script tags:</p> 
+       <pre mode="javascript" theme="chrome"><code>&lt;!-- Required because Sencha Cmd doesn't currently add manifest.js from parent themes --&gt;
+&lt;script src=&quot;../../../ext-theme-neptune/sass/example/manifest.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Your theme's manifest.js file --&gt;
+&lt;script src=&quot;manifest.js&quot;&gt;&lt;/script&gt;</code></pre> 
+       <p>That ensures that the UIs defined in ext-theme-neptune and my-custom-theme get sliced correctly when you build the my-custom-theme package using <code>sencha package build</code>. You must also add these 2 script tags to <code>&quot;theme-demo-app/sass/example/theme.html&quot;</code>, so that the UIs will get sliced when building the app using <code>sencha app build</code>:</p> 
+       <pre mode="javascript" theme="chrome"><code>&lt;script type=&quot;text/javascript&quot; src=&quot;../../../../ext/packages/ext-theme-neptune/sass/example/manifest.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../../../../ext/packages/my-custom-theme/sass/example/manifest.js&quot;&gt;&lt;/script&gt;</code></pre> 
+       <p>In the future, it will seldom be necessary to modify <code>&quot;theme.html&quot;</code> manually but, in Sencha Cmd 5, script tags for <code>&quot;shortcuts.js&quot;</code> and <code>&quot;manifest.js&quot;</code> are not added automatically.</p> 
+       <p>That’s all there is to it. Now just build the demo app again, and run it in IE8 or below. You should see rounded corners on the “highlight” panel that look just like the ones creates using CSS3 when you run the app in a modern browser.</p> 
+       <h3 id="Theme_JS_Overrides">Theme JS Overrides</h3> 
+       <p>Sometimes a theme needs to change the appearance of some aspect of a component that is only configurable via JavaScript. This can easily be accomplished by adding a JavaScript override to your theme package. To demonstrate how this is done, let’s change the <a href=".././apidocs/#!/api/Ext.panel.Panel-cfg-titleAlign" data-full-load="true">titleAlign</a> config of Panels in the custom theme. Create a new file named <code>&quot;packages/my-custom-theme/overrides/panel/Panel.js&quot;</code> and add the following code:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyCustomTheme.panel.Panel', {
+    override: 'Ext.panel.Panel',
+    titleAlign: 'center'
+});</code></pre> 
+       <p>Now lets build the theme package so that <code>&quot;packages/my-custom-theme/build/my-custom-theme.js&quot;</code> will include the new override. From the <code>&quot;packages/my-custom-theme/&quot;</code> directory run:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha package build</code></pre> 
+       <p>You should now refresh the application so that the theme’s JS overrides will get included when running the application in development mode. Run the following command from the <code>&quot;theme-demo-app&quot;</code> directory:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app refresh</code></pre> 
+       <p>Now build the app from the theme-demo-app directory:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app build</code></pre> 
+       <p>Then open <code>&quot;theme-demo-app/index.html&quot;</code> in the browser. You should notice that all Panel headers have centered titles.</p> 
+       <p>Although any Ext JS component config can be overridden in this manner, best practice is to only use theme overrides to change those configs that directly affect the visual appearance of a component.</p> 
+       <h3 id="The_SASS_Namespace">The SASS Namespace</h3> 
+       <p>As described above, Sencha Cmd looks for files in <code>&quot;sass/var&quot;</code> and <code>&quot;sass/src&quot;</code> that match up with JavaScript classes. By default, for themes, the <code>Ext</code> namespace is assumed to be the top-level namespace and so your theme would have a <code>&quot;sass/src/panel/Panel.scss&quot;</code> file corresponding to <code>Ext.panel.Panel</code>.</p> 
+       <p>For a theme to apply outside the <code>Ext</code> namespace, you must change a config property called <code>package.sass.namespace</code> in <code>&quot;.sencha/package/app.json&quot;</code>. To be able to style all components in your theme, you will need to set this as blank:</p> 
+       <pre mode="javascript" theme="chrome"><code>/**
+ * Sass configuration properties.
+ */
+&quot;sass&quot;: {
+    /**
+     * The root namespace to use when mapping *.scss files to classes in the
+     * sass/src and sass/var directories. For example, &quot;MyApp.view.Foo&quot; would
+     * map to &quot;sass/src/view/Foo.scss&quot;. If we changed this to &quot;MyApp.view&quot; then
+     * it would map to &quot;sass/src/Foo.scss&quot;. To style classes outside the app's
+     * root namespace, change this to &quot;&quot;. Doing so would change the mapping of
+     * &quot;MyApp.view.Foo&quot; to &quot;sass/src/MyApp/view/Foo.scss&quot;.
+     */
+    &quot;namespace&quot;: &quot;&quot;
+},</code></pre> 
+       <p>With this set, the file you need to create to correspond with <code>Ext.panel.Panel</code> is <code>&quot;sass/src/Ext/panel/Panel.scss&quot;</code>.</p> 
+       <h3 id="Adding_Custom_Utility_SASS">Adding Custom Utility SASS</h3> 
+       <p>If your theme requires SASS functions or mixins that are not related to component styling, e.g. utilities, these should be placed in the theme’s <code>&quot;sass/etc&quot;</code> directory. You can organize files in this directory however you like, but the only file that Sencha Cmd includes in the build is <code>&quot;sass/etc/all.scss&quot;</code>. Any other files must be imported by the <code>&quot;all.scss&quot;</code> file. For an example that follows this pattern see <code>&quot;packages/ext-theme-base/sass/etc/&quot;</code>.</p> 
+       <h3 id="Migrating_a_Theme_from_Ext_JS_4_1_or_earlier_">Migrating a Theme from Ext JS 4.1 or earlier.</h3> 
+       <p>In Ext 4.1, theming was done quite differently. Typically, all the SASS variables would be placed in one <code>&quot;all.scss&quot;</code> file, and at the end of the file, the base theme’s “all.scss” file would be imported. The best starting point for migrating an existing theme is to place all the old SASS variables in the theme’s <code>&quot;sass/etc/all.scss&quot;</code> file. Any SASS rules that the legacy theme had should be placed in <code>&quot;sass/src/Component.scss&quot;</code>. Then try to build the theme or an app that uses the theme as described above. Eventually you may want to move the variables and rules into the files that correspond to the components being styled.</p> 
+       <h2 id="Styling_Your_Application">Styling Your Application</h2> 
+       <p>Styling that is not shared between applications belongs in the application itself, not in the theme. Sencha Cmd provides an easy way to add application-level styling by following the same pattern as theme styling. The application acts as the final level in the theme hierarchy. Applications can change theme variables, and they can add their own custom variables and rules for styling the application’s views.</p> 
+       <h3 id="Changing_Theme_Variables_in_Your_Application">Changing Theme Variables in Your Application</h3> 
+       <p>Let’s continue using the <code>&quot;theme-demo-app&quot;</code> application created above, and override the theme’s <code>$base-color</code> in the application. Create a file named <code>&quot;theme-demo-app/sass/var/view/main/Main.scss&quot;</code> and add the following code:</p> 
+       <pre mode="javascript" theme="chrome"><code>$base-color: #333;</code></pre> 
+       <p>Then build the app by running the following command from the <code>&quot;theme-demo-app&quot;</code> directory:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app build</code></pre> 
+       <p>Open the application’s <code>&quot;index.html&quot;</code> page in a browser and you will see that the color has changed to gray.</p> 
+       <p>Notice how we did not use <code>!default</code> when setting the $base-color variable. <code>!default</code> is used for setting variables in themes, because those theme variables might need to be overridden in a derived theme, or in an application. <code>!default</code> is not needed here because the application is the end of the line in the theme inheritance tree.</p> 
+       <p>You may also be wondering why we set <code>$base-color</code> in <code>&quot;Main.scss&quot;</code> instead of <code>&quot;Component.scss&quot;</code> like we did when changing the <code>$base-color</code> for a theme. The reason for this is because the namespace that Sencha Cmd uses for resolving SCSS file names is the namespace of the application. For each class in your application, Sencha Cmd checks for a corresponding scss file in <code>&quot;sass/var/&quot;</code> for variables, and <code>&quot;sass/src/&quot;</code> for rules. Since the application has a class named ThemeDemoApp.view.Main, the <code>&quot;sass/var/view/main/Main.scss&quot;</code> file gets included in the build. <code>&quot;sass/var/Componenent.scss&quot;</code> is not included unless the application had a class named “ThemeDemoApp.Component”.</p> 
+       <h3 id="Styling_Your_Application_s_Views">Styling Your Application’s Views</h3> 
+       <p>CSS style rules for your application’s views should go in the app’s <code>&quot;sass/src/&quot;</code> directory in a scss file that has the same path and name as the view it is styling. Let’s style the center panel in the ThemeDemoApp application. Since that panel is defined in ThemeDemoApp.view.Main, the CSS rule that styles it goes in <code>&quot;sass/src/view/Main.scss&quot;</code>:</p> 
+       <pre mode="javascript" theme="chrome"><code>.content-panel-body {
+    background-color: #ccc;
+}</code></pre> 
+       <p>Add the “content-panel-body” CSS class to the body of the center panel in your application’s <code>Main.js</code> file:</p> 
+       <pre mode="javascript" theme="chrome"><code>...
+xtype: 'panel',
+ui: 'highlight',
+bodyCls: 'content-panel-body',
+frame: true,
+...</code></pre> 
+       <p>You should see a gray background-color on the body of the center tabpanel.</p> 
+       <h3 id="The_SASS_Namespace">The SASS Namespace</h3> 
+       <p>Similar to themes, applications also have <code>&quot;sass/var&quot;</code> and <code>&quot;sass/src&quot;</code> folders and these also correspond to the JavaScript class hierarchy. For an application, the top-level namespace is specified by <code>name</code> in <code>&quot;app.json&quot;</code>. By default this value is the application’s namespace.</p> 
+       <p>This default is most convenient for styling just your application’s views since these are most likely in your application’s namespace. To style components outside your application namespace, you can change <code>app.sass.namespace</code> but it may be a better idea to create a theme instead.</p> 
+       <h3 id="Organization_of_Generated_SASS">Organization of Generated SASS</h3> 
+       <p>When using themes as described above, the SASS from your theme and from your application as well as from required packages (see <a href="../cmd/cmd_packages/cmd_packages.html">Sencha Cmd Packages</a>) is combined in an <code>&quot;app-all.scss&quot;</code> file that is then compiled by Compass. It is important to understand the structure of this file so that you know what you can use from your theme or required packages and when.</p> 
+       <p>The structure of the <code>&quot;all.scss&quot;</code> file generated for your application is this:</p> 
+       <pre mode="javascript" theme="chrome"><code>+---------------------------------------+
+| inclusion flags                       |
++-----------+-----------+---------------+
+|           |           | base          |
+|           | theme     +---------------+
+|           |           | derived       |
+|           +-----------+---------------+
+|           |                           |
+|    etc    | packages (dep order)      |
+|           |                           |
+|           +---------------------------+
+|           |                           |
+|           | application               |
+|           |                           |
++-----------+---------------------------+
+|           |                           |
+|           | application               |
+|           |                           |
+|           +-----------+---------------+
+|           |           | derived       |
+|    var    | theme     +---------------+
+|           |           | base          |
+|           +-----------+---------------+
+|           |                           |
+|           | packages (dep order)      |
+|           |                           |
++-----------+-----------+---------------+
+|           |           | base          |
+|           | theme     +---------------+
+|           |           | derived       |
+|           +-----------+---------------+
+|           |                           |
+|    src    | packages (dep order)      |
+|           |                           |
+|           +---------------------------+
+|           |                           |
+|           | application               |
+|           |                           |
++-----------+---------------------------+</code></pre> 
+       <p>Inside the “bands” for <code>&quot;sass/var&quot;</code> and <code>&quot;sass/src&quot;</code>, the individual <code>&quot;.scss&quot;</code> files for a given theme, package and the application are always ordered to match the JavaScript class hierarchy. For example, if the “base” theme had <code>&quot;.scss&quot;</code> files for <a href=".././apidocs/#!/api/Ext.window.Window" data-full-load="true">Ext.window.Window</a> and <a href=".././apidocs/#!/api/Ext.panel.Panel" data-full-load="true">Ext.panel.Panel</a> in its <code>&quot;sass/var&quot;</code> folder, the file for <a href=".././apidocs/#!/api/Ext.panel.Panel" data-full-load="true">Ext.panel.Panel</a> would be included before the file for <a href=".././apidocs/#!/api/Ext.window.Window" data-full-load="true">Ext.window.Window</a> since it extends <code>Ext.panel.Panel</code>.</p> 
+       <p>The goals and rationale for this particular structure are as follows:</p> 
+       <ul> 
+        <li>In the <code>&quot;sass/etc&quot;</code> space, utilities and the like from base themes should be available to derived themes.</li> 
+        <li>Packages should be able to use facilities provided by the current theme.</li> 
+        <li>Applications should be able to use their theme and any required packaged.</li> 
+        <li>In the <code>&quot;sass/var&quot;</code> space, the concerns are variable control and derived calculation.</li> 
+        <li>Applications must be able to control all variables so their <code>vars</code> come first.</li> 
+        <li>Themes come next so that they pick up application variable values, but they come in “reverse” order from most derived theme to base. This allows the derived theme to set any variables it wants that have not already been set by the application or a more derived theme.</li> 
+        <li>Package variables are introduced in their package dependency order. This allows package variables to derive the values from the current theme (most importantly, from the <code>base-color</code>).</li> 
+        <li>In the <code>&quot;sass/src&quot;</code> section, the order is the same as for <code>&quot;sass/etc&quot;</code>. This provides the proper cascade of rules so that derived theme rules can easily “win” over rules from their base theme(s).</li> 
+        <li>The application cascades in last so that its rules always have the final authority.</li> 
+       </ul> 
+       <h4 id="Inclusion_Flags">Inclusion Flags</h4> 
+       <p>The “inclusion flags” section is a set of variables defined to be <code>true</code> or <code>false</code> for each JavaScript class that <em>could</em> be included. The value of this variable is <code>true</code> if that class is being included. For example, if the build uses <a href=".././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a>, this line is present in this section:</p> 
+       <pre mode="javascript" theme="chrome"><code>$include-ext-grid-panel: true;</code></pre> 
+       <p>If this build does not include <code>Ext.menu.ColorPicker</code> then this line is present:</p> 
+       <pre mode="javascript" theme="chrome"><code>$include-ext-menu-colorpicker: false;</code></pre> 
+       <h2 id="Sharing_a_Theme_Between_Applications">Sharing a Theme Between Applications</h2> 
+       <p>It’s easy to share the theme you’ve just built with a second application. Simply navigate to the “my-workspace” directory and run the following command:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha -sdk ext generate app AnotherApp another-app</code></pre> 
+       <p>This tells Sencha Cmd to generate an app in the “another-app” directory named “AnotherApp” and to use the same Ext JS SDK as the first app you created.</p> 
+       <p>The next step is to tell the app to use the custom theme: Edit “another-app/app.json” and replace the following line:</p> 
+       <pre mode="javascript" theme="chrome"><code>/**
+ * The name of the theme for this application.
+ */
+&quot;theme&quot;: &quot;ext-theme-neptune&quot;,</code></pre> 
+       <p>with:</p> 
+       <pre mode="javascript" theme="chrome"><code>/**
+ * The name of the theme for this application.
+ */
+&quot;theme&quot;: &quot;my-custom-theme&quot;,</code></pre> 
+       <p>Now build the app. From the “another-app” directory run:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app build</code></pre> 
+       <p>Then open “another-app/index.html” page in your browser. You should see a starter app that uses the same custom theme as ThemeDemoApp.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

@@ -1,0 +1,22 @@
+//将面板的第一个元素填充整个容器,此处强调的的是面板
+//将container布局设置为fit是不靠谱的
+
+//Ext.create('Ext.container.Container', {
+Ext.create('Ext.panel.Panel', {
+    title: 'Fit Layout',
+    width: 300,
+    height: 150,
+    layout:'fit',
+    items: [{
+        title: 'Inner Panel',
+        html: 'This is the inner panel content',
+        bodyPadding: 20,
+        border: false
+    },{
+        title: 'Inner Panel2',
+        html: '第二子元素',
+        bodyPadding: 20,
+        border: false
+    }],
+    renderTo: Ext.getBody()
+});

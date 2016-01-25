@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html manifest="">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>htjy</title>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script type="text/javascript" src="/ext/build/ext.js"></script>
+    <script type="text/javascript" src="/ext/build/ext-all.js"></script>
+    <script src="/ext/packages/ext-locale/build/ext-locale-zh_CN.js"></script>
+    <script src="/resources/beautify.js"></script>
+    <script src="/resources/beautify-html.js"></script>
+    <link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />
+    <style>
+    pre,
+    code {
+        display: block;
+        overflow: auto;
+        background: #f4f4f4;
+        padding: 5px 10px;
+        border: 1px solid #eee;
+        word-wrap: break-word;
+        /* Internet Explorer 5.5+ */
+        white-space: pre-wrap;
+        /* Firefox */
+    }
+    </style>
+</head>
+
+<body>
+    
+    <div style="display:none">
+        <div id='default'>
+            <p>容器下才有布局,以下例子使用container(基类)容器进行布局</p>
+            <p>不断的点击｀container基类｀按钮,可以看到id有规则的变化</p>
+        </div>
+        <div id="container">
+            <p>其他布局的基类,严格来说是不允许这种布局的,可以产生仅仅是应该语法没有错误...</p>
+            <p>｀x-container x-container-default｀的风格让我想起了bootstrap或者说oocss</p>
+        </div>
+        <div id='auto'>
+            <p>作为容器可以想到那时对盒子的封装,其分内部包括outerCt和innerCt</p>
+            <p>标准默认布局就是这样,因为defaluts的存在,有时候并不能认为不写layout就是auto布局</p>
+            <p></p>
+        </div>
+        <div id='fit'>
+            <p>fit布局很文静的在基类布局下增加了一个｀x-layout-fit｀</p>
+            <p>fit是用来平铺items第一个组件的布局方式,顺便一提,此处有坑</p>
+        </div>
+        <div id='form'>
+            <p>请允许我称之为｀表单布局｀,想象一下任意一种表单,四四方方,从上往下,一行行的的描述信息</p>
+            <p>form布局就是这样,他是一种横向布局,但是他会将每行的格子撑到最大(每个都一样),以此达到｀四四方方｀的目的</p>
+            <p>相比于默认布局,其在innerCt中增加了formWrap 和labelColumn,从名字是否能够感觉到他的目的?</p>
+        </div>
+        <div id="absolute">
+            <p>绝对布局</p>
+            <p>x-abs-layout-ct</p>
+        </div>
+        <div id="accordion">
+            <p>手风琴</p>
+        </div>
+        <div id="anchor">
+            <p>anchor</p>
+        </div>
+        <div id="border">
+            <p>border</p>
+        </div>
+        <div id="box">
+            <p>box</p>
+        </div>
+        <div id="card">
+            <p>card</p>
+        </div>
+        <div id="checkboxgroup">
+            <p>checkboxgroup</p>
+        </div>
+        <div id="column">
+            <p>column</p>
+        </div>
+        <div id="hbox">
+            <p>hbox</p>
+        </div>
+        <div id="table">
+            <p>table</p>
+        </div><div id="vbox">
+            <p>vbox</p>
+        </div>
+    </div>
+</body>
+<script>
+Ext.define('NavStore', {
+    extend: 'Ext.data.Store',
+    model: 'NavModel',
+    data: [{
+        title: 'container基类',
+        type: "default",
+        code: {
+            items: []
+        }
+    }, {
+        title: '基础布局',
+        type: "container",
+        code: {
+            layout: 'container',
+            items: []
+        }
+    }, {
+        title: '默认布局',
+        type: 'auto',
+        code: {
+            layout: 'auto',
+            items: []
+        }
+    }, {
+        title: 'fit布局',
+        type: 'fit',
+        code: {
+            layout: "fit",
+            items: []
+        }
+    }, {
+        title: 'border',
+        type: 'border',
+        code: {
+            layout: 'border',
+            items: []
+        }
+    }, {
+        title: 'card',
+        type: 'card',
+        code: {
+            layout: 'card',
+            items: []
+        }
+    }, {
+        title: 'form布局',
+        type: 'form',
+        code: {
+            layout: 'form',
+            items: []
+        }
+    }, {
+        title: 'absolute布局',
+        type: 'absolute',
+        code: {
+            layout: 'absolute',
+            items: []
+        }
+    }, {
+        title: '手风琴',
+        type: 'accordion',
+        code: {
+            layout: 'accordion',
+            items: []
+        }
+    }, {
+        title: 'anchor',
+        type: 'anchor',
+        code: {
+            layout: 'anchor',
+            items: []
+        }
+    }, {
+        title: 'box',
+        type: 'box',
+        code: {
+            layout: 'box',
+            items: []
+        }
+    }, {
+        title: 'column',
+        type: 'column',
+        code: {
+            layout: 'column',
+            items: []
+        }
+    }, {
+        title: 'hbox',
+        type: 'hbox',
+        code: {
+            layout: 'hbox',
+            items: []
+        }
+    }, {
+        title: 'vbox',
+        type: 'vbox',
+        code: {
+            layout: 'vbox',
+            items: []
+        }
+    }, {
+        title: 'checkboxgroup',
+        type: 'checkboxgroup',
+        code: {
+            layout: 'checkboxgroup',
+            items: []
+        }
+    }, {
+        title: 'table',
+        type: 'table',
+        code: {
+            layout: 'table',
+            items: []
+        }
+    }]
+});
+
+Ext.onReady(function() {
+    var cardItem = [];
+    var store = Ext.create('NavStore');
+    for (var i = 0; i < store.getCount(); i++) {
+        var data = store.getAt(i);
+        cardItem.push({
+            contentEl: data.get("type"),
+            itemId: data.get("type")
+        })
+    }
+
+    Ext.vp = Ext.create('Ext.container.Container', {
+        renderTo: Ext.getBody(),
+        layout: 'form',
+        items: [{
+            itemId: 'nav',
+            xtype: 'nav'
+        }, {
+            itemId: 'code',
+            xtype: 'textContainer',
+            autoEl: {
+                tag: 'pre'
+            }
+        }, {
+            itemId: 'codeHtml',
+            xtype: 'textContainer',
+            autoEl: {
+                tag: 'pre'
+            }
+        }, {
+            itemId: 'text',
+            xtype: 'container',
+            layout: 'card',
+            items: cardItem
+        }, {
+            itemId: 'template',
+            xtype: 'container'
+        }]
+    });
+
+    var firstBtn = Ext.vp.getComponent('nav').items.items[0];
+    firstBtn.fireEvent('click', firstBtn)
+});
+
+Ext.define('NavModel', {
+    extend: 'Ext.data.Model',
+    fields: ['type', 'code', 'title'],
+    getCodeHtml: function() {
+        //动态获取codehtml
+        var template = Ext.vp.getComponent("template");
+        template.removeAll();
+        var json = this.get('code');
+        template.add(Ext.create('Ext.container.Container', json));
+        var html = Ext.dom.Query.select('[data-ref=innerCt]', template.el.dom)[0].innerHTML;
+        return html;
+    },
+    getCode: function() {
+        return "Ext.create('Ext.container.Container'," + JSON.stringify(this.get('code')) + ")"
+    }
+});
+
+
+
+
+Ext.define('TextContainer', {
+    extend: 'Ext.container.Container',
+    alias: 'widget.textContainer',
+    setText: function(value) {
+        if (!value) {
+            return;
+        }
+        var dom = Ext.dom.Query.select('[data-ref=innerCt]', this.el.dom)[0];
+        if (Ext.typeOf(value) == 'object') {
+            value = JSON.stringify(value);
+            dom.innerText = js_beautify(value);
+        } else if (value[0] != '<') {
+            dom.innerText = js_beautify(value);
+        } else {
+            dom.innerText = html_beautify(value);
+        }
+    }
+})
+
+Ext.define("Nav", {
+    extend: "Ext.container.Container",
+    alias: 'widget.nav',
+    defaults: {
+        xtype: 'button',
+        margin: '0 10 0 0',
+        listeners: {
+            click: function(btn) {
+                var codeCmp = Ext.vp.getComponent("code"),
+                    codeHtmlCmp = Ext.vp.getComponent("codeHtml"),
+                    textCmp = Ext.vp.getComponent("text"),
+                    navCmp = Ext.vp.getComponent("nav"),
+                    store = navCmp.meta.store,
+                    type = btn.meta.type;
+                var record = store.findRecord("type", type);
+                var codeHtml = record.getCodeHtml(),
+                    code = record.getCode();
+
+                codeHtmlCmp.setText(codeHtml);
+                codeCmp.setText(code);
+                textCmp.setActiveItem(type);
+            }
+        },
+    },
+    meta: {
+        store: Ext.create('NavStore')
+    },
+    initComponent: function() {
+        var store = this.meta.store;
+        this.items = [];
+        //初始化导航
+        for (var i = 0; i < store.getCount(); i++) {
+            var data = store.getAt(i);
+            this.items.push({
+                text: store.getAt(i).get("title"),
+                meta: {
+                    type: store.getAt(i).get("type")
+                }
+            })
+        }
+
+        this.callParent(arguments);
+    }
+});
+</script>
+
+</html>

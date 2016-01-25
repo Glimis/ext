@@ -1,0 +1,990 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Ext JS 5 - Upgrade Guide</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#The_Compatibility_Layer" title="The Compatibility Layer">The Compatibility Layer</a> 
+       <a class="toc-page-h3" href="#Default_Compatibility_Checks" title="Default Compatibility Checks">Default Compatibility Checks</a> 
+       <a class="toc-page-h3" href="#Enabling_Compatibility" title="Enabling Compatibility">Enabling Compatibility</a> 
+       <a class="toc-page-h2" href="#Notable_Changes" title="Notable Changes">Notable Changes</a> 
+       <a class="toc-page-h3" href="#Browser_Support" title="Browser Support">Browser Support</a> 
+       <a class="toc-page-h3" href="#Doctype" title="Doctype">Doctype</a> 
+       <a class="toc-page-h3" href="#Distribution" title="Distribution">Distribution</a> 
+       <a class="toc-page-h3" href="#ext__dev_js" title="ext*-dev.js">ext*-dev.js</a> 
+       <a class="toc-page-h3" href="#_theme__js____theme__css" title="{theme}.js / {theme}.css">{theme}.js / {theme}.css</a> 
+       <a class="toc-page-h3" href="#examples_ux" title="examples/ux">examples/ux</a> 
+       <a class="toc-page-h2" href="#Config_System_and_Component" title="Config System and Component">Config System and Component</a> 
+       <a class="toc-page-h2" href="#Declarative_Listeners" title="Declarative Listeners">Declarative Listeners</a> 
+       <a class="toc-page-h2" href="#DomQuery" title="DomQuery">DomQuery</a> 
+       <a class="toc-page-h2" href="#DomHelper" title="DomHelper">DomHelper</a> 
+       <a class="toc-page-h2" href="#ExtraParams" title="ExtraParams">ExtraParams</a> 
+       <a class="toc-page-h2" href="#Grid" title="Grid">Grid</a> 
+       <a class="toc-page-h3" href="#Buffered_rendering" title="Buffered rendering">Buffered rendering</a> 
+       <a class="toc-page-h3" href="#Automatic_layout_on_update" title="Automatic layout on update">Automatic layout on update</a> 
+       <a class="toc-page-h3" href="#Declarative_cell_renderers" title="Declarative cell renderers">Declarative cell renderers</a> 
+       <a class="toc-page-h3" href="#Cell_formatters" title="Cell formatters">Cell formatters</a> 
+       <a class="toc-page-h3" href="#Efficient_cell_updating" title="Efficient cell updating">Efficient cell updating</a> 
+       <a class="toc-page-h3" href="#Throttled_updating" title="Throttled updating">Throttled updating</a> 
+       <a class="toc-page-h3" href="#Widget_column" title="Widget column">Widget column</a> 
+       <a class="toc-page-h3" href="#Deprecated_configs" title="Deprecated configs">Deprecated configs</a> 
+       <a class="toc-page-h2" href="#Grid_Filters" title="Grid Filters">Grid Filters</a> 
+       <a class="toc-page-h2" href="#Charts" title="Charts">Charts</a> 
+       <a class="toc-page-h2" href="#Data" title="Data">Data</a> 
+       <a class="toc-page-h3" href="#Models" title="Models">Models</a> 
+       <a class="toc-page-h4" href="#Properties___Configs" title="Properties / Configs">Properties / Configs</a> 
+       <a class="toc-page-h4" href="#Methods" title="Methods">Methods</a> 
+       <a class="toc-page-h3" href="#Fields" title="Fields">Fields</a> 
+       <a class="toc-page-h3" href="#Stores" title="Stores">Stores</a> 
+       <a class="toc-page-h4" href="#Added" title="Added">Added</a> 
+       <a class="toc-page-h4" href="#Changed" title="Changed">Changed</a> 
+       <a class="toc-page-h4" href="#Deprecated___Removed_" title="Deprecated / Removed:">Deprecated / Removed:</a> 
+       <a class="toc-page-h4" href="#Class_Hierarchy_Changes" title="Class Hierarchy Changes">Class Hierarchy Changes</a> 
+       <a class="toc-page-h3" href="#TreeStore" title="TreeStore">TreeStore</a> 
+       <a class="toc-page-h3" href="#Operation" title="Operation">Operation</a> 
+       <a class="toc-page-h3" href="#Proxy" title="Proxy">Proxy</a> 
+       <a class="toc-page-h3" href="#Reader" title="Reader">Reader</a> 
+       <a class="toc-page-h3" href="#Writer" title="Writer">Writer</a> 
+       <a class="toc-page-h3" href="#Sessions__NEW_" title="Sessions (NEW)">Sessions (NEW)</a> 
+       <a class="toc-page-h3" href="#Schema__NEW_" title="Schema (NEW)">Schema (NEW)</a> 
+       <a class="toc-page-h3" href="#ModelManager__DEPRECATED_" title="ModelManager (DEPRECATED)">ModelManager (DEPRECATED)</a> 
+       <a class="toc-page-h3" href="#Associations" title="Associations">Associations</a> 
+       <a class="toc-page-h3" href="#Ext_data_association____REPLACED_" title="Ext.data.association.* (REPLACED)">Ext.data.association.* (REPLACED)</a> 
+       <a class="toc-page-h2" href="#AbstractElement__REMOVED_" title="AbstractElement (REMOVED)">AbstractElement (REMOVED)</a> 
+       <a class="toc-page-h2" href="#Element" title="Element">Element</a> 
+       <a class="toc-page-h3" href="#Constructor" title="Constructor">Constructor</a> 
+       <a class="toc-page-h3" href="#Ext_get__" title="Ext.get()">Ext.get()</a> 
+       <a class="toc-page-h3" href="#Ext_fly__" title="Ext.fly()">Ext.fly()</a> 
+       <a class="toc-page-h3" href="#Element_create__" title="Element.create()">Element.create()</a> 
+       <a class="toc-page-h3" href="#Element_selection_methods__select__query_" title="Element selection methods (select, query)">Element selection methods (select, query)</a> 
+       <a class="toc-page-h3" href="#Method_Changes" title="Method Changes">Method Changes</a> 
+       <a class="toc-page-h3" href="#Instance_IDs" title="Instance IDs">Instance IDs</a> 
+       <a class="toc-page-h2" href="#EventManager" title="EventManager">EventManager</a> 
+       <a class="toc-page-h2" href="#AbstractComponent__REMOVED_" title="AbstractComponent (REMOVED)">AbstractComponent (REMOVED)</a> 
+       <a class="toc-page-h2" href="#Component" title="Component">Component</a> 
+       <a class="toc-page-h3" href="#Method_Changes" title="Method Changes">Method Changes</a> 
+       <a class="toc-page-h2" href="#AbstractContainer" title="AbstractContainer">AbstractContainer</a> 
+       <a class="toc-page-h2" href="#AbstractPanel" title="AbstractPanel">AbstractPanel</a> 
+       <a class="toc-page-h2" href="#Panel" title="Panel">Panel</a> 
+       <a class="toc-page-h3" href="#Panel_Headers" title="Panel Headers">Panel Headers</a> 
+       <a class="toc-page-h3" href="#Method_Changes" title="Method Changes">Method Changes</a> 
+       <a class="toc-page-h2" href="#Ext_form_Field" title="Ext.form.Field">Ext.form.Field</a> 
+       <a class="toc-page-h2" href="#Ext_form_field_TriggerField" title="Ext.form.field.TriggerField">Ext.form.field.TriggerField</a> 
+       <a class="toc-page-h2" href="#Ext_ComponentManager" title="Ext.ComponentManager">Ext.ComponentManager</a> 
+       <a class="toc-page-h2" href="#Ext_util_Bindable" title="Ext.util.Bindable">Ext.util.Bindable</a> 
+       <a class="toc-page-h2" href="#SASS_Styling_API_changes" title="SASS/Styling API changes">SASS/Styling API changes</a> 
+       <a class="toc-page-h3" href="#Classic_Theme_Overrides" title="Classic Theme Overrides">Classic Theme Overrides</a> 
+       <a class="toc-page-h2" href="#Liquid_Layout_Components" title="Liquid Layout Components">Liquid Layout Components</a> 
+       <a class="toc-page-h2" href="#Keyboard_Navigation_and_Focus_Styling" title="Keyboard Navigation and Focus Styling">Keyboard Navigation and Focus Styling</a> 
+       <a class="toc-page-h2" href="#More_Information" title="More Information">More Information</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Ext JS 5 Upgrade Guide</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>With Ext JS 5, we have tried to maximize backwards compatibility, while:</p> 
+       <ul> 
+        <li>Adding many new features</li> 
+        <li>Streamlining common tasks</li> 
+        <li>Adjusting areas of the framework that have historically caused problems</li> 
+       </ul> 
+       <p>Ext JS 5 introduces support for the MVVM architecture as well as improvements on the (C) in MVC. While we encourage you to investigate and take advantage of these improvements, it is important to note that we have made every effort to ensure existing Ext JS 4 MVC applications continue to function unmodified.</p> 
+       <p>This guide lays out the major areas to be aware of when planning your upgrade to Ext JS 5.</p> 
+       <h2 id="The_Compatibility_Layer">The Compatibility Layer</h2> 
+       <p>The ideal starting point for migrating an existing Ext JS 4.x application to Ext JS 5 is to enable the new compatibility layer. This is similar to the compatibility layer we had for Ext JS 4, except that we have moved the logic into the framework itself. This makes it simpler to enable and disable the compatibility layer. It also helps ensure that it is kept up-to date with the framework during maintenance releases. Sencha Cmd can eliminate all of the overhead when we build <code>ext-all.js</code> or when you build your application. This means the compatibility layer is only “live” during the development phase.</p> 
+       <p>The primary goal of the compatibility layer is to help you identify calls to methods that need attention. This identification comes in the form of console messages and/or descriptive errors. In some cases, the former behavior is also reinstated by the compatibility layer so you can move forward and make those adjustments later in the migration process.</p> 
+       <h3 id="Default_Compatibility_Checks">Default Compatibility Checks</h3> 
+       <p>In development mode, without specifying a compatibility level (see below) you will receive errors if you call a method that has been removed in Ext JS 5. For example, getTriggerWidth() in <a href="../.././apidocs/#!/api/Ext.form.field.Trigger" data-full-load="true">Ext.form.field.Trigger</a> is one such method. When called it will generate the error:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.form.field.Trigger#getTriggerWidth has been deprecated.</code></pre> 
+       <p>By enabling the compatibility layer this error will be turned into a console message and the old behavior restored. When you have resolved all of these issues, you can disable the compatibility layer and you should get no further errors.</p> 
+       <h3 id="Enabling_Compatibility">Enabling Compatibility</h3> 
+       <p>If you are using Sencha Cmd to build your application, you can enable Ext JS 4.2 level compatibility simply set the following property in your application’s app.json:</p> 
+       <pre mode="javascript" theme="chrome"><code>compatibility: {
+    ext: '4.2'
+}</code></pre> 
+       <p>If you do not use Sencha Cmd to build your application, you may specify your “manifest” object before loading the framework:</p> 
+       <pre mode="javascript" theme="chrome"><code>var Ext = Ext || {};
+Ext.manifest = { // the same content as &quot;app.json&quot;
+    compatibility: {
+        ext: '4.2'
+    }
+}</code></pre> 
+       <h2 id="Notable_Changes">Notable Changes</h2> 
+       <h3 id="Browser_Support">Browser Support</h3> 
+       <p>We have removed support for IE6 and IE7. Our Supported browsers are now:</p> 
+       <p><img src="images/ext-js-compatibility.png" /></p> 
+       <ul> 
+        <li>IE8+ (standards mode only)</li> 
+        <li>Firefox (PC &amp; Mac)</li> 
+        <li>Safari 6+</li> 
+        <li>Chrome (PC &amp; Mac)</li> 
+        <li>Opera (PC &amp; Mac)</li> 
+       </ul> 
+       <p><strong>Note:</strong> Ext JS 5 currently does not support phones.</p> 
+       <h3 id="Doctype">Doctype</h3> 
+       <p>The first change to make is adding the DOCTYPE. We recommend the usage of the HTML5 doctype. To ensure the Internet Explorer does not activate “Compatibility Mode”, we also recommend the <code>X-UA-Compatible</code> meta tag. For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</code></pre> 
+       <p>Omitting the doctype is not supported and will result in a non-functioning application on legacy browsers.</p> 
+       <p>We imagine this part of the upgrade should also be relatively straightforward. If your application has a lot of CSS geared specifically at IE6-7, changing the doctype might be a bit more cumbersome.</p> 
+       <h3 id="Distribution">Distribution</h3> 
+       <p>With Ext JS 5, the framework is now contained in a Sencha Cmd package named “ext”. This means we can now automate the download of the framework when you:</p> 
+       <ul> 
+        <li><p><strong>Generate your application.</strong> Just run <code>sencha generate app -ext</code> and Sencha Cmd will download the latest version of Ext JS and use it to generate the application.</p></li> 
+        <li><p><strong>Build your application.</strong> When you commit your app to source control, you can now easily ignore the “ext” folder and <code>sencha app build</code> will download and extract the framework you need.</p></li> 
+        <li><p><strong>Upgrade your application.</strong> Using <code>sencha app upgrade -ext</code>, as with generation, the upgrade process will now download the framework you need</p></li> 
+       </ul> 
+       <p>The move to being a package means the build outputs are stored in a “build” folder. This folder is useful if you want to use Ext JS 5 directly without Sencha Cmd.</p> 
+       <p><img src="images/ext-builds.jpeg" /></p> 
+       <p>The “packages” and “src” folders are used by Sencha Cmd applications to build only what your application requires.</p> 
+       <p>If you are using Sencha Cmd to build your application, please refer to the <a href="./cmd_upgrade_guide.html">Sencha Cmd 5 Upgrade Guide</a>. If not, read on.</p> 
+       <h3 id="ext__dev_js">ext*-dev.js</h3> 
+       <p>Sencha Touch consolidated “-debug” and “-dev” to simply “-debug”. The distinction between these two files created more confusion than benefit. So Ext JS 5 also removes the “-dev” files and the “-debug” files contain the appropriate debug only safety checks.</p> 
+       <h3 id="_theme__js____theme__css">{theme}.js / {theme}.css</h3> 
+       <p>Themes often contain JavaScript overrides to primarily to tune default configs for some components. This requirement was introduced in Ext JS 4.2’s Neptune theme and with Ext JS 5 this will shift to give default status to Neptune. In general, to include the JavaScript portion of a theme, you need a script tag following “ext*.js”:</p> 
+       <pre mode="javascript" theme="chrome"><code>packages/{theme}/build/{theme}(-debug).js</code></pre> 
+       <p>The <code>-debug</code> token is optional and when present it selects the uncompressed JavaScript build of the theme overrides. {theme}.css</p> 
+       <p>The compiled theme files are now present in the following folder off the root of the distribution:</p> 
+       <pre mode="javascript" theme="chrome"><code>packages/{theme}/build/resources/{theme}-all(-rtl)(-debug).css</code></pre> 
+       <p>The “-rtl” and “-debug” tokens are optional. If you need RTL support, add “-rtl”. If you want uncompressed CSS, add “-debug”. You can add either, both or neither.</p> 
+       <h3 id="examples_ux">examples/ux</h3> 
+       <p>The “User eXtensions” are provided as a starting point in building useful components. They are often useful as-is but are intended to serve as examples of how to go beyond the core framework. The ux folder is basically the same as before but will likely be converted into an “ext-ux” package in the near future.</p> 
+       <h2 id="Config_System_and_Component">Config System and Component</h2> 
+       <p>Sencha Touch developers should be intimately familiar with the class definition config syntax. Ext JS 5 extends the config system to make it more backwards compatible and now calls <strong>initConfig</strong> in the Component constructor (before calling initComponent). This change will likely affect custom components that use the config system so be sure to check your components as the timing of config property initialization will likely be different.</p> 
+       <p>Declaring new config properties is the same as always, but derived classes can now set these directly on their class body. This approach allows derived classes to remain compatible with their base class even when the base class converts an old-style property to a config system config property.</p> 
+       <p>One internal change to the config system that will be of benefit to some classes is that a custom set method can now use “callParent” to call the generated set method. Unless the class inherits the set method in which case the generated set method won’t be applied.</p> 
+       <h2 id="Declarative_Listeners">Declarative Listeners</h2> 
+       <p>In prior versions of Ext JS, listeners declared on the class body would be overwritten by listener declarations on subclasses or instance configs.</p> 
+       <p>As of Ext JS 5, listeners declared on the class body will never be overwritten. Instead, listeners defined on suclasses or in instance configs will be added to any existing listeners inherited from superclasses and/or mixins. This enables listeners to be safely defined in a declarative manner. </p> 
+       <p>In the following example all three listeners will be called:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('SuperButton', {
+    extend: 'Ext.button.Button',
+    listeners: {
+        click: function() {
+            console.log('button clicked (superclass handler)');
+        }
+    }
+});
+
+Ext.define('SubButton', {
+    extend: 'SuperButton',
+    listeners: {
+        click: function() {
+            console.log('button clicked (subclass handler)');
+        }
+    }
+});
+
+Ext.create('SubButton', {
+    renderTo: Ext.getBody(),
+    text: 'click me',
+    listeners: {
+        click: function() {
+            console.log('button clicked (instance handler)');
+        }
+    }
+});</code></pre> 
+       <p>Users who were dependent upon the past behavior of declarative listeners that overrode their parent classes’ listeners will need to change their code to override the handler method instead.</p> 
+       <h2 id="DomQuery">DomQuery</h2> 
+       <p>Since all supported browsers now have querySelector(), Ext JS 5 has removed Ext.dom.Query as a default requirement. This means that if you still need to use Ext.dom.Query, you’ll need to include it manually. It is also now recommended that you use only Ext.Element methods, (e.g. select(), selectNode() and query()) rather than relying on Ext.dom.Query directly.</p> 
+       <p>We recommend replacing all usages of Ext.dom.Query, but there are circumstances where it may still be needed. If you may also opt to require Ext.dom.Query at application start. The most likely reasons to continue using Ext.dom.Query would be:</p> 
+       <ul> 
+        <li>Reliance on custom “pseudo” selectors like “:contains”.</li> 
+        <li>Use in Ext.data.reader.Xml.</li> 
+       </ul> 
+       <h2 id="DomHelper">DomHelper</h2> 
+       <p>There is a minor change in DomHelper behavior with regards to generating HTML markup: for element attributes whose values are <code>undefined</code>, no attribute markup will be generated. When a valueless atribute is desired, use an empty string instead:</p> 
+       <pre mode="javascript" theme="chrome"><code>el.createChild({
+    tag: 'div',
+    foo: '',
+    bar: undefined
+});</code></pre> 
+       <p>The new DOM element will look like this: <code>&lt;div foo=&quot;&quot;&gt;&lt;/div&gt;</code>.</p> 
+       <h2 id="ExtraParams">ExtraParams</h2> 
+       <p>Directly setting extraParams on a proxy is no longer the preferred method of appending extraParams in Ext JS 5. Please utilize the setExtraParams() / getExtraParams() methods to get and set your proxy’s extraParams.</p> 
+       <p>For instance:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.Ajax.setExtraParams({
+    foo: &quot;bar&quot;             
+});</code></pre> 
+       <h2 id="Grid">Grid</h2> 
+       <p>In ExtJS 5, each row is a separate table element. This improves browser layout performance.</p> 
+       <h3 id="Buffered_rendering">Buffered rendering</h3> 
+       <p>The “bufferedrenderer” grid plugin is now enabled by default. This means that only the set of visible rows, and a small, configurable zone of extra rows to allow scrolling are rendered. New rows are added when the grid is scrolled. Rows on the trailing edge are removed when they move outside this extra zone.</p> 
+       <p>This can be disabled by setting <code>bufferedRenderer</code> to <code>false</code> on the <code>grid</code>. For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create({
+    xtype: 'grid',
+    bufferedRenderer: false,
+    ...
+});</code></pre> 
+       <h3 id="Automatic_layout_on_update">Automatic layout on update</h3> 
+       <p>Grid row updating does not cause layouts unless there is the possibility of variable row heights. That is, some cells may contain arbitrary HTML such as variable sized fonts, wrapping text or images. <strong>If</strong> any of these are being used, you should configure that column with</p> 
+       <pre mode="javascript" theme="chrome"><code>variableRowHeight: true</code></pre> 
+       <p>If any visible column <em>does</em> specify that it may cause variable row heights, then an update which affects that column will trigger a layout. The layout is required to account for changes in overall height, scrollbar presence and column width (reacting to scrollbar presence).</p> 
+       <h3 id="Declarative_cell_renderers">Declarative cell renderers</h3> 
+       <p>Column cell renderers my now be specified as a string specifying the <strong>name</strong> of a method in the column’s configured <code>scope</code>, or if no scope is specified, in the either the <code>ViewController</code> or the closest ancestor component with <code>defaultListenerScope</code>.</p> 
+       <h3 id="Cell_formatters">Cell formatters</h3> 
+       <p>A cell formatter is specified as a format specification as would be used in a <code>Ext.Template</code> formatted token. For example <code>formatter: 'round(2)'</code> to round numbers to 2 decimal places or <code>formatter: 'date(&quot;Y-m-d&quot;)'</code> to format a Date.</p> 
+       <p>When the value begins with <code>&quot;this.&quot;</code> (for example, <code>&quot;this.foo(2)&quot;</code>), the implied scope on which “foo” is found is the <code>scope</code> config for the column. If the <code>scope</code> is not given, then either the <code>ViewController</code> or the closest ancestor component with <code>defaultListenerScope</code> is assumed to be the object with the method.</p> 
+       <h3 id="Efficient_cell_updating">Efficient cell updating</h3> 
+       <p>Columns may now be configured with an <code>updater</code>. This is a method which is only called when a record is modified and an existing grid row needs to be updated. It is passed the HTML cell element and the new value, and may manipulate the DOM structure in any way.</p> 
+       <p>If any visible columns use a custom renderer which declares extra arguments in addition to the value, then the updater is <strong>not</strong> used since these arguments may be used to affect the generated HTML of a row, therefore a full new HTML row must be rendered, and the renderer will be used.</p> 
+       <h3 id="Throttled_updating">Throttled updating</h3> 
+       <p>If a store is being updated very rapidly, then updates to a view may be throttled so that changes are batched and flushed on a configurable interval. A Grid may be configured with <code>throttledUpdate: true</code> to enable this. By default, the delay between flushes is 200 milliseconds. This is configurable using the <code>updateDelay</code> config.</p> 
+       <h3 id="Widget_column">Widget column</h3> 
+       <p>The <a href="../.././apidocs/#!/api/Ext.grid.column.Widget" data-full-load="true">Ext.grid.column.Widget</a> is a column which may be configured with a config object which contains an xtype. This config object is used to create a Component or Widget in each <strong>rendered</strong> cell of that column.</p> 
+       <p>If the Component has a <code>defaultBindProperty</code>, the column’s <code>dataIndex</code> field is bound to that property, and the Component will be updated whenever that field changes.</p> 
+       <p>Coming soon: Widgets and components in a widget column can use the <code>bind</code> config to bind to a ViewModel which encapsulates the current row’s record.</p> 
+       <h3 id="Deprecated_configs">Deprecated configs</h3> 
+       <ul> 
+        <li>verticalScroller is ignored.</li> 
+       </ul> 
+       <h2 id="Grid_Filters">Grid Filters</h2> 
+       <p>Grid filters have been changed to be a plugin instead of a feature. This means that grids previously using a Grid Filter Feature will need to update the syntax to indicate that grid filter is a plugin. Grid filters will also need to be defined on the column. It is no longer possible to pass them in as a config to the grid filter’s constructor. Grid Filter implementation should now look like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    text: 'Origin',
+    dataIndex: 'origin',
+    filter: {
+        type: 'string',
+        value: 'in'
+    }
+}, {
+    text: 'Age',
+    dataIndex: 'age',
+    filter: {
+        type: 'numeric',
+        value: {
+            gt: 100
+        }
+    }
+}</code></pre> 
+       <p>The <code>type</code> of the filter is deduced from the Model of the Store if there is a field defined by name of the <code>dataIndex</code> given on the column.</p> 
+       <h2 id="Charts">Charts</h2> 
+       <p>We introduced a new, high performance, touch-optimized charts package in Sencha Touch 2.1. We have now enhanced that charts package to work with Ext JS 5 and Sencha Touch. This brings lots of new capabilities, as well as great performance on tablet devices.</p> 
+       <p><img src="images/charts.jpeg" /></p> 
+       <p>The legacy Ext JS 4 charts have been converted into a separate package. This means that you can still use them when upgrading to Ext JS 5 if you’d like to minimize your conversion effort. The process of updating to the new charts package simply requires switching the ext-charts package for the new sencha-charts package. Many of the APIs remain the same. For details on upgrading from Ext JS charts to the new Sencha Charts, see the <a href="./charts_upgrade_guide.html">Charts Guide</a>. </p> 
+       <p>Our current Ext JS charts will remain in the framework for legacy support until Ext JS 5.1 (at the least). However, they will not gain any of the new features or functionality included with Sencha Charts.</p> 
+       <p>While the new charting package has many similarities with the legacy charts, users should expect to find some API differences.</p> 
+       <h2 id="Data">Data</h2> 
+       <h3 id="Models">Models</h3> 
+       <p>The internals of <a href="../.././apidocs/#!/api/Ext.data.Model" data-full-load="true">Ext.data.Model</a> have been heavily optimized to include support for calculated fields, better identity (“id” property) management and undeclared fields.</p> 
+       <p>This last item takes a bit of unpacking. Basically if the following are true for a field then that field no longer has to be listed in the fields array:</p> 
+       <ul> 
+        <li>Needs no conversion beyond deserialization (say from JSON)</li> 
+        <li>Has no default value</li> 
+        <li>Does not need to be validated (at the Model level)</li> 
+       </ul> 
+       <h4 id="Properties___Configs">Properties / Configs</h4> 
+       <ul> 
+        <li><p><strong>data:</strong> In Ext JS 5, undeclared model fields will remain intact where they were previously pruned in Ext 4. This is allows Models to only define the fields that need to be processed in some way.</p></li> 
+        <li><p><strong>raw:</strong> Because of the changes to the data property, there is no longer a separate raw data property tracked on each record. Should your existing applications rely on this previously Reader-generated property, you can approximate the old behavior during the transition with a simple override to copy the data before it is updated:</p> <pre mode="javascript" theme="chrome"><code>Ext.define('App.overrides.data.Model', {
+    override: 'Ext.data.Model',
+    constructor: (data) {
+        this.raw = Ext.apply({}, data);
+        this.callParent(arguments);
+    }
+});</code></pre></li> 
+        <li><p><strong>id / internalId:</strong> When a record is created and no “id” is given, one will be generated. This is handled by the Model’s “identifier” config (from Sencha Touch and formerly “idgen” in Ext JS 4). This is placed as “id” on the record (accessed using “getId”) as well as in the “data” object as the “idProperty”. In Ext JS 4, the id would often be copied to the internalId. This is no longer the case. The internalId is a separately generated value that is unique across all records and should never be changed. The id, however, may be changed.</p></li> 
+        <li><p><strong>clientIdProperty</strong> is now a config for Writer that is used to rename “id” as it is sent to the server for create operations. If now present, the generated “id” will be sent. As with Ext JS 4, the server’s response is used to send back the server-generated id as needed. The id sent to the server is read back using the existing “clientIdProperty” on Model. When using a Session, the “foreign key” fields of all associated records will be updated, if maintained within the same session.</p></li> 
+        <li><p><strong>modified:</strong> <a href="../.././apidocs/#!/api/Ext.data.Model" data-full-load="true">Ext.data.Model</a> previously returned an empty object for the <code>modified</code> property if no records had changed. In Ext JS 5, accessing the Model’s modified property will return <code>undefined</code> if no changed records have been appended. Changes such as these allow the Data package to remain as slim as possible.</p></li> 
+       </ul> 
+       <p>Users should now utilize the model’s “modified” methods to ascertain change. These include: </p> 
+       <ul> 
+        <li>isModified()</li> 
+        <li>getModified()</li> 
+        <li>getChanges()</li> 
+        <li><p><strong>belongsTo:</strong> Deprecated in favor of “reference” config on field. See below.</p></li> 
+        <li><p><strong>hasMany:</strong> Typical use is deprecated in favor of “reference” config on field. See below. The use of hasMany to describe child items that do not contain a foreign key is supported.</p></li> 
+        <li><p><strong>associations:</strong> Same as above since this config is just an alternative way of expressing belongsTo and hasMany.</p></li> 
+        <li><p><strong>persistenceProperty:</strong> This property has been removed.</p></li> 
+        <li><p><strong>validations:</strong> Supported but deprecated for creating validators associated with a single field. For these use the validators config object which is keyed by field name.</p></li> 
+       </ul> 
+       <h4 id="Methods">Methods</h4> 
+       <ul> 
+        <li><p><strong>constructor:</strong> To construct a record, you simply pass the data object. The second argument is the owning Session (see below) and should not be passed by user code - it is intended for use by Session.</p></li> 
+        <li><p><strong>destroy / erase / drop:</strong> There was a conflict between this “destroy” method meaning “remove record on server” and Ext.Base which defines “destroy” for all objects to mean “clean up the local resources used by an object”. For this reason, Sencha Touch renamed Model’s “destroy” method to “erase”. This rename is now part of the merged data package and there is now also a “drop” method that marks the record to be removed, but does not save it immediately. So, “erase” is the same as “drop” then “save”. “destroy” is now inline with the rest of the framework, which means to clean up an object.</p></li> 
+       </ul> 
+       <h3 id="Fields">Fields</h3> 
+       <p>One of the biggest changes to fields is that the various field types are now defined as classes in a small class hierarchy (Ext.data.field.*). Now you can write custom field types and use them in your Models by simply giving them an alias (for example, ‘data.field.foo’) and using that name as the type config on a field (for example, ‘foo’).</p> 
+       <ul> 
+        <li><p><strong>depends:</strong> You can now declare the field names that a “convert” function uses to calculate its value and this field will automatically be updated whenever any of these fields are set.</p></li> 
+        <li><p><strong>calculate:</strong> This new config allows you to write a simple function that produces the value of a field given the record’s data object. Instead of declaring a “convert” function and the “depends” array, this text of this function is parsed to extract the field dependencies.</p></li> 
+        <li><p><strong>reference:</strong> To make it simple to relate one Model with another, when a field contains the id of another record (a “foreign key”), you can add this config and simply give the name of the Model being referenced. This is enough to populate association data for both this Model and the referenced Model.</p></li> 
+        <li><p><strong>validators:</strong> This config is typically used when deriving a custom field type, but this is an easy way to list the rules that describe a valid field value.</p></li> 
+        <li><p><strong>useNull:</strong> This config is now named <strong>allowNull</strong>.</p></li> 
+       </ul> 
+       <p>The ability to derive custom field types replaces the Ext.data.Types static class which has been deprecated.</p> 
+       <h3 id="Stores">Stores</h3> 
+       <p>There are several internal changes to stores in Ext JS 5. Many are inherited from Sencha Touch and others are to support chained stores.</p> 
+       <h4 id="Added">Added</h4> 
+       <ul> 
+        <li><strong>“beginUpdate” / “endUpdate”:</strong> These methods can be called before making multiple changes to a store and after. These translate to new “beginupdate” and “endupdate” events as these transition an internal update counter from or back to 0. This allows views observing the store to defer expensive operations out to the “endupdate” event.</li> 
+       </ul> 
+       <h4 id="Changed">Changed</h4> 
+       <ul> 
+        <li><p><strong>“getById” / “getByInternalId”:</strong> In Ext JS 4, only getByInternalId was a map lookup, and since internalId was not always the same as id, applications needed to call getById. In Ext JS 4 that was a linear search, but in Ext JS 5 both are backed by maps.</p></li> 
+        <li><p><strong>“remove” event:</strong> In Ext JS 4.x, store fired the remove event for every record. However, in Ext JS 5, record removals only fire one event for an array of records.</p></li> 
+        <li><p><strong>“add” event:</strong> Previously the index sent with an add event only matched the first record even if the records were not contiguous. Now the add event is sent once per contiguous range.</p></li> 
+        <li><p><strong>“datachanged” event:</strong> In some cases, previous Ext 4 releases did not always fire this event consistently. Ext 5 now assures that this event is raised for all manual bulk load methods such as “loadData”, “add”, or “insert”. Note that this event is not raised initially when a Store is instantiated with inline data: [ ].</p></li> 
+        <li><p><strong>“destroy” / “destroyStore”:</strong> In ExtJS 4, the “destroy” method was used to send a remote request to the server to delete records. This conflicts with the common usage of “destroy” across the framework to mean to clean up resources. To bring this in line, the “destroy” method now cleans up a store. To send a delete request to the server, the “erase” method (same as model) should be used. “destroyStore” is deprecated.</p></li> 
+       </ul> 
+       <h4 id="Deprecated___Removed_">Deprecated / Removed:</h4> 
+       <ul> 
+        <li><p><strong>“buffered” config:</strong> This config is supported for Ext.create and operator new, but is deprecated. It is recommended to create a buffered store using <code>type: &quot;buffered&quot;</code>. If you are deriving a store from Ext.data.Store, the “buffered” config is not supported. Instead derive from <a href="../.././apidocs/#!/api/Ext.data.BufferedStore" data-full-load="true">Ext.data.BufferedStore</a>. For example, a grid store config:</p> <pre mode="javascript" theme="chrome"><code>store: {
+    type: 'buffered',  // was &quot;buffered: true&quot;,
+    ...
+}</code></pre></li> 
+        <li><p><strong>groupers:</strong> Support for multiple grouping levels was never realized in Ext JS 4 and groupers was really nothing more than extra sorters. This has been replaced by the “grouper” config and the getGroupString method that was previously configured on Store is now configured on the grouper. The internal structures are now much closer to being able to support nested groupers and this config will most likely be restored when that functionality is available.</p></li> 
+       </ul> 
+       <h4 id="Class_Hierarchy_Changes">Class Hierarchy Changes</h4> 
+       <p>If you have written custom Store classes and perhaps used AbstractStore or if you have extended TreeStore, the changes to the Store class hierarchy will probably have some impact. Otherwise, you can probably skip this.</p> 
+       <p>The new classes in the hierarchy (beyond ChainedStore) are the private classes: ProxyStore and LocalStore. While direct use of these is labeled private, their methods and properties are public parts of their derived classes. The ProxyStore class contains those things that manage remoteness, making this class the closest to the AbstractStore from Ext JS 4, while the LocalStore mixin provides the methods for managing a local collection of records.</p> 
+       <p><img src="images/data.jpeg" /></p> 
+       <h3 id="TreeStore">TreeStore</h3> 
+       <p>The change to TreeStore is perhaps more interesting than the others. Now that the TreeStore is the actual record store for a view, your listeners on TreeStore will work, whereas before, listeners often had to be placed on the NodeStore since that was the store connected to the view.</p> 
+       <ul> 
+        <li><p><strong>get/setRootNode:</strong> Supported but deprecated in favor of get/setRoot. This is because “root” is now a config system config property and these are the standard get/set methods.</p></li> 
+        <li><p><strong>load event:</strong> TreeStore load event now dispatches with arguments that match Ext.data.Store. New argument order is [store, records, successful, operation, node]</p></li> 
+       </ul> 
+       <p>Different levels of trees may contain different node types.</p> 
+       <p>The type of node to create may be defined on the store’s model class. A TreeModel (Base class of models to be used in a TreeStore) may be configured with a <code>childType</code> which is the short name of the TreeModel class to be used when reading its child nodes.</p> 
+       <p>Another way to specify the node type to read is by configuring the <code>Reader</code> of the store with a <code>typeProperty</code>. This specifies the property name in incoming raw record data which provides the short name of the TreeModel class to be read.</p> 
+       <p>** node events are no longer relayed unchanged through the TreeStore** This is because the TreeStore is now the View’s driving Store, and events named ‘remove’, ‘insert’, ‘sort’ etc are significant to listening Views because they are native Store events.</p> 
+       <p>Node events are prepended with ‘node’ before being relayed through the TreeStore.</p> 
+       <h3 id="Operation">Operation</h3> 
+       <p><code>Ext.data.Operation</code> has now been split into 4 subclasses, one for each type of CRUD operation. These operation classes should be used in favor of <code>Ext.data.operation.Operation</code> directly.</p> 
+       <h3 id="Proxy">Proxy</h3> 
+       <ul> 
+        <li><p><strong>“destroy” / “erase”:</strong> Similar to model &amp; store, the destroy method has been corrected to mean clean up any resources. To send a delete request to the server, the “erase” method should be used.</p></li> 
+        <li><p><strong>“doRequest”:</strong> Now takes a single argument, an <code>Ext.data.operation.Operation</code>. Callbacks should be attached to operation directly.</p></li> 
+       </ul> 
+       <h3 id="Reader">Reader</h3> 
+       <ul> 
+        <li><strong>root:</strong> Supported but deprecated. Renamed to “rootProperty” for consistency with all other property name configs.</li> 
+       </ul> 
+       <h3 id="Writer">Writer</h3> 
+       <ul> 
+        <li><strong>root:</strong> Supported but deprecated. Renamed to “rootProperty” for consistency with all other property name configs.</li> 
+        <li><strong>writeAllFields:</strong> The default for this config was <code>true</code> and is now <code>false</code> to optimize data transfer. This config is used to tell the <code>Writer</code> to send all fields on an <code>update</code> even if those fields have not changed.</li> 
+       </ul> 
+       <h3 id="Sessions__NEW_">Sessions (NEW)</h3> 
+       <p>The new Session class will help manage editing of multiple records and their associations. If you are manually saving records and stores and have to work out the proper sequence to save all of your edits, the Session class will likely be very helpful. Check out the API documentation on <a href="../.././apidocs/#!/api/Ext.data.Session" data-full-load="true">Ext.data.Session</a> to determine if you might benefit from coordinated Model management.</p> 
+       <h3 id="Schema__NEW_">Schema (NEW)</h3> 
+       <p>Collecting and managing all of your Model definitions and their associations is now handled by the Schema class <a href="../.././apidocs/#!/api/Ext.data.schema.Schema" data-full-load="true">Ext.data.schema.Schema</a>. The Schema class knows, for example, when one class declares an association with another and ensures that both classes are “decorated” with appropriate accessor methods - regardless of the order in which those classes are loaded.</p> 
+       <h3 id="ModelManager__DEPRECATED_">ModelManager (DEPRECATED)</h3> 
+       <p>The Ext.data.ModelManager class is deprecated. Its features have been replaced by Schema.</p> 
+       <h3 id="Associations">Associations</h3> 
+       <p>The way you declare associations has been streamlined. The old syntax is supported but, in many cases, field’s new “reference” config makes the declaration much simpler. Further, Ext JS 5 now supports “many-to-many” associations using the “manyToMany” Model config.</p> 
+       <h3 id="Ext_data_association____REPLACED_">Ext.data.association.* (REPLACED)</h3> 
+       <p>The contents of this namespace have been replaced by Schema. Direct use of these classes in applications is rare and the configs that corresponded to these classes (“belongsTo”, etc) are still supported though most deprecated.</p> 
+       <h2 id="AbstractElement__REMOVED_">AbstractElement (REMOVED)</h2> 
+       <p>This class has been removed and merged with Element (see below).</p> 
+       <h2 id="Element">Element</h2> 
+       <p>The <a href="../.././apidocs/#!/api/Ext.dom.Element" data-full-load="true">Ext.dom.Element</a> class has been merged between Ext JS and Sencha Touch. In this process a handful of methods had to change in mostly minor ways.</p> 
+       <h3 id="Constructor">Constructor</h3> 
+       <p>In Ext JS 4, the Ext.dom.Element constructor would return an element from the element cache, if one existed in the cache, unless “true” was passed as the “forceNew” parameter. As of Ext JS 5 this behavior has changed to always construct a new Ext.dom.Element instance, and the “forceNew” parameter has been removed. This helps avoid a redundant cache lookup, since the most common path is for the Element constructor to be called from Ext.get() which has already performed cache lookup. Users are advised to avoid calling the Ext.dom.Element constructor directly and always use Ext.get() or Ext.fly() if an Element instance is required. The constructor has been tagged as “private” in the docs to reflect this change.</p> 
+       <h3 id="Ext_get__">Ext.get()</h3> 
+       <p>In Ext JS 4 Ext.get() would return null if a DocumentFragment was passed. In Ext JS 5 DocumentFragments are allowed to be wrapped in an Ext.dom.Element instance using Ext.get(), so that they can take full advantage of the Ext.dom.Element API.</p> 
+       <h3 id="Ext_fly__">Ext.fly()</h3> 
+       <p><a href="../.././apidocs/#!/api/Ext.dom.Fly" data-full-load="true">Ext.dom.Fly</a> is now a separate class, and just like Ext.dom.Element it should not be instantiated by calling the constructor. Always use Ext.fly() to retrieve a flyweight element instance. The major change in behavior for flyweight Elements between Ext JS 4 and 5 is that in version 5 you can no longer attach event listeners (addListener and removeListener raise errors in development mode). Always use Ext.get() to retrieve an Element instance if it will be used to attach event listeners. Using Ext.get() adds the Element to the internal Element cache which allows its listeners to be cleansed upon destruction. While adding listeners to flyweight Elements was not recommended in v4, it is now strictly enforced.</p> 
+       <p>Another minor change to the behavior of Ext.fly() is that it will no longer allow text nodes to be wrapped, but will return null if a text node is passsed. This was done for consistency with the behavior of Ext.get().</p> 
+       <h3 id="Element_create__">Element.create()</h3> 
+       <p>In Ext JS 4 Ext.dom.Element inherited the default static create() method generated by the class system. As a result it was possible (though not recommended) to instantiate an Element instance using Ext.dom.Element.create(). Sencha Touch has a private overridden create() method on Ext.dom.Element which is used as part of the rendering process for components. This conflict has been resolved in favor of Sencha Touch. To retrieve an Element wrapping a node or id, use Ext.get() or Ext.fly().</p> 
+       <h3 id="Element_selection_methods__select__query_">Element selection methods (select, query)</h3> 
+       <p>In 4.x the select() and query() methods used Ext.dom.Query under the covers. This was done primarily to allow them to work in older browsers that did not support querySelector and querySelectorAll, but this had the side-effect of enabling a few advanced selectors not supported by the native querySelector and querySelectorAll.</p> 
+       <p>In Ext JS 5 all supported browsers have querySelector and querySelectorAll, and so using Ext.dom.Query for processing element selectors is not typically necessary. As a result, we have changed the select() and query() methods to use querySelector or querySelectorAll, and have removed the requirement of Ext.dom.Query. Users who require the advanced selectors supported by Ext.dom.Query can use Ext.dom.Query directly, or they can restore the old functionality of Ext.dom.Element’s query() and select() methods, using an override such as the following:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('Ext.ElementCompat', {
+    override: 'Ext.dom.Element',
+    requires: [ 'Ext.dom.Query' ],
+
+    select: function(selector, composite) {
+        var elements;
+
+        if (typeof selector == &quot;string&quot;) {
+            elements = Ext.dom.Query.select(selector, this.dom);
+        }
+        else if (selector.length !== undefined) {
+            elements = selector;
+        }
+        return composite ? new Ext.CompositeElement(elements)
+                  : new Ext.CompositeElementLite(elements);
+    }
+}, function(DQ) {
+    Ext.query = function(selector, root, type, single) {
+        return DQ.select(selector, root, type, single);
+    };
+});</code></pre> 
+       <h3 id="Method_Changes">Method Changes</h3> 
+       <ul> 
+        <li>getAttributeNS - deprecated. use getAttribute instead</li> 
+        <li>isDisplayed - deprecated. use isStyle(‘display’, ‘none’) instead.</li> 
+        <li>getStyleSize - deprecated. intended for internal framework use, but unused by the framework</li> 
+        <li>getComputedWidth - deprecated. use getWidth instead.</li> 
+        <li>getComputedHeight - deprecated. use getHeight instead.</li> 
+        <li>setLeftTop - deprecated. use setLocalXY instead</li> 
+        <li>setBounds - deprecated. use setBox instead</li> 
+        <li>isBorderBox - deprecated. since IE6/7 are no longer supported, all browsers use border-box model</li> 
+        <li>relayEvent - removed. Because Ext.Element now derives from Ext.mixin.Observable, this method conflicted with a private relayEvent method in Observable. If relayEvent functionality is needed, use the Observable relayEvents() method.</li> 
+        <li>isTransparent - deprecated</li> 
+        <li>getHTML - deprecated. use getHtml instead</li> 
+        <li>replaceWith - deprecated. use replace() instead.</li> 
+        <li>setRegion - Removed. Use setBox() instead.</li> 
+       </ul> 
+       <p>We have removed the following private or undocumented methods from Ext.dom.Element:</p> 
+       <p><strong>Instance methods:</strong> getViewWidth, getViewHeight, getStyles, addToCache, updateCacheEntry, hasMetrics</p> 
+       <p><strong>Static methods:</strong> addUnits, isAncestor, getX, getY, getXY</p> 
+       <h3 id="Instance_IDs">Instance IDs</h3> 
+       <p>As part of our performance optimization efforts in Ext JS 5, we have removed the overhead for handling identifiers with invalid characters from certain core areas. To help catch such ids before they fail, we have added checks in key places such as <code>Ext.get()</code> and the Ext.Component constructor. These checks use <code>Ext.validIdRe</code>, which is defined as:</p> 
+       <pre mode="javascript" theme="chrome"><code>validIdRe: /^[a-z_][a-z0-9\-_]*$/i</code></pre> 
+       <p>In a nutshell, create ids that adhere to the above regex in order to future-proof your application.</p> 
+       <h2 id="EventManager">EventManager</h2> 
+       <p>The new event system does not utilize Ext.EventManager, and so it has been deprecated. If you are using Ext.EventManager to attach event listeners to Elements please use the Ext.dom.Element (Observable) api instead. For help upgrading legacy applications a deprecated version of Ext.EventManager is provided, but it must be explicitly required since it is no longer used by the framework internally</p> 
+       <h2 id="AbstractComponent__REMOVED_">AbstractComponent (REMOVED)</h2> 
+       <p>This class has been removed and merged with Component (see below).</p> 
+       <h2 id="Component">Component</h2> 
+       <p>The most important change to Component is that the constructor now calls initConfig. Derived classes that use the config system will need to account for the potential change in timing that this may cause. These classes should no longer call initConfig themselves.</p> 
+       <p>As part of the config system support, initConfig for Component actually performs its task two different ways, depending on whether a property is using the config system. Consider this derived component:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('CustomComponent', {
+    extend: 'Ext.Component',
+    config: {
+        foo: 42
+    },
+
+    bar: 'value'
+});
+
+var cc = new CustomComponent({
+    foo: 427,
+    bar: 'other'
+});</code></pre> 
+       <p>It is unlikely that a class would declare two config properties, one using the config system and one not like the above. However, Ext JS components are a mixture like this so it is important to understand how this is processed.</p> 
+       <p>The “foo” value of 427 will be passed to the generated setFoo method during the constructor. If this class had supplied setFoo, applyFoo and/or updateFoo, all of these methods would be called as the config system normally would. The “bar” value of “other”, however, will be set on the instance before the config system properties are processed.</p> 
+       <p>In other words, the config object passed to the constructor is handled in almost the same way as previous versions: properties are copied onto the instance. The only difference is that config system properties are instead passed through the proper setters, appliers and updaters. All of this is handled by initConfig.</p> 
+       <p>Another important change to Component is the removal of the <code>margins</code> config, as well as the <code>defaultMargins</code> config of all container layouts. The <code>margin</code> config is now the only way to configure margins on Components. Applications that previously used <code>margins</code> should change to using <code>margin</code> instead. Applications that used <code>defaultMargins</code> on the layout should instead configure a <code>margin</code> in the Container’s <code>defaults</code> block.</p> 
+       <h3 id="Method_Changes">Method Changes</h3> 
+       <ul> 
+        <li>setRegion - Removed. Use setBox() instead.</li> 
+       </ul> 
+       <h2 id="AbstractContainer">AbstractContainer</h2> 
+       <p>This class has been removed and merged with Container.</p> 
+       <h2 id="AbstractPanel">AbstractPanel</h2> 
+       <p>This class has been removed and merged with Panel.</p> 
+       <h2 id="Panel">Panel</h2> 
+       <h3 id="Panel_Headers">Panel Headers</h3> 
+       <p>Panel Header titles are now instances of <code>Ext.panel.Title</code>. This means additional flexibility in configuring the Header’s title, however, it also means that <code>header.title</code> will refer to an instance of <code>Ext.panel.Title</code> instead of the actual title text. For maximium compatibility the <code>title</code> property of <code>Ext.panel.Panel</code> will still refer to the title text, but applications that use a Header instance to access the title text will need to use <code>header.getTitle().getText()</code>.</p> 
+       <p>Panel Header icons are now part of the Header’s <code>Ext.panel.Title</code> component, and so they no longer participate as an <code>item</code> in the Header. This means that the behavior of <code>titlePosition</code> will off by one compared to version 4 when there is an icon present. Applications that use <code>titlePosition</code> to control the position of the title relative to the icon will need to change to use <code>iconAlign</code> instead.</p> 
+       <h3 id="Method_Changes">Method Changes</h3> 
+       <p>When panels are using inside a Border layout, there are extra methods available. To get along with the config system, two setters were renamed</p> 
+       <ul> 
+        <li>setRegion - This sets the <code>region</code> config. This method should be used instead of setBorderRegion.</li> 
+        <li>setWeight - This sets the <code>weight</code> config. This method should be used instead of setRegionWeight.</li> 
+       </ul> 
+       <h2 id="Ext_form_Field">Ext.form.Field</h2> 
+       <p>Form field layouts underwent a major refactor to take advantage of more advanced CSS features available in IE8+. This enabled us to completely eliminate JavaScript involvement in the layout of the internal elements of form fields, and also resulted in the elimination of the table elements that were used for form field layout in Ext JS 4. The end goal was for the functionality of form fields to remain the same, but there was one minor change in their behavior.</p> 
+       <p>In v4, if the width of the form field’s parent element was smaller than the field’s default width, the form field would become smaller as well, fitting inside the containing element. This allowed configurations such as the following to work:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.panel.Panel', {
+    renderTo: document.body,
+    title: 'Field Test',
+    width: 100,
+    bodyPadding: 10,
+    items: [{
+        xtype: 'textfield',
+        margin: 0
+    }]
+});</code></pre> 
+       <p><img src="images/fields-five.jpeg" /></p> 
+       <p>In v5, the field is not allowed to be smaller than it’s default width, unless a width is configured on the field itself, or set by the containing layout. This means that the above configuration results in a field that overflows outside the container.</p> 
+       <p><img src="images/fields-four.jpeg" /></p> 
+       <p>There are 3 possible solutions to this problem:</p> 
+       <ol> 
+        <li>Set the form field’s width directly using its width config</li> 
+        <li>Use a container layout that sets the width of the field (e.g. ‘anchor’)</li> 
+        <li>Use autoScroll: true on the container if scrolling the field into view is desired.</li> 
+       </ol> 
+       <h2 id="Ext_form_field_TriggerField">Ext.form.field.TriggerField</h2> 
+       <p>This class is deprecated because any text field can now be configured with triggers. These new triggers are much more easily declared and managed (for example, they can easily be shown and hidden as needed). This is a welcome improvement over Ext JS 4 where only TriggerField and derived classes could have triggers, and those triggers were configured in a very rigid manner.</p> 
+       <p>Creating a field with custom triggers is now as simple as:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.form.field.Text', {
+    renderTo: Ext.getBody(),
+    fieldLabel: 'My Custom Field',
+    triggers: {
+        foo: {
+            cls: 'my-foo-trigger',
+            weight: 1, // controls display order
+            hideOnReadOnly: false, //always visible
+            handler: function() {
+                console.log('foo trigger clicked');
+            }
+        },
+        bar: {
+            cls: 'my-bar-trigger',
+            hidden: true,
+            handler: function() {
+                console.log('bar trigger clicked');
+            }
+        }
+    }
+});</code></pre> 
+       <p>Use of “trigger1Cls” and related configs is supported but deprecated in favor of named triggers and their config properties.</p> 
+       <h2 id="Ext_ComponentManager">Ext.ComponentManager</h2> 
+       <p>This class is seldom used directly by applications, but its internals have been streamlined and it no longer provides a HashMap of components. Instead look at the methods this class provides to access the registered components.</p> 
+       <h2 id="Ext_util_Bindable">Ext.util.Bindable</h2> 
+       <p>This class was renamed to <code>Ext.util.StoreHolder</code> to remove confusion with the new <code>Ext.mixin.Bindable</code> that supports data binding. This was intended to be an internal helper class used by various components to add support for a <code>store</code> config and was never intended for public use.</p> 
+       <h2 id="SASS_Styling_API_changes">SASS/Styling API changes</h2> 
+       <p>The experimental <code>$tab-left-rotate-direction</code> and <code>$tab-right-rotate-direction</code> SASS variables were removed in favor of the new <code>rotation</code> config of <code>Ext.tab.Tab</code> and <code>tabRotation</code> config of <code>Ext.tab.Panel</code> and <code>Ext.tab.Bar</code>. The new configs provide much more flexibility in that they allow tabs to be rotated in any direction regardless of which side the tab bar is docked to.</p> 
+       <p>Tab and Button styling was unified to use a common set of rules and a similar API, as a result the <code>$tab-text-padding</code> SASS variable and the <code>$ui-text-padding</code> parameter to the <code>extjs-tab-ui</code> mixin were changed to accept a number, not a list.</p> 
+       <p>Styling of Box layout overflow scrollers for <code>Ext.menu.Menu</code> and <code>Ext.toolbar.Toolbar</code> was changed to use UI-specific path names for the scroller icons. This means that themes that provided their own custom scroller icons for the default UI of Menu or Toolbar will have to rename those images to include the UI name as follows:</p> 
+       <ul> 
+        <li>menu/scroll-bottom.png -&gt; menu/default-scroll-bottom.png</li> 
+        <li>menu/scroll-top.png -&gt; menu/default-scroll-top.png</li> 
+        <li>toolbar/scroll-top.png -&gt; toolbar/default-scroll-top.png</li> 
+        <li>toolbar/scroll-right.png -&gt; toolbar/default-scroll-right.png</li> 
+        <li>toolbar/scroll-bottom.png -&gt; toolbar/default-scroll-bottom.png</li> 
+        <li>toolbar/scroll-left.png -&gt; toolbar/default-scroll-left.png</li> 
+       </ul> 
+       <p>Panel headers now support an <code>iconAlign</code> config, and this alignment is relative to the header’s title. This means that the icon is no longer a separate component in the panel header, but instead it is part of the <code>Ext.panel.Title</code> component. As a result, when headers are rotated vertically, the title and icon are both rotated (previously only the title would be rotated, and the icon would not be rotated).</p> 
+       <p>As part of the effort to simplify Panel Header markup, the “body” element of Panel Headers was removed. For consistency, the <code>$tip-header-body-padding</code> SASS variable was renamed to <code>$tip-header-padding</code>, and the <code>$ui-header-body-padding</code> parameter of the <code>extjs-tip-ui()</code> SASS mixin was renamed to <code>$ui-header-padding</code>.</p> 
+       <p>For consistency with the new form-field SASS mixins the following SASS variables were removed:</p> 
+       <ul> 
+        <li><code>$form-field-font</code></li> 
+        <li><code>$form-toolbar-field-font</code></li> 
+       </ul> 
+       <p>Use <code>$form-field-font-size</code>, <code>$form-field-font-family</code>, etc. instead.</p> 
+       <h3 id="Classic_Theme_Overrides">Classic Theme Overrides</h3> 
+       <p>The classic theme now contains overrides for several classes. Users of ext-theme-classic and ext-theme-gray themes who are not using Sencha Cmd to build their apps will need to include ext-theme-classic.js or ext-theme-gray.js in order for those themes to work as they did in version 4. This portion of the upgrade will be seamless for users who use Sencha Cmd to build their apps, since Cmd automatically includes theme overrides.</p> 
+       <h2 id="Liquid_Layout_Components">Liquid Layout Components</h2> 
+       <p>In Ext JS 5 form fields and buttons use “liquid” CSS layout. This means that their layouts are achieved using CSS only with no JavaScript intervention needed. When these “liquid layout” components are used in certain container layouts like “form” and “auto”, the layout engine can completely skip their layout runs. The side effect of this new behavior is that application developers can no longer rely on the <code>afterLayout</code> and <code>onBoxReady</code> template methods of Buttons and Form Fields. We recommend using <code>afterRender</code> instead.</p> 
+       <h2 id="Keyboard_Navigation_and_Focus_Styling">Keyboard Navigation and Focus Styling</h2> 
+       <p>One of the biggest improvements in Ext JS 5.0.1 is better support for keyboard navigation, a key feature of any accessible application. Perhaps the most commonly cited reason for making an application keyboard-navigable is accessibility, or ARIA support. However, many users accustomed to using the keyboard will find keyboard navigation to be a generally useful productivity feature. The main goal of keyboard navigation support is for all functionality to be accessible using the keyboard, and this means every actionable element must be focusable, and have a distinct focus style.</p> 
+       <p>We expect support for keyboard navigation to be a welcome change for many applications, making them more accessible to more users. At the same time, we understand that all applications have different needs and requirements. In some cases, the default focus styling may not be desired, so we have provided the ability to customize the focus styling of any component using a robust API of SASS variables and mixins.</p> 
+       <p>Check out our <a href="../../core_concepts/accessibility.html#Focus_styling">Accessibility Guide</a> to learn more about changing focus styling in your application.</p> 
+       <h2 id="More_Information">More Information</h2> 
+       <p>For more information about the Upgrade process, please check out these guides:</p> 
+       <ul> 
+        <li><a href="/cmd/5.x/cmd_upgrade_guide.html">Cmd - Upgrade Guide</a></li> 
+        <li><a href="./charts_upgrade_guide.html">Charts - Upgrade Guide</a></li> 
+       </ul> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

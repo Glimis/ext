@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<html manifest="">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>htjy</title>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
+    <link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />
+    <script type="text/javascript" src="/ext/build/ext-all-rtl-debug.js"></script>
+    <!-- // <script src="/resources/ace/build/src/ext-static_highlight.js"></script> -->
+    <script src="/resources/ace/build/src/ace.js"></script>
+    <!-- // <script src="/ext/src/ux/IFrame.js"></script> -->
+    <style>
+    ul,
+    li {
+        list-style: none
+    }
+    
+    li a {
+        text-decoration: none;
+        color: #767676;
+    }
+    
+    li a:hover {
+        color: #563d7c;
+    }
+    
+    li a.active {
+        color: #47a2d9;
+    }
+    </style>
+</head>
+
+<body>
+    <script>
+    Ext.define("app.ace", {
+        extend: 'Ext.Component',
+        alias: "widget.ace",
+        width: '100%',
+        // height: '100%',
+        mode: "ace/mode/javascript",
+        style:{
+              border: "1px solid black"
+          },
+        listeners: {
+            boxready: function(component) {
+                var mode = component.mode;
+                var id = component.id;
+                var editor = this.editor = ace.edit(id);
+                editor.setTheme("ace/theme/tomorrow");
+                editor.getSession().setMode(mode);
+                editor.setShowPrintMargin(false);
+                  editor.setOption("maxLines", 100);
+                if (this.commands) {
+                    editor.commands.addCommand(this.commands);
+                }
+            }
+        },
+        getValue: function() {
+            return this.editor.getValue();
+        },
+        setValue: function(val) {
+            this.editor.setValue(val || '');
+            this.editor.gotoLine(0);
+        }
+    });
+
+    Ext.define('app.Image', {
+        extend: 'Ext.data.Model',
+        fields: [{
+            name: 'src',
+            type: 'string'
+        }, {
+            name: 'caption',
+            type: 'string'
+        }]
+    });
+
+
+    var data = [{
+        title: "基础组件",
+        children: [{
+            caption: 'component',
+            describe: '所有组件的基础',
+            hash: "/component/component",
+            api: '/api/component.html'
+        }, {
+            caption: 'button',
+            describe: '按钮',
+            hash: "/component/button"
+        }, {
+            caption: 'cycle',
+            describe: '循环按钮',
+            hash: "/component/cycle"
+        }, {
+            caption: 'colorpicker',
+            describe: '颜色调色板',
+            hash: "/component/colorpicker"
+        }, {
+            caption: 'datepicker',
+            describe: '日期选择器',
+            hash: "/component/datepicker"
+        }, {
+            caption: 'editor',
+            describe: '编辑框',
+            hash: "/component/editor"
+        }, {
+            caption: 'menu',
+            describe: '菜单',
+            hash: "/component/menu"
+
+        }, {
+            caption: 'toolbar',
+            describe: '工具栏类',
+            hash: "/component/toolbar"
+
+        }]
+    }, {
+        title: "布局",
+        children: [{
+            caption: 'border',
+            describe: 'border',
+            hash: "layout/border"
+        }, {
+            caption: 'fit',
+            describe: 'fit',
+            hash: "layout/fit"
+        }, {
+            caption: 'form',
+            describe: 'form',
+            hash: "layout/form"
+        }, {
+            caption: 'card',
+            describe: 'card',
+            hash: "layout/card"
+        },{
+             caption: 'accordion',
+            describe: 'accordion',
+            hash: "layout/accordion"
+        },{
+             caption: 'anchor',
+            describe: 'anchor',
+            hash: "layout/anchor"
+        },{
+             caption: 'hbox',
+            describe: 'hbox',
+            hash: "layout/hbox"
+        },{
+             caption: 'vbox',
+            describe: 'vbox',
+            hash: "layout/vbox"
+        }]
+    }, {
+        title: "数据交互",
+        children: [{
+            caption: 'connect',
+            describe: '',
+            hash:'/http/connection'
+        }, {
+            caption: 'ajax',
+            describe: '',
+            hash:'/http/ajax'
+        },{
+            caption: 'model',
+            describe: '',
+            hash: "http/model"
+        }, {
+            caption: 'store',
+            hash: "http/models.json"
+        }, {
+            caption: 'proxy',
+            describe: ''
+        }]
+    }, {
+        title: "复杂组件",
+        children: [{
+            caption: 'form',
+            describe: '表单',
+            hash: "form"
+        }, {
+            caption: 'grid',
+            describe: ''
+        }]
+    }, {
+        title: "自定义组件",
+        children: [{
+            caption: 'tpl',
+            describe: ''
+        }, {
+            caption: 'dataview',
+            describe: ''
+        }]
+    }, {
+        title: "mvc架构",
+        children: [{
+            caption: 'application',
+            describe: ''
+        }, {
+            caption: 'model',
+            describe: ''
+        }, {
+            caption: 'view',
+            describe: ''
+        }, {
+            caption: 'controller',
+            describe: ''
+        }]
+    }, {
+        title: "chart图",
+        children: [{
+            caption: 'chart',
+            describe: ''
+        }]
+    }, {
+        title: "js增强",
+        children: [{
+            caption: 'json',
+            describe: '',
+            hash:'singleton/json'
+        },{
+            caption: 'number',
+            describe: '',
+            hash:'singleton/number'
+        }]
+    }, {
+        title: "组件生成与查询",
+        children: [{
+            caption: 'tpl',
+            describe: '',
+            hash:'create/tpl'
+        },{
+            caption: 'renderTpl',
+            describe: '',
+            hash:'create/renderTpl'
+        },{
+            caption: 'query',
+            describe: '',
+            hash:'create/query'
+        }]
+    }]
+
+
+    var navtpl = new Ext.XTemplate(
+        '<tpl for="." >',
+        '<ul class="viewh">{title}</ul>',
+        '<hr>',
+        '<li>',
+        '<ul >',
+        '<tpl for="children">',
+        '<a class="aaa" href="#type={hash}"><li>{caption}</li></a>',
+        '</tpl>',
+        '</ul>',
+        '</li>',
+        '</tpl>'
+    );
+
+
+    Ext.define("app.nav", {
+        extend: 'Ext.Component',
+        alias: "widget.nav",
+        style: {
+            'background-color': 'white'
+        },
+        tpl: navtpl,
+        // store: Ext.data.StoreManager.lookup('navStore'),
+        // itemSelector: 'div',
+        data: data,
+        autoScroll: true,
+        listeners: {
+            itemclick: function(cmp, mode, el) {
+
+                console.log(cmp)
+            }
+        }
+    })
+
+    Ext.Loader.setPath('Ext', "/ext/src/");
+    Ext.require('Ext.ux.IFrame');
+    window.onhashchange = function() {
+
+        var splits = window.location.hash.match(/[#&]type=([^&]*)/);
+        if (splits && splits.length == 2) {
+            Ext.vp.load('/template/' + splits[1] + '.vm');
+        }
+    }
+    Ext.onReady(function() {
+
+        Ext.create('Ext.container.Viewport', {
+
+            getJavascriptEdit: function() {
+                return Ext.ComponentQuery.query('#javascript', this)[0]
+            },
+            getCssEdit: function() {
+                return Ext.ComponentQuery.query('#css', this)[0]
+            },
+            getHtmlEdit: function() {
+                return Ext.ComponentQuery.query('#html', this)[0]
+            },
+            getIframe: function() {
+                return Ext.ComponentQuery.query('#iframe', this)[0]
+            },
+            flush: function(js) {
+                this.getJavascriptEdit().setValue(js);
+                this.getCssEdit().setValue(['.warning { background-color: #fcf8e3; }', '.danger { background-color: #f2dede; }', '.info { background-color: #d9edf7; }', '.success { background-color: #dff0d8; } ', '.active { background-color: #f5f5f5; }'].join("\n"));
+                this.getHtmlEdit().setValue("<div id='test'></div>");
+                Ext.vp.down("toolbar").fireEvent("run")
+            },
+            load: function(src) {
+                var me = this;
+                Ext.Ajax.request({
+                    url: src,
+                    success: function(response) {
+                        var js = response.responseText;
+                        me.flush(js);
+                    }
+                });
+            },
+            listeners: {
+                boxready: function(vp) {
+                    Ext.vp = vp;
+                    window.onhashchange();
+                }
+            },
+            layout: 'border',
+            items: [{
+                region: 'west',
+                width: 250,
+                xtype: 'nav'
+            }, {
+                region: 'center',
+                layout: 'vbox',
+                defaults: {
+                    width: '100%',
+                    border: 0
+                },
+                items: [{
+                    height: 30,
+                    xtype: 'toolbar',
+                    items: [{
+                            text: '运行(ctrl+s)',
+                            handler: function(btn) {
+                                btn.ownerCt.fireEvent("run", btn);
+                            }
+                        },
+                        //  
+                        // {
+                        //     xtype: 'menu',
+                        //     floating: false, 
+                        //     text: '分割按钮',
+                        //     items: [{
+                        //         text: 'regular item 1'
+                        //     }, {
+                        //         text: 'regular item 2'
+                        //     }, {
+                        //         text: 'regular item 3'
+                        //     }]
+                        // },
+                        '->', {
+                            text: '运行'
+                        }
+                    ],
+                    listeners: {
+                        /**
+                         * 运行配置信息
+                         * @return {[type]} [description]
+                         */
+                        run: function(btn, e) {
+                            var cssVal = Ext.vp.getCssEdit().getValue(),
+                                jsVal = Ext.vp.getJavascriptEdit().getValue(),
+                                htmlVal = Ext.vp.getHtmlEdit().getValue(),
+                                iframe = Ext.vp.getIframe(),
+                                headers = this.getHeaders();
+                            jsVal = 'Ext.onReady(function() {try{' + jsVal + '}catch(e){console.log(e);Ext.getBody().setHtml(e.message)}})';
+
+                            // iframe.write(headers, cssVal, jsVal, htmlVal);
+                            iframe.removeAll();
+                            iframe.add(Ext.create("Ext.ux.IFrame", {
+                                listeners: {
+                                    boxready: function(vp) {
+                                        var doc = this.getDoc();
+                                        var vals = ['<html>', '<head>', headers.join(""), '<style>', cssVal, '</style>', '<script>', jsVal, '<\/script>', '</head>', '<body>', htmlVal, '</body>', '</html>'];
+                                        doc.open();
+                                        doc.write(vals.join(""));
+                                        doc.close();
+                                    }
+                                }
+                            }));
+
+                        }
+                    },
+                    getHeaders: function() {
+                        return ['<script type="text/javascript" src="/ext/build/ext.js"><\/script>', '<script type="text/javascript" src="/ext/build/ext-all.js"><\/script>', '<script src="/ext/packages/ext-locale/build/ext-locale-zh_CN.js"><\/script>', '<link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />', '<link rel="stylesheet" href="../css/font-awesome.min.css">'];;
+                    }
+                }, {
+                    flex: 3,
+                    layout: 'hbox',
+                    defaults: {
+                        height: '100%',
+                        padding: 10
+                    },
+                    items: [{
+                        flex: 1,
+                        items: [{
+                            xtype: 'ace',
+                            itemId: 'javascript',
+                            mode: 'ace/mode/javascript',
+                            commands: {
+                                name: 'run',
+                                bindKey: {
+                                    win: 'Ctrl-S',
+                                    mac: 'Command-S'
+                                },
+                                exec: function(editor) {
+                                    Ext.vp.down("toolbar").fireEvent("run");
+                                },
+                                readOnly: true
+                            }
+                        }]
+                    }, {
+                        itemId: 'iframe',
+                        flex: 1,
+                       
+                        layout:'fit'
+                    }]
+                }, {
+                    flex: 1,
+                    layout: 'hbox',
+                    defaults: {
+                        height: '100%',
+                        padding: 10
+                    },
+                    items: [{
+                        flex: 1,
+                        items: {
+                            itemId: 'html',
+                            xtype: 'ace',
+                            mode: 'ace/mode/html'
+                        }
+                    }, {
+
+                        flex: 1,
+                        items: {
+                            itemId: 'css',
+                            xtype: 'ace',
+                            mode: 'ace/mode/css'
+                        }
+                    }]
+                }]
+            }]
+        });
+
+
+    })
+    </script>
+</body>
+
+</html>

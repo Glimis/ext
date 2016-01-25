@@ -1,0 +1,10 @@
+Ext.onReady(function() {
+    var editor = new Ext.Editor({
+        updateEl: true, // update the innerHTML of the bound element when editing completes
+        field: {
+            xtype: 'textfield'
+        }
+    });
+    var el = Ext.get('test'); // The element to 'edit'
+    editor.startEdit(el);
+})

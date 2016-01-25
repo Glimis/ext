@@ -1,0 +1,540 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Accessibility</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Overview_of_Accessibility" title="Overview of Accessibility">Overview of Accessibility</a> 
+       <a class="toc-page-h2" href="#Accessibility_in_Ext_JS" title="Accessibility in Ext JS">Accessibility in Ext JS</a> 
+       <a class="toc-page-h3" href="#Focus_styling" title="Focus styling">Focus styling</a> 
+       <a class="toc-page-h4" href="#Buttons" title="Buttons">Buttons</a> 
+       <a class="toc-page-h4" href="#Tabs" title="Tabs">Tabs</a> 
+       <a class="toc-page-h4" href="#Grids" title="Grids">Grids</a> 
+       <a class="toc-page-h4" href="#Customizing_Focus_Styling" title="Customizing Focus Styling">Customizing Focus Styling</a> 
+       <a class="toc-page-h3" href="#Keyboard_Navigation" title="Keyboard Navigation">Keyboard Navigation</a> 
+       <a class="toc-page-h3" href="#DOM_attributes" title="DOM attributes">DOM attributes</a> 
+       <a class="toc-page-h4" href="#ARIA_Roles" title="ARIA Roles">ARIA Roles</a> 
+       <a class="toc-page-h4" href="#ARIA_States_and_Properties" title="ARIA States and Properties">ARIA States and Properties</a> 
+       <a class="toc-page-h2" href="#ARIA_Package" title="ARIA Package">ARIA Package</a> 
+       <a class="toc-page-h2" href="#ARIA_Theme" title="ARIA Theme">ARIA Theme</a> 
+       <a class="toc-page-h2" href="#Conclusion" title="Conclusion">Conclusion</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Introduction to Accessibility</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>Ext JS 5.0.1 makes it possible to create highly accessible JavaScript applications by providing the tools that developers need to achieve <a href="http://www.section508.gov/">Section 508</a> and <a href="http://www.w3.org/WAI/intro/aria">ARIA compliance</a>. Ext JS makes it easy for application developers to create UIs that are usable by people using assistive technologies to navigate the web.</p> 
+       <h2 id="Overview_of_Accessibility">Overview of Accessibility</h2> 
+       <p>What does software accessibility mean? In general, accessibility means that the functionality and content of an application is available to:</p> 
+       <ul> 
+        <li>Those with disabilities, especially the visually impaired</li> 
+        <li>Those who rely on assistive technologies, such as screen readers, to use a computer</li> 
+        <li>Those who cannot use a mouse to navigate an application</li> 
+       </ul> 
+       <p>In 1998, the United States Congress passed the “<a href="http://www.section508.gov/">Section 508 Amendment to the Rehabilitation Act of 1973</a>”, more commonly known as “Section 508”. Section 508 requires Federal agencies to make all electronic information readily available to people with disabilities. Section 508 accessibility is a requirement for anyone producing applications for U.S. government agencies. </p> 
+       <p>However, accessibility is beneficial to all applications since the additional features enable them to reach a larger number of users. Web applications can make significant steps toward achieving compliance with Section 508 by following the guidelines spelled out in the <a href="http://www.w3.org/WAI/">Web Accessibility Initiative’s</a> “Accessible Rich Internet Applications Suite”, otherwise known as <a href="http://www.w3.org/WAI/intro/aria">WAI-ARIA</a> or just “ARIA”.</p> 
+       <h2 id="Accessibility_in_Ext_JS">Accessibility in Ext JS</h2> 
+       <p>Thanks to Ext JS’s built-in tab indexing and focus-ability, your browser should tab and focus as you would expect. With this approach, we are able to translate components into items that the browser understands for default keyboard navigable behavior.</p> 
+       <p>Accessibility support in Ext JS is designed with two major goals in mind, keyboard navigation via focus, and DOM attributes. </p> 
+       <p>As of Ext JS 5.0.1, the focus and keyboard navigation functionality is “always on” due to the class-level property known as <code>focusable</code>. This allows all keyboard enabled components to interact with the user when tabbed into. </p> 
+       <p>What this all really means is that focus is part of every application without any additional modifications needed by the developer.</p> 
+       <h3 id="Focus_styling">Focus styling</h3> 
+       <p>Focus styling can be described as a method of visually indicating that an element is prepared to accept keyboard events or other user inputs. This is valuable (and necessary) for accessibility and power users that heavily rely upon keyboard navigation.</p> 
+       <p>The framework provides a clear indication of the currently focused component, which updates as the focused component is changed. This indication will generally be seen as an inner border and/or body border on the focused element. This may vary slightly depending on your application’s theme. To give you control over these visual aspects, you have control over multiple Sass variables and mixin parameters related to focus.</p> 
+       <h4 id="Buttons">Buttons</h4> 
+       <p>In previous releases, button focus styling was identical to hover styling, and was a source of confusion for some users. In 5.0.1 we changed buttons to use “inner” bordering to indicate focus. This takes the form of a 1px solid border directly inside the button’s outer border in Neptune and Crisp themes.</p> 
+       <p><img src="images/crisp_button.jpeg" /></p> 
+       <p>In Classic themes, the focus border is rendered as a dotted outline around the button’s inner element, similar to the classic “Windows” look.</p> 
+       <p><img src="images/classic_button.jpeg" /></p> 
+       <p>You may need to control the styling of a focused button when it is hovered or pressed separately from the default hover state. To accommodate this, we’ve added SASS variables for 2 additional button states - “focus-over” and “focus-pressed”.</p> 
+       <h4 id="Tabs">Tabs</h4> 
+       <p>Tabs have not historically had a visual indication of focus. As of Ext JS 5.0.1, Tabs are treated similarly to buttons. Focus comes in the form of a solid inner border in Neptune/Crisp themes and a dotted body outline in Classic.</p> 
+       <p>Crisp:</p> 
+       <p><img src="images/crisp_tab.jpeg" /></p> 
+       <p>Classic:</p> 
+       <p><img src="images/classic_tab.jpeg" /></p> 
+       <p>Just as with Buttons, Tabs have SASS variables for controlling 2 additional focus states - “focus-over” and “focus-active”.</p> 
+       <h4 id="Grids">Grids</h4> 
+       <p>The focused grid cell also contains a distinct focus border as seen below:</p> 
+       <p><img src="images/row_focus.jpeg" /></p> 
+       <p>Additionally, grid column headers can also be independently focused as seen below:</p> 
+       <p><img src="images/header_focus.jpeg" /></p> 
+       <h4 id="Customizing_Focus_Styling">Customizing Focus Styling</h4> 
+       <p>We expect support for keyboard navigation to be a welcome change for many applications, making them more accessible to more users. At the same time, we understand that all applications have different needs and requirements. In some cases, the default focus styling may not be desired, so we have provided the ability to customize the focus styling of any component using a robust API of SASS variables and mixins.</p> 
+       <p>All of the variables having to do with focus styling will have the word “focus” in their name, so they should be easy to locate in the documentation. Simply navigate to the class documentation for the component you wish to style and scroll down to the “CSS Variables” section. </p> 
+       <p>For example, to style the color of the focus border for the “default” button UI, one would use the $button-default-inner-border-color-focus SASS variable. For more information on how to use SASS in your application please refer to the <a href="./theming.html">Theming Guide</a></p> 
+       <h3 id="Keyboard_Navigation">Keyboard Navigation</h3> 
+       <p>Your application’s focusable components are fully navigable using the keyboard without mouse interaction. In terms of Ext JS, this means that pressing Tab key will advance focus beginning with the URL bar to the next focusable item within your application document’s body. </p> 
+       <p>However certain containers such as toolbars have slightly different behavior. The tab key will advance focus between toolbars, and arrow keys will move focus within the toolbar. This is how WAI-ARIA standard helps to ensure better usability by avoiding the need to press Tab key excessively.</p> 
+       <p>For this example, let’s look at two toolbars containing multiple buttons, which are an example of focusable items. </p> 
+       <p><img src="images/tabbars.jpeg" /></p> 
+       <p>Tabbing into Toolbar 1 will focus Button 1 as seen above. Continued tabbing will advance focus to the next component containing a focusable item. In this case, the next focusable item, Button A, lives within Toolbar 2. Focusable items may be buttons, tabs, form fields, grids, etc.</p> 
+       <p>Alternatively, “shift + tab” will follow the tabindex in reverse order, abiding by the same rules as above. As an example, performing a “shift + tab” within Toolbar 2 will return focus to Toolbar 1.</p> 
+       <p>Upon entering one of the above toolbars, you may also use your arrow keys to navigate between buttons. Your arrow keys will loop through all of the buttons within the toolbar. Upon reaching Button 4, focus will loop back to Button 1. </p> 
+       <p>If you use your tab key to leave a toolbar, and then “shift + tab” back to said toolbar, the framework will restore focus to the previously focused button. This creates a form of state within your toolbar and other focusable containers.</p> 
+       <p><strong>Note:</strong> Upon entering an input field, arrow key navigation will only operate within said field. Tab or Shift-Tab key press will then be necessary to exit the field.</p> 
+       <h3 id="DOM_attributes">DOM attributes</h3> 
+       <p>A Component’s DOM elements should use attributes that provide semantic information regarding the elements’ type, state, and description. These attributes are used by assistive technologies, such as screen readers, to provide verbal cues to the user and can be categorized into two separate groups:</p> 
+       <h4 id="ARIA_Roles">ARIA Roles</h4> 
+       <p><a href="http://www.w3.org/TR/wai-aria/roles">ARIA roles</a> are the main indicator of a Component or Element’s type. Roles are constant and do not change as the user interacts with a Component. The most commonly used ARIA Roles in Ext JS are Widget Roles. Many of these <a href="http://www.w3.org/TR/wai-aria/roles#widget_roles">Widget Roles</a> directly correspond to Ext JS components. Some examples of widget roles are:</p> 
+       <ul> 
+        <li>Toolbars</li> 
+        <li>Tab bars and tabs</li> 
+        <li>Checkboxes</li> 
+        <li>Radio Buttons</li> 
+        <li>Buttons</li> 
+        <li>Breadcrumb Groups</li> 
+       </ul> 
+       <h4 id="ARIA_States_and_Properties">ARIA States and Properties</h4> 
+       <p>DOM attributes are attributes that may change in response to user interaction or application state. An example of an <a href="http://www.w3.org/TR/wai-aria/states_and_properties">ARIA State</a> is the “aria-checked” attribute that is applied to a checkbox component when it is checked by the user. Likewise, an example of an ARIA Property is the “aria-invalid” property of a form field, which may be dynamically changed based on validation or user input.</p> 
+       <p>We’ll talk about enabling ARIA States and Properties in the ARIA package section below.</p> 
+       <h2 id="ARIA_Package">ARIA Package</h2> 
+       <p>The “ext-aria” package is a separate Cmd package that provides support for <a href="http://www.w3.org/TR/wai-aria/states_and_properties">ARIA States and Properties</a>. The ‘ext-aria’ package can be include in the app.json requires block like any other package. </p> 
+       <p>For instance: </p> 
+       <pre mode="javascript" theme="chrome"><code>&quot;requires&quot;: [
+    &quot;ext-aria&quot;
+],</code></pre> 
+       <p>Once you’ve modified your application’s <code>app.json</code> file, simply rebuild the application. After building, your components should contain the ARIA states and properties described above.</p> 
+       <p>That said, It may not be necessary to directly require the “ext-aria” package if your are utilizing the “ext-theme-aria” theme. ‘ext-theme-aria’ requires the ‘ext-aria’ package by default. We’ll discuss implementing ‘ext-theme-aria’ in the next section.</p> 
+       <p><strong>Note:</strong> If you’re not familiar with building an application as described above, please visit our <a href="../getting_started/getting_started.html">Getting Started guide</a> for more information.</p> 
+       <h2 id="ARIA_Theme">ARIA Theme</h2> 
+       <p>‘ext-theme-aria’ is a high-contrast theme that makes applications easier for visually impaired users to view. ‘ext-theme-aria’ can be used out of the box, or extended to create a customized look and feel.</p> 
+       <p>To incorporate the Ext JS ARIA theme into your application, simply modify the theme block in <code>app.json</code>. For instance:</p> 
+       <pre mode="javascript" theme="chrome"><code>/**
+ * The name of the theme for this application.
+ */
+&quot;theme&quot;: &quot;ext-theme-neptune&quot;,</code></pre> 
+       <p>Should become:</p> 
+       <pre mode="javascript" theme="chrome"><code>/**
+ * The name of the theme for this application.
+ */
+&quot;theme&quot;: &quot;ext-theme-aria&quot;,</code></pre> 
+       <p>Once you’ve modified your application’s <code>app.json</code> file, simply rebuild the application. After building, your application should be utilizing the ‘ext-theme-aria’ theme as seen below:</p> 
+       <p><img src="images/aria_theme.jpeg" /></p> 
+       <p>For information about custom theming, please check out the Ext JS Theming Guide.</p> 
+       <p><strong>Note:</strong> If you’re not familiar with building an application as described above, please visit our <a href="../getting_started/getting_started.html">Getting Started guide</a> for more information.</p> 
+       <h2 id="Conclusion">Conclusion</h2> 
+       <p>Ext JS 5.0.1 introduces core functionality to support a base level of accessibility with our new focus and keyboard navigation additions. Adding the ARIA package and ARIA theme provides you with a much simpler path to creating an accessible application. We are working towards expanding functionality to provide more robust accessibility support in future releases.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

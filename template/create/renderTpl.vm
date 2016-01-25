@@ -1,0 +1,46 @@
+//tpl+索引,renderTpl/renderData是tpl/data的增强
+//模板最终需要跟html/dom打交道,除了使用query的方式,renderTpl可以在描述html的时候,增加dom的识别
+
+var data ={
+	name:'所有课本信息',
+	data:[{
+    	title:'语文',
+    	desc:'论语是什么语',
+    	href:'href'
+    },{
+    	title:'数学',
+    	desc:'高数是什么数',
+    	href:'href'
+    },{
+    	title:'英语',
+    	desc:'鹰语27天速成',
+    	href:'href'
+    }]};
+
+var tpl = new Ext.XTemplate(
+    '<div id="{id}-innerCt" data-ref="innerCt">{name}',
+    '<tpl for="data">',       // 处理数据的子节点
+        '<tpl if="xindex==1">',
+         '<h2  class="success">{#}.{title}</h2>',  
+        '<tpl else>',
+         '<h2>{#}.{title}</h2>',  
+    	'</tpl>',
+        '<p>{desc}</p>',
+        '<a href="{href}">获取资源</a>',
+    '</tpl></div>'
+);
+
+var com=Ext.create("Ext.Component", {
+	renderTo:'test',
+    renderTpl: tpl,
+    renderData: data,
+    childEls: [
+        'innerCt'
+    ],
+})
+
+Ext.require('app.ux.ConsolePanel');
+var panel=Ext.create('app.ux.ConsolePanel');
+panel.com=com;
+console.log(com.innerCt.el.dom.outerHTML)
+panel.runMethod("this.com.innerCt.el.dom.outerHTML");

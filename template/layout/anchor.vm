@@ -1,0 +1,25 @@
+Ext.create('Ext.Panel', {
+    //此时宽度的50%为250
+    width: 500,
+    height: 400,
+    title: "AnchorLayout Panel",
+    layout: 'anchor',
+    renderTo: Ext.getBody(),
+    items: [
+        {
+            xtype: 'panel',
+            title: '该面板占整体容器的50%宽,20%高',
+            anchor: '50% 20%'
+        },
+        {
+            xtype: 'panel',
+            title: '右测保持250px(距离),底部保持200px',
+            anchor: '-250 -200'     
+        },
+        {
+            xtype: 'panel',
+            title: 'Mixed Offset and Percent',
+            anchor: '-250 20%'
+        }
+    ]
+});

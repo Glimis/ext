@@ -1,0 +1,52 @@
+//通过ajax获取的对象(json),并不能准确的描述一个模型比如:
+//1.验证:record.isValid()
+//2.描述业务(充血模型):record.someThing()
+//3.数据同步
+//4.`统一交互模型`
+//即所有的模型/数据交互都会依赖model/record,而非普通的json,如combobox/grid
+Ext.require('app.ux.ConsolePanel');
+var panel=Ext.create('app.ux.ConsolePanel');
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields:  [
+        {name: 'name',     type: 'string'},
+        {name: 'age',      type: 'int'}
+    ],
+    //验证
+    validations: [
+        {type: 'presence',  field: 'age'},
+        {type: 'format',    field: 'name', matcher: /Change/}
+    ],
+    //任意业务
+    changeName: function() {
+        var oldName = this.get('name'),
+            newName = oldName + " Change";
+        this.set('name', newName);
+    },
+    //代理,数据同步的基础设置
+     proxy: {
+        type: 'rest',
+        url : '/data/model'
+    }
+});
+
+panel.createuser = Ext.create('User', {
+    name : 'Conan',
+    age  : 24
+});
+
+panel.runMethod("this.createuser.get('name')");
+panel.runMethod("this.createuser.isValid()");
+panel.runMethod("this.createuser.changeName()");
+panel.runMethod("this.createuser.isValid()");
+panel.runMethod("this.createuser.get('name')");
+
+
+//模型同步,获取id为1的user数据
+User.load(1,{
+    success: function(user) {
+        panel.loaduser=user;
+        panel.runMethod("this.loaduser.getData()");
+    }
+});
+

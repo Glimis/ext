@@ -1,0 +1,790 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Charts - Upgrade Guide</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Installing_Sencha_Charts" title="Installing Sencha Charts">Installing Sencha Charts</a> 
+       <a class="toc-page-h2" href="#Charts" title="Charts">Charts</a> 
+       <a class="toc-page-h3" href="#Canvas__amp__SVG" title="Canvas &amp; SVG">Canvas &amp; SVG</a> 
+       <a class="toc-page-h3" href="#Chart_Redraw" title="Chart Redraw">Chart Redraw</a> 
+       <a class="toc-page-h3" href="#Chart_Animation" title="Chart Animation">Chart Animation</a> 
+       <a class="toc-page-h3" href="#Gradients" title="Gradients">Gradients</a> 
+       <a class="toc-page-h4" href="#Radial_Gradients" title="Radial Gradients">Radial Gradients</a> 
+       <a class="toc-page-h3" href="#Saving_Charts" title="Saving Charts">Saving Charts</a> 
+       <a class="toc-page-h4" href="#Preview" title="Preview">Preview</a> 
+       <a class="toc-page-h4" href="#Download" title="Download">Download</a> 
+       <a class="toc-page-h4" href="#Save" title="Save">Save</a> 
+       <a class="toc-page-h3" href="#Image_Rasterization" title="Image Rasterization">Image Rasterization</a> 
+       <a class="toc-page-h2" href="#Sprites" title="Sprites">Sprites</a> 
+       <a class="toc-page-h3" href="#Additional_Attributes" title="Additional Attributes">Additional Attributes</a> 
+       <a class="toc-page-h2" href="#Axes" title="Axes">Axes</a> 
+       <a class="toc-page-h3" href="#Axes_Type" title="Axes Type">Axes Type</a> 
+       <a class="toc-page-h3" href="#Renderers" title="Renderers">Renderers</a> 
+       <a class="toc-page-h3" href="#Grid" title="Grid">Grid</a> 
+       <a class="toc-page-h3" href="#Limits" title="Limits">Limits</a> 
+       <a class="toc-page-h3" href="#Floating_Axes" title="Floating Axes">Floating Axes</a> 
+       <a class="toc-page-h2" href="#Series" title="Series">Series</a> 
+       <a class="toc-page-h3" href="#Bar_and_Column_Widths_and_Gaps" title="Bar and Column Widths and Gaps">Bar and Column Widths and Gaps</a> 
+       <a class="toc-page-h3" href="#highlightCfg" title="highlightCfg">highlightCfg</a> 
+       <a class="toc-page-h3" href="#Color" title="Color">Color</a> 
+       <a class="toc-page-h3" href="#shadowAttributes" title="shadowAttributes">shadowAttributes</a> 
+       <a class="toc-page-h3" href="#Config" title="Config">Config</a> 
+       <a class="toc-page-h3" href="#Marker" title="Marker">Marker</a> 
+       <a class="toc-page-h2" href="#Column_series" title="Column series">Column series</a> 
+       <a class="toc-page-h2" href="#Bar_series" title="Bar series">Bar series</a> 
+       <a class="toc-page-h2" href="#Pie_series" title="Pie series">Pie series</a> 
+       <a class="toc-page-h3" href="#labelField" title="labelField">labelField</a> 
+       <a class="toc-page-h2" href="#Radar_series" title="Radar series">Radar series</a> 
+       <a class="toc-page-h2" href="#Gauge_series" title="Gauge series">Gauge series</a> 
+       <a class="toc-page-h2" href="#Area_series" title="Area series">Area series</a> 
+       <a class="toc-page-h2" href="#Scatter_series" title="Scatter series">Scatter series</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Ext Charts Upgrade Guide</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>We introduced a new, high performance, touch-optimized charts package in Sencha Touch 2.1. We have now enhanced that charts package to work with Ext JS 5 and Sencha Touch. This brings lots of new capabilities, as well as great performance on tablet devices.</p> 
+       <p>Let’s talk about some of the changes that may need to be made to update from Ext JS charts to the new Sencha Charts package.</p> 
+       <h2 id="Installing_Sencha_Charts">Installing Sencha Charts</h2> 
+       <p>Sencha Charts are not included in the Ext JS library by default. In order to include the charts package, simply add “sencha-charts” to the requires block in your application’s <code>app.json</code> file. Adding a package name to the requires block directs Cmd to make the package available to your application.</p> 
+       <p>After making the inclusion, ensure that your application has been rebuilt. Applications may be rebuilt by manually issuing the following command:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app build</code></pre> 
+       <p>You may also activate “app watch”:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app watch</code></pre> 
+       <p>Sencha app watch monitors your application’s assets and rebuilds when it detects change.</p> 
+       <h2 id="Charts">Charts</h2> 
+       <p>There are three types of base charts:</p> 
+       <ul> 
+        <li><strong>cartesian/chart</strong> - Creates a chart for series implementations that plot values using cartesian coordinates. Examples of this include Bar, Area, Scatter, and Line charts.</li> 
+        <li><strong>polar</strong> - Creates a chartfor series implementations that plot values using polar coordinates. Examples of this include Pie and Radial charts.</li> 
+        <li><strong>spacefilling</strong> - Creates a chart that fills the entire area of the chart. Examples of this include Gauge and Treemap charts.</li> 
+       </ul> 
+       <p>ext-charts tried to automatically determine the chart type by evaluating the series type. This allowed users to simply set the xtype to ‘chart’. However, sencha-charts needs a designated xtype in some circumstances. Cartesian charts are the most commonly used and are mapped to the alias of ‘chart’. Setting an xtype of ‘chart’ will makes the assumption that you want a Bar,Line, Scatter, or Area chart. Other types of charts will require an xtype designation of polar or spacefilling.</p> 
+       <h3 id="Canvas__amp__SVG">Canvas &amp; SVG</h3> 
+       <p>Charts can now use either HTML Canvas or SVG to render its contents. The render engine is selected automatically depending on the platform used. Priority is given to the canvas engine due to its performance advantage. SVG is currently only used on Android 4.0+ due to the following bug:</p> 
+       <p><a href="http://code.google.com/p/android/issues/detail?id=37529">http://code.google.com/p/android/issues/detail?id=37529</a></p> 
+       <p>That said, charts will look the same regardless of the engine used, though the SVG engine does not support shadows at the moment.</p> 
+       <p>You may force the use of either engine by adding the <code>engine</code> property to the chart’s config. These configs would look like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>engine: Ext.draw.engine.Canvas
+engine: Ext.draw.engine.Svg</code></pre> 
+       <p>During development, you can quickly switch from one engine to another by appending/removing <code>?svg=true</code> to/from the URL.</p> 
+       <h3 id="Chart_Redraw">Chart Redraw</h3> 
+       <p>In the past, you may have found yourself using chart’s <code>refresh()</code> method to repaint the chart. We now recommend using chart’s <code>redraw()</code> method for this functionality.</p> 
+       <h3 id="Chart_Animation">Chart Animation</h3> 
+       <p>Chart’s animate config will now default to true. You will need to set animate to false if you intend to disable animations.</p> 
+       <h3 id="Gradients">Gradients</h3> 
+       <p>The gradients config object now uses slightly different syntax. Any charts using the gradients object will need to be updated as per the following: </p> 
+       <p><strong>Old style</strong></p> 
+       <pre mode="javascript" theme="chrome"><code>gradients: [{
+    id: 'gradientId',
+    angle: 45,
+    stops: {
+        0: {
+            color: '#555'
+        },
+        100: {
+            color: '#ddd'
+        }
+    }
+}, {
+    id: 'gradientId2',
+    angle: 0,
+    stops: {
+        0: {
+            color: '#590'
+        },
+        20: {
+            color: '#599'
+        },
+        100: {
+            color: '#ddd'
+        }
+    }
+}]</code></pre> 
+       <p><strong>New style</strong></p> 
+       <pre mode="javascript" theme="chrome"><code>gradients: [{
+    id: 'gradientId1',
+    type: 'linear',
+    angle: 45,
+    stops: [{
+        offset: 0,
+        color: 'red'
+    }, {
+       offset: 1,
+       color: 'yellow'
+    }]
+}, {
+   id: 'gradientId2',
+   type: 'radial',
+   stops: [{
+       offset: 0,
+       color: '#555',
+   }, {
+       offset: 1,
+       color: '#ddd',
+   }]
+}]</code></pre> 
+       <h4 id="Radial_Gradients">Radial Gradients</h4> 
+       <p>We have added support for radial gradients, which means that the gradient type is now required in the gradient object. </p> 
+       <h3 id="Saving_Charts">Saving Charts</h3> 
+       <p>Chart saving cannot be consistently implemented across all the platforms. Many mobile devices simply won’t allow users to download files. For that reason, the <code>chart.preview()</code> method should be used instead of <code>chart.download()</code>. Both are new methods for Ext JS 5. </p> 
+       <h4 id="Preview">Preview</h4> 
+       <p><code>chart.preview()</code> shows a dialog window with an image of the chart inside. The user can then use their browser’s native image saving functionality to download the image.</p> 
+       <h4 id="Download">Download</h4> 
+       <p>chart.download()attempts a client-side download of the chart’s image. This method currently works exclusively in Chrome at this time.</p> 
+       <h4 id="Save">Save</h4> 
+       <p>It is also important to note that the <code>chart.save()</code> method is now deprecated. While in the deprecated state, <code>chart.save()</code> will disregard the value of type passed to it and the actual format will be SVG or PNG. This type is dependent on the render engine used. If <code>chart.save()</code> is called on a device in which downloading is not possible, <code>chart.save()</code> will result in a <code>chart.preview()</code>.</p> 
+       <h3 id="Image_Rasterization">Image Rasterization</h3> 
+       <p>In previous versions of charts, <code>chart.save()</code> generated an SVG document and sent it to a Sencha server for rasterization. New charts generate a DataURL in the Canvas or SVG format (depending on the render engine used), so the same approach can be used. </p> 
+       <p><strong>Note:</strong> <em>We have not yet upgraded our server-side application with support for the new formats.</em></p> 
+       <h2 id="Sprites">Sprites</h2> 
+       <p>Sprite attribute names now mimic Canvas context attributes instead of SVG attributes:</p> 
+       <table> 
+        <tbody> 
+         <tr> 
+          <td><b>Old name</b></td> 
+          <td><b>New name</b></td> 
+         </tr> 
+         <tr> 
+          <td>fill, color</td> 
+          <td>fillStyle</td> 
+         </tr> 
+         <tr> 
+          <td>stroke</td> 
+          <td>strokeStyle</td> 
+         </tr> 
+         <tr> 
+          <td>stroke-width</td> 
+          <td>lineWidth</td> 
+         </tr> 
+         <tr> 
+          <td>stroke-linejoin</td> 
+          <td>lineJoin</td> 
+         </tr> 
+         <tr> 
+          <td>stroke-miterlimit</td> 
+          <td>miterLimit</td> 
+         </tr> 
+         <tr> 
+          <td>text-anchor</td> 
+          <td>textAlign</td> 
+         </tr> 
+         <tr> 
+          <td>opacity</td> 
+          <td>globalAlpha</td> 
+         </tr> 
+         <tr> 
+          <td>translateX</td> 
+          <td>translationX</td> 
+         </tr> 
+         <tr> 
+          <td>translateY</td> 
+          <td>translationY</td> 
+         </tr> 
+         <tr> 
+          <td>rotateRads</td> 
+          <td>rotationRads</td> 
+         </tr> 
+         <tr> 
+          <td>rotateCenterX</td> 
+          <td>rotationCenterX</td> 
+         </tr> 
+         <tr> 
+          <td>rotateCenterY</td> 
+          <td>rotationCenterY</td> 
+         </tr> 
+         <tr> 
+          <td>scaleX</td> 
+          <td>scalingX</td> 
+         </tr> 
+         <tr> 
+          <td>scaleY</td> 
+          <td>scalingY</td> 
+         </tr> 
+         <tr> 
+          <td>scaleCenterX</td> 
+          <td>scalingCenterX</td> 
+         </tr> 
+         <tr> 
+          <td>scaleCenterY</td> 
+          <td>scalingCenterY</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <p>Old attribute names will still be recognized since new attribute names have been given aliases. That said, we highly recommend the use of new attribute names to ensure your application’s longevity.</p> 
+       <h3 id="Additional_Attributes">Additional Attributes</h3> 
+       <p>We have also added support for two new attributes: lineDash and lineDashOffset.</p> 
+       <ul> 
+        <li><code>lineDash</code> - takes an array of numbers that specify a sequence of dash/space, e.g. [1,1] or [7,3,3,3].</li> 
+        <li><code>lineDashOffset</code> - specifies how far into the line dash sequence drawing commences.</li> 
+       </ul> 
+       <h2 id="Axes">Axes</h2> 
+       <h3 id="Axes_Type">Axes Type</h3> 
+       <p>Axis <code>type</code> should now be all lowercase:</p> 
+       <pre mode="javascript" theme="chrome"><code>axes: [
+    {
+        type: 'numeric',
+        position: 'left',
+        ...
+    },
+    {
+        type: 'category',
+        position: 'bottom',
+        ...
+    }
+]</code></pre> 
+       <h3 id="Renderers">Renderers</h3> 
+       <p>Renderers should be defined directly on the axis, not inside the label config as in previous versions:</p> 
+       <pre mode="javascript" theme="chrome"><code>axes: [{
+    type: 'numeric',
+    position: 'left',
+    // Will make all labels have precision of 1 decimal place
+    // and have '%' added at the end.
+    renderer: function (v) { return v.toFixed(1) + '%' },
+    label: { // no renderer here
+        fontSize: 14
+    }
+}]</code></pre> 
+       <h3 id="Grid">Grid</h3> 
+       <p>Grid is now disabled by default.</p> 
+       <h3 id="Limits">Limits</h3> 
+       <p>Axes now support the <code>limits</code> config. Example usage can be seen here:</p> 
+       <pre mode="javascript" theme="chrome"><code>limits: [{
+    value: 70,
+    line: {
+        strokeStyle: 'red',
+        lineDash: [6, 3],
+        title: {
+            text: 'Average temperature (˚F)',
+            fontSize: 14
+        }
+    }
+}]</code></pre> 
+       <h3 id="Floating_Axes">Floating Axes</h3> 
+       <p>Floating axes are now supported. Floating axis tracks a specified value on another axis that runs in the opposite direction.</p> 
+       <p>Please refer to the docs for the <code>floating</code> config and/or see the following Kitchen Sink examples:</p> 
+       <p><a href="http://dev-devel.sencha.com/ext/5.0.0/examples/kitchensink/?charts=true#column-multi-axis">Column - Multi Axis</a></p> 
+       <p><a href="http://dev-devel.sencha.com/ext/5.0.0/examples/kitchensink/?charts=true#radial-multi-axis">Radial - Multi Axis</a></p> 
+       <h2 id="Series">Series</h2> 
+       <h3 id="Bar_and_Column_Widths_and_Gaps">Bar and Column Widths and Gaps</h3> 
+       <p>The Ext JS 5 API focuses on setting maximum and minimum values to manipulate widths and gaps.<br />These settings allow the chart’s bars and columns to fit within the available space. The Ext JS 4 API set absolute values for the width of bars and columns and let the gaps fill the rest of the space. You were then allowed you to define the gaps as a ratio of the bar and column width.</p> 
+       <p>When migrating bar and column width/gap settings to Ext JS 5, you’ll want to begin working with the following configs:</p> 
+       <ul> 
+        <li><a href="../.././apidocs/#!/api/Ext.chart.series.sprite.Bar-cfg-maxBarWidth" data-full-load="true">Ext.chart.series.sprite.Bar-cfg-maxBarWidth</a></li> 
+        <li><a href="../.././apidocs/#!/api/Ext.chart.series.sprite.Bar-cfg-minBarWidth" data-full-load="true">Ext.chart.series.sprite.Bar-cfg-minBarWidth</a></li> 
+        <li><a href="../.././apidocs/#!/api/Ext.chart.series.sprite.Bar-cfg-minGapWidth" data-full-load="true">Ext.chart.series.sprite.Bar-cfg-minGapWidth</a></li> 
+       </ul> 
+       <h3 id="highlightCfg">highlightCfg</h3> 
+       <p><code>highlightCfg</code> config (object) should be used in place of <code>highlight</code> config (boolean/object), e.g.:</p> 
+       <pre mode="javascript" theme="chrome"><code>series: {
+  type: 'pie',
+  highlightCfg: {   // defines a change in series sprite's style that
+      margin: 30    // happens when series item becomes highlighted
+  }
+}</code></pre> 
+       <p>Notice the difference with the old definition for Pie series:</p> 
+       <pre mode="javascript" theme="chrome"><code>highlight: {
+    segment: {
+        margin: 30
+    }
+}</code></pre> 
+       <h3 id="Color">Color</h3> 
+       <p>The <code>color</code> config should be used instead of <code>colorSet</code> config to set series’ colors manually, e.g.: <code>colorSet: ['#82B525', '#ddd']</code>.</p> 
+       <h3 id="shadowAttributes">shadowAttributes</h3> 
+       <p><code>shadowAttributes</code> config is no longer supported. But you can define a style instead, e.g.:</p> 
+       <pre mode="javascript" theme="chrome"><code>series: {
+    style: {
+        shadowColor: 'rgba(0,0,0,0.5),
+        shadowBlur: 10
+    }
+}</code></pre> 
+       <p><strong>Note:</strong> <em>shadows are not supported by the Svg engine <a href="../.././apidocs/#!/api/Ext.draw.engine.Svg" data-full-load="true">Ext.draw.engine.Svg</a>.</em></p> 
+       <h3 id="Config">Config</h3> 
+       <p>Chart’s series config is an Array now. That said, <code>chart.series.first()</code> won’t work. </p> 
+       <p>Please use: </p> 
+       <pre mode="javascript" theme="chrome"><code>chart.getSeries()[0]</code></pre> 
+       <h3 id="Marker">Marker</h3> 
+       <p>One should use marker config instead of <code>markerConfig</code> config to define series’ markers.</p> 
+       <h2 id="Column_series">Column series</h2> 
+       <p>There’s no series of type <code>column</code> anymore, one has to use <code>bar</code> series instead, e.g.:</p> 
+       <pre mode="javascript" theme="chrome"><code>axes: [{
+    type: 'numeric',
+    position: 'left',
+    ...
+}, {
+    type: 'category',
+    position: 'bottom',
+    ...
+}],
+series: {
+    type: 'bar',
+    ...
+}</code></pre> 
+       <h2 id="Bar_series">Bar series</h2> 
+       <p>In the same vein of column chart, there is no bar type anymore. You’ll need to use the bar series but with <code>flipXY property</code> set to <code>true</code> for horizontal bars.</p> 
+       <p>When flipping the chart, axes positions should be changed accordingly, e.g.:</p> 
+       <pre mode="javascript" theme="chrome"><code>flipXY: true,
+axes: [{
+    type: 'numeric',
+    position: 'bottom',
+    ...
+}, {
+    type: 'category',
+    position: 'left',
+    ...
+}],
+series: {
+    type: 'bar',
+    ...
+}</code></pre> 
+       <h2 id="Pie_series">Pie series</h2> 
+       <h3 id="labelField">labelField</h3> 
+       <pre mode="javascript" theme="chrome"><code>labelField: 'name'</code></pre> 
+       <p>config should be used instead of</p> 
+       <pre mode="javascript" theme="chrome"><code>label: {
+  field: 'name'
+}</code></pre> 
+       <h2 id="Radar_series">Radar series</h2> 
+       <p>There is no axis type <code>radial</code>. Use</p> 
+       <pre mode="javascript" theme="chrome"><code>axes: [{
+    type: 'numeric',
+    position: 'radial',
+}, {
+   type: 'category',
+   position: 'angular',
+}]</code></pre> 
+       <p>instead of: </p> 
+       <pre mode="javascript" theme="chrome"><code>axes: [{
+    type: 'Radial',
+    ...
+}]</code></pre> 
+       <h2 id="Gauge_series">Gauge series</h2> 
+       <p>Gauge series do not support themes and have to be styled manually with <code>chart.colors</code>, <code>series.style</code> and <code>series.subStyle</code> configs.</p> 
+       <h2 id="Area_series">Area series</h2> 
+       <p><code>label</code> config is not yet supported.</p> 
+       <h2 id="Scatter_series">Scatter series</h2> 
+       <p><code>label</code> config is not yet supported.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html manifest="">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>htjy</title>
+    <link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />
+    <script type="text/javascript" src="/ext/build/ext-all-rtl-debug.js"></script>
+    <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-weight: 300;
+    }
+    
+    .smallbox {
+        width: 33.3%;
+        float: left;
+    }
+    
+    .smallbox:hover {
+        background: #f7f7f9;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .box {
+        max-width: 1350px;
+        margin: 0 auto;
+    }
+    
+    .box a {
+        width: 40px;
+        display: inline-block;
+    }
+    
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden
+    }
+    
+    .clearfix {
+        *+height: 1%;
+    }
+    
+    .viewh {
+        padding: 0 0 10px 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="content"></div>
+</body>
+<script>
+Ext.define('app.Image', {
+    extend: 'Ext.data.Model',
+    fields: [{
+        name: 'src',
+        type: 'string'
+    }, {
+        name: 'caption',
+        type: 'string'
+    }]
+});
+
+
+Ext.define('app.Toolbar', {
+    extend: 'Ext.toolbar.Toolbar',
+    buttonAlign: 'center',
+    height: 40,
+    defaults: { // defaults 将会应用所有的子组件上,而不是父容器
+        style: 'font-size : 20px; color : blue;'
+    },
+    items: [{
+        xtype: 'label',
+        text: 'Ext',
+    }, '->', {
+        text: '首页'
+    }, {
+        text: '组件例子',
+        handler: function(btn) {
+            window.open('/code.html')
+        }
+    }, {
+        text: 'api教程'
+    }, {
+        text: '官方api',
+        menu: [{
+            text: '4.0官方版',
+            handler:function(){
+                window.open('/doc/ext4.1zh/index.html')
+            }
+        }, {
+            text: '5.1官方版',
+            handler:function(){
+                window.open('/doc/ext5.0/apidocs/template.html')
+            }
+        }, {
+            text: '6.0官方版'
+        }, {
+            text: '4.0中文版'
+        }]
+    }, {
+        xtype: 'tbfill'
+    }, {
+        xtype: 'tbfill'
+    }, ]
+})
+
+
+Ext.onReady(function() {
+
+    Ext.create('Ext.data.Store', {
+        id: 'imagesStore',
+        model: 'app.Image',
+        data: [{
+            title: "基础组件",
+            children: [{
+                caption: 'component',
+                describe: '所有组件的基础',
+                href: "/code.html?type=component",
+                api: '/api/component.html'
+            }, {
+                caption: 'button',
+                describe: '按钮',
+                href: "/code.html?type=button"
+            }, {
+                caption: 'cycle',
+                describe: '循环按钮',
+                href: "/code.html?type=cycle"
+            }, {
+                caption: 'colorpicker',
+                describe: '颜色调色板',
+                href: "/code.html?type=colorpicker"
+            }, {
+                caption: 'datepicker',
+                describe: '日期选择器',
+                href: "/code.html?type=datepicker"
+            }, {
+                caption: 'editor',
+                describe: '编辑框',
+                href: "/code.html?type=editor"
+            }, {
+                caption: 'menu',
+                describe: '菜单',
+                href: "/code.html?type=menu"
+
+            }, {
+                caption: 'toolbar',
+                describe: '工具栏类',
+                href: "/code.html?type=toolbar"
+
+            }]
+        }, {
+            title: "布局",
+            children: [{
+                caption: 'layout',
+                describe: 'layout',
+                href: "/api/layout.html",
+                api: '/api/layout.html'
+            }]
+        }, {
+            title: "数据交互",
+            children: [{
+                caption: 'model',
+                describe: '',
+                href: "/code.html?type=model"
+            }, {
+                caption: 'store',
+                describe: ''
+            }, {
+                caption: 'ajax',
+                describe: ''
+            }, {
+                caption: 'proxy',
+                describe: ''
+            }]
+        }, {
+            title: "复杂组件",
+            children: [{
+                caption: 'form',
+                describe: '表单',
+                href: "/code.html?type=form"
+            }, {
+                caption: 'grid',
+                describe: ''
+            }]
+        }, {
+            title: "自定义组件",
+            children: [{
+                caption: 'tpl',
+                describe: ''
+            }, {
+                caption: 'dataview',
+                describe: ''
+            }]
+        }, {
+            title: "mvc架构",
+            children: [{
+                caption: 'application',
+                describe: ''
+            }, {
+                caption: 'model',
+                describe: ''
+            }, {
+                caption: 'view',
+                describe: ''
+            }, {
+                caption: 'controller',
+                describe: ''
+            }]
+        }, {
+            title: "chart图",
+            children: [{
+                caption: 'chart',
+                describe: ''
+            }]
+        }]
+    });
+
+    var imageTpl = new Ext.XTemplate(
+        '<div style="  overflow: auto;">',
+        '<tpl for="." >',
+        '<h1 class="viewh">{title}</h1>',
+        '<hr>',
+        '<div class="box clearfix ">',
+        '<tpl for="children">',
+        '<div class="smallbox" >',
+        '<h3>{caption}</h3>',
+        '<p>{describe}</p>',
+        '<div>',
+        '<a target="_blank" href="{href}"><span>例子</span></a>',
+        '<a target="_blank" href="{api}"><span>api</span></a>',
+        '</div>',
+        '</div>',
+        '</tpl>',
+        '</div>',
+        '</tpl>',
+        ' </div>'
+    );
+
+    var dataview = Ext.create('Ext.view.View', {
+        autoScroll: true,
+        store: Ext.data.StoreManager.lookup('imagesStore'),
+        // margin:'60 0 0 0',
+        tpl: imageTpl,
+        itemSelector: 'div.box'
+    });
+
+    var toolbar = Ext.create('app.Toolbar')
+
+
+    Ext.vp = Ext.create('Ext.container.Viewport', {
+        layout: 'border',
+        items: [{
+            border: 0,
+            region: 'north',
+
+            items: toolbar
+        }, {
+            border: 0,
+            region: 'center',
+            layout: 'fit',
+            items: dataview
+        }]
+    })
+
+
+
+
+})
+</script>
+
+</html>

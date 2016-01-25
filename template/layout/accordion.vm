@@ -1,0 +1,28 @@
+//手风琴,此布局将多个Panel以一种可以展开/收缩的样式排列,
+//且任何时候只有一个Panel可以处于展开状态.
+Ext.create('Ext.panel.Panel', {
+    title: 'Accordion Layout',
+    width: 300,
+    height: 300,
+    defaults: {
+        bodyStyle: 'padding:15px'
+    },
+    layout: {
+        type: 'accordion',
+        titleCollapse: false,
+        animate: true,
+        //激活置顶
+        activeOnTop: true
+    },
+    items: [{
+        title: 'Panel 1',
+        html: 'Panel1 content!'
+    },{
+        title: 'Panel 2',
+        html: 'Panel2 content!'
+    },{
+        title: 'Panel 3',
+        html: 'Panel3 content!'
+    }],
+    renderTo: Ext.getBody()
+});

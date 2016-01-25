@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-ux-desktop-StartMenu'>/**
+</span> * Ext JS Library
+ * Copyright(c) 2006-2014 Sencha Inc.
+ * licensing@sencha.com
+ * http://www.sencha.com/license
+ * @class Ext.ux.desktop.StartMenu
+ */
+Ext.define('Ext.ux.desktop.StartMenu', {
+    extend: 'Ext.panel.Panel',
+
+    requires: [
+        'Ext.menu.Menu',
+        'Ext.toolbar.Toolbar'
+    ],
+
+<span id='Ext-ux-desktop-StartMenu-property-ariaRole'>    ariaRole: 'menu',
+</span>
+<span id='Ext-ux-desktop-StartMenu-cfg-cls'>    cls: 'x-menu ux-start-menu',
+</span>
+<span id='Ext-ux-desktop-StartMenu-cfg-defaultAlign'>    defaultAlign: 'bl-tl',
+</span>
+<span id='Ext-ux-desktop-StartMenu-cfg-iconCls'>    iconCls: 'user',
+</span>
+<span id='Ext-ux-desktop-StartMenu-cfg-floating'>    floating: true,
+</span>
+<span id='Ext-ux-desktop-StartMenu-cfg-shadow'>    shadow: true,
+</span>
+<span id='Ext-ux-desktop-StartMenu-cfg-width'>    // We have to hardcode a width because the internal Menu cannot drive our width.
+</span>    // This is combined with changing the align property of the menu's layout from the
+    // typical 'stretchmax' to 'stretch' which allows the the items to fill the menu
+    // area.
+    width: 300,
+
+<span id='Ext-ux-desktop-StartMenu-method-initComponent'>    initComponent: function() {
+</span>        var me = this, menu = me.menu;
+
+        me.menu = new Ext.menu.Menu({
+            cls: 'ux-start-menu-body',
+            border: false,
+            floating: false,
+            items: menu
+        });
+        me.menu.layout.align = 'stretch';
+
+        me.items = [me.menu];
+        me.layout = 'fit';
+
+        Ext.menu.Manager.register(me);
+        me.callParent();
+        // TODO - relay menu events
+
+        me.toolbar = new Ext.toolbar.Toolbar(Ext.apply({
+            dock: 'right',
+            cls: 'ux-start-menu-toolbar',
+            vertical: true,
+            width: 100,
+            listeners: {
+                add: function(tb, c) {
+                    c.on({
+                        click: function() {
+                            me.hide();
+                        }
+                    });
+                }
+            }
+        }, me.toolConfig));
+
+        me.toolbar.layout.align = 'stretch';
+        me.addDocked(me.toolbar);
+
+        delete me.toolItems;
+    },
+
+<span id='Ext-ux-desktop-StartMenu-method-addMenuItem'>    addMenuItem: function() {
+</span>        var cmp = this.menu;
+        cmp.add.apply(cmp, arguments);
+    },
+
+<span id='Ext-ux-desktop-StartMenu-method-addToolItem'>    addToolItem: function() {
+</span>        var cmp = this.toolbar;
+        cmp.add.apply(cmp, arguments);
+    }
+}); // StartMenu
+</pre>
+</body>
+</html>

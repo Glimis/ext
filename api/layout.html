@@ -1,0 +1,770 @@
+<!DOCTYPE HTML>
+<html manifest="">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>htjy</title>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script type="text/javascript" src="/ext/build/ext.js"></script>
+    <script type="text/javascript" src="/ext/build/ext-all.js"></script>
+    <script src="/ext/packages/ext-locale/build/ext-locale-zh_CN.js"></script>
+    <script src="/resources/beautify.js"></script>
+    <script src="/resources/beautify-html.js"></script>
+    <link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />
+    <style>
+    pre,
+    code {
+        display: block;
+        overflow: auto;
+        background: #f4f4f4;
+        padding: 5px 10px;
+        border: 1px solid #eee;
+        word-wrap: break-word;
+        /* Internet Explorer 5.5+ */
+        white-space: pre-wrap;
+        /* Firefox */
+    }
+    
+    .success {
+        background-color: #1374bb;
+        border: 0px;
+    }
+    
+    .danger {
+        color: #d44950
+    }
+    </style>
+</head>
+
+<body>
+    <div style="display:none">
+        <div id='default'>
+            <p>只有容器才有布局(layout属性)
+                <br>从最终生成的html上来看,标准的container分outerCt/innerCt
+                <br>而panel还增加了body
+                <br>从追加items的效果上可以看到innerCt主要用来放置子元素(items)
+            </p>
+        </div>
+        <div id='auto'>
+            <p>作为第一个布局,其长相(html)竟然跟不写一样。。。没错,毕竟是默认布局
+                <br>当然defaluts属性可以初始化子元素的默认信息,有时候并不能认为不写layout就是auto布局</p>
+        </div>
+        <div id="absolute">
+            <p>绝对布局,沿用默认的架构,items在innerCt中一次创建
+                <br>没有x,y的配合,所有的子容器会混合在一起,当然,这并不表示x,y与布局有关
+                <br>可以看到,x/y代表left/top的属性,因此,该属性的效果完全看css(position)
+            </p>
+        </div>
+        <div id="anchor">
+            <p>anchor属性描述的是子元素与容器的位置/大小关系
+                <br>anchor是一个纯正的由布局给子组件增加的属性
+                <br>当然,对子元素的相对,一定需要对容器进行宽高的赋值</p>
+        </div>
+        <div id="column">
+            <p>列布局,通过columnWidth属性对列进行分配,没有将会根据内容自动分配宽度,当宽度超过100%时,会另起一行
+                <br>不用想了,子元素一定是一堆float:left并带有相对/绝对的组件</p>
+        </div>
+        <div id="container">
+            <p>其他布局的基类,严格来说是不允许这种布局的,可以产生仅仅是因为语法没有错误...
+                <br>作为`基类`,竟然失去了outerCt/innerCt
+                <br>从复用组件上来看,这种情况基本代表了某种布局,不需要outerCt/innerCt</p>
+        </div>
+        <div id='fit'>
+            <p>看起来只是在基类最内层增加｀x-layout-fit｀,其具体内涵看不出来,暂时也不用关心
+                <br>无论怎样需要强调的是, 子元素自动填满容器指的仅仅是面板下(看来与body有关)</p>
+        </div>
+        <div id="card">
+            <p>fit的集合管理,布局可以管理多个子组件,但每次只能显示一个
+                <br>如果没有items,看起来(html)跟fit一样...</p>
+        </div>
+        <div id="border">
+            <p>作为一个包含自适应的布局,要么直接渲染至body(使其内部计算),要么给一个width/height,否则。。。
+                <br>作为区域(region),一般情况下需要一个容器配合,此处例子仅用来查看布局结构
+                <br>在该例中,可以明显看出在border布局下使用组件的背景和容器背景的区别(组件背景深,容器背景浅)
+            </p>
+        </div>
+        <div id='form'>
+            <p>｀表单布局｀,想象一下任意一种表单,四四方方,从上往下,一行行的的描述信息
+                <br>form布局就是这样,他是一种横向布局,但是他会将每行的格子撑到最大(每个都一样),以此达到｀四四方方｀的目的
+                <br>相比于默认布局,其在innerCt中增加了formWrap 和labelColumn,从目前来看,可以无视labelColumn(x-form-layout-colgroup容器下的所有元素)
+                <br>加入items后可以看到,items组件会在formWrap下依次创建
+                <br>请注意,fieldLabel属性的存在与布局or容器无关,仅仅是其组件(field系列)包含该属性</p>
+        </div>
+        <div id="accordion">
+            <p>此布局将多个Panel以一种可以展开/收缩的样式排列
+                <br>业务需求是收缩时只展示title,因此,没有title的容器全都可以放弃了,
+                <br>尽管称之为panel,其实只要有title属性的容器都可以,或者说panel及其子类都是没有问题的
+                <br>如果任性使用component之类的组建,会报<span class='danger'>d.addBodyCls is not a function</span>错误
+                <br>add是动词/方法,Cls代表class属性,而body与data-ref="body"的关系,完全是呼之欲出
+            </p>
+        </div>
+        <div id="box">
+            <p>vbox与hbox的父类,看起来跟hbox一样(毕竟是父类),区别不深究,不推荐使用
+            <br>flex,该组建在容器中的宽/高所占比例,老规矩,有相对就需要固定宽/高</p>
+        </div>
+        <div id="hbox">
+            <p>依据宽度进行分割,框架对宽度的要求永远都那么宽松,不写就依据容器100%
+            <br>可以的话,最好给宽赋值</p>
+        </div>
+        <div id="vbox">
+            <p>依据高度进行分割,相比于对宽的大度,对高度的设置就比较严格
+            <br>高永远比宽麻烦,毕竟自适应宽是主流,自适应高页面还是太非主流了</p>
+        </div>
+        <div id="table">
+            <p>使用table进行的布局,包含table的所有优点和坑
+                <br>作为不怎么推荐的布局。。略
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+Ext.define('NavStore', {
+    extend: 'Ext.data.Store',
+    model: 'NavModel',
+    data: [{
+        title: '容器',
+        type: "default",
+        code: {
+            items: [],
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            },
+            title: '标题',
+            buttons: [{
+                text: '按钮'
+            }]
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项'
+        }, {
+            xtype: 'component',
+            html: '子项'
+        }]
+    }, {
+        title: '默认布局',
+        type: 'auto',
+        code: {
+            items: [],
+            layout: 'auto',
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项'
+        }, {
+            xtype: 'component',
+            html: '子项'
+        }]
+    }, {
+        title: 'absolute布局',
+        type: 'absolute',
+        code: {
+            items: [],
+            height: 275,
+            layout: 'absolute',
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项1',
+            x: 30,
+            y: 40,
+        }, {
+            xtype: 'component',
+            html: '子项2'
+        }]
+    }, {
+        title: 'anchor',
+        type: 'anchor',
+        code: {
+            layout: 'anchor',
+            items: [],
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            },
+            height: 300
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项1'
+        }, {
+            xtype: 'component',
+            html: '子项2',
+            anchor: '75% 20%'
+        }, {
+            xtype: 'component',
+            html: '子项3',
+            anchor: '-300 -200'
+        }]
+    }, {
+        title: 'column',
+        type: 'column',
+        code: {
+            layout: 'column',
+            items: [],
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项'
+        }, {
+            xtype: 'component',
+            html: '子项子项'
+        }, {
+            xtype: 'component',
+            html: '子项子项子项子项子项子项子项子项子项子项子项子项子项',
+            columnWidth: 0.1
+        }, {
+            xtype: 'component',
+            html: '子项',
+            columnWidth: 0.9
+        }, {
+            xtype: 'component',
+            html: '子项',
+            columnWidth: 1
+        }]
+    }, {
+        title: 'form布局',
+        type: 'form',
+        code: {
+            items: [],
+            layout: 'form',
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项'
+        }, {
+            xtype: 'textfield',
+            fieldLabel: '子项'
+        }]
+    }, {
+        title: '基础布局',
+        type: "container",
+        code: {
+            items: [],
+            layout: 'container',
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项'
+        }, {
+            xtype: 'component',
+            html: '子项'
+        }]
+    }, {
+        title: 'fit布局',
+        type: 'fit',
+        code: {
+            items: [],
+            layout: "fit",
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项'
+        }, {
+            xtype: 'component',
+            html: '子项'
+        }]
+    }, {
+        title: 'card',
+        type: 'card',
+        code: {
+            items: [],
+            layout: 'card',
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项'
+        }, {
+            xtype: 'component',
+            html: '子项'
+        }]
+    }, {
+        title: 'border',
+        type: 'border',
+        code: {
+            items: [],
+            width: 700,
+            height: 700,
+            layout: 'border',
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            region: 'south',
+            xtype: 'component',
+            height: 100,
+            html: 'south'
+        }, {
+            region: 'north',
+            xtype: 'component',
+            html: 'north',
+            height: 100
+        }, {
+            region: 'east',
+            xtype: 'component',
+            html: 'east',
+            width: 100,
+        }, {
+            region: 'west',
+            xtype: 'component',
+            html: 'west',
+            width: 100,
+        }, {
+            region: 'center',
+            xtype: 'component',
+            html: 'center'
+        }]
+    }, {
+        title: '手风琴',
+        type: 'accordion',
+        code: {
+            items: [],
+            layout: 'accordion',
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'panel',
+            html: '子项'
+        }, {
+            xtype: 'form',
+            title: '标题',
+            html: '子项'
+        }]
+    }, {
+        title: 'box',
+        type: 'box',
+        code: {
+            layout: 'box',
+            items: [],
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            },
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项',
+            flex: 1
+        }, {
+            xtype: 'component',
+            html: '子项',
+            flex: 2
+        }]
+    }, {
+        title: 'hbox',
+        type: 'hbox',
+        code: {
+            layout: 'hbox',
+            items: [],
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项',
+            flex: 1
+        }, {
+            xtype: 'component',
+            html: '子项',
+            flex: 2
+        }]
+    }, {
+        title: 'vbox',
+        type: 'vbox',
+        code: {
+            layout: 'vbox',
+            items: [],
+            height: 200,
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项',
+            flex: 1
+        }, {
+            xtype: 'component',
+            html: '子项',
+            flex: 2
+        }]
+    },{
+        title: 'table',
+        type: 'table',
+         width: 600,
+        code: {
+            layout: {
+                type:'table',
+                 columns: 3
+            },
+            items: [],
+            defaults: {
+                style: {
+                    border: '1px solid black'
+                }
+            }
+        },
+        items: [{
+            xtype: 'component',
+            html: '子项',
+            rowspan: 2
+        }, {
+            xtype: 'component',
+            html: '子项',
+             colspan: 2
+        },{
+            xtype: 'component',
+            html: '子项'
+        },{
+            xtype: 'component',
+            html: '子项'
+        },{
+            xtype: 'component',
+            html: '子项'
+        },{
+            xtype: 'component',
+            html: '子项'
+        },{
+            xtype: 'component',
+            html: '子项'
+        }]
+    }]
+});
+
+Ext.onReady(function() {
+    var cardItem = [];
+    var store = Ext.create('NavStore');
+    for (var i = 0; i < store.getCount(); i++) {
+        var data = store.getAt(i);
+        cardItem.push({
+            contentEl: data.get("type"),
+            itemId: data.get("type")
+        })
+    }
+
+    Ext.vp = Ext.create('Ext.container.Container', {
+        renderTo: Ext.getBody(),
+        layout: 'form',
+        items: [{
+            itemId: 'containernav',
+            xtype: 'containernav'
+        }, {
+            itemId: 'nav',
+            xtype: 'nav'
+        }, {
+            itemId: 'datanav',
+            xtype: 'datanav'
+        }, {
+            itemId: 'text',
+            xtype: 'container',
+            layout: 'card',
+            items: cardItem
+        }, {
+            itemId: 'code',
+            xtype: 'textContainer',
+            autoEl: {
+                tag: 'pre'
+            }
+        }, {
+            itemId: 'codeHtml',
+            xtype: 'textContainer',
+            autoEl: {
+                tag: 'pre'
+            }
+        }, {
+            itemId: 'template',
+            xtype: 'container'
+        }],
+        flush: function() {
+            //使用的容器
+            
+            var container = Ext.vp.getComponent("containernav").getSelectContainer();
+            var recode = Ext.vp.getComponent("nav").getRecode();
+            var code = recode.getCode();
+            if (!container || !code) {
+                return;
+            }
+            code = Ext.clone(code);
+
+            var isneeditems = Ext.vp.getComponent("datanav").isNeedItems();
+            var items = [];
+
+            if (isneeditems) {
+                items = recode.get("items") || [];
+                code.items = Ext.clone(items);
+            }
+            var html = "Ext.create('" + container + "'," + JSON.stringify(code) + ")";
+            var codeCmp = Ext.vp.getComponent("code");
+            codeCmp.setText(html);
+            var codeHtmlCmp = Ext.vp.getComponent("codeHtml");
+            var codeHtml = Ext.vp.getComponent("nav").getCodeHtml(container, code);
+            codeHtmlCmp.setText(codeHtml);
+
+            var textCmp = Ext.vp.getComponent("text");
+            textCmp.setActiveItem(recode.get('type'));
+
+            var num2 = Ext.vp.getComponent("nav").getIndex();
+            var num3 = Ext.vp.getComponent("datanav").getIndex();
+            var num1 = Ext.vp.getComponent("containernav").getIndex();
+            window.location.hash = [num1, num2, num3].join(",");
+        }
+    });
+    var array = window.location.hash.slice(1).split(",");
+    if (array.length != 3) {
+        array[0] = array[1] = array[2] = 1;
+    }
+    var firstBtn = Ext.vp.getComponent('nav').items.items[array[1]];
+    firstBtn.fireEvent('click', firstBtn);
+    var datanavBtn = Ext.vp.getComponent('datanav').items.items[array[2]];
+    datanavBtn.fireEvent('click', datanavBtn);
+    var containernavBtn = Ext.vp.getComponent('containernav').items.items[array[0]];
+    containernavBtn.fireEvent('click', containernavBtn);
+});
+
+Ext.define('NavModel', {
+    extend: 'Ext.data.Model',
+    fields: ['type', 'code', 'title'],
+    getCodeHtml: function(container, code) {
+        //动态获取codehtml
+
+        var template = Ext.vp.getComponent("template");
+        template.removeAll();
+        template.add(Ext.create(container, code));
+        var html = Ext.dom.Query.select('[data-ref=innerCt]', template.el.dom)[0].innerHTML;
+        return html;
+    },
+    getCode: function() {
+        return this.get('code');
+    }
+});
+
+
+
+
+Ext.define('TextContainer', {
+    extend: 'Ext.container.Container',
+    alias: 'widget.textContainer',
+    setText: function(value) {
+        if (!value) {
+            return;
+        }
+        var dom = Ext.dom.Query.select('[data-ref=innerCt]', this.el.dom)[0];
+        if (Ext.typeOf(value) == 'object') {
+            value = JSON.stringify(value);
+            dom.innerText = js_beautify(value);
+        } else if (value[0] != '<') {
+            dom.innerText = js_beautify(value);
+        } else {
+            dom.innerText = html_beautify(value);
+        }
+    }
+})
+
+Ext.define("Nav", {
+    extend: "Ext.container.Container",
+    alias: 'widget.nav',
+    defaults: {
+        xtype: 'button',
+        margin: '0 10 0 0',
+        listeners: {
+            click: function(btn) {
+                btn.ownerCt.btn = btn;
+                var buttons = btn.ownerCt.items.items;
+                for (var i = 1; i < buttons.length; i++) {
+                    buttons[i].removeCls("success");
+                }
+
+                btn.addCls("success");
+                Ext.vp.flush();
+            }
+        },
+    },
+    meta: {
+        store: Ext.create('NavStore')
+    },
+    getIndex: function() {
+        return this.items.indexOf(this.btn);
+    },
+    getCode: function() {
+        var type = this.btn.meta.type;
+        var record = this.meta.store.findRecord("type", type);
+        return record.getCode();
+    },
+    getRecode: function() {
+        var type = this.btn.meta.type;
+        var record = this.meta.store.findRecord("type", type);
+        return record;
+    },
+    getCodeHtml: function(container, code) {
+        var type = this.btn.meta.type;
+        var record = this.meta.store.findRecord("type", type);
+        return record.getCodeHtml(container, code);
+    },
+    initComponent: function() {
+        var store = this.meta.store;
+        this.items = [{
+            xtype: 'box',
+            style: {
+                display: "inline",
+                'vertical-align': 'super'
+            },
+            html: '选择布局'
+        }];
+        //初始化导航
+        for (var i = 0; i < store.getCount(); i++) {
+            var data = store.getAt(i);
+            this.items.push({
+                text: store.getAt(i).get("title"),
+                meta: {
+                    type: store.getAt(i).get("type")
+                }
+            })
+        }
+
+        this.callParent(arguments);
+    }
+});
+
+
+Ext.define("ContainerNav", {
+    extend: "Ext.container.Container",
+    alias: 'widget.containernav',
+    defaults: {
+        xtype: 'button',
+        margin: '0 10 0 0',
+        listeners: {
+            click: function(btn) {
+                btn.ownerCt.btn = btn;
+                var buttons = btn.ownerCt.items.items;
+                for (var i = 1; i < buttons.length; i++) {
+                    buttons[i].removeCls("success");
+                }
+
+                btn.addCls("success");
+                Ext.vp.flush();
+            }
+        }
+    },
+    getIndex: function() {
+        return this.items.indexOf(this.btn);
+    },
+    items: [{
+        xtype: 'box',
+        style: {
+            display: "inline",
+            'vertical-align': 'super'
+        },
+        html: '选择容器'
+    }, {
+        text: 'container',
+        meta: {
+            type: 'Ext.container.Container'
+        }
+    }, {
+        text: 'panel',
+        meta: {
+            type: 'Ext.panel.Panel'
+        }
+    }],
+    getSelectContainer: function() {
+        return this.btn ? this.btn.meta.type : null;
+    }
+});
+
+
+Ext.define("DataNav", {
+    extend: "Ext.container.Container",
+    alias: 'widget.datanav',
+    defaults: {
+        xtype: 'button',
+        margin: '0 10 0 0',
+        listeners: {
+            click: function(btn) {
+                btn.ownerCt.btn = btn;
+                var buttons = btn.ownerCt.items.items;
+                for (var i = 1; i < buttons.length; i++) {
+                    buttons[i].removeCls("success");
+                }
+
+                btn.addCls("success");
+                Ext.vp.flush();
+            }
+        }
+    },
+    isNeedItems: function() {
+        return this.btn.flag;
+    },
+    getIndex: function() {
+        return this.items.indexOf(this.btn);
+    },
+    items: [{
+        xtype: 'box',
+        style: {
+            display: "inline",
+            'vertical-align': 'super'
+        },
+        html: '选择操作'
+    }, {
+        text: '取消item,观察格式',
+        flag: false
+    }, {
+        text: '加入item',
+        flag: true
+    }]
+});
+</script>
+
+</html>

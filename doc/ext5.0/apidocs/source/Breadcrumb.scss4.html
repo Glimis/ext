@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-toolbar-Breadcrumb'>/** @class Ext.toolbar.Breadcrumb */
+</span>//
+
+// Some breadcrumb vars derive their values from toolbar vars, so make sure we have imported
+// the Toolbar vars first since there is no dependency at the class-level.  This means
+// Toolbar vars might get imported twice but that is not a problem since the variables
+// are !default - the second import will be effectively ignored.
+@import 'Toolbar';
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-button-ui'>/**
+</span> * @var {string}
+ * The UI of buttons that are used in the &quot;default&quot; breadcrumb UI
+ */
+$breadcrumb-button-ui: 'default-toolbar' !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-button-spacing'>/**
+</span> * @var {number}
+ * The space between the breadcrumb buttons
+ */
+$breadcrumb-button-spacing: 0px !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-arrow-width'>/**
+</span> * @var {number}
+ * The width of breadcrumb arrows when {@link #split} is `false`
+ */
+$breadcrumb-arrow-width: $button-small-split-width !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-split-width'>/**
+</span> * @var {number}
+ * The width of breadcrumb arrows when {@link #split} is `true`
+ */
+$breadcrumb-split-width: $button-small-split-width !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-folder-icon'>/**
+</span> * @var {string}
+ * The background-image for the default &quot;folder&quot; icon
+ */
+$breadcrumb-folder-icon: 'tree/folder' !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-leaf-icon'>/**
+</span> * @var {string}
+ * The background-image for the default &quot;leaf&quot; icon
+ */
+$breadcrumb-leaf-icon: 'tree/leaf' !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-include-menu-active-arrow'>/**
+</span> * @var {boolean}
+ * `true` to include a separate background-image for menu arrows when a breadcrumb button's
+ * menu is open
+ */
+$breadcrumb-include-menu-active-arrow: true !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-include-split-over-arrow'>/**
+</span> * @var {boolean}
+ * `true` to include a separate background-image for split arrows when a breadcrumb button's
+ * arrow is hovered
+ */
+$breadcrumb-include-split-over-arrow: true !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-width'>/**
+</span> * @var {number}
+ * The width of Breadcrumb scrollers
+ */
+$breadcrumb-scroller-width: $toolbar-scroller-width !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-height'>/**
+</span> * @var {number}
+ * The height of Breadcrumb scrollers
+ */
+$breadcrumb-scroller-height: $toolbar-scroller-height !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-border-color'>/**
+</span> * @var {color}
+ * The border-color of Breadcrumb scrollers
+ */
+$breadcrumb-scroller-border-color: $toolbar-scroller-border-color !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-border-width'>/**
+</span> * @var {number}
+ * The border-width of Breadcrumb scrollers
+ */
+$breadcrumb-scroller-border-width: $toolbar-scroller-border-width !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-top-margin'>/**
+</span> * @var {number/list}
+ * The margin of &quot;top&quot; Breadcrumb scroller buttons
+ */
+$breadcrumb-scroller-top-margin: $toolbar-scroller-top-margin !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-right-margin'>/**
+</span> * @var {number/list}
+ * The margin of &quot;right&quot; Breadcrumb scroller buttons
+ */
+$breadcrumb-scroller-right-margin: $toolbar-scroller-right-margin !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-bottom-margin'>/**
+</span> * @var {number/list}
+ * The margin of &quot;bottom&quot; Breadcrumb scroller buttons
+ */
+$breadcrumb-scroller-bottom-margin: $toolbar-scroller-bottom-margin !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-left-margin'>/**
+</span> * @var {number/list}
+ * The margin of &quot;left&quot; Breadcrumb scroller buttons
+ */
+$breadcrumb-scroller-left-margin: $toolbar-scroller-left-margin !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-cursor'>/**
+</span> * @var {string}
+ * The cursor of Breadcrumb scrollers
+ */
+$breadcrumb-scroller-cursor: $toolbar-scroller-cursor !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-cursor-disabled'>/**
+</span> * @var {string}
+ * The cursor of disabled Breadcrumb scrollers
+ */
+$breadcrumb-scroller-cursor-disabled: $toolbar-scroller-cursor-disabled !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-opacity'>/**
+</span> * @var {number}
+ * The opacity of Breadcrumb scroller buttons. Only applicable when
+ * {@link $breadcrumb-classic-scrollers} is `false`.
+ */
+$breadcrumb-scroller-opacity: $toolbar-scroller-opacity !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-opacity-over'>/**
+</span> * @var {number}
+ * The opacity of hovered Breadcrumb scroller buttons. Only applicable when
+ * {@link $breadcrumb-classic-scrollers} is `false`.
+ */
+$breadcrumb-scroller-opacity-over: $toolbar-scroller-opacity-over !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-opacity-pressed'>/**
+</span> * @var {number}
+ * The opacity of pressed Breadcrumb scroller buttons. Only applicable when
+ * {@link $breadcrumb-classic-scrollers} is `false`.
+ */
+$breadcrumb-scroller-opacity-pressed: $toolbar-scroller-opacity-pressed !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-scroller-opacity-disabled'>/**
+</span> * @var {number}
+ * The opacity of disabled Breadcrumb scroller buttons. Only applicable when
+ * {@link $breadcrumb-classic-scrollers} is `false`.
+ */
+$breadcrumb-scroller-opacity-disabled: $toolbar-scroller-opacity-disabled !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-breadcrumb-classic-scrollers'>/**
+</span> * @var {boolean}
+ * `true` to use classic-style scroller buttons.  When `true` scroller buttons are given their
+ * hover state by changing their background-position,  When `false` scroller buttons are
+ * given their hover state by applying opacity.
+ */
+$breadcrumb-classic-scrollers: $toolbar-classic-scrollers !default;
+
+<span id='Ext-toolbar-Breadcrumb-css_var-S-include-breadcrumb-default-ui'>/**
+</span> * @var {boolean}
+ * `true` to include the &quot;default&quot; breadcrumb UI
+ */
+$include-breadcrumb-default-ui: true !default;
+</pre>
+</body>
+</html>

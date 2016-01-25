@@ -1,0 +1,32 @@
+Ext.onReady(function() {
+    Ext.create('Ext.toolbar.Toolbar', {
+        renderTo: 'test',
+        width: 700,
+        items: [{
+                // xtype: 'button', // 默认的工具栏类型
+                text: '按钮'
+            }, {
+                xtype: 'splitbutton',
+                text: '分割按钮'
+            },
+            // 使用右对齐容器
+            '->', // 等同 { xtype: 'tbfill' }
+            {
+                xtype: 'textfield',
+                name: 'field1',
+                emptyText: '输入搜索词'
+            },
+            // 添加工具栏项之间的垂直分隔条
+            '-', // 等同 {xtype: 'tbseparator'} 创建 Ext.toolbar.Separator
+            'text 1', // 等同 {xtype: 'tbtext', text: 'text1'} 创建 Ext.toolbar.TextItem
+            {
+                xtype: 'tbspacer'
+            }, // 等同 ' ' 创建 Ext.toolbar.Spacer
+            'text 2', {
+                xtype: 'tbspacer',
+                width: 50
+            }, // 添加一个50像素的空格
+            'text 3'
+        ]
+    });
+})

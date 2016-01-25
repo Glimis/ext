@@ -1,0 +1,600 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | What's New in Ext JS 5.0.1</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Accessibility" title="Accessibility">Accessibility</a> 
+       <a class="toc-page-h3" href="#Focus" title="Focus">Focus</a> 
+       <a class="toc-page-h3" href="#Keyboard_Navigation" title="Keyboard Navigation">Keyboard Navigation</a> 
+       <a class="toc-page-h2" href="#ViewModels" title="ViewModels">ViewModels</a> 
+       <a class="toc-page-h3" href="#Selection_Binding" title="Selection Binding">Selection Binding</a> 
+       <a class="toc-page-h3" href="#Model__amp__Field_Validation" title="Model &amp; Field Validation">Model &amp; Field Validation</a> 
+       <a class="toc-page-h2" href="#Data" title="Data">Data</a> 
+       <a class="toc-page-h3" href="#TreeStore_vs_Node_Events" title="TreeStore vs Node Events">TreeStore vs Node Events</a> 
+       <a class="toc-page-h3" href="#Associations" title="Associations">Associations</a> 
+       <a class="toc-page-h2" href="#Responsive_Configs" title="Responsive Configs">Responsive Configs</a> 
+       <a class="toc-page-h2" href="#Charts" title="Charts">Charts</a> 
+       <a class="toc-page-h3" href="#Chart_Themes" title="Chart Themes">Chart Themes</a> 
+       <a class="toc-page-h3" href="#Sencha_Cmd" title="Sencha Cmd">Sencha Cmd</a> 
+       <a class="toc-page-h4" href="#Output" title="Output">Output</a> 
+       <a class="toc-page-h4" href="#Packager" title="Packager">Packager</a> 
+       <a class="toc-page-h2" href="#Wrap_Up" title="Wrap Up">Wrap Up</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>What’s New in Ext JS 5.0.1</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>Ext JS 5.0.1 is a maintenance release that addresses many bugs and limitations discovered by our community while testing Ext JS 5.0.0. We believe this update significantly strengthens the Ext JS 5 branch and we’re excited to hear your feedback. If you feel there are pieces missing from this guide, please let us know in the <a href="http://www.sencha.com/forum/forumdisplay.php?129-Ext-5-Q-amp-A">Ext JS 5 forums</a>.</p> 
+       <p>Let’s discuss a few of these improvements.</p> 
+       <h2 id="Accessibility">Accessibility</h2> 
+       <p>Ext JS 4.2.2 introduced the “ext-aria” package to provide improved support for accessibility, as described in the <a href="http://www.w3.org/TR/wai-aria/">WAI-ARIA 1.0 standard</a>. While this was an important step in creating accessible applications, we learned a lot from the feedback we received from our testing partners and early adopters. Ext JS 5.0.1 incorporates much of that feedback to provide a better solution moving forward. </p> 
+       <p>Ext JS 5.0.1 re-introduces the concept of “ext-aria”, in addition to many other exciting improvements. Further, we have migrated support for focus and keyboard navigation from “ext-aria” to the framework’s core.</p> 
+       <h3 id="Focus">Focus</h3> 
+       <p>Ext JS 5.0.1 contains an improved strategy for the internal handling of focus. This internalization better aligns with accessibility standards. Core components, including buttons, tabs, form fields, and grids, now provide a clear, visual indication of focus. This is a key requirement for accessible applications. Users can modify several SASS variables and mixin parameters to gain more control over these new visual aspects.</p> 
+       <h3 id="Keyboard_Navigation">Keyboard Navigation</h3> 
+       <p>Ext JS previously relied on <a href="../.././apidocs/#!/api/Ext.FocusManager" data-full-load="true">Ext.FocusManager</a> to assist in managing focus. While this class remains, it is no longer the recommended approach. It’s important to note that Ext.FocusManager has been deprecated and its future existence should not be relied upon. In its place, we have added a “focusable” property to components. This property is used to manage the tabIndex DOM attribute. Any component, with this property set to true, will be able to receive focus by clicking or via the keyboard input.</p> 
+       <p>When these focusable components are placed in certain containers (such as toolbars), the container provides arrow key navigation and manages which item will receive the focus on entry into the container.</p> 
+       <p>For more details regarding accessibility, focus, and keyboard navigation improvements, see the <a href="../../core_concepts/accessibility.html">Accessibility Guide</a>.</p> 
+       <h2 id="ViewModels">ViewModels</h2> 
+       <p>We have addressed a number of bugs related to viewModels, but there are some noteworthy improvements related to binding as well.</p> 
+       <h3 id="Selection_Binding">Selection Binding</h3> 
+       <p>Developers may now use “selection” as a bindable property on certain components. These components include ComboBox, Grids, Trees, Breadcrumbs, etc. Using the selection binding keeps the component selections in sync. </p> 
+       <p>For details, see the <a href="http://dev.sencha.com/extjs/5.0.1/examples/kitchensink/#binding-selection">Kitchen Sink example</a>.</p> 
+       <h3 id="Model__amp__Field_Validation">Model &amp; Field Validation</h3> 
+       <p>One key improvement with form fields is that two-way bindings now check that the value is valid before updating their bound properties. The form fields can now acquire the Model’s validators and include them in their own validation.</p> 
+       <p>As of Ext JS 5.0.1, invalid values will never be put back into your records.</p> 
+       <h2 id="Data">Data</h2> 
+       <p>Ext.data has also been an area of a few key fixes and improvements in Ext JS 5.0.1.</p> 
+       <h3 id="TreeStore_vs_Node_Events">TreeStore vs Node Events</h3> 
+       <p>The <a href="../.././apidocs/#!/api/Ext.data.TreeStore" data-full-load="true">TreeStore class</a> was refactored in Ext JS 5.0.0 to extend Ext.data.Store. With this change, TreeStore would relay events from the root node (<a href="../.././apidocs/#!/api/Ext.data.NodeInterface" data-full-load="true">Ext.data.NodeInterface</a>). Unfortunately, certain node events collided with store events, which created problems for listeners. One such example was the “remove” event.</p> 
+       <p>Ext JS 5.0.1 modifies the TreeStore strategy by prefixing all node events with “node” before firing them as TreeStore events. This means that the node’s “remove” event is now fired from the TreeStore as “noderemove”. </p> 
+       <p>We always strive to avoid such changes in a maintenance release. However, this was a crucial change necessary to resolve the issue without breaking node listeners and/or store listeners. </p> 
+       <h3 id="Associations">Associations</h3> 
+       <p>Ext JS 5.0.0 introduced a lot of exciting new changes in terms of associations. However, one limitation that we discovered was that if you created a new record and then dropped that record, there was no cleanup logic to handle potential child records. This could create a situation where a session would generate create or update operations for these child records. These operations could not be processed by the server since the parent record was not saved.</p> 
+       <p>Ext JS 5.0.1 offers reference fields that declare parent/child ownership between Models. These reference fields are then consulted when dropping records. When you indicate this type of association, dropped records will automatically handle deleting their child records.</p> 
+       <p>For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('App.model.Order', {
+    extend: 'Ext.data.Model',
+    // ...
+});
+
+Ext.define('App.model.OrderItem', {
+    extend: 'Ext.data.Model',
+
+    fields: [{
+        name: 'orderId',
+
+        // Indicates that the referenced Model (Order) owns these
+        // records:
+        reference: { parent: 'Order' }
+    }]
+});</code></pre> 
+       <p>In this way, when an Order it dropped (marked for deletion), its child OrderItems will likewise be dropped:</p> 
+       <pre mode="javascript" theme="chrome"><code>order.drop();</code></pre> 
+       <p>Further, setting parent references to null (for example, by removing it from the parent’s association store) schedules that record for cleanup.</p> 
+       <pre mode="javascript" theme="chrome"><code>order.orderItems().removeAt(0); // removed orderItem is dropped
+
+order.orderItems().getAt(0).setOrder(null); // also drops this item</code></pre> 
+       <p>The server is still ultimately responsible for a full cascade delete, but the above handling ensures that the client will never reference dropped records in save operations.</p> 
+       <h2 id="Responsive_Configs">Responsive Configs</h2> 
+       <p>The new responsiveConfig provided by <a href="../.././apidocs/#!/api/Ext.mixin.Responsive" data-full-load="true">Ext.mixin.Responsive</a> and <a href="../.././apidocs/#!/api/Ext.plugin.Responsive" data-full-load="true">Ext.plugin.Responsive</a> provide flexibility for cleanly managing dynamic conditions.</p> 
+       <p>The new responsiveFormulas allow you to add properties for responsiveConfig rules. For example, your main controller could do something like this to publish new properties:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.main.Main', {
+    extend: 'Ext.container.Container',
+
+    mixins: [
+      'Ext.mixin.Responsive'
+    ],
+
+    responsiveFormulas: {
+        small: 'width &lt; 600',
+        medium: 'width &gt;= 600 &amp;&amp; width &lt; 800',
+        large: 'width &gt;= 800',
+
+        tuesday: function (context) {
+            return (new Date()).getDay() === 2;
+        }
+    }
+});</code></pre> 
+       <p>These responsiveForumulas then produce these new values, which can be used in any of your responsiveConfig’s. This can help streamline your application’s responsiveConfigs, as well as give you a single place to maintain these kinds of choices.</p> 
+       <h2 id="Charts">Charts</h2> 
+       <p>The “sencha-charts” package also benefits from several improvements (such as some stock marker sprites like arrows, diamonds, etc). We’ve also modified our build process to include a packaged version of the sencha-charts package so that users aren’t required to use Sencha Cmd. However, the most significant of these that we documented and exposed custom theme creation.</p> 
+       <h3 id="Chart_Themes">Chart Themes</h3> 
+       <p>Ext JS 5.0.0 shipped charts with several built-in themes that you could select for your charts. However, building custom themes was not a documented process. With this release, we have opened up this ability so that you can make your own color palettes and much more.</p> 
+       <p>A theme for charts is a class derived from <a href="../.././apidocs/#!/api/Ext.chart.theme.Base" data-full-load="true">Ext.chart.theme.Base</a> and given an alias that starts with: </p> 
+       <pre mode="javascript" theme="chrome"><code>&quot;chart.theme.&quot;</code></pre> 
+       <p>A basic theme could be as simple as this:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('App.chart.theme.Awesome', {
+    extend: 'Ext.chart.theme.Base',
+    alias: 'chart.theme.awesome',
+
+    singleton: true,
+
+    config: {
+      baseColor: '#4d7fe6'
+    }
+});</code></pre> 
+       <p>From here, you can add any number of other configs to style your series, axes and markers. To see all the options check out <a href="../.././apidocs/#!/api/Ext.chart.theme.Base" data-full-load="true">Ext.chart.theme.Base</a> reference for the available configs. </p> 
+       <p>To use the above you would simply set the “theme” config on your charts:</p> 
+       <pre mode="javascript" theme="chrome"><code>theme: 'awesome'</code></pre> 
+       <h3 id="Sencha_Cmd">Sencha Cmd</h3> 
+       <p>Last but not least, Sencha Cmd 5.0.1 expands upon options available in <code>app.json</code>. This gives you more fine-grained control to configure your application without having to delve into the build scripts.</p> 
+       <h4 id="Output">Output</h4> 
+       <p>To give you a peek at the most useful of these new controls, let’s look at the “output” object. A common requirement for some environments is to maintain the “markup” file in a folder other than where the Sencha application resides. For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>foo.php
+foo/
+    app.json
+    app.js</code></pre> 
+       <p>The difference with this model is that the markup file (“foo.php” above, but it could be anything) is in a parent folder. In previous releases, this required setting several build properties. In Sencha Cmd 5.0.1 we can now do this in app.json:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    ...
+    &quot;output&quot;: {
+        &quot;page&quot;: {
+            &quot;path&quot;: &quot;../foo.php&quot;,
+            &quot;enable&quot;: false
+        }
+    }
+}</code></pre> 
+       <p>That single setting ensures that all paths will be calculated relative to the parent folder while also disabling the build step that rewrites the markup file. The “output” object can control many other aspects of your build’s output such from enabling compiler optimizations to tuning the microloader.</p> 
+       <p>To learn more about these new available options, please open <code>app.json</code> and review the robust commenting.</p> 
+       <h4 id="Packager">Packager</h4> 
+       <p>Cordova and PhoneGap are now much more flexible and easier to use with the new “packager” property. This new setting allows your build to specify its packager (either “cordova” or “phonegap”) directly in <code>app.json</code>. Combined with the “builds” object, we can make an application that builds for web, iOS and Android. Further, we can specify local Cordova builds for Android and use the PhoneGap Cloud Build for iOS since iOS requires a Mac.</p> 
+       <p>For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    ...
+    &quot;builds&quot;: {
+        &quot;web&quot;: {
+            &quot;default&quot;: true  // picked by &quot;sencha app build&quot; 
+        },
+        &quot;ios&quot;: {
+            &quot;packager&quot;: &quot;phonegap&quot;,
+            &quot;phonegap&quot;: {
+                &quot;config&quot;: {
+            &quot;platform&quot;: &quot;ios&quot;,
+                    &quot;remote&quot;: true  // use PhoneGap Build
+                }
+            }
+        },
+        &quot;android&quot;: {
+            &quot;packager&quot;: &quot;phonegap&quot;  // Any OS can build Android
+        &quot;phonegap&quot;: {
+            &quot;config&quot;: {
+                &quot;platform&quot;: &quot;android&quot; // use Local Phonegap
+            }
+        }
+        }
+    }
+}</code></pre> 
+       <p>As before we can run a build like so:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app build</code></pre> 
+       <p>The above will use the “web” build definition. But now we can also do these:</p> 
+       <pre mode="javascript" theme="chrome"><code>sencha app build ios
+sencha app build android</code></pre> 
+       <p>Of course, you will need to have Cordova and PhoneGap installed and you will also need to configure your PhoneGap Build account. Other than formalities, you can see how this property cleans up the build process. Using this approach also frees you up to add “testing” to any of these builds and get uncompressed JavaScript code for debugging.</p> 
+       <h2 id="Wrap_Up">Wrap Up</h2> 
+       <p>We’re very excited about the new functionality and many bug fixes in Ext JS 5.0.1. We believe that this is one of the strongest releases we’ve ever had and hope that you do to. </p> 
+       <p>If you have questions, please open a thread on the <a href="http://www.sencha.com/forum/forumdisplay.php?129-Ext-5-Q-amp-A">Ext JS 5 Forums</a>. If you’re a support member, please open a ticket in the <a href="http://support.sencha.com">Support Portal</a>.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

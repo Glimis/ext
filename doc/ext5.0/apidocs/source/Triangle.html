@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js">Ext.define('Ext.draw.sprite.Triangle', {
+    extend: 'Ext.draw.sprite.Path',
+    alias: 'sprite.triangle',
+
+    inheritableStatics: {
+        def: {
+            processors: {
+                x: 'number',
+                y: 'number',
+<span id='global-cfg-size'>                /**
+</span>                 * @cfg {Number} [size=4] The size of the sprite.
+                 * Meant to be comparable to the size of a circle sprite with the same radius.
+                 */
+                size: 'number'
+            },
+            defaults: {
+                x: 0,
+                y: 0,
+                size: 4
+            },
+            dirtyTriggers: {
+                x: 'path',
+                y: 'path',
+                size: 'path'
+            }
+        }
+    },
+
+    updatePath: function (path, attr) {
+        var s = attr.size * 2.2,
+            x = attr.x,
+            y = attr.y;
+        path.fromSvgString('M'.concat(x, ',', y, 'm0-', s * 0.58, 'l', s * 0.5, ',', s * 0.87, '-', s, ',0z'));
+    }
+
+});</pre>
+</body>
+</html>

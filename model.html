@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>htjy</title>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script type="text/javascript" src="/ext/build/ext.js"></script>
+    <script type="text/javascript" src="/ext/build/ext-all.js"></script>
+    <script src="/ext/packages/ext-locale/build/ext-locale-zh_CN.js"></script>
+    <script src="/resources/beautify.js"></script>
+    <script src="/resources/beautify-html.js"></script>
+    <link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />
+</head>
+
+<body>
+    <p>数据存储</p>
+    <p>model模型</p>
+    <p>model是对事物的描述,包含属性的描述</p>
+    <p>model是与接口交互的依赖对象(一般一个model包含一组增删改查的接口),它可以跟接口(后台)进行交互</p>
+    <p>领域模型包括充血模型与贫血模型,标准的java使用的是贫血模型,而ext实用的事充血模型,简单的说model并非一个`pojo`,是可以包含方法的</p>
+     <p>model允许关联关系的确立</p>
+    <h2>包含属性的描述</h2>
+    <pre>
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'name',  type: 'string'},
+        {name: 'age',   type: 'int', convert: null},
+        {name: 'phone', type: 'string'},
+        {name: 'alive', type: 'boolean', defaultValue: true, convert: null}
+    ]
+});
+    </pre> 任何model,包括任意orm中的model,都必须对属性进行描述,fields就是这么一个属性
+    <h2>数据交互的依赖对象</h2>
+    <pre>
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields: ['id', 'name', 'email'],
+    proxy: {
+        type: 'rest',
+        url : '/users'
+    }
+});
+
+var user = Ext.create('User', {name: 'Ed Spencer', email: 'ed@sencha.com'});
+user.save(); //保存
+User.load(123);
+
+user.set('name', 'Edward Spencer');
+user.save();//修改
+
+user.destroy();//删除
+    </pre>
+<p>交互能力是通过proxy进行的,model可以包含(自动调用)此对象,无论是将其理解为前端的orm或者对ajax的封装都没有问题</p>
+<p>模型是各种通讯的依赖,各种依赖接口数据的各种事件都会传递模型对象</p>
+<p>比如combobox,grid,form</p>
+<h2>充血模式</h2>
+<pre>
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'name',  type: 'string'},
+        {name: 'age',   type: 'int', convert: null},
+        {name: 'phone', type: 'string'},
+        {name: 'alive', type: 'boolean', defaultValue: true, convert: null}
+    ],
+
+    changeName: function() {
+        var oldName = this.get('name'),
+            newName = oldName + " The Barbarian";
+
+        this.set('name', newName);
+    }
+});    
+</pre>
+<p>模型中包含对自己的操作(包括增删改查)就可以称为充血模型</p>
+<p>互联网项目的模型下的业务并不复杂,充血除了自撸意外,更重要的在于验证,有爱的ext已经将其封装</p>
+<h2>验证</h2>
+<pre>
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'name',     type: 'string'},
+        {name: 'age',      type: 'int'},
+        {name: 'phone',    type: 'string'},
+        {name: 'gender',   type: 'string'},
+        {name: 'username', type: 'string'},
+        {name: 'alive',    type: 'boolean', defaultValue: true}
+    ],
+
+    validations: [
+        {type: 'presence',  field: 'age'},
+        {type: 'length',    field: 'name',     min: 2},
+        {type: 'inclusion', field: 'gender',   list: ['Male', 'Female']},
+        {type: 'exclusion', field: 'username', list: ['Admin', 'Operator']},
+        {type: 'format',    field: 'username', matcher: /([a-z]+)[0-9]{2,3}/}
+    ]
+});
+
+var instance = Ext.create('User', {
+    name: 'Ed',
+    gender: 'Male',
+    username: 'edspencer'
+});
+var errors = instance.validate();    
+</pre>
+<p>有人认为这根form验证冲突了,描述起来会很麻烦....form是模型包含ui的封装,最关键的是,他的模型可能包含多个model,而此处的model会一一对应一个接口(就像数据表一样),这种写法更加的方便</p>
+<h2>关联关系</h2>
+<pre>
+Ext.define('Post', {
+    extend: 'Ext.data.Model',
+    fields: ['id', 'user_id'],
+
+    belongsTo: 'User',
+    hasMany  : {model: 'Comment', name: 'comments'}
+});
+
+Ext.define('Comment', {
+    extend: 'Ext.data.Model',
+    fields: ['id', 'user_id', 'post_id'],
+
+    belongsTo: 'Post'
+});
+
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields: ['id'],
+
+    hasMany: [
+        'Post',
+        {model: 'Comment', name: 'comments'}
+    ]
+});    
+</pre>
+<p>如同数据一般</p>
+</body>
+<script>
+Ext.onReady(function() {
+    Ext.create("app.view.StorePort");
+});
+</script>
+
+</html>

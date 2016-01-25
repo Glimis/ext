@@ -1,0 +1,14 @@
+var connect = Ext.create("Ext.data.Connection", {
+    method: 'get',
+     url: '/data/hello.json',
+     timeout:100,
+     extraParams:{
+     	name:'a'
+     }
+})
+connect.request({
+    success: function(response){
+        var text = response.responseText;
+      	Ext.getBody().setText(Ext.getBody().getHtml()+"...."+text)
+    }
+});

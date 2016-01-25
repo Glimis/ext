@@ -1,0 +1,665 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Grids</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+          <li class="file"><a href="../../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+        <li class="file"><a href="../../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Basic_Grid_Panel" title="Basic Grid Panel">Basic Grid Panel</a> 
+       <a class="toc-page-h3" href="#Model_and_Store" title="Model and Store">Model and Store</a> 
+       <a class="toc-page-h3" href="#Grid_Panel" title="Grid Panel">Grid Panel</a> 
+       <a class="toc-page-h2" href="#Renderers" title="Renderers">Renderers</a> 
+       <a class="toc-page-h2" href="#Grouping" title="Grouping">Grouping</a> 
+       <a class="toc-page-h2" href="#Selection_Models" title="Selection Models">Selection Models</a> 
+       <a class="toc-page-h2" href="#Editing" title="Editing">Editing</a> 
+       <a class="toc-page-h3" href="#Cell_Editing" title="Cell Editing">Cell Editing</a> 
+       <a class="toc-page-h3" href="#Row_Editing" title="Row Editing">Row Editing</a> 
+       <a class="toc-page-h2" href="#Paging" title="Paging">Paging</a> 
+       <a class="toc-page-h3" href="#Store_Setup" title="Store Setup">Store Setup</a> 
+       <a class="toc-page-h3" href="#Paging_Toolbar" title="Paging Toolbar">Paging Toolbar</a> 
+       <a class="toc-page-h3" href="#Buffered_Rendering" title="Buffered Rendering">Buffered Rendering</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Grids</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p><a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a> is one of the centerpieces of Ext JS. It’s an incredibly versatile component that provides an easy way to display, sort, group, and edit data.</p> 
+       <h2 id="Basic_Grid_Panel">Basic Grid Panel</h2> 
+       <p><img src="./images/simple_grid.png" alt="Basic Grid Panel" /></p> 
+       <p>Let’s get started by creating a basic <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a>. Here’s all you need to know to get a simple grid up and running:</p> 
+       <h3 id="Model_and_Store">Model and Store</h3> 
+       <p><a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a> is simply a component that displays data contained in a <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a>. <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a> can be thought of as a collection of records, or <a href="../.././apidocs/#!/api/Ext.data.Model" data-full-load="true">Ext.data.Model</a> instances.</p> 
+       <p>The benefit of this setup is separating our concerns. <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a> is only concerned with displaying the data, while <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a> takes care of fetching and saving the data using <a href="../.././apidocs/#!/api/Ext.data.proxy.Proxy" data-full-load="true">Ext.data.proxy.Proxy</a>.</p> 
+       <p>First, we need to define a <a href="../.././apidocs/#!/api/Ext.data.Model" data-full-load="true">Ext.data.Model</a>. A model is just a collection of fields that represents a type of data. Let’s define a model that represents a “User”:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields: [ 'name', 'email', 'phone' ]
+});</code></pre> 
+       <p>Next let’s create a <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a> that contains several <code>User</code> instances.</p> 
+       <pre mode="javascript" theme="chrome"><code>var userStore = Ext.create('Ext.data.Store', {
+    model: 'User',
+    data: [
+        { name: 'Lisa', email: 'lisa@simpsons.com', phone: '555-111-1224' },
+        { name: 'Bart', email: 'bart@simpsons.com', phone: '555-222-1234' },
+        { name: 'Homer', email: 'homer@simpsons.com', phone: '555-222-1244' },
+        { name: 'Marge', email: 'marge@simpsons.com', phone: '555-222-1254' }
+    ]
+});</code></pre> 
+       <p>For sake of ease, we configured <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a> to load its data inline. In a real world application, you would most likely configure the <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a> to use a <a href="../.././apidocs/#!/api/Ext.data.proxy.Proxy" data-full-load="true">Ext.data.proxy.Proxy</a> to load data from the server.</p> 
+       <h3 id="Grid_Panel">Grid Panel</h3> 
+       <p>Now, we have a model, which defines our data structure. We have also loaded several model instances into <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a>. Now we’re ready to display the data using <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a>.</p> 
+       <p>In this example, we configured the grid with <a href="../.././apidocs/#!/api/Ext.AbstractComponent-method-renderTo" data-full-load="true">renderTo</a> to immediately render the grid into the HTML document. </p> 
+       <p>In many situations, the grid will be an ancestor of <a href="../.././apidocs/#!/api/Ext.container.Viewport" data-full-load="true">Ext.container.Viewport</a>, which means rendering is already handled.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.grid.Panel', {
+    renderTo: Ext.getBody(),
+    store: userStore,
+    width: 400,
+    height: 200,
+    title: 'Application Users',
+    columns: [
+        {
+            text: 'Name',
+            width: 100,
+            sortable: false,
+            hideable: false,
+            dataIndex: 'name'
+        },
+        {
+            text: 'Email Address',
+            width: 150,
+            dataIndex: 'email',
+            hidden: true
+        },
+        {
+            text: 'Phone Number',
+            flex: 1,
+            dataIndex: 'phone'
+        }
+    ]
+});</code></pre> 
+       <p>And that’s all there is to it. </p> 
+       <p>We just created a <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a> that renders itself to the body element. We also told the grid panel to get its data from the <code>userStore</code> that we previously created. </p> 
+       <p>Finally, we defined the Grid Panel’s columns and gave them a <code>dataIndex</code> property. This <code>dataIndex</code> associates a field from our Model to a column.</p> 
+       <p>The <code>Name</code> column has a fixed width of <code>100px</code> and has sorting and hiding disabled. The <code>Email Address</code> column is hidden by default (it can be shown again by using the menu on any other column). Finally, the <code>Phone Number</code> column flexes to fit the remainder of the Grid Panel’s total width. </p> 
+       <p>For a larger example, see the <a href="#!/example/build/KitchenSink/ext-theme-neptune/#array-grid">Array Grid Example</a>.</p> 
+       <h2 id="Renderers">Renderers</h2> 
+       <p>You can use the <code>renderer</code> property of the column config to change the way in which data is displayed. A renderer is a function that modifies the underlying value and returns a new value for display. Some of the most common renderers are included in <a href="../.././apidocs/#!/api/Ext.util.Format" data-full-load="true">Ext.util.Format</a>, but you can write your own as well:</p> 
+       <pre mode="javascript" theme="chrome"><code>columns: [
+    {
+        text: 'Birth Date',
+        dataIndex: 'birthDate',
+        // format the date using a renderer from the Ext.util.Format class
+        renderer: Ext.util.Format.dateRenderer('m/d/Y')
+    },
+    {
+        text: 'Email Address',
+        dataIndex: 'email',
+        // format the email address using a custom renderer
+        renderer: function(value) {
+            return Ext.String.format('&lt;a href=&quot;mailto:{0}&quot;&gt;{1}&lt;/a&gt;', value, value);
+        }
+    }
+]</code></pre> 
+       <p>See the Kitchen Sink’s <a href="http://dev.sencha.com/ext/5.0.0/examples/kitchensink/#array-grid">Array Grid</a> for a live demo that uses custom renderers.</p> 
+       <h2 id="Grouping">Grouping</h2> 
+       <p><img src="./images/grouping.png" /></p> 
+       <p>Organizing the rows into groups is easy. First we specify a <a href="../.././apidocs/#!/api/Ext.data.Store-method-groupField" data-full-load="true">Ext.data.Store#groupField</a> property on our store:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.data.Store', {
+    model: 'Employee',
+    data: ...,
+    groupField: 'department'
+});</code></pre> 
+       <p>Next we configure a grid with a <a href="../.././apidocs/#!/api/Ext.grid.feature.Feature" data-full-load="true">Ext.grid.feature.Feature</a> that will handle displaying the rows in groups:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.grid.Panel', {
+    ...
+    features: [{ ftype: 'grouping' }]
+});</code></pre> 
+       <p>See the Kitchen Sink’s <a href="http://dev.sencha.com/ext/5.0.0/examples/kitchensink/#grouped-grid">Grouping Grid Panel</a> for a live example.</p> 
+       <h2 id="Selection_Models">Selection Models</h2> 
+       <p>Grid Panels can be used to simply display data. However, it is often necessary to interact with the grid’s data. All Grid Panel’s have a <a href="../.././apidocs/#!/api/Ext.selection.Model" data-full-load="true">Ext.selection.Model</a>, which determines how data is selected. The two main types of Selection Model are <a href="../.././apidocs/#!/api/Ext.selection.RowModel" data-full-load="true">Ext.selection.RowModel</a>, where entire rows are selected, and <a href="../.././apidocs/#!/api/Ext.selection.CellModel" data-full-load="true">Ext.selection.CellModel</a>, where individual cells are selected.</p> 
+       <p>Grid Panels use <a href="../.././apidocs/#!/api/Ext.selection.RowModel" data-full-load="true">Ext.selection.RowModel</a> by default, but it’s easy to switch to a <a href="../.././apidocs/#!/api/Ext.selection.CellModel" data-full-load="true">Ext.selection.CellModel</a>:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.grid.Panel', {
+    selType: 'cellmodel',
+    store: ...
+});</code></pre> 
+       <p>Using <a href="../.././apidocs/#!/api/Ext.selection.CellModel" data-full-load="true">Ext.selection.CellModel</a> changes a couple of things. Firstly, clicking on a cell now selects just that cell as opposed to the entire row. Secondly, the keyboard navigation will walk from cell to cell instead of row to row. Cell-based selection models are usually used in conjunction with editing.</p> 
+       <h2 id="Editing">Editing</h2> 
+       <p>Grid Panel has built-in support for editing. Let’s look at the two main editing modes - row editing and cell editing.</p> 
+       <h3 id="Cell_Editing">Cell Editing</h3> 
+       <p>Cell editing allows you to edit the data in a Grid Panel one cell at a time. The first step in implementing cell editing is to configure an editor for each <a href="../.././apidocs/#!/api/Ext.grid.column.Column" data-full-load="true">Ext.grid.column.Column</a> in your Grid Panel that should be editable. This is done using the <a href="../.././apidocs/#!/api/Ext.grid.column.Column-method-editor" data-full-load="true">Ext.grid.column.Column#editor</a> config. The simplest way is to specify just the xtype of the field you want to use as an editor:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.grid.Panel', {
+    ...
+    columns: [
+        {
+            text: 'Email Address',
+            dataIndex: 'email',
+            editor: 'textfield'
+       }
+    ]
+});</code></pre> 
+       <p>If you need more control over how the editor field behaves, the <a href="../.././apidocs/#!/api/Ext.grid.column.Column-method-editor" data-full-load="true">Ext.grid.column.Column#editor</a> config can also take a config object for a Field. For example if we are using a <a href="../.././apidocs/#!/api/Ext.form.field.Text" data-full-load="true">Ext.form.field.Text</a> and we want to require a value:</p> 
+       <pre mode="javascript" theme="chrome"><code>columns: [
+    text: 'Name',
+    dataIndex: 'name',
+    editor: {
+        xtype: 'textfield',
+        allowBlank: false
+    }
+[</code></pre> 
+       <p>You can use any class in the <code>Ext.form.field</code> package as an editor field. Lets suppose we want to edit a column that contains dates. We can use a <a href="../.././apidocs/#!/api/Ext.form.field.Date" data-full-load="true">Ext.form.field.Date</a> editor:</p> 
+       <pre mode="javascript" theme="chrome"><code>columns: [
+    {
+        text: 'Birth Date',
+        dataIndex: 'birthDate',
+        editor: 'datefield'
+    }
+]</code></pre> 
+       <p>Any <a href="../.././apidocs/#!/api/Ext.grid.column.Column" data-full-load="true">Ext.grid.column.Column</a> in a <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a> that do not have a <a href="../.././apidocs/#!/api/Ext.grid.column.Column-method-editor" data-full-load="true">Ext.grid.column.Column#editor</a>] configured will not be editable.</p> 
+       <p>Now that we’ve configured which columns we want to be editable, and the editor fields that will be used to edit the data, the next step is to specify a selection model. Let’s use a <a href="../.././apidocs/#!/api/Ext.selection.CellModel" data-full-load="true">Ext.selection.CellModel</a> in our <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a> config:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.grid.Panel', {
+    ...
+    selType: 'cellmodel'
+});</code></pre> 
+       <p>Finally, to enable editing we need to configure the <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a> with a <a href="../.././apidocs/#!/api/Ext.grid.plugin.CellEditing" data-full-load="true">Ext.grid.plugin.CellEditing</a>:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.grid.Panel', {
+    ...
+    selType: 'cellmodel',
+    plugins: [
+        Ext.create('Ext.grid.plugin.CellEditing', {
+            clicksToEdit: 1
+        })
+    ]
+});</code></pre> 
+       <p>And that’s all it takes to create an editable grid using cell editing. See <a href="http://dev.sencha.com/ext/5.0.0/examples/kitchensink/#cell-editing">Cell Editing</a> for a working example.</p> 
+       <p><img src="./images/cell_editing.png" /></p> 
+       <h3 id="Row_Editing">Row Editing</h3> 
+       <p>Row editing enables you to edit an entire row at a time, rather than editing cell by cell. Row editing works in exactly the same way as cell editing - all we need to do is change the plugin type to <a href="../.././apidocs/#!/api/Ext.grid.plugin.RowEditing" data-full-load="true">Ext.grid.plugin.RowEditing</a> and set the selType to <code>rowmodel</code>.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.grid.Panel', {
+    ...
+    selType: 'rowmodel',
+    plugins: [
+        Ext.create('Ext.grid.plugin.RowEditing', {
+            clicksToEdit: 1
+        })
+    ]
+});</code></pre> 
+       <p><img src="./images/row_editing.png" /></p> 
+       <p>See <a href="http://dev.sencha.com/ext/5.0.0/examples/grid/row-editing.html">Row Editing</a> for a working example.</p> 
+       <h2 id="Paging">Paging</h2> 
+       <p>Sometimes your data set is too large to display all on one page. <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a> supports displaying individual pages from the dataset using a <a href="../.././apidocs/#!/api/Ext.toolbar.Paging" data-full-load="true">Ext.toolbar.Paging</a>, which loads pages using previous/next buttons.</p> 
+       <h3 id="Store_Setup">Store Setup</h3> 
+       <p>Before we can set up either type of paging on a <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a>, we have to configure the <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a> to support paging. In the below example we add <a href="../.././apidocs/#!/api/Ext.data.Store-method-pageSize" data-full-load="true">Ext.data.Store#pageSize</a> to the <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a>, and we configure our <a href="../.././apidocs/#!/api/Ext.data.reader.Reader" data-full-load="true">Ext.data.reader.Reader</a> with a <a href="../.././apidocs/#!/api/Ext.data.reader.Reader-method-totalProperty" data-full-load="true">Ext.data.reader.Reader#totalProperty</a>:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.data.Store', {
+    model: 'User',
+    autoLoad: true,
+    pageSize: 4,
+    proxy: {
+        type: 'ajax',
+        url : 'data/users.json',
+        reader: {
+            type: 'json',
+            root: 'users',
+            totalProperty: 'total'
+        }
+    }
+});</code></pre> 
+       <p><a href="../.././apidocs/#!/api/Ext.data.reader.Reader-method-totalProperty" data-full-load="true">Ext.data.reader.Reader#totalProperty</a> config tells <a href="../.././apidocs/#!/api/Ext.data.reader.Json" data-full-load="true">Ext.data.reader.Json</a> where to get the total number of results in the JSON response. This <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a> is configured to consume a JSON response that looks something like this:</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    &quot;success&quot;: true,
+    &quot;total&quot;: 12,
+    &quot;users&quot;: [
+        { &quot;name&quot;: &quot;Lisa&quot;, &quot;email&quot;: &quot;lisa@simpsons.com&quot;, &quot;phone&quot;: &quot;555-111-1224&quot; },
+        { &quot;name&quot;: &quot;Bart&quot;, &quot;email&quot;: &quot;bart@simpsons.com&quot;, &quot;phone&quot;: &quot;555-222-1234&quot; },
+        { &quot;name&quot;: &quot;Homer&quot;, &quot;email&quot;: &quot;homer@simpsons.com&quot;, &quot;phone&quot;: &quot;555-222-1244&quot; },
+        { &quot;name&quot;: &quot;Marge&quot;, &quot;email&quot;: &quot;marge@simpsons.com&quot;, &quot;phone&quot;: &quot;555-222-1254&quot; }
+    ]
+}</code></pre> 
+       <h3 id="Paging_Toolbar">Paging Toolbar</h3> 
+       <p>Now that we’ve setup our <a href="../.././apidocs/#!/api/Ext.data.Store" data-full-load="true">Ext.data.Store</a> to support paging, all that’s left is to configure a <a href="../.././apidocs/#!/api/Ext.toolbar.Paging" data-full-load="true">Ext.toolbar.Paging</a>. You could put the <a href="../.././apidocs/#!/api/Ext.toolbar.Paging" data-full-load="true">Ext.toolbar.Paging</a> anywhere in your application layout, but typically it is docked to the <a href="../.././apidocs/#!/api/Ext.grid.Panel" data-full-load="true">Ext.grid.Panel</a>:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.grid.Panel', {
+    store: userStore,
+    columns: ...,
+    dockedItems: [{
+        xtype: 'pagingtoolbar',
+        store: userStore,   // same store GridPanel is using
+        dock: 'bottom',
+        displayInfo: true
+    }]
+});</code></pre> 
+       <p><img src="./images/paging_toolbar.png" /></p> 
+       <p>See the <a href="http://dev.sencha.com/ext/5.0.0/examples/kitchensink/#paging-grid">Paging Grid</a> for a working example.</p> 
+       <h3 id="Buffered_Rendering">Buffered Rendering</h3> 
+       <p>Grids support buffered rendering of extremely large datasets as an alternative to using a paging toolbar. Your users can scroll through thousands of records without the performance penalties of renderering all the records on screen at once. The grid should be bound to a store with a pageSize specified.</p> 
+       <p>To use buffered rendering, configure your grid with the <code>bufferedrenderer</code> plugin. The Store can be fully loaded with a very large dataset.</p> 
+       <p>Only enough rows are rendered to fill the visible area of the grid with a little <a href="../.././apidocs/#!/api/Ext.grid.plugin.BufferedRenderer-method-leadingBufferZone" data-full-load="true">Ext.grid.plugin.BufferedRenderer#leadingBufferZone</a> overflow either side to allow scrolling. As scrolling proceeds, new rows are rendered in the direction of scroll, and rows are removed from the receding side of the table.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.create('Ext.grid.Panel', {
+    // Use a BufferedRenderer plugin
+    plugins: {
+        ptype: 'bufferedrenderer'
+    },
+    // Configure the rest as usual
+    ...
+});</code></pre> 
+       <p>See <a href="http://dev.sencha.com/ext/5.0.0/examples/grid/buffer-grid.html">Buffered Renderer</a> for a working example.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

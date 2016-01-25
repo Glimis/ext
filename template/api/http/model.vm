@@ -1,0 +1,23 @@
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields:  [
+        {name: 'name',     type: 'string'},
+        {name: 'age',      type: 'int'}
+    ],
+    //验证
+    validations: [
+        {type: 'presence',  field: 'age'},
+        {type: 'format',    field: 'name', matcher: /Change/}
+    ],
+    //任意业务
+    changeName: function() {
+        var oldName = this.get('name'),
+            newName = oldName + " Change";
+        this.set('name', newName);
+    },
+    //代理,数据同步的基础设置
+     proxy: {
+        type: 'rest',
+        url : '/data/model'
+    }
+});

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Sencha Examples</title>
+  <link href="/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" rel="stylesheet" />
+    <link href="/resources/codemirror/lib/codemirror.css" rel="stylesheet" />
+    <script type="text/javascript" src="/ext/build/ext-all-rtl-debug.js"></script>
+
+    <script type="text/javascript">
+        function loadInlineExample(code, options) {
+            try {
+                document.body.innerHTML = '';
+                eval(code);
+                return Ext.getBody().el.dom.innerHTML;
+            } catch (e) {
+                document.body.innerHTML = e;
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | View Controllers</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Recapping_Controllers" title="Recapping Controllers">Recapping Controllers</a> 
+       <a class="toc-page-h3" href="#Challenges" title="Challenges">Challenges</a> 
+       <a class="toc-page-h2" href="#ViewControllers" title="ViewControllers">ViewControllers</a> 
+       <a class="toc-page-h3" href="#Listeners" title="Listeners">Listeners</a> 
+       <a class="toc-page-h3" href="#Reference" title="Reference">Reference</a> 
+       <a class="toc-page-h3" href="#Encapsulation" title="Encapsulation">Encapsulation</a> 
+       <a class="toc-page-h3" href="#Listeners_and_Event_Domains" title="Listeners and Event Domains">Listeners and Event Domains</a> 
+       <a class="toc-page-h3" href="#Lifecycle" title="Lifecycle">Lifecycle</a> 
+       <a class="toc-page-h2" href="#Conclusion" title="Conclusion">Conclusion</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>ViewControllers in Ext JS 5</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>Ext JS 5 delivers some exciting improvements for you to use in your application architecture. We have added support for ViewModels and MVVM as well as ViewControllers to enhance MVC applications. Best of all, these choices are not mutually exclusive, so you can introduce these features incrementally or even blend them.</p> 
+       <h2 id="Recapping_Controllers">Recapping Controllers</h2> 
+       <p>In Ext JS 4, a Controller is a class derived from <a href=".././apidocs/#!/api/Ext.app.Controller" data-full-load="true">Ext.app.Controller</a>. These Controllers use CSS-like selectors (called “Component Queries”) to match components and respond to their events. They also use “refs” to select and retrieve component instances.</p> 
+       <p>These controllers are created at application launch and remain present for the life of the application. During its lifetime, views of interest to a controller will come and go. There may even be multiple instances of views that the controller manages.</p> 
+       <h3 id="Challenges">Challenges</h3> 
+       <p>For large applications, these techniques can create certain challenges.</p> 
+       <p>In such environments, views and controllers may be authored by multiple development teams and integrated into the final application. Ensuring that controllers only react to their intended views can be difficult. Further, it is common for developers to want to limit the number of controllers created at application launch. While lazily creating controllers is possible with some effort, they can’t be destroyed, so they remain even if they are no longer needed.</p> 
+       <h2 id="ViewControllers">ViewControllers</h2> 
+       <p>While Ext JS 5 is backwards compatible with current controllers, it introduces a new type of controller designed to handle these challenges: <a href=".././apidocs/#!/api/Ext.app.ViewController" data-full-load="true">Ext.app.ViewController</a>. ViewController does this in the following ways:</p> 
+       <ul> 
+        <li>Simplifies the connection to views using “listeners” and “reference” configs.</li> 
+        <li>Leverages the life cycle of views to automatically manage their associated ViewController.</li> 
+        <li>Reduces complexity in the ViewController based on a one-to-one relationship with the managed view.</li> 
+        <li>Provides encapsulation to make nesting views reliable.</li> 
+        <li>Retains the ability to select components and listen to their events at any level below the associated view.</li> 
+       </ul> 
+       <h3 id="Listeners">Listeners</h3> 
+       <p>The listeners config is not new, but it has gained several new abilities in Ext JS 5. For the purposes of ViewControllers, we can look at just two examples. The first is a basic use of a listeners config on a child item in a view:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.foo.Foo', {
+    extend: 'Ext.panel.Panel',
+    xtype: 'foo',
+    controller: 'foo',
+
+    items: [{
+        xtype: 'textfield',
+        fieldLabel: 'Bar',
+        listeners: {
+            change: 'onBarChange'  // no scope given here
+        }
+    }]
+});
+
+Ext.define('MyApp.view.foo.FooController', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.foo',
+
+    onBarChange: function (barTextField) {
+        // called by 'change' event
+    }
+});</code></pre> 
+       <p>The above use of listeners shows a named event handler (“onBarChange”) with no specified “scope”. Internally, the event system resolves the default scope for the Bar textfield to its owning ViewController.</p> 
+       <p>Historically, the listeners config was reserved for use by a component’s creator, so how would a view listen to its own events, or perhaps those fired by its base class? The answer is that we need to use an explicit scope:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.foo.Foo', {
+    extend: 'Ext.panel.Panel',
+    xtype: 'foo',
+    controller: 'foo',
+
+    listeners: {
+        collapse: 'onCollapse',
+        scope: 'controller'
+    },
+
+    items: [{
+        ...
+    }]
+});</code></pre> 
+       <p>The above example leverages two new features in Ext JS 5: named scopes and declarative listeners. We’ll focus on the named scope here. There are two valid values for named scope: “this” and “controller”. When writing MVC applications, we almost always use “controller” which has the obvious result of looking on that view’s ViewController (not the ViewController of the view that created the instance).</p> 
+       <p>Since a view is a type of <a href=".././apidocs/#!/api/Ext.Component" data-full-load="true">Ext.Component</a>, we have assigned this view an “xtype” which enables other views to create an instance of our view in the same way this view created its textfield. To see how this comes together, consider a view that uses this one. For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.bar.Bar', {
+    extend: 'Ext.panel.Panel',
+    xtype: 'bar',
+    controller: 'bar',
+
+    items: [{
+        xtype: 'foo',
+        listeners: {
+            collapse: 'onCollapse'
+        }
+    }]
+});</code></pre> 
+       <p>In this case, the Bar view is creating an instance of the Foo view as one of its items. Further, it is listening to the collapse event just like the Foo view. In previous versions of Ext JS and Sencha Touch, these declarations would conflict. With Ext JS 5, however, this will now resolve as one would hope. The listeners declared by the Foo view will fire on Foo’s ViewController while the listeners declared in the Bar view will fire on Bar’s ViewController.</p> 
+       <h3 id="Reference">Reference</h3> 
+       <p>One of the most common loose ends when writing controller logic is getting ahold of the necessary components to complete a particular action. Something as simple as:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.foo.Foo', {
+    extend: 'Ext.panel.Panel',
+    xtype: 'foo',
+    controller: 'foo',
+
+    tbar: [{
+        xtype: 'button',
+        text: 'Add',
+        handler: 'onAdd'
+    }],
+
+    items: [{
+        xtype: 'grid',
+        ...
+    }]
+});
+
+Ext.define('MyApp.view.foo.FooController', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.foo',
+
+    onAdd: function () {
+        // ... get the grid and add a record ...
+    }
+});</code></pre> 
+       <p>But how should one acquire the grid component? In Ext JS 4, you could use the “refs” config or some other way to look up the component. All techniques require you to place some recognizable property on the grid to allow it to be uniquely identified. Older techniques used the “id” config (and <a href=".././apidocs/#!/api/Ext.getCmp" data-full-load="true">Ext.getCmp</a>) or the “itemId” config (using “refs” or some component query method). The advantage of “id” is fast lookup, but since these identifiers must be unique across the entire application and the DOM as well, this is not often desirable. Using “itemId” and some form of query is more flexible, but it’s necessary to perform a search to find the desired component.</p> 
+       <p>With the new reference config in Ext JS 5, we simply add the “reference” to the grid and use “lookupReference” to get at it:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.foo.Foo', {
+    extend: 'Ext.panel.Panel',
+    xtype: 'foo',
+    controller: 'foo',
+
+    tbar: [{
+        xtype: 'button',
+        text: 'Add',
+        handler: 'onAdd'
+    }],
+
+    items: [{
+        xtype: 'grid',
+        reference: 'fooGrid'
+        ...
+    }]
+});
+
+Ext.define('MyApp.view.foo.FooController', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.foo',
+
+    onAdd: function () {
+        var grid = this.lookupReference('fooGrid');
+    }
+});</code></pre> 
+       <p>This is similar to assigning an itemId of “fooGrid” and doing: “this.down(‘#fooGrid’)”. The difference under the hood, however, is quite significant. First, a reference config instructs the component to register itself with its owning view (identified by the presence of a ViewController in this case). Second, the lookupReference method simply consults the cache to see if references need to be refreshed (say due to add or remove on a container). If all is well, it just returns the reference from the cache. Or, in pseudo-code:</p> 
+       <pre mode="javascript" theme="chrome"><code>lookupReference: (reference) {
+    var cache = this.references;
+    if (!cache) {
+        Ext.fixReferences(); // fix all references
+        cache = this.references; // now the cache is valid
+    }
+    return cache[reference];
+}</code></pre> 
+       <p>In other words, there is no search and the linkages damaged by adding or removing items from containers are fixed in one go, when they are needed. As we will see below, this approach has benefits other than efficiency.</p> 
+       <h3 id="Encapsulation">Encapsulation</h3> 
+       <p>The use of selectors in the Ext JS 4 MVC implementation was very flexible but at the same time had certain risks. The fact that these selectors “see” everything at all levels of the component hierarchy is both powerful and prone to mistakes. For example, a controller could be working 100% when it runs in isolation but then fails as soon as other views are introduced because its selectors have undesired matches with the new view.</p> 
+       <p>These problems can be managed by following certain practices, but when using listeners and references with a ViewController these problems are simply not possible. This is because the listeners and reference configs connect only with their owning ViewController. Views are free to chose any reference value that is unique within that view knowing that these names will not be exposed to the view’s creator.</p> 
+       <p>Likewise, listeners are resolved on their owning ViewController and cannot be accidentally dispatched to event handlers in other controllers with errant selectors. While listeners are often preferable to selectors, the two mechanisms play well together for those situations where a selector-based approach is desired.</p> 
+       <p>To complete this model, views need to fire events that can be consumed by their owning view’s ViewController. There is a helper method in ViewController for this purpose: fireViewEvent. For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.foo.FooController', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.foo',
+
+    onAdd: function () {
+        var record = new MyApp.model.Thing();
+        var grid = this.lookupReference('fooGrid');
+        grid.store.add(record);
+
+        this.fireViewEvent('addrecord', this, record);
+    }
+});</code></pre> 
+       <p>This enables the standard form of listener for the creator of this view:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.bar.Bar', {
+    extend: 'Ext.panel.Panel',
+    xtype: 'bar',
+    controller: 'bar',
+
+    items: [{
+        xtype: 'foo',
+        listeners: {
+            collapse: 'onCollapse',
+            addrecord: 'onAddRecord'
+        }
+    }]
+});</code></pre> 
+       <h3 id="Listeners_and_Event_Domains">Listeners and Event Domains</h3> 
+       <p>In Ext JS 4.2, the MVC event dispatcher was generalized with the introduction of event domains. These event domains intercepted events as they were fired and dispatched them to controllers controlled by selector matching. The “component” event domain had full component query selectors while the other domains had more limited selectors.</p> 
+       <p>With Ext JS 5, each ViewController creates an instance of a new type of event domain called the “view” event domain. This event domain allows ViewControllers to use the standard “listen” and “control” methods while limiting their scope implicitly to their view. It also adds a special selector to match the view itself:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyApp.view.foo.FooController', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.foo',
+
+    control: {
+        '#': {  // matches the view itself
+            collapse: 'onCollapse'
+        },
+        button: {
+            click: 'onAnyButtonClick'
+        }
+    }
+});</code></pre> 
+       <p>The key difference between listeners and selectors can be seen above. The “button” selector will match any button in this view or any child view, irrespective of depth, even if that button belongs to a great-grandchild view. In other words, selector-based handlers do not respect encapsulation boundaries. This behavior is consistent with previous <a href=".././apidocs/#!/api/Ext.app.Controller" data-full-load="true">Ext.app.Controller</a> behavior and can be a useful technique in limited situations.</p> 
+       <p>Lastly, these event domains respect nesting and effectively “bubble” an event up the view hierarchy. That is to say, when an event fires, it’s first delivered to any standard listeners. Then, it’s delivered to its owning ViewController, followed by its parent ViewController (if any) on up the hierarchy. Eventually, the event is delivered to the standard “component” event domain to be handled by Ext.app.Controller-derived controllers.</p> 
+       <h3 id="Lifecycle">Lifecycle</h3> 
+       <p>A common technique with large applications is to dynamically create controllers when they are first needed. This could help reduce the load time of the application and help runtime performance as well by not activating all potential controllers. The limitation to this in previous versions was that, once created, these controllers would remain active in the application. It was not possible to destroy them and release their resources. Likewise, this did not change the reality that a controller could have any number of associated views (including none).</p> 
+       <p>The ViewController, however, is created very early in the component’s lifecycle and is bound to that view for its entire lifetime. When that view is destroyed, the ViewController is likewise destroyed. This means that the ViewController is no longer forced to manage states where there is no view or many views.</p> 
+       <p>This one-to-one relationship means reference tracking is simplified and no longer prone to leaking destroyed components. A ViewController can implement any of these methods to perform tasks at key points in its lifecycle:</p> 
+       <ul> 
+        <li>beforeInit - This method can be overridden in order to operate on the view prior to its initComponent method being called. This method is called immediately after the controller is created which occurs during initConfig called from the Component constructor.</li> 
+        <li>init - Called shortly after initComponent has been called on the view. This is the typical time to perform initialization for the controller now that the view is initialized.</li> 
+        <li>initViewModel - Called when the view’s ViewModel is created (if one is defined).</li> 
+        <li>destroy - Cleanup and resources (be sure to callParent).</li> 
+       </ul> 
+       <h2 id="Conclusion">Conclusion</h2> 
+       <p>We think ViewControllers will greatly streamline your MVC applications. They also work very well with ViewModels, so you can combine these approaches and their respective strengths. We’re excited about the upcoming release and seeing these improvements at work in your applications.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

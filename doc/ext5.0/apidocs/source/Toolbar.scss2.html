@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-toolbar-Toolbar'>/** @class Ext.toolbar.Toolbar */
+</span>//
+
+$toolbar-font-size: ceil($font-size * .9) !default;
+$toolbar-text-font-size: ceil($font-size * .9) !default;
+$toolbar-background-color: adjust-color($base-color, $hue: -1.333deg, $saturation: -3.831%, $lightness: 4.51%) !default;
+$toolbar-background-gradient: color_stops(lighten($toolbar-background-color, 3), $toolbar-background-color) !default;
+$toolbar-scroller-top-margin: 5px 0 !default;
+$toolbar-scroller-right-margin: 0 !default;
+$toolbar-scroller-bottom-margin: 5px 0 !default;
+$toolbar-scroller-left-margin: 0 !default;
+$toolbar-scroller-vertical-height: 5px !default;
+$toolbar-scroller-vertical-width: 35px !default;
+
+$toolbar-scroller-opacity: 1 !default;
+$toolbar-scroller-opacity-disabled: .5 !default;
+$toolbar-scroller-opacity-pressed: 1 !default;
+$toolbar-scroller-opacity-over: 1 !default;
+// this should be the same as panel border color, but it can't reuse the $panel-border-color
+// var because toolbar cannot depend on panel
+$toolbar-border-color: adjust-color($base-color, $hue: 0deg, $saturation: 7.644%, $lightness: -8.627%) !default;
+$toolbar-classic-scrollers: true !default;
+</pre>
+</body>
+</html>

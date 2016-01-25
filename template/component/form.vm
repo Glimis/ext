@@ -1,0 +1,98 @@
+Ext.onReady(function() {
+    Ext.create('Ext.form.Panel', {
+        renderTo: 'test',
+        //公共属性
+        title: '标题',
+        bodyPadding: 5,
+        width: "100%",
+        //布局
+        layout: 'anchor',
+        //数据交互
+        url: 'save-form.php',
+        //子组件系列
+        defaults: {
+            anchor: '100%'
+        },
+        defaultType: 'textfield',
+        items: [{
+            fieldLabel: '默认1',
+            name: 'first'
+        }, {
+            fieldLabel: '默认2',
+            name: 'last'
+        }, {
+            fieldLabel: 'checkbox',
+            xtype: 'checkbox',
+        }, {
+            fieldLabel: 'combo',
+            xtype: 'combo'
+        }, {
+            fieldLabel: 'datefield',
+            xtype: 'datefield'
+        }, {
+            fieldLabel: 'displayfield',
+            xtype: 'displayfield'
+        }, {
+            fieldLabel: 'field',
+            xtype: 'field'
+        }, {
+            fieldLabel: 'fieldset',
+            xtype: 'fieldset'
+        }, {
+            fieldLabel: 'hidden',
+            xtype: 'hidden'
+        }, {
+            fieldLabel: 'htmleditor',
+            xtype: 'htmleditor'
+        }, {
+            fieldLabel: 'label',
+            xtype: 'label'
+        }, {
+            fieldLabel: 'numberfield',
+            xtype: 'numberfield'
+        }, {
+            fieldLabel: 'radio',
+            xtype: 'radio'
+        }, {
+            fieldLabel: 'radiogroup',
+            xtype: 'radiogroup'
+        }, {
+            fieldLabel: 'textarea',
+            xtype: 'textarea'
+        }, {
+            fieldLabel: 'textfield',
+            xtype: 'textfield'
+        }, {
+            fieldLabel: 'timefield',
+            xtype: 'timefield'
+        }, {
+            fieldLabel: 'trigger',
+            xtype: 'trigger'
+        }],
+
+        //按钮系列
+        buttons: [{
+            text: '重置',
+            handler: function() {
+                this.up('form').getForm().reset();
+            }
+        }, {
+            text: '保存',
+            formBind: true, //only enabled once the form is valid
+            disabled: true,
+            handler: function() {
+                var form = this.up('form').getForm();
+                if (form.isValid()) {
+                    form.submit({
+                        success: function(form, action) {
+                            Ext.Msg.alert('保存成功', action.result.msg);
+                        },
+                        failure: function(form, action) {
+                            Ext.Msg.alert('操作失败', action.result.msg);
+                        }
+                    });
+                }
+            }
+        }]
+    });
+})

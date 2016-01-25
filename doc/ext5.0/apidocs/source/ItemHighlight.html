@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-chart-interactions-ItemHighlight'>/**
+</span> * @class Ext.chart.interactions.ItemHighlight
+ * @extends Ext.chart.interactions.Abstract
+ *
+ * The ItemHighlight interaction allows the user to highlight series items in the chart.
+ */
+Ext.define('Ext.chart.interactions.ItemHighlight', {
+
+    extend: 'Ext.chart.interactions.Abstract',
+
+<span id='Ext-chart-interactions-ItemHighlight-property-type'>    type: 'itemhighlight',
+</span>    alias: 'interaction.itemhighlight',
+
+    config: {
+<span id='Ext-chart-interactions-ItemHighlight-cfg-gestures'>        //@inheritdoc
+</span>        gestures: {
+            tap: 'onHighlightGesture',
+            mousemove: 'onMouseMoveGesture',
+            mouseenter: 'onMouseEnterGesture',
+            mouseleave: 'onMouseLeaveGesture',
+            mousedown: 'onMouseDownGesture',
+            mouseup: 'onMouseUpGesture'
+        }
+    },
+
+<span id='Ext-chart-interactions-ItemHighlight-property-highlightItem'>    highlightItem: null,
+</span>
+<span id='Ext-chart-interactions-ItemHighlight-method-onMouseMoveGesture'>    onMouseMoveGesture: function (e) {
+</span>        var me = this,
+            item, tooltip, chart;
+
+        if (me.isDragging) {
+            if (me.tipItem) {
+                me.tipItem.series.hideTip(me.tipItem);
+                me.tipItem = null;
+            }
+        } else if (!me.highlightItem) {
+            item = me.getItemForEvent(e);
+            chart = me.getChart();
+            if (item !== chart.getHighlightItem()) {
+                chart.setHighlightItem(item);
+                me.sync();
+            }
+
+            if (this.isMousePointer) {
+                if ( me.tipItem &amp;&amp; (!item || me.tipItem.field !== item.field || me.tipItem.record !== item.record) ) {
+                    me.tipItem.series.hideTip(me.tipItem);
+                    me.tipItem = null;
+                }
+                if (item &amp;&amp; (tooltip = item.series.getTooltip())) {
+                    if (tooltip.trackMouse || !me.tipItem) {
+                        item.series.showTip(item, e.getXY());
+                    }
+                    me.tipItem = item;
+                }
+            }
+            return false;
+        }
+    },
+
+<span id='Ext-chart-interactions-ItemHighlight-method-showTip'>    showTip: function (e, item) {
+</span>        item.series.showTip(item, e.getXY());
+        this.tipItem = item;
+    },
+
+<span id='Ext-chart-interactions-ItemHighlight-method-onMouseEnterGesture'>    onMouseEnterGesture: function () {
+</span>        this.isMousePointer = true;
+    },
+
+<span id='Ext-chart-interactions-ItemHighlight-method-onMouseLeaveGesture'>    onMouseLeaveGesture: function () {
+</span>        this.isMousePointer = false;
+    },
+
+<span id='Ext-chart-interactions-ItemHighlight-method-onMouseDownGesture'>    onMouseDownGesture: function () {
+</span>        this.isDragging = true;
+    },
+
+<span id='Ext-chart-interactions-ItemHighlight-method-onMouseUpGesture'>    onMouseUpGesture: function () {
+</span>        this.isDragging = false;
+    },
+
+<span id='Ext-chart-interactions-ItemHighlight-method-onHighlightGesture'>    onHighlightGesture: function (e) {
+</span>        // A click/tap on an item makes its highlight sticky. It requires another click/tap to unhighlight.
+        if (this.isMousePointer) {
+            return;
+        }
+        var me = this,
+            item = me.getItemForEvent(e);
+        if (me.highlightItem &amp;&amp; item &amp;&amp; (me.highlightItem.index === item.index)) {
+            item = null;
+        }
+        me.highlightItem = item;
+        me.getChart().setHighlightItem(item);
+    }
+});
+</pre>
+</body>
+</html>

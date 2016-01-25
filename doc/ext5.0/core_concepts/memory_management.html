@@ -1,0 +1,592 @@
+<!DOCTYPE html><html><head> 
+  <link href="./../css/main.css" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="./../gwtproject/gwtproject.nocache.js"></script> 
+  <script type="text/javascript" src="./../ace/ace.js"></script> 
+  <link rel="icon" type="image/x-icon" href="./../favicon.ico" /> 
+  <script type="text/javascript" src="http://support-test.sencha.com:8080/resources/plain_html/index.js"></script> 
+  <script type="text/javascript">window["_GOOG_TRANS_EXT_VER"] = "1";</script> 
+  <title>Ext JS Guides | Memory Management</title> 
+  <meta charset="UTF-8" /> 
+  <script type="text/javascript" src="https://use.typekit.com/bqo8qzg.js"></script> 
+ </head> 
+ <body> 
+  <div id="header"> 
+   <a href="http://www.sencha.com"><img class="sencha-logo" src="./../images/logo.png" /></a> 
+   <h1 id="current-product"><a href="#">Ext JS Guides ▼</a></h1> 
+  </div> 
+  <div id="content" itemscope="" itemtype="http://schema.org/Article"> 
+   <div id="tpl-toc"> 
+    <div id="tpl-toc-content"> 
+     <ul> 
+      <li class="file"><a href="../index.html" title="Guide Home">Guide Home</a></li> 
+      <li class="folder"><a href="#">Ext JS 5 Api Docs</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../apidocs/" data-full-load="true" title="Api Docs">Ext JS 5 Api Docs</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">What's New?</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../whats_new/release_notes.html" title="">Release Notes</a></li> 
+        <li class="folder"><a href="#">5.0.1</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.1/examples/index.html" data-full-load="true" title="5.0.1 Examples">5.0.1 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0.1/whats_new.html" title="What's New in Ext JS 5.0.1">What's New in Ext JS 5.0.1</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0.1/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">5.0.0</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="http://dev.sencha.com/ext/5.0.0/examples/index.html" data-full-load="true" title="5.0.0 Examples">5.0.0 Examples</a></li> 
+          <li class="file"><a href="../whats_new/5.0/whats_new.html" title="What's New in Ext JS 5">What's New in Ext JS 5.0.0</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/extjs_upgrade_guide.html" title="Ext JS 5 - Upgrade Guide">Ext JS 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade_guide.html" data-full-load="true" title="Sencha Cmd 5 - Upgrade Guide">Sencha Cmd 5 - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/charts_upgrade_guide.html" title="Charts - Upgrade Guide">Charts - Upgrade Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+          <li class="file"><a href="../whats_new/5.0/diff_changes.html" title="">Ext JS Diff Guide</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Getting Started</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../getting_started/welcome_to_extjs.html" title="Welcome to Ext JS">Welcome to Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/getting_started.html" title="Get Started">Setup &amp; Getting Started</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../getting_started/extjs_faq.html" title="">Ext JS - FAQ</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Tutorials</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../tutorials/login_app.html" title="">Building a Login App</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Core Concepts</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../core_concepts/accessibility.html" title="Accessibility">Accessibility</a></li> 
+        <li class="file"><a href="../core_concepts/classes.html" title="The Class System">Class System</a></li> 
+        <li class="file"><a href="../core_concepts/components.html" title="Components">Components</a></li> 
+        <li class="file"><a href="../core_concepts/data_package.html" title="Data Package">Data Package</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/drag_drop.html" title="Drag and Drop">Drag and Drop</a></li> 
+        <li class="file"><a href="../core_concepts/events.html" title="Events in Ext JS 5">Events in Ext JS 5</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/layouts.html" title="Layouts and Containers">Layouts and Containers</a></li> 
+        <li class="file"><a href="../core_concepts/localization.html" title="Localization">Localization</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/memory_management.html" title="">Memory Management</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/rtl.html" title="Right to Left in Ext JS">Right to Left in Ext JS</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/tablet_support.html" title="Tablet Support">Tablet Support</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../core_concepts/theming.html" title="Theming Ext JS">Theming Ext JS</a></li> 
+        <li class="file"><a href="../core_concepts/drawing.html" title="">Draw Package</a></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Application Architecture</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../application_architecture/application_architecture.html" title="Introduction to Application Architecture">Introduction to Application Architecture</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_controllers.html" title="View Controllers">View Controllers</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_models_data_binding.html" title="View Models &amp; Data Binding">View Models &amp; Data Binding</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/view_model_internals.html" title="View Models Internals">View Model Internals</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+        <li class="file"><a href="../application_architecture/router.html" title="Using the Router">Using the Router</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Components</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../components/forms.html" title="Forms">Forms</a></li> 
+        <li class="file"><a href="../components/introduction_to_charting.html" title="Introduction to Charting">Introduction to Charting</a></li> 
+        <li class="file"><a href="../components/trees.html" title="Trees">Trees</a></li> 
+        <li class="folder"><a href="#">Grids</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../components/grids/grids.html" title="Grids">Grids</a></li> 
+          <li class="file"><a href="../components/grids/widgets_widgets_columns.html" title="Widgets and Widget Columns">Widgets and Widget Columns</a><img class="tpl-toc-img-new" src="./../images/new.png" /></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Sencha Cmd</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../../../../cmd/5.x/intro_to_cmd.html" data-full-load="true" title="Introduction to Sencha Cmd">Introduction to Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/extjs/cmd_app.html" data-full-load="true" title="Using Sencha Cmd with Ext JS 5">Using Sencha Cmd with Ext JS 5</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_upgrade.html" data-full-load="true" title="Understanding App Upgrade">Understanding App Upgrade</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cmd_compiler.html" data-full-load="true" title="Compiler-Friendly Code Guidelines">Compiler-Friendly Code Guidelines</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/cordova_phonegap.html" data-full-load="true" title="Cordova and PhoneGap Applications">Cordova and PhoneGap Applications</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/workspaces.html" data-full-load="true" title="Workspaces in Sencha Cmd">Workspaces in Sencha Cmd</a></li> 
+        <li class="file"><a href="../../../../cmd/5.x/microloader.html" data-full-load="true" title="The Microloader">The Microloader</a></li> 
+        <li class="folder"><a href="#">Sencha Cmd Packages</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_packages.html" data-full-load="true" title="Sencha Cmd Packages">Sencha Cmd Packages</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/cmd_packages/cmd_creating_packages.html" data-full-load="true" title="Creating Packages">Creating Packages</a></li> 
+         </ul></li> 
+        <li class="folder"><a href="#">Advanced Sencha Cmd</a> 
+         <ul expand="true"> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_advanced.html" data-full-load="true" title="Advanced Sencha Cmd">Advanced Sencha Cmd</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_build.html" data-full-load="true" title="Inside the App Build Process">Inside the App Build Process</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_compiler_reference.html" data-full-load="true" title="Sencha Compiler Reference">Sencha Compiler Reference</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_ant.html" data-full-load="true" title="Ant Integration">Ant Integration</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_metadata.html" data-full-load="true" title="Sencha Cmd Metadata">Sencha Cmd Metadata</a></li> 
+          <li class="file"><a href="../../../../cmd/5.x/advanced_cmd/cmd_reference.html" data-full-load="true" title="Sencha Cmd Reference">Sencha Cmd Reference</a></li> 
+         </ul></li> 
+       </ul></li> 
+      <li class="folder"><a href="#">Enterprise Tools</a> 
+       <ul expand="true"> 
+        <li class="file"><a href="../enterprise/soap.html" title="SOAP Services">SOAP Services</a></li> 
+        <li class="file"><a href="../enterprise/amf.html" title="AMF Data Sources">AMF Data Sources</a></li> 
+       </ul></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div id="middle"> 
+    <div id="tpl-content"> 
+     <div> 
+      <div class="toc-page" style="display:block;">
+        Contents 
+       <a class="toc-page-h2" href="#Our_Definition" title="Our Definition">Our Definition</a> 
+       <a class="toc-page-h3" href="#Language_Framework_Cleanup" title="Language/Framework Cleanup">Language/Framework Cleanup</a> 
+       <a class="toc-page-h3" href="#Repeating_to_exhaustion" title="Repeating to exhaustion">Repeating to exhaustion</a> 
+       <a class="toc-page-h3" href="#Usage_Grows_Unboundedly" title="Usage Grows Unboundedly">Usage Grows Unboundedly</a> 
+       <a class="toc-page-h3" href="#Abstraction_and_Garbage_Collection" title="Abstraction and Garbage Collection">Abstraction and Garbage Collection</a> 
+       <a class="toc-page-h3" href="#Allocation" title="Allocation">Allocation</a> 
+       <a class="toc-page-h3" href="#Cleanup" title="Cleanup">Cleanup</a> 
+       <a class="toc-page-h2" href="#Detecting_Leaks" title="Detecting Leaks">Detecting Leaks</a> 
+       <a class="toc-page-h3" href="#Application_Level_Leaks" title="Application Level Leaks">Application Level Leaks</a> 
+       <a class="toc-page-h3" href="#Framework_Level_Leaks" title="Framework Level Leaks">Framework Level Leaks</a> 
+       <a class="toc-page-h2" href="#Common_Code_Leak_Patterns_And_Solutions" title="Common Code Leak Patterns And Solutions">Common Code Leak Patterns And Solutions</a> 
+       <a class="toc-page-h3" href="#Preventing_Base_Class_Cleanup" title="Preventing Base Class Cleanup">Preventing Base Class Cleanup</a> 
+       <a class="toc-page-h3" href="#Not_removing_DOM_listeners" title="Not removing DOM listeners">Not removing DOM listeners</a> 
+       <a class="toc-page-h3" href="#Keeping_references_to_objects" title="Keeping references to objects">Keeping references to objects</a> 
+       <a class="toc-page-h3" href="#Keeping_References_in_Closures" title="Keeping References in Closures">Keeping References in Closures</a> 
+       <a class="toc-page-h3" href="#Continually_creating_instances_with_side_effects" title="Continually creating instances with side effects">Continually creating instances with side effects</a> 
+       <a class="toc-page-h3" href="#Clearing_any_registration_in_a_cache" title="Clearing any registration in a cache">Clearing any registration in a cache</a> 
+       <a class="toc-page-h2" href="#Summary" title="Summary">Summary</a> 
+      </div> 
+      <div id="tpl-content-name" itemprop="name"> 
+       <h1>Identifying Memory Leaks</h1> 
+      </div> 
+      <div id="tpl-content-articleBody" itemprop="articleBody"> 
+       <p>The term “memory leak” is used in many contexts. It is often used to describe memory growth. Wikipedia defines a “memory leak” as such: </p> 
+       <p><em>“When a computer program incorrectly manages memory allocations”.</em></p> 
+       <p>This is a reasonable definition, but it is a bit vague.</p> 
+       <h2 id="Our_Definition">Our Definition</h2> 
+       <p>For the purposes of this guide, a memory leak is defined as:</p> 
+       <p><em>When memory usage grows without limit after repeating a portion of code. The code must be repeated “to exhaustion” (enough that it would be necessary to reclaim memory) and the code must also ensure that reasonable language / framework cleanup has been performed.</em></p> 
+       <p>That’s a bit of mouthful, so let’s break down the important bits of this definition:</p> 
+       <h3 id="Language_Framework_Cleanup">Language/Framework Cleanup</h3> 
+       <p>Depending on the environment in which the program runs, there are typically rules regarding actions you should take to indicate that you are finished with a certain piece of allocated memory. In Ext JS, this is typically the destroy method, which generally cleans up DOM elements and unbinds listeners. </p> 
+       <p>In C#, the recommended pattern is the IDisposable interface. Regardless of the platform, these conventions must be followed to allow the platform to release allocated resources. If cleanup procedures are not followed, memory leaks will result because it is not possible to automatically infer when resources are no longer needed.</p> 
+       <h3 id="Repeating_to_exhaustion">Repeating to exhaustion</h3> 
+       <p>Let’s assume there is a development machine with 64Gb of free memory. A section of code is run 5 times. By inspection, it’s noted that after each run, memory usage increases 1Mb each time and is never reclaimed. </p> 
+       <p>This observation is not really indicative of a problem. The program is only using a tiny fraction of available memory. If the code section is repeated 50,000 times and still none of the memory is reclaimed, this would be a different result. The underlying system needs to be sufficiently stressed so that it is forced to reclaim memory.</p> 
+       <h3 id="Usage_Grows_Unboundedly">Usage Grows Unboundedly</h3> 
+       <p>This is probably the most subtle, yet most important part of the definition. In many cases, calling destroy or other cleanup may not free all allocated resources. In Ext JS this is typically observed in its caches. </p> 
+       <p>For example, the <a href=".././apidocs/#!/api/Ext.ComponentQuery" data-full-load="true">Ext.ComponentQuery</a> class is used to search components based on a string selector. Internally, this string selector is transformed into a function that can be executed on the candidate components. Constructing this function is expensive and, oftentimes, the same query is run multiple times. Due to this re-use, the generated function is kept in memory. The crucial point here is that the caching mechanism is bounded. </p> 
+       <p>The cache is an LRU (Least Recently Used) cache. The LRU keeps track of accesses to items in the collection. When an item is accessed, it is pulled to the front. The LRU cache also has a maximum size. When adding an item exceeds the maximum size, the least recently used item is evicted from the cache. Once the maximum limit is reached, the cache normalizes. Things of this nature remaining in memory is not problematic. It only becomes an issue when resources are retained without limit.</p> 
+       <h3 id="Abstraction_and_Garbage_Collection">Abstraction and Garbage Collection</h3> 
+       <p>A developer using Ext JS is far-removed from real memory management. Worse still, tools such as Window Task Manager or Mac Activity Monitor do not provide accurate depictions of memory consumption. To better understand how far removed the cause and effect relationships are, it is important to evaluate the layers of memory management.</p> 
+       <h3 id="Allocation">Allocation</h3> 
+       <ul> 
+        <li>The developer requests resources from the framework (for example, creating a component).</li> 
+        <li>The framework requests resources from the JavaScript engine (often using operator new or createElement, etc.).</li> 
+        <li>The JavaScript engine requests resources from the underlying process memory manager (typically a C++ memory allocation).</li> 
+        <li>The underlying memory manager requests resources from the operating system. This is the memory growth we can observe in Task Manager and Activity Monitor.</li> 
+       </ul> 
+       <h3 id="Cleanup">Cleanup</h3> 
+       <ol> 
+        <li>The developer calls destroy on an Ext JS component or other resource.</li> 
+        <li>The destroy method of the Ext JS component calls other cleanup methods, sets various internal references to null, etc..</li> 
+        <li>The JavaScript garbage collector later decides when to sweep over the heap and reclaim memory. This is often deferred until new memory is requested and there is “insufficient” free memory. The memory manager may simply decide to grow the heap again instead of collecting garbage since growing the heap is often cheaper, especially early in the life of the application.</li> 
+        <li>Once the JavaScript memory manager decides to collect garbage, it has to decide if the reclaimed memory should be retained as free memory for its future use or returned to the underlying process heap.</li> 
+        <li>Depending on the underlying memory manager used by the JavaScript memory manager (typically a C++ memory manager) the free memory may be kept for future use by that process or returned to the operating system. Only if and when we reach this point do we see any updates in Task Manager / Activity Monitor.</li> 
+       </ol> 
+       <p>Given the above, it is clear that the JavaScript developer has little control over the big picture in regards to memory management. There are many moving parts and the real memory management is a very small cog.</p> 
+       <p>For the purpose of this guide, we will not discuss these layers further. It is sufficient to say that the JavaScript heap and its garbage collector perform the actions they deem appropriate and it is not possible to force them to behave in a particular fashion. The best we can do is ensure that references are not being held by user code or by the framework.</p> 
+       <p>Ultimately, inspecting memory usage with common OS monitoring tools and observing increases in not necessarily indicative of a “memory leak”.</p> 
+       <h2 id="Detecting_Leaks">Detecting Leaks</h2> 
+       <h3 id="Application_Level_Leaks">Application Level Leaks</h3> 
+       <p>When applications fail to cleanup framework resources, this can cause objects to accumulate in several collections maintained by the framework. While the exact details of these are version-specific, some places to check are:</p> 
+       <ul> 
+        <li><a href=".././apidocs/#!/api/Ext.ComponentManager" data-full-load="true">Ext.ComponentManager</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.StoreManager" data-full-load="true">Ext.StoreManager</a></li> 
+        <li><a href=".././apidocs/#!/api/Ext.cache" data-full-load="true">Ext.cache</a> (the <a href=".././apidocs/#!/api/Ext.Element" data-full-load="true">Ext.Element</a> cache)</li> 
+       </ul> 
+       <h3 id="Framework_Level_Leaks">Framework Level Leaks</h3> 
+       <p>While every effort is made to cleanup resources internal to the framework, there is always room for mistakes. Historically, the most common issues have come from leaking DOM elements. If you suspect this is the case, the <a href="http://home.wanadoo.nl/jsrosman/">sIEve</a> tool provides excellent leak detection in Internet Explorer.</p> 
+       <p><strong>Note:</strong> We highly recommended that you address all application-level leaks before looking at things on this lower level.</p> 
+       <h2 id="Common_Code_Leak_Patterns_And_Solutions">Common Code Leak Patterns And Solutions</h2> 
+       <p>The following code snippets and descriptions will highlight various ways that memory is abused in a way that may cause problems.</p> 
+       <h3 id="Preventing_Base_Class_Cleanup">Preventing Base Class Cleanup</h3> 
+       <p>In an effort to clean up resources in derived classes, base class cleanup may be accidentally bypassed. </p> 
+       <p>For example:</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('Foo.bar.CustomButton', {
+    extend: 'Ext.button.Button',
+    onDestroy: function () {
+        // do some cleanup
+    }
+});</code></pre> 
+       <p><strong>Solution:</strong> Be sure to call <a href=".././apidocs/#!/api/Ext.Base-static-method-callParent" data-full-load="true">callParent()</a>, which allows the base class to perform its cleanup.</p> 
+       <h3 id="Not_removing_DOM_listeners">Not removing DOM listeners</h3> 
+       <p>An event is attached to an element. The elements is overwritten by changing the innerHTML. However, this event handler will remain in memory.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.fly(someElement).on('click', doSomething);
+
+someElement.parentNode.innerHTML = '';</code></pre> 
+       <p><strong>Solution:</strong> Keep a reference to important elements and call their destroy method when they are no longer needed. </p> 
+       <h3 id="Keeping_references_to_objects">Keeping references to objects</h3> 
+       <p>An instance of a class is created that uses lots of memory. The class is destroyed, but a reference remains on an existing object.</p> 
+       <pre mode="javascript" theme="chrome"><code>Ext.define('MyClass', {
+
+    constructor: function() {
+        this.foo = new SomeLargeObject();
+    },
+
+    destroy: function() {
+        this.foo.destroy();
+    }
+});
+
+this.o = new MyClass();
+o.destroy();
+
+// `this` still has a reference to `o` and `o` has a reference to `foo`.</code></pre> 
+       <p><strong>Solution:</strong> Set references to null to ensure memory can be reclaimed. In this case, <code>this.foo = null</code> in destroy as well as <code>this.o = null</code> after calling destroy. </p> 
+       <h3 id="Keeping_References_in_Closures">Keeping References in Closures</h3> 
+       <p>This situation is more subtle, but very similar to the above. The closure holds a reference to a large object that can’t be reclaimed while the closure is still being referenced.</p> 
+       <pre mode="javascript" theme="chrome"><code>function runAsync(val) {
+    var o = new SomeLargeObject();
+    var x = 42;
+
+    // other things
+
+    return function() {
+        return x;  // o is in closure scope but not needed
+    }
+}
+
+var f = runAsync(1);</code></pre> 
+       <p>The above often occurs because the large object was present in the outer scope and not needed by the inner function. These sorts of things are easy to miss, but can negatively affect memory usage.</p> 
+       <p><strong>Solution:</strong> Use <a href=".././apidocs/#!/api/Ext.Function-method-bind" data-full-load="true">Ext.Function.bind()</a> or the standard JavaScript Function <code>bind</code> to create safe closures for functions declared outside such functions.</p> 
+       <pre mode="javascript" theme="chrome"><code>function fn (x) {
+    return x;
+}
+
+function runAsync(val) {
+    var o = new SomeLargeObject();
+    var x = 42;
+
+    // other things
+
+    return Ext.Function.bind(fn, null, [x]); // o is not captured
+}
+
+var f = runAsync(1);</code></pre> 
+       <h3 id="Continually_creating_instances_with_side_effects">Continually creating instances with side effects</h3> 
+       <p>Creating some objects can have side effects (for example, creating DOM elements). If these are being created without being destroyed, they can leak memory.</p> 
+       <pre mode="javascript" theme="chrome"><code>{
+    xtype: 'treepanel',
+    listeners: {
+        itemclick: function(view, record, item, index, e) {
+
+            // Always creating and rendering a new menu
+            new Ext.menu.Menu({
+                items: [record.get('name')]
+            }).showAt(e.getXY());
+        }
+    }
+}</code></pre> 
+       <p><strong>Solution:</strong> Capture a reference to the menu and call the destroy method on it when it is no longer needed. </p> 
+       <h3 id="Clearing_any_registration_in_a_cache">Clearing any registration in a cache</h3> 
+       <p>It is important to remove all references to an object. Setting a local reference to null is not enough. If some global singleton cache is holding a reference, that reference will be held for the lifetime of the application.</p> 
+       <pre mode="javascript" theme="chrome"><code>var o = new SomeLargeObject();
+someCache.register(o);
+
+// Destroy and null the reference. someCache still has a reference
+o.destroy();
+o = null;</code></pre> 
+       <p><strong>Solution:</strong> Be sure to remove objects from any caches to which it has been added in addition to calling destroy.</p> 
+       <h2 id="Summary">Summary</h2> 
+       <p>Taking control of your application’s memory management can be a simple task. Keep your application above reproach by destroying your unused components, nullifying unused references, and using <a href=".././apidocs/#!/api/Ext.Base-static-method-callParent" data-full-load="true">callParent()</a>. Following these suggestions will ensure that your application is running smoothly and does not use resources irresponsibly.</p> 
+      </div> 
+      <div class="tpl-content-lastUpdated">
+        Last updated 
+       <div id="tpl-content-lastUpdated-date" itemprop="datePublished" datetime="2014-08-26T12:33Z">
+         August 26, 2014 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <div id="footer-social"> 
+    <div class="g-plusone" data-size="medium" data-annotation="none"></div> 
+   </div> 
+   <div id="footer-content"> 
+    <a href="http://www.sencha.com/products">Products</a> | 
+    <a href="http://www.sencha.com/services">Services</a> | 
+    <a href="http://www.sencha.com/support">Support</a> | 
+    <a href="http://www.sencha.com/training">Training</a> | 
+    <a href="http://www.sencha.com/partners">Partners</a> | 
+    <a href="http://www.sencha.com/blog">Community</a> | 
+    <a href="http://www.sencha.com/company">Company</a> 
+   </div> 
+  </div> 
+  <div id="menu-product-container" style="display:none;"> 
+   <div id="menu-dropdown"> 
+    <div class="menu-landing-products"> 
+     <div id="menu-vertical"> 
+      <p class="menu-landing-product" rel="extjs"> <a> Ext JS </a> </p> 
+      <p class="menu-landing-product" rel="architect"> <a> Architect </a> </p> 
+      <p class="menu-landing-product" rel="touch"> <a> Touch </a> </p> 
+      <p class="menu-landing-product" rel="cmd"> <a> Sencha Cmd </a> </p> 
+      <p class="menu-landing-product" rel="touchazure"> <a> Touch Azure </a> </p> 
+      <p class="menu-landing-product" rel="gxt"> <a> GXT </a> </p> 
+      <p class="menu-landing-product" rel="space"> <a> Space </a> </p> 
+      <p class="menu-landing-product" rel="src"> <a> src.sencha.io </a> </p> 
+      <p class="menu-landing-product" rel="animator"> <a> Animator </a> </p> 
+     </div> 
+    </div> 
+    <div id="menu-product-details"> 
+     <div id="extjs-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.0.x 
+      </div> 
+      <a href="../.././../extjs/5.0/"> 5.0.1 </a> 
+      <a class="menu-landing-zip" href="../.././../downloads/ext-docs-5.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.2.x 
+      </div> 
+      <a href="../.././../extjs/4.2.2/"> 4.2.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.1/"> 4.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.2.0/"> 4.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.1.x 
+      </div> 
+      <a href="../.././../extjs/4.1.3/"> 4.1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.3.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.2/"> 4.1.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.2.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.1/"> 4.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.1.0/"> 4.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        4.0.x 
+      </div> 
+      <a href="../.././../extjs/4.0.7/"> 4.0.7 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.7.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../extjs/4.0.0/"> 4.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/extjs-docs-4.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../extjs/5.0/">5.0.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="architect-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.x 
+      </div> 
+      <a href="../.././../architect/3/"> 3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="../.././../architect/2/"> 2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/architect-docs-2.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../architect/3/">3.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touch-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        2.4.x 
+      </div> 
+      <a href="../../.././../touch/2.4.0/"> 2.4.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.4.0.zip"> zip </a> 
+      <div class="menu-landing-doc-heading">
+        2.3.x 
+      </div> 
+      <a href="../../.././../touch/2.3.1/"> 2.3.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.3.0/"> 2.3.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.3.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.2.x 
+      </div> 
+      <a href="../../.././../touch/2.2.1/"> 2.2.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.2.0/"> 2.2.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.2.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.1.x 
+      </div> 
+      <a href="../.././../touch/2.1.1/"> 2.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../touch/2.1.0/"> 2.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.0.x 
+      </div> 
+      <a href="../../.././../touch/2.0.2/"> 2.0.2 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.2.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.1/"> 2.0.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/2.0.0/"> 2.0.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-2.0.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        1.1.x 
+      </div> 
+      <a href="../../.././../touch/1.1.1/"> 1.1.1 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.1.zip"> zip </a> 
+      <br /> 
+      <a href="../../.././../touch/1.1.0/"> 1.1.0 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/touch-docs-1.1.0.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../../.././../touch/2.4.0/">2.4.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="cmd-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        5.x 
+      </div> 
+      <a href="../.././../cmd/"> 5.x </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../cmd/">5.x</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="touchazure-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../touch-azure/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../touch-azure/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="gxt-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        3.1.x 
+      </div> 
+      <a href="http://www.sencha.com/examples/"> 3.1.1 Examples </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/"> 3.1.1 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3.1/javadoc/index.html"> 3.1.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        3.0.x 
+      </div> 
+      <a href="http://docs.sencha.com/gxt-guides/3/"> 3.0.6 Guides </a> 
+      <br /> 
+      <a href="http://docs.sencha.com/gxt/3/"> 3.0.6 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-doc-heading">
+        2.x 
+      </div> 
+      <a href="http://www.sencha.com/gxtdocs/"> 2.3.1 Javadoc </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="http://docs.sencha.com/gxt/3.1/">3.1.1</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="space-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../space/1.0.0/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../space/1.0.0/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="src-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.0.x 
+      </div> 
+      <a href="../.././../src/1/"> 1.0.0 </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../src/1/">1.0.0</a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="animator-menu-product" class="menu-specific-product"> 
+      <div class="menu-landing-doc-heading">
+        1.x 
+      </div> 
+      <a href="../.././../animator/1.5/"> 1.5 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.5.zip"> zip </a> 
+      <br /> 
+      <a href="../.././../animator/1.3/"> 1.3 </a> 
+      <a class="menu-landing-zip" href="http://cdn.sencha.com/downloads/docs/animator-docs-1.3.zip"> zip </a> 
+      <br /> 
+      <div class="menu-landing-recent-version">
+        Most Recent 
+       <div class="menu-landing-most-recent"> 
+        <a href="../.././../animator/1.5/">1.5</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- GooglePlus --> 
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script> 
+  <!-- Google Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1396058-24', 'guides-extjs');
+    ga('send', 'pageview');
+  </script> 
+  <!-- Google Analytics (deprecated) --> 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1396058-10']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+ 
+</body></html>

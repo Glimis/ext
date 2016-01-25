@@ -1,0 +1,26 @@
+//此布局管理多个子组件, 每个都完全填满父容器, 而每次仅显示一个(类似于tabs)
+//本身不提供交互切换面板(区别于tabs),可以调用setActiveItem切换
+var panel=Ext.create('Ext.panel.Panel', {
+    layout: 'card',
+    items: [
+        { html: 'Card 1' },
+        { html: 'Card 2' },
+        { html: 'Card 3' },
+        { html: 'Card 4' },
+        { html: 'Card 5' },
+        { html: 'Card 6' },
+        { html: 'Card 7' },
+        { html: 'Card 8' },
+        { html: 'Card 9' },
+        { html: 'Card 10' }
+    ],
+    renderTo: Ext.getBody()
+});
+
+
+ Ext.TaskManager.start({
+     run: function(){
+     	panel.getLayout().setActiveItem(Ext.Number.randomInt(0,9));
+     },
+     interval: 1000
+ })

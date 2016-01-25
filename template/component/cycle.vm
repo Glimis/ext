@@ -1,0 +1,32 @@
+Ext.onReady(function() {
+    //分割按钮,点击按钮会自动循环选择选项,也可以点击下拉选择选项
+    Ext.create('Ext.button.Cycle', {
+        renderTo: 'test',
+        showText: true,
+        prependText: 'View as ',
+        height:50,
+        menu: {
+            items: [{
+                text: 'A',
+                iconCls: 'icon-search',
+                checked: true
+            }, {
+                text: 'B',
+                iconCls: 'view-html'
+            }, {
+                text: 'C',
+                iconCls: 'view-html'
+            }, {
+                text: 'D',
+                iconCls: 'view-html'
+            }]
+        },
+        changeHandler: function(cycleBtn, activeItem) {
+            Ext.toast({
+                width: 200,
+                html: activeItem.text,
+                title: activeItem.text
+            })
+        }
+    });
+})
