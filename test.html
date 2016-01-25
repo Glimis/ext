@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Api/Ext.Component</title>
+    <script id='test' type='template'>
+        <ul>
+            <%for(var i=0;i<data.student.length;i++){%>
+                <li><span>姓名:<%=data.student[i].name%></span></li>
+                <li><span>性别:<%=data.student[i].sex%></span></li>
+                <%}%>
+        </ul>
+    </script>
+    <script>
+    var data = {
+        student: [{
+            name: '张三',
+            sex: '男'
+        }, {
+            name: '李四',
+            sex: '女'
+        }]
+    }
+    var template = document.getElementById('test').innerHTML;
+    var code = ['var t=[];'],
+        cursor = 0;
+    //截取分割符,拼接js
+    var codes = template.split(/<%|%>/g);
+    for (var i = 0; i < codes.length; i++) {
+        var c = codes[i];
+        if (c.match(/for|if|else|}/)) {
+            //如果为逻辑,直接添加用于执行
+            code.push(c);
+        } else {
+            //如果为结构,放入数组中,用于展示
+            if (c[0] == '=') {
+                //包含＝不带",用于关联数据
+                code.push('t.push(' + c.substr(1) + ');');
+            } else {
+                //不包含＝不带",用于添加结构
+                code.push('t.push("' + c + '");');
+            }
+        }
+    }
+    code.push('return t.join("");');
+    var htmljs = code.join('').replace(/[\r\t\n]/g, '');
+    var html = new Function('data', htmljs)(data);
+    </script>
+
+    <body>
+        <div id='a'></div>
+    </body>
+
+</html>
